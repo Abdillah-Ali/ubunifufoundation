@@ -2,12 +2,34 @@ import { Link } from "react-router-dom";
 import Container from "@/components/layout/Container";
 import PageHero from "@/components/layout/PageHero";
 import usePageTitle from "@/hooks/usePageTitle";
-import { posts } from "@/data/posts";
+import { useState, useEffect } from "react";
+import { client, urlFor } from "@/lib/sanity";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
 const Blog = () => {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   usePageTitle("Blog & News");
   useScrollReveal();
+
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "post"] | order(publishedAt desc)`)
+      .then((data) => {
+        setPosts(data);
+        setLoading(false);
+      })
+      .catch(console.error);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -21,10 +43,10 @@ const Blog = () => {
         <Container>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             {posts.map((post) => (
-              <Link to={`/blog/${post.slug}`} key={post.slug} className="group reveal">
+              <Link to={`/blog/${post.slug.current}`} key={post.slug.current} className="group reveal">
                 <div className="aspect-[16/10] overflow-hidden rounded-2xl mb-6 shadow-md border border-border">
                   <img
-                    src={post.coverImage}
+                    src={urlFor(post.coverImage).url()}
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy"

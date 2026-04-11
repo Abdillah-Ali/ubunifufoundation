@@ -4,14 +4,43 @@ import { cn } from "@/lib/utils";
 import Container from "@/components/layout/Container";
 import PageSection from "@/components/layout/PageSection";
 import usePageTitle from "@/hooks/usePageTitle";
-import { posts } from "@/data/posts";
+import { useState, useEffect } from "react";
+import { client, urlFor } from "@/lib/sanity";
+import { PortableText } from "@portabletext/react";
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const post = posts.find((p) => p.slug === slug);
-  const relatedPosts = posts.filter((p) => p.slug !== slug).slice(0, 3);
+  const [post, setPost] = useState(null);
+  const [relatedPosts, setRelatedPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  usePageTitle(post?.title || "Post Not Found");
+  useEffect(() => {
+    setLoading(true);
+    // Fetch post
+    client
+      .fetch(`*[_type == "post" && slug.current == $slug][0]`, { slug })
+      .then((data) => {
+        setPost(data);
+        setLoading(false);
+      })
+      .catch(console.error);
+
+    // Fetch related posts
+    client
+      .fetch(`*[_type == "post" && slug.current != $slug] | order(publishedAt desc)[0...3]`, { slug })
+      .then((data) => setRelatedPosts(data))
+      .catch(console.error);
+  }, [slug]);
+
+  usePageTitle(post?.title || (loading ? "Loading..." : "Post Not Found"));
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   if (!post) {
     return (
@@ -51,7 +80,7 @@ const BlogPost = () => {
       <div className="py-12 md:py-20">
         <Container>
           <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border border-border">
-            <img src={post.coverImage} alt={post.title} className="w-full h-auto object-cover" />
+            <img src={urlFor(post.coverImage).url()} alt={post.title} className="w-full h-auto object-cover" />
           </div>
         </Container>
       </div>
@@ -60,8 +89,9 @@ const BlogPost = () => {
       <Container className="pb-24">
         <article
           className="max-w-3xl mx-auto prose prose-lg prose-headings:font-bold prose-headings:tracking-tight prose-p:text-foreground prose-p:leading-relaxed prose-p:text-lg prose-strong:text-foreground prose-img:rounded-[2.5rem] prose-strong:font-bold"
-          dangerouslySetInnerHTML={{ __html: post.body }} 
-        />
+        >
+          <PortableText value={post.body} />
+        </article>
       </Container>
 
       {/* Related Posts - Schwab Style Grid */}
@@ -74,9 +104,9 @@ const BlogPost = () => {
             </div>
             <div className="grid md:grid-cols-3 gap-12">
               {relatedPosts.map((p) => (
-                <Link to={`/blog/${p.slug}`} key={p.slug} className="group">
+                <Link to={`/blog/${p.slug.current}`} key={p.slug.current} className="group">
                   <div className="aspect-[16/10] overflow-hidden rounded-2xl mb-6 shadow-md border border-border">
-                    <img src={p.coverImage} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+                    <img src={urlFor(p.coverImage).url()} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
                   </div>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3 text-[13px] font-bold text-primary">
