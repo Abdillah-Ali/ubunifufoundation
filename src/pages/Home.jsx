@@ -7,12 +7,13 @@ import SectionTitle from "@/components/layout/SectionTitle";
 import Container from "@/components/layout/Container";
 import usePageTitle from "@/hooks/usePageTitle";
 import { projects } from "@/data/projects";
-import { posts } from "@/data/posts";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import { cn } from "@/lib/utils";
 import { galleryImages } from "@/data/gallery";
 import { successStories } from "@/data/impact";
 import FeaturedImpact from "@/components/ui/FeaturedImpact";
+import { useState, useEffect } from "react";
+import { client, urlFor } from "@/lib/sanity";
 
 import useScrollReveal from "@/hooks/useScrollReveal";
 
@@ -43,8 +44,15 @@ const Home = () => {
   usePageTitle("Home");
   useScrollReveal();
 
+  const [latestPosts, setLatestPosts] = useState([]);
   const featuredProjects = projects.filter((p) => p.status === "ongoing").slice(0, 3);
-  const latestPosts = posts.slice(0, 3);
+
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "post"] | order(publishedAt desc)[0...3]`)
+      .then((data) => setLatestPosts(data))
+      .catch(console.error);
+  }, []);
 
   return (
     <div className="bg-background min-h-screen">
@@ -360,11 +368,11 @@ const Home = () => {
 
           <div className="grid lg:grid-cols-3 gap-16">
             {latestPosts.map((post) => (
-              <Link to={`/blog/${post.slug}`} key={post.slug} className="group reveal">
+              <Link to={`/blog/${post.slug.current}`} key={post.slug.current} className="group reveal">
                 <div className="aspect-[16/10] overflow-hidden rounded-[2rem] mb-10 shadow-xl border border-border relative">
                   <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors z-10" />
                   <img
-                    src={post.coverImage}
+                    src={urlFor(post.coverImage).url()}
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />

@@ -90,7 +90,22 @@ const BlogPost = () => {
         <article
           className="max-w-3xl mx-auto prose prose-lg prose-headings:font-bold prose-headings:tracking-tight prose-p:text-foreground prose-p:leading-relaxed prose-p:text-lg prose-strong:text-foreground prose-img:rounded-[2.5rem] prose-strong:font-bold"
         >
-          <PortableText value={post.body} />
+          <PortableText 
+            value={post.body} 
+            components={{
+              types: {
+                image: ({ value }) => (
+                  <div className="my-10 rounded-[2.5rem] overflow-hidden border border-border">
+                    <img
+                      src={urlFor(value).url()}
+                      alt={value.alt || "Blog Image"}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ),
+              },
+            }}
+          />
         </article>
       </Container>
 
