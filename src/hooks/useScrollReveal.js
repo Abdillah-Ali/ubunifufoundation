@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const useScrollReveal = () => {
+const useScrollReveal = (deps = []) => {
   useEffect(() => {
     const reveal = () => {
       const reveals = document.querySelectorAll(".reveal");
@@ -15,11 +15,11 @@ const useScrollReveal = () => {
     };
 
     window.addEventListener("scroll", reveal);
-    // Initial check
+    // Initial check (re-runs when deps change)
     reveal();
 
     return () => window.removeEventListener("scroll", reveal);
-  }, []);
+  }, deps);
 };
 
 export default useScrollReveal;

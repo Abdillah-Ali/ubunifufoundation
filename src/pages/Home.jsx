@@ -42,9 +42,9 @@ const stats = [
 
 const Home = () => {
   usePageTitle("Home");
-  useScrollReveal();
 
   const [latestPosts, setLatestPosts] = useState([]);
+  useScrollReveal([latestPosts]);
   const featuredProjects = projects.filter((p) => p.status === "ongoing").slice(0, 3);
 
   useEffect(() => {
@@ -367,29 +367,40 @@ const Home = () => {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-16">
-            {latestPosts.map((post) => (
-              <Link to={`/blog/${post.slug.current}`} key={post.slug.current} className="group reveal">
-                <div className="aspect-[16/10] overflow-hidden rounded-[2rem] mb-10 shadow-xl border border-border relative">
-                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors z-10" />
-                  <img
-                    src={urlFor(post.coverImage).url()}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4 text-[13px] font-bold tracking-tight text-primary">
-                    {post.category}
+            {latestPosts.map((post) => {
+              const slug = post.slug?.current;
+              if (!slug) return null;
+
+              return (
+                <Link to={`/blog/${slug}`} key={slug} className="group reveal">
+                  <div className="aspect-[16/10] overflow-hidden rounded-[2rem] mb-10 shadow-xl border border-border relative">
+                    <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors z-10" />
+                    {post.coverImage?.asset ? (
+                      <img
+                        src={urlFor(post.coverImage).url()}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-muted flex items-center justify-center">
+                        <span className="text-muted-foreground">No image</span>
+                      </div>
+                    )}
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold leading-tight group-hover:text-primary transition-colors tracking-tight">
-                    {post.title}
-                  </h3>
-                  <p className="text-lg text-foreground line-clamp-2 font-medium leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                </div>
-              </Link>
-            ))}
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-4 text-[13px] font-bold tracking-tight text-primary">
+                      {post.category}
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold leading-tight group-hover:text-primary transition-colors tracking-tight">
+                      {post.title}
+                    </h3>
+                    <p className="text-lg text-foreground line-clamp-2 font-medium leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </Container>
       </section>
