@@ -1,15 +1,11 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Heart, Users, Target, Eye, TrendingUp } from "lucide-react";
+import { ArrowRight, Heart, Users, Target, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import PageSection from "@/components/layout/PageSection";
-import SectionTitle from "@/components/layout/SectionTitle";
 import Container from "@/components/layout/Container";
 import usePageTitle from "@/hooks/usePageTitle";
 import { projects } from "@/data/projects";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import { cn } from "@/lib/utils";
-import { galleryImages } from "@/data/gallery";
 import { successStories } from "@/data/impact";
 import FeaturedImpact from "@/components/ui/FeaturedImpact";
 import { useState, useEffect } from "react";
@@ -17,28 +13,6 @@ import { client, urlFor } from "@/lib/sanity";
 
 import useScrollReveal from "@/hooks/useScrollReveal";
 
-const stats = [
-  { 
-    label: "Youths Empowered", 
-    value: "194+", 
-    description: "Young people equipped with practical skills, confidence, and entrepreneurial mindset to improve their livelihoods." 
-  },
-  { 
-    label: "Social Enterprises Supported", 
-    value: "7", 
-    description: "Youth-led initiatives supported to address community challenges and create sustainable solutions." 
-  },
-  { 
-    label: "Jobs Created", 
-    value: "47", 
-    description: "Employment opportunities generated through community-based enterprises and youth-driven initiatives." 
-  },
-  { 
-    label: "Businesses Launched", 
-    value: "8", 
-    description: "Small enterprises started by participants to promote self-employment and economic independence." 
-  }
-];
 
 const Home = () => {
   usePageTitle("Home");
@@ -120,12 +94,9 @@ const Home = () => {
       {/* 4. Impact Overview Section - High-Impact Redesign */}
       <section className="pt-24 pb-10 bg-background reveal overflow-hidden">
         <Container>
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20">
-            
-            {/* Left Column: Narrative and Stats */}
-            <div className="space-y-16">
+          <div className="space-y-16">
               {/* Header */}
-              <div className="space-y-6">
+              <div className="space-y-6 text-center max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] whitespace-nowrap">
                   Our Impact in <span className="text-primary">Zanzibar.</span>
                 </h2>
@@ -136,12 +107,12 @@ const Home = () => {
 
               {/* Intermediate Subheading */}
               <div className="space-y-10">
-                <h3 className="text-xl md:text-2xl font-bold tracking-tight border-b border-border pb-4 w-fit">
+                <h3 className="text-xl md:text-2xl font-bold tracking-tight border-b border-border pb-4 w-fit mx-auto">
                   A Legacy of Empowerment and Community Transformation.
                 </h3>
 
                 {/* Colored Stats Cards Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                   {/* Card 1: Teal */}
                   <div className="p-1.5 rounded-[2.3rem] border-2 border-[#4EB8BC]/20 bg-white/50">
                     <div className="bg-[#4EB8BC] p-8 rounded-[1.8rem] text-white h-full space-y-4 shadow-lg shadow-[#4EB8BC]/10 hover:scale-[1.01] transition-transform">
@@ -200,81 +171,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
-            {/* Right Column: Intricate Photo Collage in Dark Frame */}
-            <div className="relative group lg:mt-0 xl:mt-8">
-              <div className="bg-[#003d52] rounded-[3.5rem] p-4 sm:p-5 lg:p-8 shadow-2xl xl:translate-x-4 w-full h-fit flex flex-col relative overflow-hidden ring-4 ring-[#4EB8BC]/10">
-                {/* 1. TOPOGRAPHIC LINES (SVG) */}
-                <svg className="absolute top-0 left-0 w-full h-full opacity-[0.15] pointer-events-none" viewBox="0 0 400 600" preserveAspectRatio="none">
-                  <path d="M-50,150 C50,130 150,220 250,180 S400,100 450,120" stroke="#4EB8BC" strokeWidth="1.5" fill="none" />
-                  <path d="M-50,250 C80,230 180,320 280,280 S400,200 450,220" stroke="#4EB8BC" strokeWidth="1.5" fill="none" />
-                  <path d="M-50,350 C110,330 210,420 310,380 S400,300 450,320" stroke="#4EB8BC" strokeWidth="1.5" fill="none" />
-                  <path d="M-50,450 C140,430 240,520 340,480 S400,400 450,420" stroke="#4EB8BC" strokeWidth="1.5" fill="none" />
-                </svg>
-
-                {/* 2. COLORFUL ABSTRACT SHAPE (SVG) - Mid Left */}
-                <div className="absolute left-[-2rem] bottom-[15%] w-48 h-48 opacity-40 pointer-events-none">
-                  <svg viewBox="0 0 200 200">
-                    <path d="M44.4,-77.4C57.4,-68.8,67.6,-56.3,75.4,-42.6C83.2,-28.9,88.7,-14.5,88.5,-0.1C88.2,14.3,82.3,28.7,73.5,41.1C64.6,53.5,52.8,63.9,39.6,72.4C26.3,80.9,11.7,87.6,-2.4,91.8C-16.4,95.9,-29.9,97.6,-43,93.4C-56.1,89.1,-68.9,78.9,-78.9,66.1C-88.9,53.2,-96.2,37.8,-98,22C-99.8,6.1,-96.1,-10.2,-89.1,-24.8C-82.1,-39.3,-71.8,-52.1,-59.3,-60.9C-46.7,-69.7,-31.9,-74.4,-17.3,-78.1C-2.6,-81.8,11.5,-84.6,24.4,-82.9C37.3,-81.2,49,-75.1,44.4,-77.4Z" fill="#F5B041" transform="translate(100 100)" />
-                    <path d="M44.3,-74.6C56.6,-66.2,65.2,-52.4,70.9,-37.9C76.6,-23.4,79.5,-8.3,77.5,6.1C75.5,20.4,68.7,33.9,59,45C49.3,56,36.9,64.6,23.3,69.5C9.7,74.5,-5.2,75.8,-20.1,73.1C-35,70.5,-50,63.9,-61,53.3C-72,42.7,-79.1,28.1,-80.6,13.2C-82.1,-1.7,-78.1,-16.9,-71,-30.2C-64,-43.5,-53.8,-54.9,-41.8,-63.4C-29.8,-71.9,-15.9,-77.4,-0.6,-76.4C14.7,-75.4,29.4,-67.9,44.3,-74.6Z" fill="#4EB8BC" transform="translate(110 110)" />
-                  </svg>
-                </div>
-                
-                {/* Mosaic Collage Grid */}
-                <div className="grid grid-cols-4 gap-2 sm:gap-3 auto-rows-[70px] sm:auto-rows-[90px] grid-flow-dense relative z-10">
-                  {galleryImages.slice(0, 16).map((img, i) => {
-                    const spans = [
-                      "col-span-2 row-span-2", "col-span-1 row-span-1", "col-span-1 row-span-2", "col-span-1 row-span-1",
-                      "col-span-1 row-span-2", "col-span-2 row-span-1", "col-span-1 row-span-1", "col-span-1 row-span-2",
-                      "col-span-1 row-span-1", "col-span-1 row-span-1", "col-span-1 row-span-2", "col-span-2 row-span-2",
-                      "col-span-1 row-span-1", "col-span-1 row-span-2", "col-span-1 row-span-1", "col-span-1 row-span-1"
-                    ];
-                    
-                    // Special case for the "Market scene" with yellow border
-                    const isYellowCard = i === 12; // Example index for the bottom left card
-
-                    return (
-                      <div 
-                        key={i} 
-                        className={cn(
-                          "overflow-hidden transition-all duration-500",
-                          spans[i] || "col-span-1 row-span-1",
-                          isYellowCard ? "rounded-[1.2rem] p-1.5 bg-[#F5B041]" : "rounded-[1rem] shadow-md border border-white/5"
-                        )}
-                      >
-                        <img 
-                          src={img.src} 
-                          alt="Impact Collage" 
-                          className={cn(
-                            "w-full h-full object-cover hover:scale-110 transition-transform duration-700",
-                            isYellowCard ? "rounded-[0.8rem]" : "rounded-none"
-                          )} 
-                          loading="lazy" 
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
-                
-                {/* 3. BOTTOM CONNECTOR / TAB (SVG/CSS) */}
-                <div className="absolute -bottom-1 left-1.2/2 -translate-x-1.2/2 w-48 h-6 bg-[#F5B041] rounded-t-3xl mx-auto flex items-center justify-center opacity-90 hidden sm:flex left-1/2 -translate-x-1/2">
-                   <div className="w-12 h-1.5 bg-white/30 rounded-full" />
-                </div>
-
-                {/* Bottom Accent Decor Decoration Strip */}
-                <div className="mt-8 flex items-center justify-between opacity-30">
-                  <div className="h-[1px] w-1/4 bg-gradient-to-r from-transparent via-[#4EB8BC] to-transparent" />
-                  <div className="flex gap-4">
-                    <div className="h-2 w-2 rounded-full bg-[#4EB8BC]" />
-                    <div className="h-2 w-2 rounded-full bg-[#F5B041]" />
-                    <div className="h-2 w-2 rounded-full bg-white" />
-                  </div>
-                  <div className="h-[1px] w-1/4 bg-gradient-to-r from-transparent via-[#4EB8BC] to-transparent" />
-                </div>
-              </div>
-            </div>
-
-          </div>
         </Container>
       </section>
 
@@ -361,7 +257,7 @@ const Home = () => {
             </div>
             <Link to="/blog">
               <Button variant="outline" className="rounded-full px-8 py-4 border-2 border-foreground hover:bg-foreground hover:text-white transition-all font-bold text-[13px] tracking-tight uppercase">
-                View All Intelligence
+                View All News
               </Button>
             </Link>
           </div>

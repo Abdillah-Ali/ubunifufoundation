@@ -10,7 +10,6 @@ import Projects from "./pages/Projects";
 import Impact from "./pages/Impact";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
-import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
 import GetInvolved from "./pages/GetInvolved";
@@ -32,7 +31,6 @@ const App = () =>
             <Route path="/impact" element={<Impact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/donate" element={<Donate />} />
             <Route path="/get-involved" element={<GetInvolved />} />

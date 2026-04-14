@@ -1,11 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import PageHero from "@/components/layout/PageHero";
-import PageSection from "@/components/layout/PageSection";
-import SectionTitle from "@/components/layout/SectionTitle";
 import usePageTitle from "@/hooks/usePageTitle";
 import { projects } from "@/data/projects";
 import Container from "@/components/layout/Container";
@@ -14,7 +11,7 @@ import { cn } from "@/lib/utils";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
 const Projects = () => {
-  usePageTitle("Projects & Programs");
+  usePageTitle("Programs");
   useScrollReveal();
   const [tab, setTab] = useState("all");
   const [statusFilter, setStatusFilter] = useState("all");
@@ -27,7 +24,7 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-background pb-24">
-      <PageHero title="Projects & Programs" subtitle="Explore our long-term programs and specific project activities driving sustainable change across Tanzania." />
+      <PageHero title="Programs" subtitle="Explore our long-term programs and specific project activities driving sustainable change across Tanzania." />
 
       <section className="py-20 reveal">
         <Container>

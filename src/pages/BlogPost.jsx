@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
-import { useState, useEffect, useMemo } from "react";
-import { ArrowLeft, Calendar, User, Tag, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ArrowLeft, Calendar, User, Tag, Facebook, Twitter, Linkedin } from "lucide-react";
 import Container from "@/components/layout/Container";
 import BlogCard from "@/components/ui/BlogCard";
 import usePageTitle from "@/hooks/usePageTitle";
@@ -158,7 +158,7 @@ const BlogPost = () => {
             to="/blog"
             className="inline-flex items-center gap-2 text-primary hover:underline text-sm font-semibold"
           >
-            <ArrowLeft size={14} /> Back to Blog
+            <ArrowLeft size={14} /> Back to News
           </Link>
         </div>
       </div>
@@ -194,7 +194,7 @@ const BlogPost = () => {
               size={15}
               className="group-hover:-translate-x-1 transition-transform"
             />
-            Back to Stories
+            Back to News
           </Link>
         </Container>
       </div>

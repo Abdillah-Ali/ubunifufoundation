@@ -51,9 +51,8 @@ const Footer = () => {
             <h4 className="text-[13px] font-bold text-white tracking-tight uppercase mb-6 pb-2 border-b border-white/10 w-fit">Company</h4>
             <ul className="space-y-4">
               {[
-                { label: "About Us", to: "/about" },
-                { label: "Our Programs", to: "/projects" },
-                { label: "Impact Gallery", to: "/gallery" },
+                { label: "About", to: "/about" },
+                { label: "Programs", to: "/projects" },
                 { label: "Latest News", to: "/blog" },
                 { label: "Contact Us", to: "/contact" }
               ].map((link) => (

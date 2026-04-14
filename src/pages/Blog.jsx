@@ -15,7 +15,7 @@ const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeArea, setActiveArea] = useState(null);
 
-  usePageTitle("Stories & Insights");
+  usePageTitle("News & Stories");
   useScrollReveal([loading]);
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const Blog = () => {
       <section className="border-b border-gray-100 bg-white py-12 md:py-16">
         <Container>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-3">
-            Stories &amp; Insights
+            News &amp; Stories
           </h1>
           <p className="text-gray-500 text-base md:text-lg max-w-xl leading-relaxed">
             Exploring the impactful journeys of youth leadership, rural innovation,
@@ -120,7 +120,7 @@ const Blog = () => {
                   />
                   <input
                     type="text"
-                    placeholder="Search stories..."
+                    placeholder="Search news..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full pl-10 pr-4 py-2.5 rounded-full border border-gray-200 bg-gray-50 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition"

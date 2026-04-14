@@ -7,13 +7,13 @@ import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
-{ label: "Home", to: "/" },
-{ label: "About Us", to: "/about" },
-{ label: "Projects & Programs", to: "/projects" },
-{ label: "Impact", to: "/impact" },
-{ label: "Blog", to: "/blog" },
-{ label: "Gallery", to: "/gallery" },
-{ label: "Contact", to: "/contact" }];
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Programs", to: "/projects" },
+  { label: "Impact", to: "/impact" },
+  { label: "News", to: "/blog" },
+  { label: "Contact", to: "/contact" }
+];
 
 
 const Navbar = () => {

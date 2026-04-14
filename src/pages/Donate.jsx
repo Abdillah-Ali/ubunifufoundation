@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { BookOpen, Users, Lightbulb, CheckCircle2, DollarSign, ShieldCheck } from "lucide-react";
+import { BookOpen, Users, Lightbulb, CheckCircle2, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Input } from "@/components/ui/input";
 import Container from "@/components/layout/Container";

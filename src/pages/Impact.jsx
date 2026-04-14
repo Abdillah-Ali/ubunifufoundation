@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Users, Target, TrendingUp, Lightbulb, MapPin, Heart, ArrowRight } from "lucide-react";
+import { Users, Target, TrendingUp, Lightbulb, MapPin, Heart } from "lucide-react";
 import { impactStats, successStories } from "@/data/impact";
 import { cn } from "@/lib/utils";
 import Container from "@/components/layout/Container";

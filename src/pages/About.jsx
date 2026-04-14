@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, Eye, TrendingUp, Users, Sprout, Heart, BookOpen, Lightbulb } from "lucide-react";
+import { Target, Users, Sprout, Heart, BookOpen, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import Container from "@/components/layout/Container";
 import usePageTitle from "@/hooks/usePageTitle";
 import useScrollReveal from "@/hooks/useScrollReveal";
@@ -53,7 +52,7 @@ const partners = [
 ];
 
 const About = () => {
-  usePageTitle("About Us");
+  usePageTitle("About");
   useScrollReveal();
 
   return (
