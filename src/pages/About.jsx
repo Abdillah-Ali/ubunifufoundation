@@ -172,13 +172,16 @@ const About = () => {
               </div>
               <div className="space-y-6 text-foreground/80 text-base md:text-lg leading-relaxed font-medium">
                 <p>
-                  Ubunifu Foundation was born out of a simple but powerful belief — that every young person deserves the chance to build a meaningful future. Founded in Zanzibar in 2023, we started with a small group of passionate individuals who saw firsthand the challenges facing youth and women in their communities: limited opportunities, rising unemployment, and a lack of platforms to grow.
+                  The story of Ubunifu Foundation is a journey of "returning home to sow seeds of change."
                 </p>
                 <p>
-                  What began as informal mentorship circles and skills workshops has grown into a structured foundation delivering entrepreneurship training, vocational education, and community-driven programs that reach hundreds of young people across the island.
+                  It began in 2022, when two young Zanzibaris, Saida and Fadhil, returned from the Social Innovation Academy (SINA) in Uganda a program that funded by TUI Care Foundation. They didn't just bring back memories; they brought a mission: to prove that Zanzibar’s challenges were actually opportunities in disguise.
                 </p>
                 <p>
-                  Today, Ubunifu Foundation stands as a growing force for social change — nurturing the next generation of leaders, innovators, and community builders who will shape the future of Zanzibar.
+                  In September 2023, they turned this vision into reality by launching Ubunifu Foundation’s first program with 29 pioneers. As part of the SINA Community and the TUI Future Shaper initiative, the foundation became a bridge between local talent and global impact.
+                </p>
+                <p>
+                  Today, Ubunifu empowers 100 youth and women annually. They guide them through a transformative process—from discovering their potential to launching social enterprises ensuring that the next generation of Zanzibari leaders doesn't just wait for the future, but builds it.
                 </p>
               </div>
             </div>
