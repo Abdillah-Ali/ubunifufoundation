@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Heart, Users, Target, TrendingUp } from "lucide-react";
+import { Heart, Users, Target, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Container from "@/components/layout/Container";
 import usePageTitle from "@/hooks/usePageTitle";
 import { projects } from "@/data/projects";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
-import { cn } from "@/lib/utils";
+
 import { successStories } from "@/data/impact";
 import FeaturedImpact from "@/components/ui/FeaturedImpact";
 import { useState, useEffect } from "react";
@@ -19,7 +19,7 @@ const Home = () => {
 
   const [latestPosts, setLatestPosts] = useState([]);
   useScrollReveal([latestPosts]);
-  const featuredProjects = projects.filter((p) => p.status === "ongoing").slice(0, 3);
+  const featuredProjects = projects.filter((p) => p.status === "ongoing").slice(0, 4);
 
   useEffect(() => {
     client
@@ -193,56 +193,68 @@ const Home = () => {
         </Container>
       </section>
 
-      {/* Featured Programs - Zigzag Layout */}
-      <section className="py-32 bg-background">
+      {/* Featured Programs - Card Grid Layout */}
+      <section className="py-20 bg-background border-t border-border">
         <Container>
-          <div className="max-w-4xl mb-24 reveal">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 tracking-tight leading-tight">Our Core <span className="text-primary">Programs.</span></h2>
-            <p className="text-base md:text-lg text-foreground leading-relaxed font-medium max-w-2xl">
-              Driving transformational change through targeted vertical tracks across the region.
-            </p>
+          {/* Section Header */}
+          <div className="flex items-end justify-between mb-10 reveal">
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight leading-tight text-foreground mb-1">
+                Our Core Programs
+              </h2>
+              <p className="text-sm text-foreground/50 font-medium">Discover what we do and apply.</p>
+            </div>
+            <Link
+              to="/projects"
+              className="hidden sm:inline-flex items-center gap-1.5 text-[13px] font-bold border border-foreground text-foreground px-4 py-2 hover:bg-foreground hover:text-white transition-all shrink-0"
+            >
+              View all
+            </Link>
           </div>
 
-          <div className="space-y-40">
-            {featuredProjects.map((project, index) => (
-              <div 
-                key={project.id} 
-                className={cn(
-                  "flex flex-col gap-16 lg:gap-32 items-center reveal",
-                  index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
-                )}
-              >
+          {/* 4-Column Card Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {featuredProjects.map((project) => (
+              <div key={project.id} className="group flex flex-col reveal">
                 {/* Image */}
-                <div className="w-full lg:w-3/5">
-                  <div className="aspect-[16/10] rounded-[3rem] overflow-hidden shadow-2xl group border border-border bg-secondary relative">
-                     <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors z-10" />
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                    />
-                  </div>
+                <div className="aspect-[4/3] w-full overflow-hidden mb-5 bg-secondary border border-border">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
 
                 {/* Content */}
-                <div className="w-full lg:w-2/5 space-y-8">
-                  <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[13px] font-bold tracking-tight">
-                    Program Track
-                  </div>
-                  <h3 className="text-xl md:text-3xl font-bold tracking-tight leading-tight">
+                <div className="flex flex-col flex-1 gap-3">
+                  <h3 className="text-[15px] md:text-base font-bold leading-snug tracking-tight text-foreground group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-base md:text-lg text-foreground leading-relaxed font-medium max-w-xl">
+                  <p className="text-[13px] text-foreground/65 leading-relaxed font-medium flex-1">
                     {project.description}
                   </p>
-                  <Link to="/projects">
-                    <Button className="rounded-full px-8 py-5 text-sm font-medium tracking-wide bg-primary hover:bg-primary/90 mt-4 group">
-                      Learn More <ArrowRight className="ml-3 group-hover:translate-x-3 transition-transform" size={18} />
+                  {project.partner && (
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 border-t border-border pt-3">
+                      With {project.partner}
+                    </p>
+                  )}
+                  <Link to="/projects" className="mt-2">
+                    <Button className="rounded-none px-5 py-2.5 text-[13px] font-bold tracking-tight bg-foreground hover:bg-primary text-white transition-colors w-fit">
+                      Learn more
                     </Button>
                   </Link>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Mobile view all */}
+          <div className="sm:hidden mt-10 text-center">
+            <Link to="/projects">
+              <Button variant="outline" className="rounded-none border border-foreground text-foreground hover:bg-foreground hover:text-white font-bold text-[13px] px-6 py-3 transition-all">
+                View all programs
+              </Button>
+            </Link>
           </div>
         </Container>
       </section>
