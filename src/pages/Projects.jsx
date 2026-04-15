@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import PageHero from "@/components/layout/PageHero";
 import usePageTitle from "@/hooks/usePageTitle";
 import { projects } from "@/data/projects";

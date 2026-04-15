@@ -1,4 +1,3 @@
-import { Users, Target, TrendingUp, Lightbulb, MapPin, Heart } from "lucide-react";
 import { impactStats, successStories } from "@/data/impact";
 import { cn } from "@/lib/utils";
 import Container from "@/components/layout/Container";
