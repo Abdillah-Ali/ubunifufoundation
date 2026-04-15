@@ -65,7 +65,7 @@ const Home = () => {
 
   useEffect(() => {
     client
-      .fetch(`*[_type == "post"] | order(publishedAt desc)[0...3]`)
+      .fetch(`*[_type == "post"] | order(publishedAt desc)[0...5]`)
       .then((data) => setLatestPosts(data))
       .catch(console.error);
   }, []);
@@ -273,30 +273,31 @@ const Home = () => {
         </Container>
       </section>
 
-      {/* Latest Blog - Premium Grid */}
-      <section className="py-32 bg-secondary border-y border-border">
+      {/* Latest Blog - Minimalist Grid Redesign */}
+      <section className="py-24 bg-background border-t border-border/50">
         <Container>
-          <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8 reveal">
-            <div className="max-w-2xl text-left">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 tracking-tight leading-tight">News & <span className="text-primary">Stories.</span></h2>
-              <p className="text-base md:text-lg text-foreground font-medium">Insights and updates from the frontline of impact.</p>
+          {/* Section Header */}
+          <div className="flex justify-between items-start mb-16 reveal">
+            <div className="max-w-xl text-left">
+              <h2 className="text-3xl font-bold mb-4 tracking-tight text-foreground uppercase">Latest news</h2>
+              <p className="text-base text-muted-foreground font-medium">What happens at Ubunifu Foundation around the world.</p>
             </div>
             <Link to="/blog">
-              <Button variant="outline" className="rounded-full px-8 py-4 border-2 border-foreground hover:bg-foreground hover:text-white transition-all font-bold text-[13px] tracking-tight uppercase">
-                View All News
+              <Button variant="outline" className="rounded-none border-foreground text-foreground px-6 py-2 hover:bg-foreground hover:text-white transition-all font-bold text-xs uppercase tracking-tight">
+                View all
               </Button>
             </Link>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-12">
             {latestPosts.map((post) => {
               const slug = post.slug?.current;
               if (!slug) return null;
 
               return (
-                <Link to={`/blog/${slug}`} key={slug} className="group reveal">
-                  <div className="aspect-[16/10] overflow-hidden rounded-[2rem] mb-10 shadow-xl border border-border relative">
-                    <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors z-10" />
+                <div key={slug} className="group flex flex-col reveal h-full">
+                  {/* Image */}
+                  <div className="aspect-[4/3] overflow-hidden mb-6 bg-muted relative">
                     {post.coverImage?.asset ? (
                       <img
                         src={urlFor(post.coverImage).url()}
@@ -305,22 +306,28 @@ const Home = () => {
                       />
                     ) : (
                       <div className="w-full h-full bg-muted flex items-center justify-center">
-                        <span className="text-muted-foreground">No image</span>
+                        <span className="text-muted-foreground text-xs uppercase">No image</span>
                       </div>
                     )}
                   </div>
-                  <div className="space-y-6">
-                    <div className="flex items-center gap-4 text-[13px] font-bold tracking-tight text-primary">
-                      {post.category}
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-bold leading-tight group-hover:text-primary transition-colors tracking-tight">
+                  
+                  {/* Content */}
+                  <div className="flex flex-col flex-1 space-y-4">
+                    <h3 className="text-base font-bold leading-tight group-hover:text-primary transition-colors tracking-tight line-clamp-3">
                       {post.title}
                     </h3>
-                    <p className="text-lg text-foreground line-clamp-2 font-medium leading-relaxed">
+                    <p className="text-xs text-muted-foreground line-clamp-4 leading-relaxed font-medium">
                       {post.excerpt}
                     </p>
+                    <div className="pt-4 mt-auto">
+                      <Link to={`/blog/${slug}`}>
+                        <Button className="rounded-none bg-[#001D3D] hover:bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 w-fit h-auto">
+                          Read more
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
-                </Link>
+                </div>
               );
             })}
           </div>
