@@ -103,23 +103,42 @@ const Home = () => {
         </Container>
       </section>
 
-      {/* Introduction Section */}
-      <section className="py-24 bg-background reveal">
+      {/* 2. Overarching Mission Sections - Alternating Blocks */}
+      <section className="py-32 bg-background space-y-40">
         <Container>
-          <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
-            {/* Text Content */}
-            <div className="space-y-8">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight">
-                Ubunifu <span className="text-primary">Foundation.</span>
-              </h2>
-              <p className="text-base md:text-lg text-foreground font-medium leading-relaxed max-w-2xl">
-                Ubunifu Foundation is a community-driven organization based in Kwerekwe, Zanzibar, dedicated to addressing youth unemployment and empowering women. We provide access to entrepreneurial skills, vocational training, and mentorship, creating a supportive environment where individuals transform challenges into long-term opportunities. Through its programs, Ubunifu Foundation equips youth and women to become social entrepreneurs who drive sustainable impact, improve livelihoods, and contribute to economic growth while promoting environmental responsibility.
+          {/* Block 1: About Us / Purpose */}
+          <div className="grid md:grid-cols-2 gap-16 lg:gap-32 items-center reveal">
+            <div className="space-y-8 order-2 md:order-1">
+              <div className="space-y-4">
+                <p className="text-[11px] font-bold tracking-[0.2em] text-primary uppercase">About Us</p>
+                <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1] text-foreground">
+                  Why we are here
+                </h2>
+              </div>
+              <p className="text-lg text-muted-foreground font-medium leading-relaxed">
+                Ubunifu Foundation is a community-driven organization based in Kwerekwe, Zanzibar, dedicated to addressing youth unemployment and empowering women. We provide access to entrepreneurial skills, vocational training, and mentorship, creating a supportive environment where individuals transform challenges into long-term opportunities.
               </p>
+              <Link to="/about">
+                <Button variant="outline" className="rounded-none border-foreground text-foreground px-10 py-6 hover:bg-foreground hover:text-white transition-all font-bold text-sm uppercase tracking-tight">
+                  Learn more
+                </Button>
+              </Link>
             </div>
+            <div className="order-1 md:order-2">
+              <div className="aspect-[4/3] bg-secondary border border-border overflow-hidden shadow-sm">
+                <img 
+                  src="/zanzibar_youth_innovation.png" 
+                  alt="Zanzibar Youth Innovation" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
 
-            {/* Video Content */}
-            <div className="w-full">
-              <div className="aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/10 bg-secondary relative">
+          {/* Block 2: Our Mission / Impact */}
+          <div className="grid md:grid-cols-2 gap-16 lg:gap-32 items-center mt-32 reveal">
+            <div className="order-1">
+              <div className="aspect-video bg-secondary border border-border overflow-hidden shadow-sm relative">
                 <iframe
                   src="https://www.youtube.com/embed/m-nki6XAL7Q"
                   title="Ubunifu Foundation Introduction"
@@ -128,6 +147,22 @@ const Home = () => {
                   allowFullScreen
                 ></iframe>
               </div>
+            </div>
+            <div className="space-y-8 order-2">
+              <div className="space-y-4">
+                <p className="text-[11px] font-bold tracking-[0.2em] text-primary uppercase">Our Mission</p>
+                <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1] text-foreground">
+                  Change begins with transformation
+                </h2>
+              </div>
+              <p className="text-lg text-muted-foreground font-medium leading-relaxed">
+                Through its programs, Ubunifu Foundation equips youth and women to become social entrepreneurs who drive sustainable impact, improve livelihoods, and contribute to economic growth while promoting environmental responsibility. We create a legacy of empowerment and community transformation.
+              </p>
+              <Link to="/impact">
+                <Button variant="outline" className="rounded-none border-foreground text-foreground px-10 py-6 hover:bg-foreground hover:text-white transition-all font-bold text-sm uppercase tracking-tight">
+                  Learn more
+                </Button>
+              </Link>
             </div>
           </div>
         </Container>
