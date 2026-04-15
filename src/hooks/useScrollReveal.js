@@ -19,7 +19,8 @@ const useScrollReveal = (deps = []) => {
     reveal();
 
     return () => window.removeEventListener("scroll", reveal);
-  }, deps);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [...deps]);
 };
 
 export default useScrollReveal;
