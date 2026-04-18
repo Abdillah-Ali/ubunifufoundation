@@ -81,14 +81,13 @@ const Home = () => {
 
   return (
     <div className="bg-background min-h-screen">
-      {/* Hero */}
-      <section className="bg-[#FF85B2] pt-32 md:pt-48 pb-56 md:pb-80 relative flex flex-col items-center overflow-visible">
+      <section className="bg-[#003d52] pt-32 md:pt-48 pb-56 md:pb-80 relative flex flex-col items-center overflow-visible">
         <Container className="text-center relative z-10">
-          <h1 className="text-4xl sm:text-5xl md:text-[64px] font-black text-[#001D3D] leading-[1.05] tracking-tight max-w-[1200px] mx-auto animate-fade-in-up mb-6 md:mb-10">
+          <h1 className="text-4xl sm:text-5xl md:text-[64px] font-black text-white leading-[1.05] tracking-tight max-w-[1200px] mx-auto animate-fade-in-up mb-6 md:mb-10">
             Driving social entrepreneurship and youth empowerment in Zanzibar
           </h1>
           <div className="max-w-4xl mx-auto animate-fade-in-up" style={{ animationDelay: '150ms' }}>
-            <p className="text-xl md:text-2xl text-[#001D3D]/90 font-medium leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 font-medium leading-relaxed max-w-3xl mx-auto">
               Supporting young people and women through skills development, innovation, and entrepreneurship to create sustainable change.
             </p>
           </div>
