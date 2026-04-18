@@ -12,6 +12,15 @@ import { useState, useEffect } from "react";
 import { client, urlFor } from "@/lib/sanity";
 
 import useScrollReveal from "@/hooks/useScrollReveal";
+import { cn } from "@/lib/utils";
+
+
+import p1 from "@/assets/hero/p1.png";
+import p2 from "@/assets/hero/p2.png";
+import p3 from "@/assets/hero/p3.png";
+import p4 from "@/assets/hero/p4.png";
+import p5 from "@/assets/hero/p5.png";
+import p6 from "@/assets/hero/p6.png";
 
 const ProgramCard = ({ project }) => (
   <div className="group bg-card rounded-[2.5rem] overflow-hidden border border-border/40 shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col h-full reveal">
@@ -73,38 +82,42 @@ const Home = () => {
   return (
     <div className="bg-background min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-[75vh] flex items-center text-white overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/Hero section background image.png" 
-            alt="Hero Background" 
-            className="w-full h-full object-cover scale-105 animate-pulse-slow"
-          />
-          <div className="absolute inset-0 bg-black/65" /> {/* Cinematic Overlay */}
-        </div>
-
-        <Container className="relative z-10 py-16">
-          <div className="max-w-4xl animate-fade-in-up">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 tracking-tight drop-shadow-2xl">
-              Driving social entrepreneurship and youth empowerment in Zanzibar
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-2xl font-medium">
+      <section className="bg-[#FF85B2] pt-32 md:pt-48 pb-56 md:pb-80 relative flex flex-col items-center overflow-visible">
+        <Container className="text-center relative z-10">
+          <h1 className="text-4xl sm:text-5xl md:text-[64px] font-black text-[#001D3D] leading-[1.05] tracking-tight max-w-[1200px] mx-auto animate-fade-in-up mb-6 md:mb-10">
+            Driving social entrepreneurship and youth empowerment in Zanzibar
+          </h1>
+          <div className="max-w-4xl mx-auto animate-fade-in-up" style={{ animationDelay: '150ms' }}>
+            <p className="text-xl md:text-2xl text-[#001D3D]/90 font-medium leading-relaxed max-w-3xl mx-auto">
               Supporting young people and women through skills development, innovation, and entrepreneurship to create sustainable change.
             </p>
-            <div className="flex flex-wrap gap-6">
-              <Link to="/about">
-                <Button className="rounded-full px-8 py-6 text-sm md:text-base font-medium tracking-wide bg-primary hover:bg-primary/90 shadow-[0_0_40px_rgba(0,150,199,0.2)] hover:scale-105 transition-all">
-                  Learn More <ArrowRight className="ml-3" size={18} />
-                </Button>
-              </Link>
-            </div>
           </div>
         </Container>
+        
+        {/* Portraits Row - Overlapping bottom edge */}
+        <div className="absolute bottom-0 translate-y-1/4 md:translate-y-1/2 w-full px-4 z-20 overflow-hidden md:overflow-visible">
+          <div className="flex gap-2 md:gap-4 justify-center items-end max-w-[1600px] mx-auto">
+             {[p1, p2, p3, p4, p5, p6].map((img, i) => (
+               <div 
+                 key={i} 
+                 className={cn(
+                  "relative flex-shrink-0 animate-fade-in-up shadow-2xl transition-all duration-700 hover:-translate-y-4 hover:scale-[1.02] overflow-hidden",
+                  i === 0 || i === 5 ? "w-[15vw] md:w-56 h-[20vh] md:h-[380px]" : 
+                  i === 1 || i === 4 ? "w-[16vw] md:w-60 h-[24vh] md:h-[430px]" : 
+                  "w-[18vw] md:w-72 h-[28vh] md:h-[480px]"
+                 )}
+                 style={{ animationDelay: `${i * 100}ms` }}
+               >
+                  <img src={img} alt="Portrait contributor" className="w-full h-full object-cover" />
+               </div>
+             ))}
+          </div>
+        </div>
       </section>
 
+
       {/* 2. Overarching Mission Sections - Alternating Blocks */}
-      <section className="py-32 bg-background space-y-40">
+      <section className="pt-[160px] md:pt-[320px] pb-32 bg-background space-y-40">
         <Container>
           {/* Block 1: About Us / Purpose */}
           <div className="grid md:grid-cols-2 gap-16 lg:gap-32 items-center reveal">

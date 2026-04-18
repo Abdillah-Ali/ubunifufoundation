@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,9 +19,21 @@ const navLinks = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+    <header className={cn(
+      "sticky top-0 w-full z-50 transition-colors duration-300",
+      (pathname === "/" && !isScrolled) ? "bg-[#FF85B2]" : "bg-white shadow-sm border-b border-border/50"
+    )}>
       <Container className="flex items-center justify-between h-20 md:h-24">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <img src={logo} alt="Ubunifu Foundation" className="h-12 md:h-16 w-auto" />

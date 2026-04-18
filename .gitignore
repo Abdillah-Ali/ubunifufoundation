@@ -47,3 +47,6 @@ playwright/.cache
 sanity/node_modules
 sanity/dist
 sanity/.sanity
+
+# Temporary Logs
+lint_output*.txt
