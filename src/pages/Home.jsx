@@ -133,6 +133,37 @@ const AboutImageDesign = () => (
 );
 
 
+/* ─── Hero Section Components ───────────────────────────────── */
+const RipplePattern = ({ className }) => (
+  <svg 
+    viewBox="0 0 200 200" 
+    className={cn("absolute pointer-events-none opacity-40", className)}
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="100" cy="100" r="40" stroke="#f59e0b" strokeWidth="2" strokeDasharray="4 4" />
+    <circle cx="100" cy="100" r="60" stroke="#f59e0b" strokeWidth="2" strokeDasharray="8 4" />
+    <circle cx="100" cy="100" r="80" stroke="#f59e0b" strokeWidth="2" strokeDasharray="12 4" />
+    <circle cx="100" cy="100" r="100" stroke="#f59e0b" strokeWidth="2" strokeDasharray="16 4" />
+  </svg>
+);
+
+const Underline = () => (
+  <svg 
+    className="absolute -bottom-2 left-0 w-full h-3 text-[#f59e0b] opacity-80" 
+    viewBox="0 0 100 10" 
+    preserveAspectRatio="none"
+  >
+    <path 
+      d="M0 5 Q 25 0, 50 5 T 100 5" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="3" 
+      strokeLinecap="round" 
+    />
+  </svg>
+);
+
 const Home = () => {
   usePageTitle("Home");
 
@@ -149,45 +180,67 @@ const Home = () => {
 
   return (
     <div className="bg-background min-h-screen overflow-x-hidden">
-      <section className="bg-[#003d52] pt-32 md:pt-48 pb-40 md:pb-60 relative flex flex-col items-center overflow-visible">
-        <Container className="text-center relative z-10">
-          <h1 className="text-4xl sm:text-5xl md:text-[64px] font-black text-white leading-[1.05] tracking-tight max-w-[1200px] mx-auto animate-fade-in-up mb-6 md:mb-10">
-            Driving social entrepreneurship and youth empowerment in Zanzibar
-          </h1>
-          <div className="max-w-4xl mx-auto animate-fade-in-up" style={{ animationDelay: '150ms' }}>
-            <p className="text-xl md:text-2xl text-white/90 font-medium leading-relaxed max-w-3xl mx-auto">
-              Supporting young people and women through skills development, innovation, and entrepreneurship to create sustainable change.
-            </p>
+      {/* ── High-Impact Hero ───────────────────────────────────── */}
+      <section className="bg-[#2D1B4D] relative overflow-hidden pt-36 md:pt-48 pb-24 md:pb-40">
+        {/* Background Ripple (Top Left) */}
+        <RipplePattern className="top-[-50px] left-[-50px] w-96 h-96 opacity-10" />
+        
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            
+            {/* LEFT: Content */}
+            <div className="space-y-10 reveal z-10">
+              <div className="space-y-6">
+                <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold text-white font-serif leading-[1.05] tracking-tight">
+                  Talent is <span className="relative inline-block">
+                    global,
+                    <Underline />
+                  </span><br />
+                  opportunity is not
+                </h1>
+                <p className="text-xl md:text-2xl text-white/80 font-medium leading-relaxed max-w-xl">
+                  Ubunifu Foundation makes advanced, high-quality entrepreneurship and youth empowerment accessible to students everywhere with completely free academic offerings.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-4 group cursor-pointer w-fit">
+                <span className="text-lg font-bold text-white border-b-2 border-transparent group-hover:border-[#f59e0b] transition-all tracking-tight">
+                  Request Information
+                </span>
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+                  <ArrowRight size={22} strokeWidth={2.5} />
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT: Circular Image Cluster */}
+            <div className="relative h-[500px] md:h-[600px] reveal z-0 hidden sm:block">
+              <RipplePattern className="top-0 right-0 w-[400px] h-[400px] opacity-20" />
+              <RipplePattern className="bottom-0 left-20 w-[300px] h-[300px] opacity-15" />
+              
+              {/* Image 1: Main (Center Right) */}
+              <div className="absolute top-[10%] right-0 w-[55%] aspect-square rounded-full border-4 border-white/20 overflow-hidden shadow-2xl z-20 group">
+                <img src={p1} alt="Scholar 1" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              </div>
+              
+              {/* Image 2: Support (Top Left) */}
+              <div className="absolute top-0 left-[5%] w-[42%] aspect-square rounded-full border-4 border-white/20 overflow-hidden shadow-2xl z-10 group">
+                <img src={p2} alt="Scholar 2" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              </div>
+              
+              {/* Image 3: Support (Bottom Center) */}
+              <div className="absolute bottom-[5%] left-[20%] w-[48%] aspect-square rounded-full border-4 border-white/20 overflow-hidden shadow-2xl z-30 group">
+                <img src={p3} alt="Scholar 3" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              </div>
+
+              {/* Image 4: Small Accent */}
+              <div className="absolute bottom-[15%] right-[10%] w-[25%] aspect-square rounded-full border-4 border-white/20 overflow-hidden shadow-xl z-10 group">
+                <img src={p4} alt="Scholar 4" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              </div>
+            </div>
+
           </div>
         </Container>
-        
-        {/* Portraits Row - Overlapping bottom edge */}
-        <div className="absolute bottom-0 translate-y-1/3 w-full px-2 md:px-4 z-20 overflow-hidden md:overflow-visible">
-          <div className="flex gap-1.5 md:gap-4 justify-center items-center max-w-[1400px] mx-auto">
-             {[p1, p2, p3, p4, p5, p6].map((img, i) => {
-               const offsets = ["10px", "-20px", "30px", "-40px", "15px", "-10px"];
-               return (
-                <div 
-                  key={i} 
-                  className={cn(
-                   "relative flex-shrink-0 animate-fade-in-up shadow-2xl transition-all duration-700 hover:-translate-y-4 hover:scale-[1.02] overflow-hidden rounded-2xl border-white border-2",
-                   "w-[24vw] h-[34vw] min-w-[90px] min-h-[130px]", // Mobile base sizes
-                   "md:w-36 md:h-56 lg:w-44 lg:h-64", // Tablet/Desktop
-                   i === 2 || i === 3 ? "md:w-52 md:h-72 lg:w-60 lg:h-80" : // Center pair
-                   i === 1 || i === 4 ? "md:w-44 md:h-64 lg:w-52 lg:h-72" : // Inner pair
-                   "md:w-36 md:h-56 lg:w-44 lg:h-64" // Outer pair
-                  )}
-                  style={{ 
-                    animationDelay: `${i * 100}ms`,
-                    marginTop: offsets[i]
-                  }}
-                >
-                   <img src={img} alt="Portrait contributor" className="w-full h-full object-cover" />
-                </div>
-               );
-             })}
-          </div>
-        </div>
       </section>
 
 
@@ -581,25 +634,25 @@ const Home = () => {
       </section>
 
       {/* CTA section - High Impact */}
-      <section className="py-40 bg-background relative overflow-hidden">
+      <section className="py-40 bg-[#001D3D] relative overflow-hidden">
         {/* Background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] opacity-20 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] opacity-10 pointer-events-none" />
         
         <Container className="text-center relative z-10 reveal">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-12 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-12 tracking-tight leading-tight text-white">
             Together, We Can <span className="text-primary">Do More.</span>
           </h2>
-          <p className="text-2xl md:text-3xl text-foreground max-w-3xl mx-auto mb-16 font-medium leading-relaxed">
+          <p className="text-2xl md:text-3xl text-white/90 max-w-3xl mx-auto mb-16 font-medium leading-relaxed">
             Join a collective effort to build stronger, self-sufficient communities. Every contribution is a catalyst for change.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <Link to="/donate">
-              <Button className="rounded-full px-12 py-6 text-sm md:text-base font-medium tracking-wide bg-primary hover:bg-primary/90 shadow-xl hover:scale-105 transition-all">
+              <Button className="rounded-full px-12 py-6 text-sm md:text-base font-bold tracking-wide bg-primary hover:bg-primary/90 shadow-xl hover:scale-105 transition-all text-white">
                 Support Our Work
               </Button>
             </Link>
             <Link to="/contact">
-              <Button variant="outline" className="rounded-full px-12 py-6 text-sm md:text-base font-medium tracking-wide border-2 border-foreground hover:bg-foreground hover:text-white transition-all">
+              <Button variant="outline" className="rounded-full px-12 py-6 text-sm md:text-base font-bold tracking-wide border-2 border-white text-white hover:bg-white hover:text-[#001D3D] transition-all">
                 Partner With Us
               </Button>
             </Link>
