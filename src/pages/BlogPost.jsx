@@ -22,39 +22,41 @@ const ptComponents = {
   },
   block: {
     h2: ({ children }) => (
-      <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4 leading-tight">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#001D3D] font-serif mt-16 mb-6 leading-tight">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-xl font-bold text-gray-900 mt-8 mb-3 leading-tight">
+      <h3 className="text-2xl md:text-3xl font-bold text-[#001D3D] font-serif mt-12 mb-5 leading-tight">
         {children}
       </h3>
     ),
     normal: ({ children }) => (
-      <p className="text-[15px] text-gray-600 leading-[1.85] mb-5">{children}</p>
+      <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-6 font-medium">
+        {children}
+      </p>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-primary pl-5 my-6 italic text-gray-600 text-[15px] leading-relaxed">
+      <blockquote className="border-l-4 border-primary pl-8 my-12 italic text-slate-700 text-xl md:text-2xl leading-relaxed font-serif">
         {children}
       </blockquote>
     ),
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc list-outside pl-5 mb-5 space-y-2 text-[15px] text-gray-600 leading-relaxed">
+      <ul className="list-disc list-outside pl-6 mb-8 space-y-4 text-base md:text-lg text-slate-600 leading-relaxed font-medium">
         {children}
       </ul>
     ),
     number: ({ children }) => (
-      <ol className="list-decimal list-outside pl-5 mb-5 space-y-2 text-[15px] text-gray-600 leading-relaxed">
+      <ol className="list-decimal list-outside pl-6 mb-8 space-y-4 text-base md:text-lg text-slate-600 leading-relaxed font-medium">
         {children}
       </ol>
     ),
   },
   marks: {
     strong: ({ children }) => (
-      <strong className="font-bold text-gray-900">{children}</strong>
+      <strong className="font-bold text-slate-900">{children}</strong>
     ),
     em: ({ children }) => <em className="italic">{children}</em>,
     link: ({ value, children }) => (
@@ -62,7 +64,7 @@ const ptComponents = {
         href={value?.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors"
+        className="text-primary underline decoration-2 underline-offset-4 hover:text-primary/80 transition-colors font-bold"
       >
         {children}
       </a>
@@ -184,161 +186,100 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* ── Back link ──────────────────────────────────────────── */}
-      <div className="border-b border-gray-100 bg-white">
-        <Container className="py-4">
+      <div className="bg-white">
+        <Container className="py-8 md:py-12">
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-primary transition-colors group"
+            className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors group"
           >
             <ArrowLeft
-              size={15}
+              size={14}
               className="group-hover:-translate-x-1 transition-transform"
             />
-            Back to News
+            Back to News & Media
           </Link>
         </Container>
       </div>
 
-      {/* ── Two-column layout ──────────────────────────────────── */}
-      <section className="py-10 md:py-14">
+      {/* ── Focused Header ─────────────────────────────────────── */}
+      <section className="pb-16 md:pb-24">
         <Container>
-          <div className="flex flex-col lg:flex-row gap-10 xl:gap-14">
+          <div className="max-w-3xl mx-auto space-y-10">
+            {/* Category & Date */}
+            <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-[0.2em]">
+              {post.category && (
+                <span className="text-primary">{post.category}</span>
+              )}
+              {post.category && formattedDate && (
+                <span className="w-1.5 h-1.5 rounded-full bg-slate-200" />
+              )}
+              {formattedDate && (
+                <span className="text-slate-400">{formattedDate}</span>
+              )}
+            </div>
 
-            {/* ── LEFT: Main Content ─────────────────────────── */}
-            <article className="flex-1 min-w-0">
-              {/* Featured Image */}
-              {post.coverImage?.asset ? (
-                <div className="rounded-2xl overflow-hidden mb-8 aspect-video bg-gray-100 shadow-sm border border-gray-100">
-                  <img
-                    src={urlFor(post.coverImage).width(1200).url()}
-                    alt={post.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ) : null}
+            {/* Title */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#001D3D] font-serif leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
 
-              {/* Title */}
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-5">
-                {post.title}
-              </h1>
-
-              {/* Metadata row */}
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-gray-500 mb-5 pb-5 border-b border-gray-100">
-                <span className="flex items-center gap-1.5 font-medium text-gray-700">
-                  <User size={13} className="text-primary" />
+            {/* Author */}
+            <div className="flex items-center gap-4 pt-6">
+              <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-primary overflow-hidden border-2 border-white shadow-sm">
+                <User size={20} />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-sm font-bold text-slate-900 leading-none">
                   {post.author || "Ubunifu Team"}
                 </span>
-                {formattedDate && (
-                  <span className="flex items-center gap-1.5">
-                    <Calendar size={13} className="text-primary" />
-                    {formattedDate}
-                  </span>
-                )}
-                {post.category && (
-                  <span className="bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full">
-                    {post.category}
-                  </span>
-                )}
-                {tags.length > 0 && (
-                  <span className="flex items-center gap-1.5 flex-wrap">
-                    <Tag size={11} className="text-gray-400" />
-                    {tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-gray-100 text-gray-500 text-[10px] font-semibold px-2 py-0.5 rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </span>
-                )}
+                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-1">
+                  Author & Contributor
+                </span>
               </div>
+            </div>
 
-              {/* Body */}
-              <div className="max-w-none">
-                {post.body ? (
-                  <PortableText value={post.body} components={ptComponents} />
-                ) : (
-                  <p className="text-gray-500 italic">No content available.</p>
-                )}
+            {/* Featured Image */}
+            {post.coverImage?.asset ? (
+              <div className="rounded-[2.5rem] overflow-hidden aspect-[16/9] bg-slate-100 shadow-2xl shadow-slate-200/50 border border-slate-100 mt-12">
+                <img
+                  src={urlFor(post.coverImage).width(1200).url()}
+                  alt={post.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
+            ) : null}
+          </div>
+        </Container>
+      </section>
 
-              {/* Share row */}
-              <div className="mt-10 pt-6 border-t border-gray-100">
-                <ShareRow url={pageUrl} title={post.title} />
-              </div>
-            </article>
+      {/* ── Article Content ────────────────────────────────────── */}
+      <section className="pb-32">
+        <Container>
+          <div className="max-w-2xl md:max-w-3xl mx-auto">
+            <div className="prose prose-slate lg:prose-lg max-w-none">
+              {post.body ? (
+                <PortableText value={post.body} components={ptComponents} />
+              ) : (
+                <p className="text-slate-500 italic">No content available.</p>
+              )}
+            </div>
 
-            {/* ── RIGHT: Sidebar ─────────────────────────────── */}
-            <aside className="w-full lg:w-72 xl:w-80 flex-shrink-0 space-y-8 lg:pt-0">
-              {/* Pull-quote card */}
-              <div className="rounded-2xl bg-primary/5 border-l-4 border-primary p-5">
-                <p className="text-[14px] leading-relaxed text-gray-700 italic font-medium">
-                  "{pullQuote}"
-                </p>
-                <div className="flex items-center gap-2 mt-4">
-                  <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center">
-                    <User size={13} className="text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-[12px] font-bold text-gray-800">
-                      {post.author || "Ubunifu Team"}
-                    </p>
-                    {formattedDate && (
-                      <p className="text-[11px] text-gray-400">{formattedDate}</p>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              {/* Share */}
-              <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">
-                  Share this Story
-                </h3>
-                <ShareRow url={pageUrl} title={post.title} />
-              </div>
-
-              {/* Recent Stories */}
-              {recentPosts.length > 0 && (
-                <div>
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">
-                    Recent Stories
-                  </h3>
-                  <ul className="space-y-4">
-                    {recentPosts
-                      .filter((p) => p.slug?.current !== slug)
-                      .slice(0, 4)
-                      .map((p) => (
-                        <li key={p.slug?.current}>
-                          <Link
-                            to={`/blog/${p.slug?.current}`}
-                            className="group block"
-                          >
-                            <p className="text-[13px] font-semibold text-gray-800 group-hover:text-primary transition-colors line-clamp-2 leading-snug">
-                              {p.title}
-                            </p>
-                            {p.category && (
-                              <p className="text-[11px] text-gray-400 mt-0.5">
-                                {p.category}
-                                {p.publishedAt && (
-                                  <>
-                                    {" · "}
-                                    {new Date(p.publishedAt).toLocaleDateString("en-US", {
-                                      month: "short",
-                                      day: "numeric",
-                                    })}
-                                  </>
-                                )}
-                              </p>
-                            )}
-                          </Link>
-                        </li>
-                      ))}
-                  </ul>
+            {/* Tags & Share */}
+            <div className="mt-20 pt-10 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-10">
+              {tags.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="bg-slate-50 text-slate-500 text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-slate-100"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               )}
-            </aside>
+              <ShareRow url={pageUrl} title={post.title} />
+            </div>
           </div>
         </Container>
       </section>

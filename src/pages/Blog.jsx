@@ -1,10 +1,13 @@
 import { useState, useEffect, useMemo } from "react";
+import { Link } from "react-router-dom";
 import { Search, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import Container from "@/components/layout/Container";
 import BlogCard from "@/components/ui/BlogCard";
 import usePageTitle from "@/hooks/usePageTitle";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import { client } from "@/lib/sanity";
+import { cn } from "@/lib/utils";
 
 const IMPACT_AREAS = ["Youth", "Women", "Education", "Innovation", "Environment", "Richasses"];
 
@@ -57,146 +60,104 @@ const Blog = () => {
 
   const recentPosts = useMemo(() => posts.slice(0, 5), [posts]);
 
+  const BackgroundPatterns = () => (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Large cluster top right */}
+      <svg className="absolute -top-[20%] -right-[10%] w-[70%] h-[140%] opacity-[0.12] text-white" viewBox="0 0 100 100">
+        {[45, 40, 35, 30, 25, 20].map((r, i) => (
+          <circle 
+            key={i} 
+            cx="80" cy="30" r={r} 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth={0.5 + i * 0.2} 
+            strokeDasharray={`${10 + i * 5} ${5 + i * 2}`} 
+          />
+        ))}
+      </svg>
+      
+      {/* Cluster bottom left */}
+      <svg className="absolute -bottom-[30%] -left-[15%] w-[80%] h-[160%] opacity-[0.08] text-white" viewBox="0 0 100 100">
+        {[55, 48, 41, 34, 27].map((r, i) => (
+          <circle 
+            key={i} 
+            cx="20" cy="80" r={r} 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth={0.4 + i * 0.3} 
+            strokeDasharray={`${8 + i * 4} ${4 + i * 2}`} 
+          />
+        ))}
+      </svg>
+
+      {/* Center cluster */}
+      <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[120%] opacity-[0.06] text-white" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="20 10" />
+        <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="15 5" />
+        <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="8 4" />
+      </svg>
+    </div>
+  );
+
   return (
     <div className="min-h-screen bg-white">
-      {/* ── Page Header ─────────────────────────────────────────── */}
-      <section className="border-b border-gray-100 bg-white py-12 md:py-16">
-        <Container>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-3">
-            News &amp; Stories
-          </h1>
-          <p className="text-gray-500 text-base md:text-lg max-w-xl leading-relaxed">
-            Exploring the impactful journeys of youth leadership, rural innovation,
-            and sustainable development across Africa.
-          </p>
+      {/* ── Page Header: High-Impact Redesign ──────────────────── */}
+      <section className="bg-[#14B8A6] relative flex flex-col items-start overflow-hidden py-24 md:py-32 lg:py-40">
+        <BackgroundPatterns />
+        <Container className="relative z-10">
+          <div className="max-w-3xl space-y-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1]">
+              News & Media
+            </h1>
+            <p className="text-white/90 text-lg md:text-xl lg:text-2xl font-medium leading-relaxed max-w-2xl">
+              Read the latest from Ubunifu Foundation, stay updated with our impact,
+              and connect with our social innovation experts.
+            </p>
+            <div className="pt-4">
+              <Link to="/contact">
+                <Button className="rounded-full bg-[#f59e0b] hover:bg-[#d97706] text-white px-10 py-7 h-auto text-lg font-bold shadow-xl shadow-black/10 transition-all hover:scale-105">
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
+          </div>
         </Container>
       </section>
 
       {/* ── Main Layout ─────────────────────────────────────────── */}
-      <section className="py-10 md:py-14">
+      <section className="py-16 md:py-24">
         <Container>
-          <div className="flex flex-col lg:flex-row gap-10 xl:gap-14">
-            {/* ── LEFT: Card Grid ─────────────────────────────── */}
-            <div className="flex-1 min-w-0">
-              {loading ? (
-                <div className="flex items-center justify-center py-32">
-                  <div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin" />
-                </div>
-              ) : error ? (
-                <div className="text-center py-20 bg-red-50 rounded-2xl border border-red-100">
-                  <p className="text-red-600 font-medium">{error}</p>
-                </div>
-              ) : filteredPosts.length === 0 ? (
-                <div className="text-center py-20 bg-gray-50 rounded-2xl border border-gray-100">
-                  <p className="text-gray-500 font-medium text-lg">No stories found.</p>
-                  {(searchQuery || activeArea) && (
-                    <button
-                      onClick={() => { setSearchQuery(""); setActiveArea(null); }}
-                      className="mt-4 text-sm text-primary underline underline-offset-2"
-                    >
-                      Clear filters
-                    </button>
-                  )}
-                </div>
-              ) : (
-                <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {filteredPosts.map((post) => (
-                    <div key={post.slug?.current} className="reveal">
-                      <BlogCard post={post} className="h-full" />
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* ── RIGHT: Sidebar ──────────────────────────────── */}
-            <aside className="w-full lg:w-72 xl:w-80 flex-shrink-0 space-y-8">
-              {/* Search */}
-              <div>
-                <div className="relative">
-                  <Search
-                    size={15}
-                    className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Search news..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2.5 rounded-full border border-gray-200 bg-gray-50 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition"
-                    id="blog-search"
-                  />
-                </div>
+          {/* ── Card Grid ─────────────────────────────────────────── */}
+          <div className="min-w-0">
+            {loading ? (
+              <div className="flex items-center justify-center py-32">
+                <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
               </div>
-
-              {/* Impact Areas */}
-              <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">
-                  Impact Areas
-                </h3>
-                <ul className="space-y-1.5">
-                  {IMPACT_AREAS.map((area) => (
-                    <li key={area}>
-                      <button
-                        onClick={() =>
-                          setActiveArea(activeArea === area ? null : area)
-                        }
-                        className={`flex items-center gap-2 w-full text-left text-[14px] font-medium transition-colors py-0.5 ${
-                          activeArea === area
-                            ? "text-primary"
-                            : "text-gray-600 hover:text-primary"
-                        }`}
-                      >
-                        <ChevronRight
-                          size={13}
-                          className={`flex-shrink-0 transition-transform ${
-                            activeArea === area ? "rotate-90 text-primary" : ""
-                          }`}
-                        />
-                        {area}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
+            ) : error ? (
+              <div className="text-center py-24 bg-red-50 rounded-[2.5rem] border border-red-100">
+                <p className="text-red-600 font-bold text-lg">{error}</p>
               </div>
-
-              {/* Recent Stories */}
-              {recentPosts.length > 0 && (
-                <div>
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">
-                    Recent Stories
-                  </h3>
-                  <ul className="space-y-4">
-                    {recentPosts.map((p) => (
-                      <li key={p.slug?.current}>
-                        <a
-                          href={`/blog/${p.slug?.current}`}
-                          className="group block"
-                        >
-                          <p className="text-[13px] font-semibold text-gray-800 group-hover:text-primary transition-colors line-clamp-2 leading-snug">
-                            {p.title}
-                          </p>
-                          {p.category && (
-                            <p className="text-[11px] text-gray-400 mt-0.5">
-                              {p.category}
-                              {p.publishedAt && (
-                                <>
-                                  {" · "}
-                                  {new Date(p.publishedAt).toLocaleDateString("en-US", {
-                                    month: "short",
-                                    day: "numeric",
-                                  })}
-                                </>
-                              )}
-                            </p>
-                          )}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </aside>
+            ) : filteredPosts.length === 0 ? (
+              <div className="text-center py-24 bg-slate-50 rounded-[2.5rem] border border-slate-100">
+                <p className="text-slate-500 font-bold text-xl mb-6">No stories found matching your selection.</p>
+                {(searchQuery || activeArea) && (
+                  <button
+                    onClick={() => { setSearchQuery(""); setActiveArea(null); }}
+                    className="text-sm font-bold text-primary underline underline-offset-4 decoration-2 hover:text-primary/70 transition-colors"
+                  >
+                    Clear all filters
+                  </button>
+                )}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
+                {filteredPosts.map((post) => (
+                  <div key={post.slug?.current} className="reveal">
+                    <BlogCard post={post} className="h-full" />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </Container>
       </section>
