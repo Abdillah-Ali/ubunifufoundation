@@ -112,7 +112,6 @@ const BlogPost = () => {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
   const [relatedPosts, setRelatedPosts] = useState([]);
-  const [recentPosts, setRecentPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -132,11 +131,6 @@ const BlogPost = () => {
       )
       .then((data) => setRelatedPosts(data || []))
       .catch(console.error);
-
-    client
-      .fetch(`*[_type == "post"] | order(publishedAt desc)[0...5]`)
-      .then((data) => setRecentPosts(data || []))
-      .catch(console.error);
   }, [slug]);
 
   usePageTitle(post?.title || (loading ? "Loading…" : "Post Not Found"));
@@ -154,13 +148,13 @@ const BlogPost = () => {
   if (!post) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4 text-gray-900">Post Not Found</h1>
+        <div className="text-center px-4">
+          <h1 className="text-3xl font-bold mb-6 text-gray-900 font-serif">Post Not Found</h1>
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-primary hover:underline text-sm font-semibold"
+            className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-bold shadow-lg transition-transform hover:scale-105"
           >
-            <ArrowLeft size={14} /> Back to News
+            <ArrowLeft size={16} /> Back to News
           </Link>
         </div>
       </div>
@@ -168,117 +162,126 @@ const BlogPost = () => {
   }
 
   const formattedDate = post.publishedAt
-    ? new Date(post.publishedAt).toLocaleDateString("en-US", {
-        month: "long",
+    ? new Date(post.publishedAt).toLocaleDateString("en-GB", {
         day: "numeric",
+        month: "long",
         year: "numeric",
-      })
+      }).toUpperCase()
     : null;
 
   const tags = Array.isArray(post.tags) ? post.tags : [];
   const pageUrl = typeof window !== "undefined" ? window.location.href : "";
 
-  /* Pull-quote: first excerpt sentence as sidebar highlight */
-  const pullQuote = post.excerpt
-    ? post.excerpt.split(".")[0] + "."
-    : "The connections we build are the foundation for a resilient community.";
-
   return (
     <div className="min-h-screen bg-white">
-      {/* ── Back link ──────────────────────────────────────────── */}
-      <div className="bg-white">
-        <Container className="py-8 md:py-12">
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors group"
-          >
-            <ArrowLeft
-              size={14}
-              className="group-hover:-translate-x-1 transition-transform"
-            />
-            Back to News & Media
-          </Link>
-        </Container>
-      </div>
-
-      {/* ── Focused Header ─────────────────────────────────────── */}
-      <section className="pb-16 md:pb-24">
-        <Container>
-          <div className="max-w-3xl mx-auto space-y-10">
-            {/* Category & Date */}
-            <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-[0.2em]">
-              {post.category && (
-                <span className="text-primary">{post.category}</span>
-              )}
-              {post.category && formattedDate && (
-                <span className="w-1.5 h-1.5 rounded-full bg-slate-200" />
-              )}
-              {formattedDate && (
-                <span className="text-slate-400">{formattedDate}</span>
-              )}
-            </div>
-
-            {/* Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#001D3D] font-serif leading-[1.1] tracking-tight">
-              {post.title}
+      {/* ── Purple Hero Section ────────────────────────────────── */}
+      <section className="bg-[#3B2A5A] relative overflow-hidden py-24 md:py-32 lg:py-40">
+        <div className="absolute inset-0 opacity-[0.12] pointer-events-none">
+          <svg className="absolute top-0 right-0 w-1/2 h-full text-white" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <rect x="70" y="20" width="8" height="15" fill="currentColor" opacity="0.8" />
+            <rect x="80" y="30" width="8" height="15" fill="currentColor" opacity="0.6" />
+            <rect x="70" y="45" width="8" height="15" fill="currentColor" opacity="0.4" />
+            <rect x="90" y="10" width="8" height="15" fill="currentColor" opacity="0.5" />
+            <rect x="80" y="55" width="8" height="15" fill="currentColor" opacity="0.7" />
+            <rect x="60" y="70" width="8" height="15" fill="currentColor" opacity="0.3" />
+            <rect x="90" y="75" width="8" height="15" fill="currentColor" opacity="0.9" />
+            <rect x="80" y="85" width="8" height="15" fill="currentColor" opacity="0.4" />
+            <rect x="70" y="90" width="8" height="15" fill="currentColor" opacity="0.2" />
+          </svg>
+        </div>
+        <Container className="relative z-10">
+          <div className="max-w-3xl space-y-6">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white font-serif tracking-tight">
+              News
             </h1>
-
-            {/* Author */}
-            <div className="flex items-center gap-4 pt-6">
-              <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-primary overflow-hidden border-2 border-white shadow-sm">
-                <User size={20} />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-sm font-bold text-slate-900 leading-none">
-                  {post.author || "Ubunifu Team"}
-                </span>
-                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-1">
-                  Author & Contributor
-                </span>
-              </div>
-            </div>
-
-            {/* Featured Image */}
-            {post.coverImage?.asset ? (
-              <div className="rounded-[2.5rem] overflow-hidden aspect-[16/9] bg-slate-100 shadow-2xl shadow-slate-200/50 border border-slate-100 mt-12">
-                <img
-                  src={urlFor(post.coverImage).width(1200).url()}
-                  alt={post.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ) : null}
+            <p className="text-white/80 text-lg md:text-xl md:text-2xl font-medium max-w-2xl leading-relaxed">
+              Read up on the latest from Ubunifu Foundation and what's happening in our community.
+            </p>
           </div>
         </Container>
       </section>
 
-      {/* ── Article Content ────────────────────────────────────── */}
-      <section className="pb-32">
+      {/* ── Main Content Layout ────────────────────────────────── */}
+      <section className="py-16 md:py-24">
         <Container>
-          <div className="max-w-2xl md:max-w-3xl mx-auto">
-            <div className="prose prose-slate lg:prose-lg max-w-none">
-              {post.body ? (
-                <PortableText value={post.body} components={ptComponents} />
-              ) : (
-                <p className="text-slate-500 italic">No content available.</p>
-              )}
+          {/* Navigation Row */}
+          <div className="flex justify-end mb-12">
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 text-sm font-bold text-[#001D3D] hover:text-primary transition-all group"
+            >
+              <ArrowLeft size={16} className="text-[#f59e0b] group-hover:-translate-x-1 transition-transform" />
+              <span className="border-b-2 border-transparent hover:border-primary">Back to News</span>
+            </Link>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-12 xl:gap-20">
+            {/* LEFT COLUMN: Text Content */}
+            <div className="lg:w-[62%] space-y-10">
+              <div className="space-y-4">
+                <h2 className="text-4xl md:text-5xl font-bold text-[#001D3D] font-serif leading-[1.15]">
+                  {post.title}
+                </h2>
+                {formattedDate && (
+                  <p className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest">
+                    {formattedDate}
+                  </p>
+                )}
+              </div>
+
+              <div className="prose prose-slate prose-lg max-w-none">
+                {post.body ? (
+                  <PortableText value={post.body} components={ptComponents} />
+                ) : (
+                  <p className="text-gray-500 italic">No content available.</p>
+                )}
+              </div>
+
+              {/* Tags & Sharing */}
+              <div className="pt-12 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
+                {tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-gray-50 text-gray-500 text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-gray-100"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <ShareRow url={pageUrl} title={post.title} />
+              </div>
             </div>
 
-            {/* Tags & Share */}
-            <div className="mt-20 pt-10 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-10">
-              {tags.length > 0 && (
-                <div className="flex flex-wrap gap-2">
-                  {tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="bg-slate-50 text-slate-500 text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-slate-100"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+            {/* RIGHT COLUMN: Featured Image */}
+            <div className="lg:w-[38%]">
+              <div className="sticky top-24 space-y-8">
+                {post.coverImage?.asset && (
+                  <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/5 ring-1 ring-black/5">
+                    <img
+                      src={urlFor(post.coverImage).width(1000).url()}
+                      alt={post.title}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                )}
+                
+                {/* Author context if needed, or other meta */}
+                <div className="bg-slate-50 rounded-2xl p-8 space-y-4">
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-[#f59e0b]">Primary Contributor</h4>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                      <User size={24} />
+                    </div>
+                    <div>
+                      <p className="text-base font-bold text-[#001D3D]">{post.author || "Ubunifu Team"}</p>
+                      <p className="text-xs text-gray-500 font-medium tracking-tight">Ubunifu Foundation</p>
+                    </div>
+                  </div>
                 </div>
-              )}
-              <ShareRow url={pageUrl} title={post.title} />
+              </div>
             </div>
           </div>
         </Container>
@@ -286,14 +289,14 @@ const BlogPost = () => {
 
       {/* ── Related Stories ─────────────────────────────────────── */}
       {relatedPosts.length > 0 && (
-        <section className="py-12 bg-gray-50 border-t border-gray-100">
+        <section className="py-24 bg-slate-50 border-t border-slate-100">
           <Container>
-            <div className="mb-7">
-              <h2 className="text-2xl font-bold text-gray-900 tracking-tight">
+            <div className="mb-12">
+              <h2 className="text-3xl font-bold text-[#001D3D] font-serif tracking-tight">
                 Related Stories
               </h2>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
               {relatedPosts.map((p) => (
                 <BlogCard key={p.slug?.current} post={p} className="h-full" />
               ))}

@@ -171,9 +171,11 @@ const Home = () => {
                   key={i} 
                   className={cn(
                    "relative flex-shrink-0 animate-fade-in-up shadow-2xl transition-all duration-700 hover:-translate-y-4 hover:scale-[1.02] overflow-hidden rounded-2xl border-white border-2",
-                   i === 0 || i === 5 ? "w-[12vw] md:w-36 h-[18vh] md:h-56" : 
-                   i === 1 || i === 4 ? "w-[14vw] md:w-44 h-[22vh] md:h-64" : 
-                   "w-[16vw] md:w-52 h-[26vh] md:h-72"
+                   "w-[24vw] h-[34vw] min-w-[90px] min-h-[130px]", // Mobile base sizes
+                   "md:w-36 md:h-56 lg:w-44 lg:h-64", // Tablet/Desktop
+                   i === 2 || i === 3 ? "md:w-52 md:h-72 lg:w-60 lg:h-80" : // Center pair
+                   i === 1 || i === 4 ? "md:w-44 md:h-64 lg:w-52 lg:h-72" : // Inner pair
+                   "md:w-36 md:h-56 lg:w-44 lg:h-64" // Outer pair
                   )}
                   style={{ 
                     animationDelay: `${i * 100}ms`,
@@ -252,16 +254,16 @@ const Home = () => {
       <section className="pt-24 pb-10 bg-background reveal overflow-hidden relative">
         {/* Island Watermarks */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-between px-[-10%] opacity-[0.2]">
+          <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-between px-[-10%] opacity-[0.1] md:opacity-[0.2]">
             <img 
               src="/pemba island.png" 
               alt="Pemba Island Watermark" 
-              className="w-[35%] max-w-[600px] translate-x-[-15%]"
+              className="w-[60%] md:w-[35%] max-w-[600px] translate-x-[-20%] md:translate-x-[-15%] -translate-y-1/2 md:translate-y-0"
             />
             <img 
               src="/unguja island.jpg" 
               alt="Unguja Island Watermark" 
-              className="w-[35%] max-w-[600px] translate-x-[15%]"
+              className="w-[60%] md:w-[35%] max-w-[600px] translate-x-[20%] md:translate-x-[15%] translate-y-1/2 md:translate-y-0"
             />
           </div>
         </div>
@@ -533,7 +535,7 @@ const Home = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-x-8 gap-y-12">
             {latestPosts.map((post) => {
               const slug = post.slug?.current;
               if (!slug) return null;

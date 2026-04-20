@@ -39,10 +39,10 @@ const Navbar = () => {
           <div 
             className="flex flex-col justify-between h-12 md:h-16 leading-none font-sans" 
           >
-            <span className="text-[25px] md:text-[34px] font-bold text-[hsl(var(--logo-red))]">
+            <span className="text-[22px] xs:text-[25px] md:text-[34px] font-bold text-[hsl(var(--logo-red))]">
               Ubunifu
             </span>
-            <span className="text-[17px] md:text-[23px] font-bold text-[hsl(var(--logo-blue))]">
+            <span className="text-[15px] xs:text-[17px] md:text-[23px] font-bold text-[hsl(var(--logo-blue))]">
               Foundation
             </span>
           </div>
