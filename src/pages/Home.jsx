@@ -164,6 +164,7 @@ const Underline = () => (
   </svg>
 );
 
+
 const Home = () => {
   usePageTitle("Home");
 
@@ -191,15 +192,15 @@ const Home = () => {
             {/* LEFT: Content */}
             <div className="space-y-10 reveal z-10">
               <div className="space-y-6">
-                <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold text-white font-serif leading-[1.05] tracking-tight">
-                  Talent is <span className="relative inline-block">
-                    global,
+                <h1 className="text-5xl md:text-6xl lg:text-[72px] font-bold text-white font-serif leading-[1.1] tracking-tight">
+                  Driving social entrepreneurship<br /> 
+                  and youth <span className="relative inline-block">
+                    empowerment
                     <Underline />
-                  </span><br />
-                  opportunity is not
+                  </span> in Zanzibar
                 </h1>
                 <p className="text-xl md:text-2xl text-white/80 font-medium leading-relaxed max-w-xl">
-                  Ubunifu Foundation makes advanced, high-quality entrepreneurship and youth empowerment accessible to students everywhere with completely free academic offerings.
+                  Supporting young people and women through skills development, innovation, and entrepreneurship to create sustainable change.
                 </p>
               </div>
 
