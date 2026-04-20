@@ -391,17 +391,17 @@ const Home = () => {
       </section>
 
       {/* ── Our Core Programs: Redesign ── */}
-      <section className="py-24 md:py-32 bg-[#F8F9FA] reveal overflow-hidden">
+      <section className="py-24 md:py-32 bg-[#001D3D] reveal overflow-hidden">
         <Container>
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             
             {/* Section Header */}
             <div className="max-w-3xl mx-auto text-center mb-20 space-y-6">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#001D3D] leading-tight tracking-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
                 Our Core <span className="text-primary">Programs.</span>
               </h2>
               <div className="w-20 h-1.5 bg-primary mx-auto rounded-full" />
-              <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed">
+              <p className="text-lg md:text-xl text-slate-300 font-medium leading-relaxed">
                 Transforming lives through structured initiatives and community-driven progress across Zanzibar. We equip youth and women with skills to build sustainable futures.
               </p>
             </div>
