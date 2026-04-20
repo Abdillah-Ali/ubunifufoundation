@@ -65,6 +65,74 @@ const ProgramCard = ({ project }) => (
 );
 
 
+const AboutImageDesign = () => (
+  <div className="relative w-full aspect-square max-w-[600px] mx-auto p-8">
+    {/* Decorative Horizontal Stripes */}
+    <div className="absolute left-[-5%] top-[45%] w-[45%] space-y-1.5 z-0">
+      {[...Array(6)].map((_, i) => (
+        <div 
+          key={i} 
+          className="h-1.5 bg-accent/40 rounded-full" 
+          style={{ 
+            width: `${100 - (i * 12)}%`,
+            backgroundColor: i % 2 === 0 ? 'hsl(var(--accent))' : 'hsl(var(--primary))',
+            opacity: 0.2 + (i * 0.1)
+          }}
+        />
+      ))}
+    </div>
+
+    {/* Decorative Arcs - Large Right Circle Frame */}
+    <div className="absolute top-[10%] right-[-5%] w-[75%] aspect-square pointer-events-none z-0">
+      <svg className="w-full h-full animate-pulse-slow" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="48" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeDasharray="10 8" className="opacity-50" />
+        <circle cx="50" cy="50" r="44" fill="none" stroke="#f59e0b" strokeWidth="3.5" strokeDasharray="25 15" className="opacity-40" />
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" strokeWidth="2.5" className="opacity-30" />
+      </svg>
+    </div>
+
+    {/* Decorative Arcs - Small Circle Frames */}
+    <div className="absolute top-[0%] left-[5%] w-[45%] aspect-square pointer-events-none z-0">
+      <svg className="w-full h-full rotate-45" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="48" fill="none" stroke="#22c55e" strokeWidth="2" strokeDasharray="4 8" className="opacity-40" />
+      </svg>
+    </div>
+
+    {/* Image Containers */}
+    
+    {/* 1. Top-Center/Right (Large) */}
+    <div className="absolute top-[10%] right-0 w-[62%] aspect-square rounded-full overflow-hidden border-[6px] border-white shadow-2xl z-20 group">
+      <img 
+        src="/zanzibar_youth_innovation.png" 
+        alt="Zanzibar Youth Innovation" 
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+      />
+      <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
+    </div>
+
+    {/* 2. Top-Left (Medium) */}
+    <div className="absolute top-0 left-[5%] w-[42%] aspect-square rounded-full overflow-hidden border-[6px] border-white shadow-xl z-10 group">
+      <img 
+        src="/zanzibar_youth_innovation.png" 
+        alt="Zanzibar Youth Innovation" 
+        className="w-full h-full object-cover object-left transition-transform duration-700 group-hover:scale-110" 
+      />
+      <div className="absolute inset-0 bg-accent/10 group-hover:bg-transparent transition-colors duration-500" />
+    </div>
+
+    {/* 3. Bottom-Left (Medium) */}
+    <div className="absolute bottom-[5%] left-[8%] w-[52%] aspect-square rounded-full overflow-hidden border-[6px] border-white shadow-2xl z-30 group">
+      <img 
+        src="/zanzibar_youth_innovation.png" 
+        alt="Zanzibar Youth Innovation" 
+        className="w-full h-full object-cover object-right transition-transform duration-700 group-hover:scale-110" 
+      />
+      <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
+    </div>
+  </div>
+);
+
+
 const Home = () => {
   usePageTitle("Home");
 
@@ -80,8 +148,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-background min-h-screen">
-      <section className="bg-[#003d52] pt-32 md:pt-48 pb-56 md:pb-80 relative flex flex-col items-center overflow-visible">
+    <div className="bg-background min-h-screen overflow-x-hidden">
+      <section className="bg-[#003d52] pt-32 md:pt-48 pb-40 md:pb-60 relative flex flex-col items-center overflow-visible">
         <Container className="text-center relative z-10">
           <h1 className="text-4xl sm:text-5xl md:text-[64px] font-black text-white leading-[1.05] tracking-tight max-w-[1200px] mx-auto animate-fade-in-up mb-6 md:mb-10">
             Driving social entrepreneurship and youth empowerment in Zanzibar
@@ -94,29 +162,35 @@ const Home = () => {
         </Container>
         
         {/* Portraits Row - Overlapping bottom edge */}
-        <div className="absolute bottom-0 translate-y-1/4 md:translate-y-1/2 w-full px-4 z-20 overflow-hidden md:overflow-visible">
-          <div className="flex gap-2 md:gap-4 justify-center items-end max-w-[1600px] mx-auto">
-             {[p1, p2, p3, p4, p5, p6].map((img, i) => (
-               <div 
-                 key={i} 
-                 className={cn(
-                  "relative flex-shrink-0 animate-fade-in-up shadow-2xl transition-all duration-700 hover:-translate-y-4 hover:scale-[1.02] overflow-hidden",
-                  i === 0 || i === 5 ? "w-[15vw] md:w-56 h-[20vh] md:h-[380px]" : 
-                  i === 1 || i === 4 ? "w-[16vw] md:w-60 h-[24vh] md:h-[430px]" : 
-                  "w-[18vw] md:w-72 h-[28vh] md:h-[480px]"
-                 )}
-                 style={{ animationDelay: `${i * 100}ms` }}
-               >
-                  <img src={img} alt="Portrait contributor" className="w-full h-full object-cover" />
-               </div>
-             ))}
+        <div className="absolute bottom-0 translate-y-1/3 w-full px-2 md:px-4 z-20 overflow-hidden md:overflow-visible">
+          <div className="flex gap-1.5 md:gap-4 justify-center items-center max-w-[1400px] mx-auto">
+             {[p1, p2, p3, p4, p5, p6].map((img, i) => {
+               const offsets = ["10px", "-20px", "30px", "-40px", "15px", "-10px"];
+               return (
+                <div 
+                  key={i} 
+                  className={cn(
+                   "relative flex-shrink-0 animate-fade-in-up shadow-2xl transition-all duration-700 hover:-translate-y-4 hover:scale-[1.02] overflow-hidden rounded-2xl border-white border-2",
+                   i === 0 || i === 5 ? "w-[12vw] md:w-36 h-[18vh] md:h-56" : 
+                   i === 1 || i === 4 ? "w-[14vw] md:w-44 h-[22vh] md:h-64" : 
+                   "w-[16vw] md:w-52 h-[26vh] md:h-72"
+                  )}
+                  style={{ 
+                    animationDelay: `${i * 100}ms`,
+                    marginTop: offsets[i]
+                  }}
+                >
+                   <img src={img} alt="Portrait contributor" className="w-full h-full object-cover" />
+                </div>
+               );
+             })}
           </div>
         </div>
       </section>
 
 
       {/* 2. Overarching Mission Sections - Alternating Blocks */}
-      <section className="pt-[160px] md:pt-[320px] pb-32 bg-background space-y-40">
+      <section className="pt-[100px] md:pt-[160px] pb-32 bg-background space-y-40">
         <Container>
           {/* Block 1: About Us / Purpose */}
           <div className="grid md:grid-cols-2 gap-16 lg:gap-32 items-center reveal">
@@ -130,20 +204,14 @@ const Home = () => {
               <p className="text-lg text-muted-foreground font-medium leading-relaxed">
                 Ubunifu Foundation is a community-driven organization based in Kwerekwe, Zanzibar, dedicated to addressing youth unemployment and empowering women. We provide access to entrepreneurial skills, vocational training, and mentorship, creating a supportive environment where individuals transform challenges into long-term opportunities.
               </p>
-              <Link to="/about">
-                <Button variant="outline" className="rounded-none border-foreground text-foreground px-10 py-6 hover:bg-foreground hover:text-white transition-all font-bold text-sm uppercase tracking-tight">
+              <Link to="/about" className="inline-block mt-4">
+                <Button variant="outline" className="rounded-xl border-foreground text-foreground px-10 py-6 hover:bg-foreground hover:text-white transition-all font-bold text-sm uppercase tracking-tight">
                   Learn more
                 </Button>
               </Link>
             </div>
-            <div className="order-1 md:order-2">
-              <div className="aspect-[4/3] bg-secondary border border-border overflow-hidden shadow-sm">
-                <img 
-                  src="/zanzibar_youth_innovation.png" 
-                  alt="Zanzibar Youth Innovation" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="order-1 md:order-2 relative">
+              <AboutImageDesign />
             </div>
           </div>
 
@@ -181,7 +249,22 @@ const Home = () => {
       </section>
 
       {/* 4. Impact Overview Section - High-Impact Redesign */}
-      <section className="pt-24 pb-10 bg-background reveal overflow-hidden">
+      <section className="pt-24 pb-10 bg-background reveal overflow-hidden relative">
+        {/* Island Watermarks */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-between px-[-10%] opacity-[0.2]">
+            <img 
+              src="/pemba island.png" 
+              alt="Pemba Island Watermark" 
+              className="w-[35%] max-w-[600px] translate-x-[-15%]"
+            />
+            <img 
+              src="/unguja island.jpg" 
+              alt="Unguja Island Watermark" 
+              className="w-[35%] max-w-[600px] translate-x-[15%]"
+            />
+          </div>
+        </div>
         <Container>
           <div className="space-y-16">
               {/* Header */}
@@ -263,62 +346,176 @@ const Home = () => {
         </Container>
       </section>
 
-      {/* 5. Success Story Section - Clean Grid Redesign */}
+      {/* 5. Success Story Section - Reference Layout */}
       <section className="pt-6 pb-32 bg-background reveal">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-10 gap-y-14">
             {successStories.slice(0, 4).map((story, i) => (
-              <FeaturedImpact 
-                key={i}
-                image={story.image}
-                title={story.title}
-                description={story.description}
-                href={null}
-                author={null}
-                stat={null}
-              />
+              <div key={i} className="flex flex-col group">
+                {/* Rectangle Image */}
+                <div className="w-full aspect-[4/3] overflow-hidden rounded-xl mb-5 bg-muted">
+                  <img
+                    src={story.image}
+                    alt={story.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-bold tracking-tight text-foreground mb-3 leading-snug">
+                  {story.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-sm text-muted-foreground leading-relaxed font-medium flex-1 mb-5">
+                  {story.description}
+                </p>
+
+                {/* CTA Link */}
+                <Link
+                  to="/impact"
+                  className="flex items-center gap-3 group/cta w-fit"
+                >
+                  <span className="text-sm font-bold text-foreground group-hover/cta:text-primary transition-colors tracking-tight">
+                    Read Story
+                  </span>
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white group-hover/cta:bg-primary/80 transition-colors shadow-md">
+                    <ArrowRight size={15} />
+                  </span>
+                </Link>
+              </div>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* Featured Programs - Premium Card Grid Layout */}
-      <section className="py-32 bg-background border-t border-border/50">
+      {/* ── Our Core Programs: Redesign ── */}
+      <section className="py-24 md:py-32 bg-[#F8F9FA] reveal overflow-hidden">
         <Container>
-          {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 reveal">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-foreground mb-4">
+          <div className="max-w-7xl mx-auto px-4 md:px-8">
+            
+            {/* Section Header */}
+            <div className="max-w-3xl mx-auto text-center mb-20 space-y-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#001D3D] leading-tight tracking-tight">
                 Our Core <span className="text-primary">Programs.</span>
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground font-medium">
-                Transforming lives through structured initiatives and community-driven progress.
+              <div className="w-20 h-1.5 bg-primary mx-auto rounded-full" />
+              <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed">
+                Transforming lives through structured initiatives and community-driven progress across Zanzibar. We equip youth and women with skills to build sustainable futures.
               </p>
             </div>
-            <Link to="/projects" className="hidden md:inline-block">
-              <Button variant="outline" className="rounded-full px-8 py-6 border-2 border-foreground hover:bg-foreground hover:text-white transition-all font-bold text-sm tracking-tight">
-                View All Programs
-              </Button>
-            </Link>
-          </div>
 
-          {/* 4-Column Card Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-            {featuredProjects.map((project) => (
-              <ProgramCard key={project.id} project={project} />
-            ))}
-          </div>
+            {/* Featured Program Block */}
+            <div className="mb-16">
+              <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-xl shadow-slate-200/60 border border-slate-100/50 group">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  
+                  {/* Text Content */}
+                  <div className="p-10 md:p-16 lg:p-20 flex flex-col justify-center space-y-8 order-2 lg:order-1">
+                    <div className="space-y-3">
+                      <p className="text-[12px] font-bold tracking-[0.25em] text-slate-400 uppercase">
+                        Featured Program
+                      </p>
+                      <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#001D3D] leading-[1.15]">
+                        {featuredProjects[0]?.title}
+                      </h3>
+                    </div>
+                    
+                    <p className="text-base md:text-lg text-slate-600 leading-relaxed font-medium">
+                      {featuredProjects[0]?.description}
+                    </p>
+                    
+                    {featuredProjects[0]?.partner && (
+                      <div className="pt-6 border-t border-slate-100">
+                        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">
+                          In partnership with
+                        </p>
+                        <p className="text-sm font-bold text-[#001D3D]">
+                          {featuredProjects[0]?.partner}
+                        </p>
+                      </div>
+                    )}
+                    
+                    <Link to="/projects" className="pt-2">
+                      <Button className="rounded-full bg-primary hover:bg-[#001D3D] text-white px-8 py-6 h-auto text-sm font-bold tracking-tight transition-all duration-300 shadow-lg shadow-primary/20 flex items-center gap-3 w-fit">
+                        See Details
+                        <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white/20">
+                          <ArrowRight size={14} className="text-white" />
+                        </div>
+                      </Button>
+                    </Link>
+                  </div>
 
-          {/* Mobile view all */}
-          <div className="md:hidden mt-12 text-center">
-            <Link to="/projects">
-              <Button variant="outline" className="w-full rounded-2xl border-2 border-foreground text-foreground hover:bg-foreground hover:text-white font-bold py-6 transition-all">
-                View all programs
-              </Button>
-            </Link>
+                  {/* Image Block */}
+                  <div className="relative min-h-[400px] lg:min-h-full order-1 lg:order-2 overflow-hidden">
+                    <img
+                      src={featuredProjects[0]?.image}
+                      alt={featuredProjects[0]?.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-l from-black/20 via-transparent to-transparent hidden lg:block" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Supporting Programs Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+              {featuredProjects.slice(1, 4).map((project) => (
+                <div
+                  key={project.id}
+                  className="bg-white rounded-[2rem] p-10 flex flex-col h-full border border-slate-100/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group"
+                >
+                  <div className="mb-8">
+                    <p className="text-[10px] font-bold tracking-[0.25em] text-slate-400 uppercase mb-4">
+                      Program
+                    </p>
+                    <h4 className="text-2xl font-bold tracking-tight text-[#001D3D] leading-tight mb-5 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h4>
+                    <p className="text-sm md:text-base text-slate-500 leading-relaxed font-medium line-clamp-4">
+                      {project.description}
+                    </p>
+                  </div>
+                  
+                  <div className="mt-auto pt-8 border-t border-slate-50 flex flex-col gap-6">
+                    {project.partner && (
+                      <div className="space-y-1">
+                        <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                          In partnership with
+                        </p>
+                        <p className="text-xs font-bold text-slate-700">{project.partner}</p>
+                      </div>
+                    )}
+                    
+                    <Link to="/projects" className="flex items-center gap-3 group/cta w-fit">
+                      <span className="text-sm font-bold text-[#001D3D] group-hover/cta:text-primary transition-colors tracking-tight">
+                        See details
+                      </span>
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 group-hover/cta:bg-primary group-hover/cta:text-white transition-all shadow-sm">
+                        <ArrowRight size={14} />
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile View All (Optional/Bottom Link) */}
+            <div className="mt-16 text-center lg:hidden">
+              <Link to="/projects">
+                <Button variant="outline" className="rounded-2xl border-2 border-[#001D3D] text-[#001D3D] hover:bg-[#001D3D] hover:text-white font-bold px-10 py-6 h-auto transition-all">
+                  View All Programs
+                </Button>
+              </Link>
+            </div>
+
           </div>
         </Container>
       </section>
+
 
       {/* Latest Blog - Minimalist Grid Redesign */}
       <section className="py-24 bg-background border-t border-border/50">

@@ -31,8 +31,7 @@ const Navbar = () => {
 
   return (
     <header className={cn(
-      "sticky top-0 w-full z-50 transition-colors duration-300",
-      (pathname === "/" && !isScrolled) ? "bg-[#003d52]" : "bg-white shadow-sm border-b border-border/50"
+      "sticky top-0 w-full z-50 transition-colors duration-300 bg-white shadow-sm border-b border-border/50"
     )}>
       <Container className="flex items-center justify-between h-20 md:h-24">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
