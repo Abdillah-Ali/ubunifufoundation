@@ -26,69 +26,25 @@ import p6 from "@/assets/hero/p6.png";
 
 
 const AboutImageDesign = () => (
-  <div className="relative w-full aspect-square max-w-[600px] mx-auto p-8">
-    {/* Decorative Horizontal Stripes */}
-    <div className="absolute left-[-5%] top-[45%] w-[45%] space-y-1.5 z-0">
-      {[...Array(6)].map((_, i) => (
-        <div 
-          key={i} 
-          className="h-1.5 bg-accent/40 rounded-full" 
-          style={{ 
-            width: `${100 - (i * 12)}%`,
-            backgroundColor: i % 2 === 0 ? 'hsl(var(--accent))' : 'hsl(var(--primary))',
-            opacity: 0.2 + (i * 0.1)
-          }}
-        />
-      ))}
-    </div>
-
-    {/* Decorative Arcs - Large Right Circle Frame */}
-    <div className="absolute top-[10%] right-[-5%] w-[75%] aspect-square pointer-events-none z-0">
-      <svg className="w-full h-full animate-pulse-slow" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="48" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeDasharray="10 8" className="opacity-50" />
-        <circle cx="50" cy="50" r="44" fill="none" stroke="#f59e0b" strokeWidth="3.5" strokeDasharray="25 15" className="opacity-40" />
-        <circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" strokeWidth="2.5" className="opacity-30" />
-      </svg>
-    </div>
-
-    {/* Decorative Arcs - Small Circle Frames */}
-    <div className="absolute top-[0%] left-[5%] w-[45%] aspect-square pointer-events-none z-0">
-      <svg className="w-full h-full rotate-45" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="48" fill="none" stroke="#22c55e" strokeWidth="2" strokeDasharray="4 8" className="opacity-40" />
-      </svg>
-    </div>
-
-    {/* Image Containers */}
+  <div className="relative w-full aspect-square max-w-[500px] mx-auto group">
+    {/* Decorative Background Glow */}
+    <div className="absolute -inset-6 bg-primary/5 rounded-none blur-3xl group-hover:bg-primary/10 transition-colors duration-500" />
     
-    {/* 1. Top-Center/Right (Large) */}
-    <div className="absolute top-[10%] right-0 w-[62%] aspect-square rounded-full overflow-hidden border-[6px] border-white shadow-2xl z-20 group">
+    {/* Main Image Container */}
+    <div className="relative h-full w-full rounded-none overflow-hidden border-8 border-white shadow-2xl z-10 transition-transform duration-700 group-hover:scale-[1.02]">
       <img 
         src="/zanzibar_youth_innovation.png" 
         alt="Zanzibar Youth Innovation" 
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
       />
-      <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
+      {/* Subtle Interaction Overlay */}
+      <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-500" />
     </div>
-
-    {/* 2. Top-Left (Medium) */}
-    <div className="absolute top-0 left-[5%] w-[42%] aspect-square rounded-full overflow-hidden border-[6px] border-white shadow-xl z-10 group">
-      <img 
-        src="/zanzibar_youth_innovation.png" 
-        alt="Zanzibar Youth Innovation" 
-        className="w-full h-full object-cover object-left transition-transform duration-700 group-hover:scale-110" 
-      />
-      <div className="absolute inset-0 bg-accent/10 group-hover:bg-transparent transition-colors duration-500" />
-    </div>
-
-    {/* 3. Bottom-Left (Medium) */}
-    <div className="absolute bottom-[5%] left-[8%] w-[52%] aspect-square rounded-full overflow-hidden border-[6px] border-white shadow-2xl z-30 group">
-      <img 
-        src="/zanzibar_youth_innovation.png" 
-        alt="Zanzibar Youth Innovation" 
-        className="w-full h-full object-cover object-right transition-transform duration-700 group-hover:scale-110" 
-      />
-      <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
-    </div>
+    
+    {/* Geometric Accent (Bottom Left) */}
+    <div className="absolute -bottom-6 -left-6 w-40 h-40 border-b-[12px] border-l-[12px] border-primary/10 rounded-none z-0" />
+    {/* Geometric Accent (Top Right) */}
+    <div className="absolute -top-6 -right-6 w-40 h-40 border-t-[12px] border-r-[12px] border-primary/10 rounded-none z-0" />
   </div>
 );
 
@@ -228,7 +184,7 @@ const Home = () => {
 
 
       {/* 2. Overarching Mission Sections - Alternating Blocks */}
-      <section className="pt-[100px] md:pt-[160px] pb-32 bg-background space-y-40">
+      <section className="pt-[120px] md:pt-[200px] pb-40 bg-background space-y-48">
         <Container>
           {/* Block 1: About Us / Purpose */}
           <div className="grid md:grid-cols-2 gap-16 lg:gap-32 items-center reveal">
@@ -254,7 +210,7 @@ const Home = () => {
           </div>
 
           {/* Block 2: Our Mission / Impact */}
-          <div className="grid md:grid-cols-2 gap-16 lg:gap-32 items-center mt-32 reveal">
+          <div className="grid md:grid-cols-2 gap-16 lg:gap-32 items-center mt-48 reveal">
             <div className="order-1">
               <div className="aspect-video bg-secondary border border-border overflow-hidden shadow-sm relative">
                 <iframe
@@ -273,7 +229,7 @@ const Home = () => {
                   Change begins with transformation
                 </h2>
               </div>
-              <p className="text-lg text-muted-foreground font-medium leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
                 Through its programs, Ubunifu Foundation equips youth and women to become social entrepreneurs who drive sustainable impact, improve livelihoods, and contribute to economic growth while promoting environmental responsibility. We create a legacy of empowerment and community transformation.
               </p>
               <Link to="/impact">
@@ -285,6 +241,11 @@ const Home = () => {
           </div>
         </Container>
       </section>
+      
+      {/* Visual Separator */}
+      <Container className="my-16">
+        <div className="h-px w-full bg-border" />
+      </Container>
 
       {/* 4. Impact Overview Section - High-Impact Redesign */}
       <section className="pt-24 pb-10 bg-background reveal overflow-hidden relative">

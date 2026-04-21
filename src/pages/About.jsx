@@ -51,6 +51,22 @@ const partners = [
   { name: "Zanzibar Social Innovation", logo: "https://images.unsplash.com/photo-1603366445787-09714680cbf1?q=80&w=200&auto=format&fit=crop" }
 ];
 
+const Underline = () => (
+  <svg 
+    className="absolute -bottom-2 left-0 w-full h-3 text-[#f59e0b] opacity-80" 
+    viewBox="0 0 100 10" 
+    preserveAspectRatio="none"
+  >
+    <path 
+      d="M0 5 Q 25 0, 50 5 T 100 5" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="3" 
+      strokeLinecap="round" 
+    />
+  </svg>
+);
+
 const About = () => {
   usePageTitle("About");
   useScrollReveal();
@@ -58,7 +74,7 @@ const About = () => {
   return (
     <div className="bg-background min-h-screen">
       {/* 1. Hero Section - Cinematic Schwab Style */}
-      <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center text-white overflow-hidden">
+      <section className="relative min-h-[60vh] md:min-h-[75vh] flex items-center text-white overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -66,17 +82,40 @@ const About = () => {
             alt="Ubunifu Foundation Hero" 
             className="w-full h-full object-cover scale-105 animate-pulse-slow"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1635]/95 via-[#1a1635]/60 to-transparent" />
+          <div className="absolute inset-0 bg-[#0c0a1a]/20" />
         </div>
 
-        <Container className="relative z-10 py-20">
-          <div className="max-w-3xl animate-fade-in-up space-y-6">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-white">
+        <Container className="relative z-10 py-20 md:py-32">
+          <div className="max-w-4xl animate-fade-in-up space-y-10">
+            {/* Title with Underline */}
+            <div className="relative inline-block">
+              <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium text-white tracking-tight">
+                About
+              </h2>
+              <Underline />
+            </div>
+
+            {/* Main Intro */}
+            <h1 className="text-xl md:text-2xl lg:text-3xl font-medium leading-snug tracking-tight text-white/95 max-w-3xl">
               Driving social entrepreneurship, youth empowerment, and sustainable community transformation by creating opportunities and building resilient futures in Zanzibar
             </h1>
-            <p className="text-base md:text-lg text-white/90 leading-relaxed max-w-xl font-medium">
+
+            {/* Subtitle */}
+            <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-xl font-medium">
               Supporting youth and women to create lasting impact.
             </p>
+
+            {/* Keywords Footer */}
+            <div className="pt-6 flex flex-wrap gap-x-4 gap-y-2 text-[10px] md:text-xs font-bold tracking-[0.2em] text-white uppercase opacity-90">
+              <span>EMPOWERING</span>
+              <span className="text-primary">|</span>
+              <span>SUSTAINABLE</span>
+              <span className="text-primary">|</span>
+              <span>INNOVATIVE</span>
+              <span className="text-primary">|</span>
+              <span>IMPACTFUL</span>
+            </div>
           </div>
         </Container>
       </section>
