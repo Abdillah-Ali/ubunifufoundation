@@ -123,33 +123,76 @@ const About = () => {
       {/* 2. Mission & Vision - Editorial Layout */}
       <section className="py-24 bg-background overflow-hidden">
         <Container>
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center reveal">
-            <div className="space-y-10 max-w-3xl">
+          <div className="grid lg:grid-cols-12 items-center reveal" style={{ gap: '32px', padding: '0 80px' }}>
+            <div className="lg:col-span-7" style={{ display: 'grid', gap: '32px' }}>
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">Problem statement.</h3>
-                <p className="text-base md:text-lg text-foreground leading-relaxed font-medium">
+                <h3 style={{ fontFamily: '"Georgia", serif', fontSize: '30px', fontWeight: 500, lineHeight: 1.26, marginBottom: '15px', color: '#131313' }}>Problem statement.</h3>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 400, lineHeight: 1.375, marginTop: '16px', color: '#131313' }}>
                   Youth aged 18- 30 in Zanzibar face high levels of unemployment due to limited job opportunities, lack of necessary skills and experience to compete for the few available job opportunities in the country which leads them to engage in unproductive activities such as a high crime rate, drug abuse and early marriage.
                 </p>
               </div>
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">Solution.</h3>
-                <p className="text-base md:text-lg text-foreground leading-relaxed font-medium">
+                <h3 style={{ fontFamily: '"Georgia", serif', fontSize: '30px', fontWeight: 500, lineHeight: 1.26, marginBottom: '15px', color: '#131313' }}>Solution.</h3>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 400, lineHeight: 1.375, marginTop: '16px', color: '#131313' }}>
                   We offer a free-responsible and self-driven learning space to nature and empower leaders to be able to transform challenges in their communities into opportunities.
                 </p>
               </div>
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">Value Proposition.</h3>
-                <p className="text-base md:text-lg text-foreground leading-relaxed font-medium">
+                <h3 style={{ fontFamily: '"Georgia", serif', fontSize: '30px', fontWeight: 500, lineHeight: 1.26, marginBottom: '15px', color: '#131313' }}>Value Proposition.</h3>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 400, lineHeight: 1.375, marginTop: '16px', color: '#131313' }}>
                   We empower youths to become social entrepreneurs who are impact drivers of a sustainable future. 
                 </p>
               </div>
             </div>
-            <div>
-              <div className="aspect-[4/3] w-full overflow-hidden">
+            
+            {/* Graphic Side */}
+            <div className="lg:col-span-5 relative w-full aspect-square flex items-center justify-center">
+              {/* SVG Concentric Rings */}
+              <svg viewBox="0 0 400 400" className="absolute inset-0 w-full h-full opacity-80" style={{ transform: "rotate(-15deg)" }}>
+                {/* Ring 1 (Inner) */}
+                <g strokeWidth="12" fill="none" strokeDasharray="none">
+                  <circle cx="200" cy="200" r="70" pathLength="100" stroke="#E3E1E8" strokeDasharray="15 10 10 15 10 20 10 10" />
+                  <circle cx="200" cy="200" r="70" pathLength="100" stroke="#7ACCC8" strokeDasharray="0 30 8 62" />
+                  <circle cx="200" cy="200" r="70" pathLength="100" stroke="#F3C06B" strokeDasharray="0 65 12 23" />
+                </g>
+
+                {/* Ring 2 */}
+                <g strokeWidth="16" fill="none" strokeDasharray="none">
+                  <circle cx="200" cy="200" r="110" pathLength="100" stroke="#E3E1E8" strokeDasharray="10 15 20 10 15 10 10 10" />
+                  <circle cx="200" cy="200" r="110" pathLength="100" stroke="#7ACCC8" strokeDasharray="0 15 10 75" />
+                  <circle cx="200" cy="200" r="110" pathLength="100" stroke="#F3C06B" strokeDasharray="0 55 15 30" />
+                </g>
+
+                {/* Ring 3 */}
+                <g strokeWidth="20" fill="none" strokeDasharray="none">
+                  <circle cx="200" cy="200" r="150" pathLength="100" stroke="#E3E1E8" strokeDasharray="20 10 15 15 10 20 5 5" />
+                  <circle cx="200" cy="200" r="150" pathLength="100" stroke="#7ACCC8" strokeDasharray="0 85 10 5" />
+                  <circle cx="200" cy="200" r="150" pathLength="100" stroke="#F3C06B" strokeDasharray="0 35 15 50" />
+                </g>
+
+                {/* Ring 4 (Outer) */}
+                <g strokeWidth="24" fill="none" strokeDasharray="none">
+                  <circle cx="200" cy="200" r="190" pathLength="100" stroke="#E3E1E8" strokeDasharray="15 20 10 15 15 10 10 5" />
+                  <circle cx="200" cy="200" r="190" pathLength="100" stroke="#7ACCC8" strokeDasharray="0 45 15 40" />
+                  <circle cx="200" cy="200" r="190" pathLength="100" stroke="#F3C06B" strokeDasharray="0 75 18 7" />
+                </g>
+              </svg>
+
+              {/* Circle Image 1 (Top Right) */}
+              <div className="absolute top-[12%] right-[5%] w-[45%] aspect-square rounded-full border-[6px] border-white overflow-hidden shadow-2xl z-10 transition-transform hover:scale-105 duration-500 bg-secondary">
                 <img 
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2000&auto=format&fit=crop" 
-                  alt="Ubunifu Foundation Mission" 
-                  className="w-full h-full object-cover"
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop" 
+                  alt="Student" 
+                  className="w-full h-full object-cover object-[80%_center]"
+                />
+              </div>
+
+              {/* Circle Image 2 (Bottom Left) */}
+              <div className="absolute bottom-[12%] left-[5%] w-[42%] aspect-square rounded-full border-[6px] border-white overflow-hidden shadow-2xl z-10 transition-transform hover:scale-105 duration-500 bg-secondary">
+                <img 
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop" 
+                  alt="Student" 
+                  className="w-full h-full object-cover object-[20%_center]"
                 />
               </div>
             </div>
