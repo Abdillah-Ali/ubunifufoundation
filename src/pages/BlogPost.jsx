@@ -205,7 +205,7 @@ const BlogPost = () => {
       <section className="py-16 md:py-24">
         <Container>
           {/* Navigation Row */}
-          <div className="flex justify-end mb-12">
+          <div className="max-w-3xl mx-auto flex justify-end mb-12">
             <Link
               to="/blog"
               className="inline-flex items-center gap-2 text-sm font-bold text-[#001D3D] hover:text-primary transition-all group"
@@ -215,9 +215,9 @@ const BlogPost = () => {
             </Link>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-12 xl:gap-20">
-            {/* LEFT COLUMN: Text Content */}
-            <div className="lg:w-[62%] space-y-10">
+          <div className="max-w-3xl mx-auto flex flex-col gap-12">
+            {/* Text Content */}
+            <div className="space-y-10">
               <div className="space-y-4">
                 <h2 className="text-4xl md:text-5xl font-bold text-[#001D3D] font-serif leading-[1.15]">
                   {post.title}
@@ -228,6 +228,16 @@ const BlogPost = () => {
                   </p>
                 )}
               </div>
+
+              {post.coverImage?.asset && (
+                 <div className="rounded-2xl overflow-hidden shadow-xl shadow-black/5 ring-1 ring-black/5 mt-8 mb-8">
+                   <img
+                     src={urlFor(post.coverImage).width(1000).url()}
+                     alt={post.title}
+                     className="w-full h-auto object-cover"
+                   />
+                 </div>
+              )}
 
               <div className="prose prose-slate prose-lg max-w-none">
                 {post.body ? (
@@ -253,35 +263,21 @@ const BlogPost = () => {
                 )}
                 <ShareRow url={pageUrl} title={post.title} />
               </div>
-            </div>
 
-            {/* RIGHT COLUMN: Featured Image */}
-            <div className="lg:w-[38%]">
-              <div className="sticky top-24 space-y-8">
-                {post.coverImage?.asset && (
-                  <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/5 ring-1 ring-black/5">
-                    <img
-                      src={urlFor(post.coverImage).width(1000).url()}
-                      alt={post.title}
-                      className="w-full h-auto object-cover"
-                    />
+              {/* Author context */}
+              <div className="bg-slate-50 rounded-2xl p-8 space-y-4 mt-8">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-[#f59e0b]">Primary Contributor</h4>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <User size={24} />
                   </div>
-                )}
-                
-                {/* Author context if needed, or other meta */}
-                <div className="bg-slate-50 rounded-2xl p-8 space-y-4">
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-[#f59e0b]">Primary Contributor</h4>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                      <User size={24} />
-                    </div>
-                    <div>
-                      <p className="text-base font-bold text-[#001D3D]">{post.author || "Ubunifu Team"}</p>
-                      <p className="text-xs text-gray-500 font-medium tracking-tight">Ubunifu Foundation</p>
-                    </div>
+                  <div>
+                    <p className="text-base font-bold text-[#001D3D]">{post.author || "Ubunifu Team"}</p>
+                    <p className="text-xs text-gray-500 font-medium tracking-tight">Ubunifu Foundation</p>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </Container>

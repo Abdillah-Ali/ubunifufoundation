@@ -165,6 +165,36 @@ const Underline = () => (
 );
 
 
+/* ─── Core Programs Components ───────────────────────────────── */
+const ProgramCard = ({ title, type, description, className, isFeatured = false }) => (
+  <div className={cn(
+    "bg-white rounded-[2rem] p-8 md:p-12 flex flex-col items-center text-center shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100",
+    isFeatured ? "w-full lg:max-w-xl" : "h-full",
+    className
+  )}>
+    <p className="text-[11px] font-bold tracking-[0.2em] text-slate-400 uppercase mb-4">
+      {type}
+    </p>
+    <h3 className={cn(
+      "font-serif font-bold text-[#001D3D] tracking-tight leading-tight mb-6",
+      isFeatured ? "text-3xl md:text-4xl" : "text-xl md:text-2xl"
+    )}>
+      {title}
+    </h3>
+    <p className="text-sm md:text-base text-slate-600 leading-relaxed font-medium mb-8">
+      {description}
+    </p>
+    <Link to="/projects" className="mt-auto group flex items-center gap-3">
+      <span className="text-sm font-bold text-[#001D3D] tracking-tight border-b border-transparent group-hover:border-[#001D3D] transition-all">
+        Learn More
+      </span>
+      <div className="w-8 h-8 rounded-full bg-[#f43f5e] flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+        <ArrowRight size={16} strokeWidth={2.5} />
+      </div>
+    </Link>
+  </div>
+);
+
 const Home = () => {
   usePageTitle("Home");
 
@@ -182,7 +212,7 @@ const Home = () => {
   return (
     <div className="bg-background min-h-screen overflow-x-hidden">
       {/* ── High-Impact Hero ───────────────────────────────────── */}
-      <section className="bg-[#2D1B4D] relative overflow-hidden pt-36 md:pt-48 pb-24 md:pb-40">
+      <section className="bg-[#2D1B4D] relative overflow-hidden pt-24 md:pt-32 pb-16 md:pb-24">
         {/* Background Ripple (Top Left) */}
         <RipplePattern className="top-[-50px] left-[-50px] w-96 h-96 opacity-10" />
         
@@ -190,8 +220,8 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             
             {/* LEFT: Content */}
-            <div className="space-y-10 reveal z-10">
-              <div className="space-y-6">
+            <div className="lg:max-w-2xl space-y-10 reveal z-10">
+              <div className="space-y-6 max-w-4xl">
                 <h1 className="text-5xl md:text-6xl lg:text-[72px] font-bold text-white font-serif leading-[1.1] tracking-tight">
                   Driving social entrepreneurship<br /> 
                   and youth <span className="relative inline-block">
@@ -199,19 +229,11 @@ const Home = () => {
                     <Underline />
                   </span> in Zanzibar
                 </h1>
-                <p className="text-xl md:text-2xl text-white/80 font-medium leading-relaxed max-w-xl">
+                <p className="text-xl md:text-2xl text-white/80 font-medium leading-relaxed">
                   Supporting young people and women through skills development, innovation, and entrepreneurship to create sustainable change.
                 </p>
               </div>
 
-              <div className="flex items-center gap-4 group cursor-pointer w-fit">
-                <span className="text-lg font-bold text-white border-b-2 border-transparent group-hover:border-[#f59e0b] transition-all tracking-tight">
-                  Request Information
-                </span>
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
-                  <ArrowRight size={22} strokeWidth={2.5} />
-                </div>
-              </div>
             </div>
 
             {/* RIGHT: Circular Image Cluster */}
@@ -250,7 +272,7 @@ const Home = () => {
         <Container>
           {/* Block 1: About Us / Purpose */}
           <div className="grid md:grid-cols-2 gap-16 lg:gap-32 items-center reveal">
-            <div className="space-y-8 order-2 md:order-1">
+            <div className="space-y-8 order-2 md:order-1 max-w-3xl">
               <div className="space-y-4">
                 <p className="text-[11px] font-bold tracking-[0.2em] text-primary uppercase">About Us</p>
                 <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1] text-foreground">
@@ -284,7 +306,7 @@ const Home = () => {
                 ></iframe>
               </div>
             </div>
-            <div className="space-y-8 order-2">
+            <div className="space-y-8 order-2 max-w-3xl">
               <div className="space-y-4">
                 <p className="text-[11px] font-bold tracking-[0.2em] text-primary uppercase">Our Mission</p>
                 <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1] text-foreground">
@@ -447,127 +469,55 @@ const Home = () => {
       </section>
 
       {/* ── Our Core Programs: Redesign ── */}
-      <section className="py-24 md:py-32 bg-[#001D3D] reveal overflow-hidden">
+      <section className="py-24 md:py-32 bg-[#F8FAFC] reveal overflow-hidden">
         <Container>
-          <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="w-full">
             
             {/* Section Header */}
-            <div className="max-w-3xl mx-auto text-center mb-20 space-y-6">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
-                Our Core <span className="text-primary">Programs.</span>
+            <div className="text-center mb-24">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-[#001D3D] tracking-tight">
+                Academic Offerings Designed for You
               </h2>
-              <div className="w-20 h-1.5 bg-primary mx-auto rounded-full" />
-              <p className="text-lg md:text-xl text-slate-300 font-medium leading-relaxed">
-                Transforming lives through structured initiatives and community-driven progress across Zanzibar. We equip youth and women with skills to build sustainable futures.
-              </p>
             </div>
 
-            {/* Featured Program Block */}
-            <div className="mb-16">
-              <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-xl shadow-slate-200/60 border border-slate-100/50 group">
-                <div className="grid grid-cols-1 lg:grid-cols-2">
-                  
-                  {/* Text Content */}
-                  <div className="p-10 md:p-16 lg:p-20 flex flex-col justify-center space-y-8 order-2 lg:order-1">
-                    <div className="space-y-3">
-                      <p className="text-[12px] font-bold tracking-[0.25em] text-slate-400 uppercase">
-                        Featured Program
-                      </p>
-                      <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#001D3D] leading-[1.15]">
-                        {featuredProjects[0]?.title}
-                      </h3>
-                    </div>
-                    
-                    <p className="text-base md:text-lg text-slate-600 leading-relaxed font-medium">
-                      {featuredProjects[0]?.description}
-                    </p>
-                    
-                    {featuredProjects[0]?.partner && (
-                      <div className="pt-6 border-t border-slate-100">
-                        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">
-                          In partnership with
-                        </p>
-                        <p className="text-sm font-bold text-[#001D3D]">
-                          {featuredProjects[0]?.partner}
-                        </p>
-                      </div>
-                    )}
-                    
-                    <Link to="/projects" className="pt-2">
-                      <Button className="rounded-full bg-primary hover:bg-[#001D3D] text-white px-8 py-6 h-auto text-sm font-bold tracking-tight transition-all duration-300 shadow-lg shadow-primary/20 flex items-center gap-3 w-fit">
-                        See Details
-                        <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white/20">
-                          <ArrowRight size={14} className="text-white" />
-                        </div>
-                      </Button>
-                    </Link>
-                  </div>
-
-                  {/* Image Block */}
-                  <div className="relative min-h-[400px] lg:min-h-full order-1 lg:order-2 overflow-hidden">
-                    <img
-                      src={featuredProjects[0]?.image}
-                      alt={featuredProjects[0]?.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-l from-black/20 via-transparent to-transparent hidden lg:block" />
-                  </div>
+            {/* Top Row: Mission & Feature Image */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-16 items-start">
+              <div className="space-y-12">
+                <p className="text-base md:text-lg text-slate-600 leading-relaxed font-medium">
+                  We provide rigorous, real-world education through our key programs without traditional barriers. Start your learning journey today with offerings designed by industry experts, delivered with impact, and focused on sustainable futures.
+                </p>
+                {/* Featured Card placement */}
+                {featuredProjects[0] && (
+                  <ProgramCard 
+                    title={featuredProjects[0].title}
+                    type="Core Program"
+                    description={featuredProjects[0].description}
+                    isFeatured={true}
+                  />
+                )}
+              </div>
+              <div className="relative">
+                <div className="aspect-[16/11] rounded-[2rem] overflow-hidden shadow-2xl shadow-slate-200">
+                  <img 
+                    src={featuredProjects[0]?.image} 
+                    alt={featuredProjects[0]?.title} 
+                    className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                  />
                 </div>
               </div>
             </div>
 
-            {/* Supporting Programs Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            {/* Bottom Grid: Supporting Programs */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {featuredProjects.slice(1, 4).map((project) => (
-                <div
+                <ProgramCard 
                   key={project.id}
-                  className="bg-white rounded-[2rem] p-10 flex flex-col h-full border border-slate-100/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group"
-                >
-                  <div className="mb-8">
-                    <p className="text-[10px] font-bold tracking-[0.25em] text-slate-400 uppercase mb-4">
-                      Program
-                    </p>
-                    <h4 className="text-2xl font-bold tracking-tight text-[#001D3D] leading-tight mb-5 group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h4>
-                    <p className="text-sm md:text-base text-slate-500 leading-relaxed font-medium line-clamp-4">
-                      {project.description}
-                    </p>
-                  </div>
-                  
-                  <div className="mt-auto pt-8 border-t border-slate-50 flex flex-col gap-6">
-                    {project.partner && (
-                      <div className="space-y-1">
-                        <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                          In partnership with
-                        </p>
-                        <p className="text-xs font-bold text-slate-700">{project.partner}</p>
-                      </div>
-                    )}
-                    
-                    <Link to="/projects" className="flex items-center gap-3 group/cta w-fit">
-                      <span className="text-sm font-bold text-[#001D3D] group-hover/cta:text-primary transition-colors tracking-tight">
-                        See details
-                      </span>
-                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 group-hover/cta:bg-primary group-hover/cta:text-white transition-all shadow-sm">
-                        <ArrowRight size={14} />
-                      </span>
-                    </Link>
-                  </div>
-                </div>
+                  title={project.title}
+                  type="Initiative"
+                  description={project.description}
+                />
               ))}
             </div>
-
-            {/* Mobile View All (Optional/Bottom Link) */}
-            <div className="mt-16 text-center lg:hidden">
-              <Link to="/projects">
-                <Button variant="outline" className="rounded-2xl border-2 border-[#001D3D] text-[#001D3D] hover:bg-[#001D3D] hover:text-white font-bold px-10 py-6 h-auto transition-all">
-                  View All Programs
-                </Button>
-              </Link>
-            </div>
-
           </div>
         </Container>
       </section>

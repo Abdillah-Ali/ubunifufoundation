@@ -170,6 +170,11 @@
     writing-mode: vertical-rl;
     text-orientation: mixed;
   }
+
+  .section-padding {
+    padding-left: clamp(1.5rem, 6vw, 8rem);
+    padding-right: clamp(1.5rem, 6vw, 8rem);
+  }
 }
 
 @keyframes pulse-slow {

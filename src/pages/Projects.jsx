@@ -64,7 +64,7 @@ const Projects = () => {
           </div>
 
           {/* Grid - Clean Schwab style */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12">
             {filtered.map((project) =>
               <div key={project.id} className="group cursor-pointer reveal">
                 <div className="aspect-[16/10] overflow-hidden rounded-2xl mb-6 shadow-md border border-border relative">

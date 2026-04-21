@@ -10,125 +10,127 @@ const Footer = () => {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
 
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand Column */}
-          <div className="space-y-6">
-            <div>
-              <Link to="/" className="flex items-center gap-3 mb-6">
-                <img src={logo} alt="Ubunifu Foundation" className="h-12 w-auto" />
-              <div 
-                className="flex flex-col justify-between h-12 leading-none font-sans" 
-              >
-                <span className="text-[25px] font-bold text-[hsl(var(--logo-red))]">
-                  Ubunifu
-                </span>
-                <span className="text-[17px] font-bold text-[hsl(var(--logo-blue))]">
-                  Foundation
-                </span>
-              </div>
-              </Link>
-              <p className="text-base leading-relaxed text-white/90">
-                Empowering youth and women in Zanzibar through sustainable development, education, and social entrepreneurship since 2023.
-              </p>
-            </div>
-            
-            <div className="flex gap-4">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
-                <a 
-                  key={i} 
-                  href="#" 
-                  className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1 border border-white/10" 
-                  aria-label="Social link"
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            {/* Brand Column */}
+            <div className="space-y-6">
+              <div>
+                <Link to="/" className="flex items-center gap-3 mb-6">
+                  <img src={logo} alt="Ubunifu Foundation" className="h-12 w-auto" />
+                <div 
+                  className="flex flex-col justify-between h-12 leading-none font-sans" 
                 >
-                  <Icon size={20} />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-[13px] font-bold text-white tracking-tight uppercase mb-6 pb-2 border-b border-white/10 w-fit">Company</h4>
-            <ul className="space-y-4">
-              {[
-                { label: "About", to: "/about" },
-                { label: "Programs", to: "/projects" },
-                { label: "Latest News", to: "/blog" },
-                { label: "Contact Us", to: "/contact" }
-              ].map((link) => (
-                <li key={link.to}>
-                  <Link to={link.to} className="group flex items-center text-sm hover:text-white transition-colors">
-                    <ArrowRight size={14} className="mr-2 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h4 className="text-[13px] font-bold text-white tracking-tight uppercase mb-6 pb-2 border-b border-white/10 w-fit">Support</h4>
-            <ul className="space-y-4">
-              {[
-                { label: "Donate Now", to: "/donate" },
-                { label: "Volunteer", to: "/get-involved" },
-                { label: "Partner Programs", to: "/contact" },
-                { label: "Get Involved", to: "/get-involved" }
-              ].map((link) => (
-                <li key={link.label}>
-                  <Link to={link.to} className="group flex items-center text-sm hover:text-white transition-colors">
-                    <ArrowRight size={14} className="mr-2 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <h4 className="text-[13px] font-bold text-white tracking-tight uppercase mb-6 pb-2 border-b border-white/10 w-fit">HQ Office</h4>
-            <ul className="space-y-6">
-              <li className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
-                  <MapPin size={18} className="text-primary" />
-                </div>
-                <div>
-                  <span className="block text-white text-sm font-bold mb-1">Visit Us</span>
-                  <span className="text-sm text-white/80 leading-relaxed">
-                    Kwerekwe, Zanzibar,<br/>Tanzania
+                  <span className="text-[25px] font-bold text-[hsl(var(--logo-red))]">
+                    Ubunifu
+                  </span>
+                  <span className="text-[17px] font-bold text-[hsl(var(--logo-blue))]">
+                    Foundation
                   </span>
                 </div>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
-                  <Phone size={18} className="text-primary" />
-                </div>
-                <div>
-                  <span className="block text-white text-sm font-bold mb-1">Call Us</span>
-                  <span className="text-sm text-white/80 leading-relaxed">+255 788 008 750</span>
-                </div>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
-                  <Mail size={18} className="text-primary" />
-                </div>
-                <div>
-                  <span className="block text-white text-sm font-bold mb-1">Email Us</span>
-                  <span className="text-sm text-white/80 leading-relaxed">info@ubunifufoundation.org</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+                </Link>
+                <p className="text-base leading-relaxed text-white/90">
+                  Empowering youth and women in Zanzibar through sustainable development, education, and social entrepreneurship since 2023.
+                </p>
+              </div>
+              
+              <div className="flex gap-4">
+                {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+                  <a 
+                    key={i} 
+                    href="#" 
+                    className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1 border border-white/10" 
+                    aria-label="Social link"
+                  >
+                    <Icon size={20} />
+                  </a>
+                ))}
+              </div>
+            </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] font-bold tracking-tight uppercase text-white/60">
-          <p>© {new Date().getFullYear()} Ubunifu Foundation. Empowering Sustainable Futures.</p>
-          <div className="flex gap-8">
-            <Link to="/" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/" className="hover:text-white transition-colors">Terms of Service</Link>
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-[13px] font-bold text-white tracking-tight uppercase mb-6 pb-2 border-b border-white/10 w-fit">Company</h4>
+              <ul className="space-y-4">
+                {[
+                  { label: "About", to: "/about" },
+                  { label: "Programs", to: "/projects" },
+                  { label: "Latest News", to: "/blog" },
+                  { label: "Contact Us", to: "/contact" }
+                ].map((link) => (
+                  <li key={link.to}>
+                    <Link to={link.to} className="group flex items-center text-sm hover:text-white transition-colors">
+                      <ArrowRight size={14} className="mr-2 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Support */}
+            <div>
+              <h4 className="text-[13px] font-bold text-white tracking-tight uppercase mb-6 pb-2 border-b border-white/10 w-fit">Support</h4>
+              <ul className="space-y-4">
+                {[
+                  { label: "Donate Now", to: "/donate" },
+                  { label: "Volunteer", to: "/get-involved" },
+                  { label: "Partner Programs", to: "/contact" },
+                  { label: "Get Involved", to: "/get-involved" }
+                ].map((link) => (
+                  <li key={link.label}>
+                    <Link to={link.to} className="group flex items-center text-sm hover:text-white transition-colors">
+                      <ArrowRight size={14} className="mr-2 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <h4 className="text-[13px] font-bold text-white tracking-tight uppercase mb-6 pb-2 border-b border-white/10 w-fit">HQ Office</h4>
+              <ul className="space-y-6">
+                <li className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
+                    <MapPin size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <span className="block text-white text-sm font-bold mb-1">Visit Us</span>
+                    <span className="text-sm text-white/80 leading-relaxed">
+                      Kwerekwe, Zanzibar,<br/>Tanzania
+                    </span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
+                    <Phone size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <span className="block text-white text-sm font-bold mb-1">Call Us</span>
+                    <span className="text-sm text-white/80 leading-relaxed">+255 788 008 750</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
+                    <Mail size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <span className="block text-white text-sm font-bold mb-1">Email Us</span>
+                    <span className="text-sm text-white/80 leading-relaxed">info@ubunifufoundation.org</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] font-bold tracking-tight uppercase text-white/60">
+            <p>© {new Date().getFullYear()} Ubunifu Foundation. Empowering Sustainable Futures.</p>
+            <div className="flex gap-8">
+              <Link to="/" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/" className="hover:text-white transition-colors">Terms of Service</Link>
+            </div>
           </div>
         </div>
       </Container>

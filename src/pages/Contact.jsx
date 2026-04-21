@@ -73,7 +73,7 @@ const Contact = () => {
         <Container>
           <div className="grid lg:grid-cols-2 gap-24 xl:gap-32">
             {/* Form */}
-            <div className="space-y-12 reveal">
+            <div className="space-y-12 reveal max-w-xl w-full mx-auto lg:mx-0">
               <div className="space-y-4">
                 <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[13px] font-bold tracking-tight">
                   Get in Touch

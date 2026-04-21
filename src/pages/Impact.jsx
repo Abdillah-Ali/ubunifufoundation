@@ -60,9 +60,9 @@ const Impact = () => {
               Real outcomes from our programs, transforming lives across Zanzibar and beyond.
             </p>
           </div>
-          <div className="grid md:grid-cols-1 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 gap-20">
             {successStories.map((story) => (
-              <div key={story.author} className="flex flex-col lg:flex-row gap-12 items-center">
+              <div key={story.author} className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
                 <div className="w-full lg:w-1/2 aspect-[16/10] overflow-hidden rounded-[2.5rem] shadow-xl border border-border">
                   <img 
                     src={story.image} 
@@ -70,7 +70,7 @@ const Impact = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                   />
                 </div>
-                <div className="w-full lg:w-1/2 space-y-6">
+                <div className="w-full lg:w-1/2 space-y-6 max-w-3xl">
                   <h3 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight">{story.title}</h3>
                   <p className="text-sm font-bold text-primary tracking-tight uppercase">{story.stat} — {story.author}</p>
                   <div className="space-y-4 text-base md:text-lg text-foreground leading-relaxed font-medium">

@@ -85,22 +85,22 @@ const About = () => {
       <section className="py-24 bg-background overflow-hidden">
         <Container>
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center reveal">
-            <div className="space-y-10">
+            <div className="space-y-10 max-w-3xl">
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">Problem statement.</h3>
-                <p className="text-base md:text-lg text-foreground leading-relaxed font-medium max-w-2xl">
+                <p className="text-base md:text-lg text-foreground leading-relaxed font-medium">
                   Youth aged 18- 30 in Zanzibar face high levels of unemployment due to limited job opportunities, lack of necessary skills and experience to compete for the few available job opportunities in the country which leads them to engage in unproductive activities such as a high crime rate, drug abuse and early marriage.
                 </p>
               </div>
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">Solution.</h3>
-                <p className="text-base md:text-lg text-foreground leading-relaxed font-medium max-w-2xl">
+                <p className="text-base md:text-lg text-foreground leading-relaxed font-medium">
                   We offer a free-responsible and self-driven learning space to nature and empower leaders to be able to transform challenges in their communities into opportunities.
                 </p>
               </div>
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">Value Proposition.</h3>
-                <p className="text-base md:text-lg text-foreground leading-relaxed font-medium max-w-2xl">
+                <p className="text-base md:text-lg text-foreground leading-relaxed font-medium">
                   We empower youths to become social entrepreneurs who are impact drivers of a sustainable future. 
                 </p>
               </div>
@@ -131,7 +131,7 @@ const About = () => {
               />
             </div>
             {/* Right: Vision on top, Mission below */}
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-12 max-w-3xl">
               <div className="space-y-4 pb-12 border-b border-border">
                 <h3 className="text-2xl md:text-3xl font-bold tracking-tight">Our Vision</h3>
                 <p className="text-base md:text-lg text-foreground leading-relaxed font-medium">
@@ -160,16 +160,16 @@ const About = () => {
 
       {/* Our Story - Full Width */}
       <section className="py-24 bg-background reveal">
-        <div className="w-full px-8 md:px-16 lg:px-24 xl:px-32">
+        <Container>
           <div className="max-w-none">
             <span className="block text-xs font-bold tracking-widest uppercase text-primary mb-6">Our Story</span>
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
-              <div>
+              <div className="max-w-3xl">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
                   From a small idea to a movement changing lives in Zanzibar.
                 </h2>
               </div>
-              <div className="space-y-6 text-foreground/80 text-base md:text-lg leading-relaxed font-medium">
+              <div className="space-y-6 text-foreground/80 text-base md:text-lg leading-relaxed font-medium max-w-3xl">
                 <p>
                   The story of Ubunifu Foundation is a journey of "returning home to sow seeds of change."
                 </p>
@@ -185,7 +185,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* 6. Strategic Goals - Premium Redesign */}
