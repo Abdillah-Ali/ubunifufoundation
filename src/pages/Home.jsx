@@ -22,47 +22,7 @@ import p4 from "@/assets/hero/p4.png";
 import p5 from "@/assets/hero/p5.png";
 import p6 from "@/assets/hero/p6.png";
 
-const ProgramCard = ({ project }) => (
-  <div className="group bg-card rounded-[2.5rem] overflow-hidden border border-border/40 shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col h-full reveal">
-    <div className="aspect-[4/3] overflow-hidden relative">
-      <img
-        src={project.image}
-        alt={project.title}
-        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-        <span className="text-white text-xs font-bold tracking-widest uppercase bg-primary/80 backdrop-blur-sm px-4 py-2 rounded-full">
-          View Details
-        </span>
-      </div>
-    </div>
-    <div className="p-8 md:p-10 flex flex-col flex-1">
-      <h3 className="text-xl font-bold leading-tight mb-4 group-hover:text-primary transition-colors tracking-tight">
-        {project.title}
-      </h3>
-      <p className="text-base text-muted-foreground leading-relaxed flex-1 mb-8 font-medium line-clamp-3">
-        {project.description}
-      </p>
-      
-      {project.partner && (
-        <div className="pt-6 border-t border-border/50 mb-6">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-2">
-            In partnership with
-          </p>
-          <p className="text-sm font-bold text-foreground">
-            {project.partner}
-          </p>
-        </div>
-      )}
-      
-      <Link to="/projects">
-        <Button className="w-full rounded-2xl bg-secondary hover:bg-primary text-foreground hover:text-white transition-all duration-300 font-bold py-6">
-          See details
-        </Button>
-      </Link>
-    </div>
-  </div>
-);
+
 
 
 const AboutImageDesign = () => (
