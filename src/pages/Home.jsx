@@ -524,7 +524,7 @@ const Home = () => {
               </Button>
             </Link>
             <Link to="/contact">
-              <Button variant="outline" className="rounded-full px-12 py-6 text-sm md:text-base font-bold tracking-wide border-2 border-white text-white hover:bg-white hover:text-[#001D3D] transition-all">
+              <Button className="rounded-full px-12 py-6 text-sm md:text-base font-bold tracking-wide border-2 border-white bg-transparent text-white hover:bg-white hover:text-[#001D3D] transition-all">
                 Partner With Us
               </Button>
             </Link>
