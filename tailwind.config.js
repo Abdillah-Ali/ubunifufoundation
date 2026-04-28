@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Helvetica Now Display"', 'Helvetica', 'Arial', 'sans-serif'],
+        sans: ['"Inter"', 'sans-serif'],
+        serif: ['"Gimlet Text"', 'Georgia', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

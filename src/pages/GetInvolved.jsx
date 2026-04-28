@@ -41,8 +41,8 @@ const GetInvolved = () => {
             <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[13px] font-bold tracking-tight mb-6">
               Volunteer
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-6">Volunteer With Us</h2>
-            <p className="text-base md:text-lg text-foreground/70 font-medium leading-relaxed max-w-2xl">
+            <h2 className="text-[34px] md:text-[42px] font-medium tracking-tight mb-6 font-serif">Volunteer With Us</h2>
+            <p className="text-base text-foreground/70 font-normal leading-[22px] max-w-2xl font-sans">
               Lend your time and skills to make a real, lasting difference in people's lives.
             </p>
           </div>
@@ -53,11 +53,11 @@ const GetInvolved = () => {
                 <div className="p-4 rounded-2xl bg-secondary text-primary w-fit group-hover:bg-primary group-hover:text-white transition-all duration-300">
                   <Users size={22} />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold tracking-tight">{role.title}</h3>
-                <p className="text-[13px] font-bold tracking-tight text-foreground/50 uppercase">
+                <h3 className="text-[20px] md:text-[24px] font-medium tracking-tight font-serif">{role.title}</h3>
+                <p className="text-[14px] font-normal tracking-[0.75px] text-foreground/50 uppercase font-sans">
                   {role.location} · {role.commitment}
                 </p>
-                <p className="text-base text-foreground/70 font-medium leading-relaxed">{role.description}</p>
+                <p className="text-base text-foreground/70 font-normal leading-[22px] font-sans">{role.description}</p>
               </div>
             ))}
           </div>
@@ -84,20 +84,21 @@ const GetInvolved = () => {
                 <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[13px] font-bold tracking-tight">
                   Collaborate
                 </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">Partner With Us</h2>
-                <p className="text-base md:text-lg text-foreground/70 font-medium leading-relaxed max-w-xl">
+                <h2 className="text-[34px] md:text-[42px] font-medium tracking-tight font-serif">Partner With Us</h2>
+                <p className="text-base text-foreground/70 font-normal leading-[22px] max-w-xl font-sans">
                   We collaborate with governments, international organizations, corporations, and community groups. Whether you offer expertise, funding, or in-kind support — there's a place for you.
                 </p>
               </div>
               <Link to="/contact">
                 <Button variant="outline" className="rounded-full px-8 py-5 text-sm font-medium tracking-wide border-2 hover:border-primary hover:text-primary transition-all">
+                <Button variant="outline" className="rounded-full px-8 py-5 text-sm font-medium tracking-wide border-2 hover:border-primary hover:text-primary transition-all font-sans">
                   Explore Partnership →
                 </Button>
               </Link>
             </div>
 
             <div className="p-10 rounded-[2rem] bg-white border-2 border-border space-y-6">
-              <h3 className="text-xl font-bold tracking-tight">Current Partners</h3>
+              <h3 className="text-[20px] md:text-[24px] font-medium tracking-tight font-serif">Current Partners</h3>
               <ul className="space-y-4">
                 {[
                   "Tui Care Foundation",
@@ -105,7 +106,7 @@ const GetInvolved = () => {
                   "Local Community Leaders",
                   "Zanzibar Youth Councils"
                 ].map((partner) => (
-                  <li key={partner} className="flex items-center gap-4 text-foreground/70 font-medium">
+                  <li key={partner} className="flex items-center gap-4 text-foreground/70 font-normal text-base font-sans">
                     <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
                     {partner}
                   </li>
@@ -124,8 +125,8 @@ const GetInvolved = () => {
               <div className="mx-auto p-5 rounded-2xl bg-primary text-white w-fit">
                 <Mail size={32} />
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">Stay Updated</h2>
-              <p className="text-base md:text-lg text-background/60 font-medium">
+              <h2 className="text-[34px] md:text-[42px] font-medium tracking-tight font-serif">Stay Updated</h2>
+              <p className="text-base text-background/60 font-normal font-sans leading-[22px]">
                 Subscribe to our newsletter for stories, updates, and ways to get involved.
               </p>
             </div>

@@ -28,8 +28,8 @@ const Projects = () => {
       <section className="py-20 reveal">
         <Container>
           <div className="max-w-3xl mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 tracking-tight">What We Do</h2>
-            <p className="text-base md:text-lg text-foreground font-medium max-w-2xl">Programs are our long-term areas of work. Projects are specific activities under those programs.</p>
+            <h2 className="text-[34px] md:text-[42px] font-medium mb-6 tracking-tight font-serif">What We Do</h2>
+            <p className="text-base text-foreground font-normal font-sans leading-[22px] max-w-2xl">Programs are our long-term areas of work. Projects are specific activities under those programs.</p>
           </div>
 
           {/* Filters - Schwab style */}
@@ -39,7 +39,7 @@ const Projects = () => {
                 <button
                   key={t}
                   className={cn(
-                    "px-6 py-2.5 rounded-full text-[13px] font-bold transition-all",
+                    "px-6 py-2.5 rounded-full text-[13px] font-medium transition-all",
                     tab === t ? "bg-primary text-white shadow-lg" : "text-foreground hover:text-foreground"
                   )}
                   onClick={() => setTab(t)}>
@@ -53,7 +53,7 @@ const Projects = () => {
                 <button
                   key={s}
                   className={cn(
-                    "px-6 py-2.5 rounded-full text-[13px] font-bold transition-all",
+                    "px-6 py-2.5 rounded-full text-[13px] font-medium transition-all",
                     statusFilter === s ? "bg-foreground text-white shadow-lg" : "text-foreground hover:text-foreground"
                   )}
                   onClick={() => setStatusFilter(s)}>
@@ -74,14 +74,14 @@ const Projects = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy" />
                   <div className="absolute top-4 left-4 flex gap-2">
-                    <span className="text-[13px] font-bold px-4 py-1.5 rounded-full bg-primary text-white tracking-tight">{project.type}</span>
+                    <span className="text-[13px] font-medium px-4 py-1.5 rounded-full bg-primary text-white tracking-tight">{project.type}</span>
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-xl md:text-2xl font-bold leading-tight tracking-tight group-hover:text-primary transition-colors">
+                  <h3 className="text-[20px] md:text-[24px] font-medium leading-tight tracking-tight group-hover:text-primary transition-colors font-serif">
                     {project.title}
                   </h3>
-                  <p className="text-base text-foreground leading-relaxed font-medium line-clamp-3">
+                  <p className="text-base text-foreground font-normal leading-[22px] font-sans line-clamp-3">
                     {project.description}
                   </p>
                   <div className="pt-2">

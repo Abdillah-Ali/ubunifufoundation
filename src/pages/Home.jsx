@@ -97,7 +97,7 @@ const ProgramCard = ({ title, type, description, className, isFeatured = false }
     )}>
       {title}
     </h3>
-    <p className="text-sm md:text-base text-slate-600 leading-relaxed font-medium mb-8">
+    <p className="text-base text-slate-600 leading-[22px] font-normal font-sans mb-8">
       {description}
     </p>
     <Link to="/projects" className="mt-auto group flex items-center gap-3">
@@ -138,14 +138,14 @@ const Home = () => {
             {/* LEFT: Content */}
             <div className="lg:max-w-2xl space-y-10 reveal z-10">
               <div className="space-y-6 max-w-4xl">
-                <h1 className="text-5xl md:text-6xl lg:text-[72px] font-bold text-white font-serif leading-[1.1] tracking-tight">
+                <h1 className="text-[40px] md:text-[50px] lg:text-[60px] font-medium text-white font-serif leading-[1.1] md:leading-[72px] tracking-tight">
                   Driving social entrepreneurship<br /> 
                   and youth <span className="relative inline-block">
                     empowerment
                     <Underline />
                   </span> in Zanzibar
                 </h1>
-                <p className="text-xl md:text-2xl text-white/80 font-medium leading-relaxed">
+                <p className="text-base md:text-lg text-white/80 font-normal leading-[22px] font-sans">
                   Supporting young people and women through skills development, innovation, and entrepreneurship to create sustainable change.
                 </p>
               </div>
@@ -191,11 +191,11 @@ const Home = () => {
             <div className="space-y-8 order-2 md:order-1 max-w-3xl">
               <div className="space-y-4">
                 <p className="text-[11px] font-bold tracking-[0.2em] text-primary uppercase">About Us</p>
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1] text-foreground">
+                <h2 className="text-[28px] md:text-[34px] font-medium leading-tight md:leading-[42px] text-foreground font-serif">
                   Why we are here
                 </h2>
               </div>
-              <p className="text-lg text-muted-foreground font-medium leading-relaxed">
+              <p className="text-base text-muted-foreground font-normal leading-[22px] font-sans">
                 Ubunifu Foundation is a community-driven organization based in Kwerekwe, Zanzibar, dedicated to addressing youth unemployment and empowering women. We provide access to entrepreneurial skills, vocational training, and mentorship, creating a supportive environment where individuals transform challenges into long-term opportunities.
               </p>
               <Link to="/about" className="inline-block mt-4">
@@ -225,11 +225,11 @@ const Home = () => {
             <div className="space-y-8 order-2 max-w-3xl">
               <div className="space-y-4">
                 <p className="text-[11px] font-bold tracking-[0.2em] text-primary uppercase">Our Mission</p>
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1] text-foreground">
+                <h2 className="text-[28px] md:text-[34px] font-medium leading-tight md:leading-[42px] text-foreground font-serif">
                   Change begins with transformation
                 </h2>
               </div>
-              <p className="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
+              <p className="text-base text-muted-foreground font-normal leading-[22px] font-sans">
                 Through its programs, Ubunifu Foundation equips youth and women to become social entrepreneurs who drive sustainable impact, improve livelihoods, and contribute to economic growth while promoting environmental responsibility. We create a legacy of empowerment and community transformation.
               </p>
               <Link to="/impact">
@@ -268,17 +268,17 @@ const Home = () => {
           <div className="space-y-16">
               {/* Header */}
               <div className="space-y-6 text-center max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] whitespace-nowrap">
+                <h2 className="text-[34px] md:text-[42px] lg:text-[60px] font-medium tracking-tight leading-tight md:leading-[72px] font-serif">
                   Our Impact in <span className="text-primary">Zanzibar.</span>
                 </h2>
-                <p className="text-lg md:text-xl text-foreground font-medium leading-relaxed">
+                <p className="text-base md:text-lg text-foreground font-normal leading-[22px] font-sans">
                   Ubunifu Foundation is empowering youth and women in Zanzibar through skills development, mentorship, and social entrepreneurship, creating opportunities for sustainable livelihoods and positive community transformation.
                 </p>
               </div>
 
               {/* Intermediate Subheading */}
               <div className="space-y-10">
-                <h3 className="text-xl md:text-2xl font-bold tracking-tight border-b border-border pb-4 w-fit mx-auto">
+                <h3 className="text-[20px] md:text-[24px] font-medium tracking-tight border-b border-border pb-4 w-fit mx-auto font-serif">
                   A Legacy of Empowerment and Community Transformation.
                 </h3>
 
@@ -292,8 +292,8 @@ const Home = () => {
                         <Users className="opacity-40" size={24} />
                       </div>
                       <div className="space-y-2">
-                        <h4 className="font-bold text-lg leading-tight">Youths Empowered</h4>
-                        <p className="text-sm text-white/90 leading-relaxed font-medium">Young people equipped with practical skills, confidence, and entrepreneurial mindset to improve their livelihoods.</p>
+                        <h4 className="font-medium text-[18px] leading-[24px] font-serif">Youths Empowered</h4>
+                        <p className="text-base text-white/90 leading-[22px] font-normal font-sans">Young people equipped with practical skills, confidence, and entrepreneurial mindset to improve their livelihoods.</p>
                       </div>
                     </div>
                   </div>
@@ -306,8 +306,8 @@ const Home = () => {
                         <Target className="opacity-40" size={24} />
                       </div>
                       <div className="space-y-2">
-                        <h4 className="font-bold text-lg leading-tight">Social Enterprises Supported</h4>
-                        <p className="text-sm text-white/90 leading-relaxed font-medium">Youth-led initiatives supported to address community challenges and create sustainable solutions.</p>
+                        <h4 className="font-medium text-[18px] leading-[24px] font-serif">Social Enterprises Supported</h4>
+                        <p className="text-base text-white/90 leading-[22px] font-normal font-sans">Youth-led initiatives supported to address community challenges and create sustainable solutions.</p>
                       </div>
                     </div>
                   </div>
@@ -320,8 +320,8 @@ const Home = () => {
                         <TrendingUp className="text-[#1e40af] opacity-40" size={24} />
                       </div>
                       <div className="space-y-2">
-                        <h4 className="font-bold text-lg leading-tight">Jobs Created</h4>
-                        <p className="text-sm text-foreground/70 leading-relaxed font-medium">Employment opportunities generated through community-based enterprises and youth-driven initiatives.</p>
+                        <h4 className="font-medium text-[18px] leading-[24px] font-serif text-[#1e40af]">Jobs Created</h4>
+                        <p className="text-base text-foreground/70 leading-[22px] font-normal font-sans">Employment opportunities generated through community-based enterprises and youth-driven initiatives.</p>
                       </div>
                     </div>
                   </div>
@@ -334,8 +334,8 @@ const Home = () => {
                         <Heart className="opacity-40" size={24} />
                       </div>
                       <div className="space-y-2">
-                        <h4 className="font-bold text-lg leading-tight">Businesses Launched</h4>
-                        <p className="text-sm text-white/85 leading-relaxed font-medium">Small enterprises started by participants to promote self-employment and economic independence.</p>
+                        <h4 className="font-medium text-[18px] leading-[24px] font-serif">Businesses Launched</h4>
+                        <p className="text-base text-white/85 leading-[22px] font-normal font-sans">Small enterprises started by participants to promote self-employment and economic independence.</p>
                       </div>
                     </div>
                   </div>
@@ -367,7 +367,7 @@ const Home = () => {
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-muted-foreground leading-relaxed font-medium flex-1 mb-5">
+                <p className="text-base text-muted-foreground leading-[22px] font-normal font-sans flex-1 mb-5">
                   {story.description}
                 </p>
 
@@ -396,7 +396,7 @@ const Home = () => {
             
             {/* Section Header */}
             <div className="text-center mb-24">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-[#001D3D] tracking-tight">
+              <h2 className="text-[34px] md:text-[42px] lg:text-[50px] font-medium font-serif text-[#001D3D] tracking-tight">
                 Academic Offerings Designed for You
               </h2>
             </div>
@@ -404,7 +404,7 @@ const Home = () => {
             {/* Top Row: Mission & Feature Image */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-16 items-start">
               <div className="space-y-12">
-                <p className="text-base md:text-lg text-slate-600 leading-relaxed font-medium">
+                <p className="text-base text-slate-600 leading-[22px] font-normal font-sans">
                   We provide rigorous, real-world education through our key programs without traditional barriers. Start your learning journey today with offerings designed by industry experts, delivered with impact, and focused on sustainable futures.
                 </p>
                 {/* Featured Card placement */}
@@ -450,8 +450,8 @@ const Home = () => {
           {/* Section Header */}
           <div className="flex justify-between items-start mb-16 reveal">
             <div className="max-w-xl text-left">
-              <h2 className="text-3xl font-bold mb-4 tracking-tight text-foreground uppercase">Latest news</h2>
-              <p className="text-base text-muted-foreground font-medium">What happens at Ubunifu Foundation around the world.</p>
+              <h2 className="text-[24px] font-medium mb-4 tracking-tight text-foreground uppercase font-serif">Latest news</h2>
+              <p className="text-base text-muted-foreground font-normal font-sans leading-[22px]">What happens at Ubunifu Foundation around the world.</p>
             </div>
             <Link to="/blog">
               <Button variant="outline" className="rounded-none border-foreground text-foreground px-6 py-2 hover:bg-foreground hover:text-white transition-all font-bold text-xs uppercase tracking-tight">
@@ -487,7 +487,7 @@ const Home = () => {
                     <h3 className="text-base font-bold leading-tight group-hover:text-primary transition-colors tracking-tight line-clamp-3">
                       {post.title}
                     </h3>
-                    <p className="text-xs text-muted-foreground line-clamp-4 leading-relaxed font-medium">
+                    <p className="text-base text-muted-foreground line-clamp-4 leading-[22px] font-normal font-sans">
                       {post.excerpt}
                     </p>
                     <div className="pt-4 mt-auto">
@@ -511,10 +511,10 @@ const Home = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] opacity-10 pointer-events-none" />
         
         <Container className="text-center relative z-10 reveal">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-12 tracking-tight leading-tight text-white">
+          <h2 className="text-[40px] md:text-[50px] lg:text-[60px] font-medium mb-12 tracking-tight leading-tight md:leading-[72px] text-white font-serif">
             Together, We Can <span className="text-primary">Do More.</span>
           </h2>
-          <p className="text-2xl md:text-3xl text-white/90 max-w-3xl mx-auto mb-16 font-medium leading-relaxed">
+          <p className="text-[20px] md:text-[24px] text-white/90 max-w-3xl mx-auto mb-16 font-normal font-sans leading-relaxed">
             Join a collective effort to build stronger, self-sufficient communities. Every contribution is a catalyst for change.
           </p>
           <div className="flex flex-wrap justify-center gap-6">

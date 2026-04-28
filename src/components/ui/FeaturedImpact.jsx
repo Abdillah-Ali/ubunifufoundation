@@ -40,10 +40,10 @@ const FeaturedImpact = ({
 
       {/* Content Body */}
       <div className="space-y-4">
-        <h3 className="text-xl md:text-2xl font-bold tracking-tight text-foreground leading-tight">
+        <h3 className="text-[20px] md:text-[24px] font-medium tracking-tight text-foreground leading-[32px] font-serif">
           {title}
         </h3>
-        <p className="text-base md:text-lg text-foreground/80 leading-relaxed font-normal">
+        <p className="text-base text-foreground/80 leading-[22px] font-normal font-sans">
           {description}
         </p>
         
@@ -51,9 +51,9 @@ const FeaturedImpact = ({
         {(author || stat || href) && (
           <div className="space-y-6 pt-2">
             {(author || stat) && (
-              <p className="text-[12px] font-bold text-foreground tracking-tight uppercase">
+              <p className="text-[12px] font-normal text-foreground tracking-[0.75px] uppercase font-sans">
                 {author} {(author && stat) && <span className="mx-2 text-foreground/10">|</span>} 
-                <span className="text-foreground/60 text-[11px] normal-case font-medium">{stat}</span>
+                <span className="text-foreground/60 text-[11px] normal-case font-normal">{stat}</span>
               </p>
             )}
 

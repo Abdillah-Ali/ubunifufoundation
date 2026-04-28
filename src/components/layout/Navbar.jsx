@@ -72,7 +72,7 @@ const Navbar = () => {
                   <Link
                     to={link.to}
                     className={cn(
-                      "text-[15px] font-normal tracking-tight transition-colors",
+                      "text-base font-normal tracking-[0.75px] transition-colors",
                       pathname.startsWith(link.to) ? "text-primary" : "text-foreground hover:text-primary"
                     )}
                   >
@@ -90,7 +90,7 @@ const Navbar = () => {
                         key={child.to}
                         to={child.to}
                         className={cn(
-                          "block px-6 py-3 text-[14px] transition-colors hover:bg-slate-50",
+                          "block px-6 py-3 text-base tracking-[0.75px] transition-colors hover:bg-slate-50",
                           pathname === child.to ? "text-primary font-medium" : "text-foreground"
                         )}
                       >
@@ -103,7 +103,7 @@ const Navbar = () => {
                 <Link
                   to={link.to}
                   className={cn(
-                    "text-[15px] font-normal tracking-tight transition-colors py-4",
+                    "text-base font-normal tracking-[0.75px] transition-colors py-4",
                     pathname === link.to ? "text-primary" : "text-foreground hover:text-primary"
                   )}
                 >
@@ -152,7 +152,7 @@ const Navbar = () => {
                             to={child.to}
                             onClick={() => setOpen(false)}
                             className={cn(
-                              "py-3 text-[13px] transition-colors",
+                              "py-3 text-base tracking-[0.75px] transition-colors",
                               pathname === child.to ? "text-primary font-bold" : "text-muted-foreground hover:text-foreground"
                             )}
                           >
@@ -167,7 +167,7 @@ const Navbar = () => {
                     to={link.to}
                     onClick={() => setOpen(false)}
                     className={cn(
-                      "px-4 py-3 rounded-md text-sm font-medium transition-colors",
+                      "px-4 py-3 rounded-md text-base font-normal tracking-[0.75px] transition-colors",
                       pathname === link.to ? "text-primary bg-accent" : "text-foreground hover:bg-muted"
                     )}
                   >

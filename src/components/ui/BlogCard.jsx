@@ -27,10 +27,10 @@ const BlogCard = ({ post, className = "" }) => {
   return (
     <div className={`group flex flex-col bg-transparent ${className}`}>
       {/* Thumbnail with Badge */}
-      <Link to={`/blog/${slug}`} className="block relative aspect-[4/3] rounded-xl overflow-hidden mb-6 bg-gray-100">
+      <Link to={`/blog/${slug}`} className="block relative aspect-square rounded-xl overflow-hidden mb-6 bg-gray-100">
         {post.coverImage?.asset ? (
           <img
-            src={urlFor(post.coverImage).width(600).url()}
+            src={urlFor(post.coverImage).width(800).height(800).url()}
             alt={post.title}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
@@ -51,25 +51,25 @@ const BlogCard = ({ post, className = "" }) => {
       <div className="flex flex-col space-y-3.5">
         <div className="space-y-1">
           {post.category && (
-            <p className="text-[10px] md:text-[11px] font-bold text-gray-400 uppercase tracking-widest">
+            <p className="text-[10px] md:text-[11px] font-normal text-gray-400 uppercase tracking-widest font-sans">
               {post.category}
             </p>
           )}
           {formattedDate && (
-            <p className="text-[10px] md:text-[11px] text-gray-500 font-medium">
+            <p className="text-[11px] text-gray-500 font-normal font-sans tracking-[0.75px]">
               {formattedDate}
             </p>
           )}
         </div>
 
         <Link to={`/blog/${slug}`} className="block group/title">
-          <h3 className="text-xl md:text-2xl font-bold leading-[1.25] text-[#001D3D] font-serif group-hover/title:text-primary transition-colors line-clamp-3">
+          <h3 className="text-[20px] md:text-[24px] font-medium leading-[32px] text-[#001D3D] font-serif group-hover/title:text-primary transition-colors line-clamp-3">
             {post.title}
           </h3>
         </Link>
 
         {post.excerpt && (
-          <p className="text-sm md:text-base text-gray-600 leading-relaxed line-clamp-3 font-medium">
+          <p className="text-base text-gray-600 leading-[22px] line-clamp-3 font-normal font-sans">
             {post.excerpt}
           </p>
         )}

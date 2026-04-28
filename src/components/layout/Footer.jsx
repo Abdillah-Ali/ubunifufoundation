@@ -28,7 +28,7 @@ const Footer = () => {
                   </span>
                 </div>
                 </Link>
-                <p className="text-base leading-relaxed text-white/90">
+                <p className="text-base leading-[22px] text-white/90 font-sans">
                   Empowering youth and women in Zanzibar through sustainable development, education, and social entrepreneurship since 2023.
                 </p>
               </div>
@@ -49,7 +49,7 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-[13px] font-bold text-white tracking-tight uppercase mb-6 pb-2 border-b border-white/10 w-fit">Company</h4>
+              <h4 className="text-[18px] font-medium text-white font-serif mb-6 pb-2 border-b border-white/10 w-fit">Company</h4>
               <ul className="space-y-4">
                 {[
                   { label: "About", to: "/about" },
@@ -58,7 +58,7 @@ const Footer = () => {
                   { label: "Contact Us", to: "/contact" }
                 ].map((link) => (
                   <li key={link.to}>
-                    <Link to={link.to} className="group flex items-center text-sm hover:text-white transition-colors">
+                    <Link to={link.to} className="group flex items-center text-base font-sans font-normal tracking-[0.75px] hover:text-white transition-colors">
                       <ArrowRight size={14} className="mr-2 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                       {link.label}
                     </Link>
@@ -69,7 +69,7 @@ const Footer = () => {
 
             {/* Support */}
             <div>
-              <h4 className="text-[13px] font-bold text-white tracking-tight uppercase mb-6 pb-2 border-b border-white/10 w-fit">Support</h4>
+              <h4 className="text-[18px] font-medium text-white font-serif mb-6 pb-2 border-b border-white/10 w-fit">Support</h4>
               <ul className="space-y-4">
                 {[
                   { label: "Donate Now", to: "/donate" },
@@ -78,7 +78,7 @@ const Footer = () => {
                   { label: "Get Involved", to: "/get-involved" }
                 ].map((link) => (
                   <li key={link.label}>
-                    <Link to={link.to} className="group flex items-center text-sm hover:text-white transition-colors">
+                    <Link to={link.to} className="group flex items-center text-base font-sans font-normal tracking-[0.75px] hover:text-white transition-colors">
                       <ArrowRight size={14} className="mr-2 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                       {link.label}
                     </Link>
@@ -89,15 +89,15 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              <h4 className="text-[13px] font-bold text-white tracking-tight uppercase mb-6 pb-2 border-b border-white/10 w-fit">HQ Office</h4>
+              <h4 className="text-[18px] font-medium text-white font-serif mb-6 pb-2 border-b border-white/10 w-fit">HQ Office</h4>
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
                     <MapPin size={18} className="text-primary" />
                   </div>
                   <div>
-                    <span className="block text-white text-sm font-bold mb-1">Visit Us</span>
-                    <span className="text-sm text-white/80 leading-relaxed">
+                    <span className="block text-white text-base font-bold mb-1 font-sans">Visit Us</span>
+                    <span className="text-base text-white/80 leading-[22px] font-sans">
                       Kwerekwe, Zanzibar,<br/>Tanzania
                     </span>
                   </div>
@@ -107,8 +107,8 @@ const Footer = () => {
                     <Phone size={18} className="text-primary" />
                   </div>
                   <div>
-                    <span className="block text-white text-sm font-bold mb-1">Call Us</span>
-                    <span className="text-sm text-white/80 leading-relaxed">+255 788 008 750</span>
+                    <span className="block text-white text-base font-bold mb-1 font-sans">Call Us</span>
+                    <span className="text-base text-white/80 leading-[22px] font-sans">+255 788 008 750</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -116,8 +116,8 @@ const Footer = () => {
                     <Mail size={18} className="text-primary" />
                   </div>
                   <div>
-                    <span className="block text-white text-sm font-bold mb-1">Email Us</span>
-                    <span className="text-sm text-white/80 leading-relaxed">info@ubunifufoundation.org</span>
+                    <span className="block text-white text-base font-bold mb-1 font-sans">Email Us</span>
+                    <span className="text-base text-white/80 leading-[22px] font-sans">info@ubunifufoundation.org</span>
                   </div>
                 </li>
               </ul>
@@ -125,7 +125,7 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] font-bold tracking-tight uppercase text-white/60">
+          <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[14px] font-normal tracking-[0.75px] font-sans text-white/60">
             <p>© {new Date().getFullYear()} Ubunifu Foundation. Empowering Sustainable Futures.</p>
             <div className="flex gap-8">
               <Link to="/" className="hover:text-white transition-colors">Privacy Policy</Link>

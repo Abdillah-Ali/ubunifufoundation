@@ -48,10 +48,10 @@ const Donate = () => {
             <div className="inline-block px-4 py-1.5 rounded-full bg-primary/90 text-white text-[13px] font-bold tracking-tight mb-4">
               Make a Difference
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+            <h1 className="text-[40px] md:text-[50px] lg:text-[60px] font-medium leading-tight md:leading-[72px] tracking-tight font-serif">
               Support the Future of Youth
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-white max-w-2xl font-medium leading-relaxed">
+            <p className="text-base sm:text-lg md:text-[20px] text-white max-w-2xl font-normal leading-[22px] md:leading-[30px] font-sans">
               Your contribution empowers young people and women with skills, opportunities, and the tools they need to build sustainable lives.
             </p>
             <Button
@@ -71,21 +71,21 @@ const Donate = () => {
             <div className="space-y-12">
               <div className="space-y-4">
                 <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[13px] font-bold tracking-tight">The Challenge</span>
-                <h3 className="text-xl md:text-2xl font-bold tracking-tight">The Challenge</h3>
-                <p className="text-foreground font-medium leading-relaxed text-base md:text-lg max-w-xl">
+                <h3 className="text-[20px] md:text-[24px] font-medium tracking-tight font-serif">The Challenge</h3>
+                <p className="text-foreground font-normal leading-[22px] text-base font-sans max-w-xl">
                   Every donation helps us provide training, mentorship, and opportunities for young people and women in Zanzibar. Without these resources, many face continuous cycles of unemployment and poverty.
                 </p>
               </div>
               <div className="space-y-4">
                 <span className="inline-block px-4 py-1.5 rounded-full bg-foreground/5 text-foreground text-[13px] font-bold tracking-tight">Your Role</span>
-                <h3 className="text-xl md:text-2xl font-bold tracking-tight">Your Impact</h3>
-                <p className="text-foreground font-medium leading-relaxed text-base md:text-lg max-w-xl">
+                <h3 className="text-[20px] md:text-[24px] font-medium tracking-tight font-serif">Your Impact</h3>
+                <p className="text-foreground font-normal leading-[22px] text-base font-sans max-w-xl">
                   Your support directly contributes to reducing unemployment, empowering communities, and building a more sustainable future.
                 </p>
               </div>
             </div>
             <div className="space-y-6">
-              <h3 className="text-xl md:text-2xl font-bold tracking-tight">Our Solution</h3>
+              <h3 className="text-[20px] md:text-[24px] font-medium tracking-tight font-serif">Our Solution</h3>
               <ul className="space-y-6">
                 {[
                   { title: "Skills Training Programs", desc: "Providing vocational and entrepreneurial training to youth." },
@@ -96,8 +96,8 @@ const Donate = () => {
                   <li key={item.title} className="flex items-start gap-5">
                     <CheckCircle2 className="text-primary mt-1 shrink-0" size={22} />
                     <div>
-                      <span className="font-bold text-foreground block text-base md:text-lg tracking-tight">{item.title}</span>
-                      <span className="text-foreground font-medium text-sm md:text-base">{item.desc}</span>
+                      <span className="font-medium text-foreground block text-[18px] md:text-[20px] tracking-tight font-serif">{item.title}</span>
+                      <span className="text-foreground font-normal text-base font-sans leading-[22px]">{item.desc}</span>
                     </div>
                   </li>
                 ))}
@@ -111,8 +111,8 @@ const Donate = () => {
       <section className="py-24 bg-secondary border-y border-border">
         <Container>
           <div className="max-w-3xl mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4">The Impact of Your Gift</h2>
-            <p className="text-base md:text-lg text-foreground font-medium max-w-2xl">Every dollar creates real, measurable change on the ground.</p>
+            <h2 className="text-[34px] md:text-[42px] font-medium tracking-tight mb-4 font-serif">The Impact of Your Gift</h2>
+            <p className="text-base text-foreground font-normal font-sans leading-[22px] max-w-2xl">Every dollar creates real, measurable change on the ground.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {donationOptions.map((option, index) => (
@@ -124,9 +124,9 @@ const Donate = () => {
                 <div className="p-4 rounded-2xl bg-secondary text-primary w-fit group-hover:bg-primary group-hover:text-white transition-all duration-300">
                   <option.icon size={22} />
                 </div>
-                <p className="text-[13px] font-bold text-primary tracking-tight">{option.amount}</p>
-                <h3 className="text-lg md:text-xl font-bold tracking-tight">{option.title}</h3>
-                <p className="text-foreground font-medium leading-relaxed text-sm">{option.impact}</p>
+                <p className="text-[14px] font-normal text-primary tracking-[0.75px] font-sans">{option.amount}</p>
+                <h3 className="text-[18px] md:text-[20px] font-medium tracking-tight font-serif">{option.title}</h3>
+                <p className="text-foreground font-normal leading-[22px] text-base font-sans">{option.impact}</p>
               </button>
             ))}
             {/* Custom Amount */}
@@ -134,7 +134,7 @@ const Donate = () => {
               <div className="p-4 rounded-2xl bg-secondary text-foreground/40 w-fit">
                 <DollarSign size={22} />
               </div>
-              <h3 className="text-xl font-bold tracking-tight">Custom Amount</h3>
+              <h3 className="text-[18px] md:text-[20px] font-medium tracking-tight font-serif">Custom Amount</h3>
               <Input
                 type="number"
                 placeholder="Enter amount"
@@ -151,8 +151,8 @@ const Donate = () => {
       <section className="py-24 bg-background">
         <Container>
           <div className="max-w-3xl mb-20">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4">Stories of Change</h2>
-            <p className="text-base md:text-lg text-foreground font-medium">Hear from those whose lives have been transformed by your support.</p>
+            <h2 className="text-[34px] md:text-[42px] font-medium tracking-tight mb-4 font-serif">Stories of Change</h2>
+            <p className="text-base text-foreground font-normal font-sans leading-[22px]">Hear from those whose lives have been transformed by your support.</p>
           </div>
           <div className="grid md:grid-cols-1 max-w-4xl mx-auto">
             {testimonials.map((test, i) => (
@@ -161,9 +161,9 @@ const Donate = () => {
                   <img src={test.image} alt={test.name} className="w-full h-full rounded-[2rem] object-cover border-4 border-white shadow-xl" />
                 </div>
                 <div className="space-y-4">
-                  <p className="text-xl md:text-2xl font-bold tracking-tight text-primary">{test.name}</p>
-                  <p className="text-[13px] font-bold text-foreground uppercase tracking-widest">{test.bio}</p>
-                  <p className="text-lg md:text-xl text-foreground font-medium leading-relaxed italic">"{test.quote}"</p>
+                  <p className="text-[20px] md:text-[24px] font-medium tracking-tight text-primary font-serif">{test.name}</p>
+                  <p className="text-[14px] font-normal text-foreground uppercase tracking-[0.75px] font-sans">{test.bio}</p>
+                  <p className="text-[18px] md:text-[20px] text-foreground font-normal leading-relaxed italic font-serif">"{test.quote}"</p>
                 </div>
               </div>
             ))}
@@ -181,11 +181,11 @@ const Donate = () => {
           </div>
 
           <div className="max-w-2xl mx-auto text-left space-y-6 bg-white p-10 rounded-[2rem] border-2 border-border">
-            <p className="font-bold text-foreground text-lg">
-              We are <span className="text-primary">65%</span> of the way to our goal of funding the Hub for another year.
+            <p className="font-normal text-foreground text-base md:text-lg font-sans">
+              We are <span className="text-primary font-medium">65%</span> of the way to our goal of funding the Hub for another year.
             </p>
             <Progress value={65} className="h-3 bg-secondary [&>div]:bg-primary rounded-full" />
-            <p className="text-sm text-foreground/50 font-medium">
+            <p className="text-[14px] text-foreground/50 font-normal font-sans leading-[22px]">
               All donations are used responsibly and transparently — directed towards programs that create measurable impact.
             </p>
           </div>
@@ -199,8 +199,8 @@ const Donate = () => {
             <div className="inline-block px-4 py-1.5 rounded-full bg-primary/90 text-white text-[13px] font-bold tracking-tight mb-4">
               Secure Transfer
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight">Make a Difference Now.</h2>
-            <p className="text-base md:text-lg text-white font-medium max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-[34px] md:text-[42px] font-medium tracking-tight leading-tight md:leading-[42px] font-serif">Make a Difference Now.</h2>
+            <p className="text-base text-white font-normal max-w-2xl mx-auto leading-[22px] font-sans">
               Use any of our official banking channels to complete your transfer.
             </p>
           </div>
@@ -209,8 +209,8 @@ const Donate = () => {
             {/* PBZ Card */}
             <div className="p-10 rounded-[2rem] bg-background/10 border border-background/20 space-y-6">
               <div className="flex items-center gap-4 pb-6 border-b border-background/20">
-                <span className="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center text-sm font-bold shadow">1</span>
-                <h3 className="font-bold text-xl tracking-tight">PBZ (TZS)</h3>
+                <span className="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center text-sm font-medium shadow font-sans">1</span>
+                <h3 className="font-medium text-[20px] md:text-[24px] tracking-tight font-serif">PBZ (TZS)</h3>
               </div>
               <div className="space-y-4">
                 {[
@@ -219,8 +219,8 @@ const Donate = () => {
                   { label: "Phone Rep.", value: "+255 788 008 750" },
                 ].map((row) => (
                   <div key={row.label} className="flex flex-col p-5 bg-background/10 rounded-2xl">
-                    <span className="text-[11px] font-bold tracking-tight text-white/60 mb-1 uppercase">{row.label}</span>
-                    <span className={`font-bold text-lg ${row.label === "Account No." ? "text-primary" : "text-background"}`}>{row.value}</span>
+                    <span className="text-[11px] font-normal tracking-[0.75px] text-white/60 mb-1 uppercase font-sans">{row.label}</span>
+                    <span className={`font-medium text-lg font-serif ${row.label === "Account No." ? "text-primary" : "text-background"}`}>{row.value}</span>
                   </div>
                 ))}
               </div>
@@ -229,8 +229,8 @@ const Donate = () => {
             {/* Equity Card */}
             <div className="p-10 rounded-[2rem] bg-background/10 border border-background/20 space-y-6">
               <div className="flex items-center gap-4 pb-6 border-b border-background/20">
-                <span className="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center text-sm font-bold shadow">2</span>
-                <h3 className="font-bold text-xl tracking-tight">Equity (USD)</h3>
+                <span className="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center text-sm font-medium shadow font-sans">2</span>
+                <h3 className="font-medium text-[20px] md:text-[24px] tracking-tight font-serif">Equity (USD)</h3>
               </div>
               <div className="space-y-4">
                 {[
@@ -239,8 +239,8 @@ const Donate = () => {
                   { label: "Phone Rep.", value: "+255 788 008 750" },
                 ].map((row) => (
                   <div key={row.label} className="flex flex-col p-5 bg-background/10 rounded-2xl">
-                    <span className="text-[11px] font-bold tracking-tight text-white/60 mb-1 uppercase">{row.label}</span>
-                    <span className={`font-bold text-lg ${row.label === "Account No." ? "text-primary" : "text-background"}`}>{row.value}</span>
+                    <span className="text-[11px] font-normal tracking-[0.75px] text-white/60 mb-1 uppercase font-sans">{row.label}</span>
+                    <span className={`font-medium text-lg font-serif ${row.label === "Account No." ? "text-primary" : "text-background"}`}>{row.value}</span>
                   </div>
                 ))}
               </div>

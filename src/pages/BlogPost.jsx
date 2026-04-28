@@ -22,17 +22,17 @@ const ptComponents = {
   },
   block: {
     h2: ({ children }) => (
-      <h2 className="text-3xl md:text-4xl font-bold text-[#1a103d] font-serif mt-16 mb-6 leading-tight">
+      <h2 className="text-[34px] md:text-[42px] font-medium text-[#1a103d] font-serif mt-16 mb-6 leading-[42px]">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-2xl md:text-3xl font-bold text-[#1a103d] font-serif mt-12 mb-5 leading-tight">
+      <h3 className="text-[24px] md:text-[28px] font-medium text-[#1a103d] font-serif mt-12 mb-5 leading-[32px]">
         {children}
       </h3>
     ),
     normal: ({ children }) => (
-      <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-6 font-medium">
+      <p className="mb-6 font-normal text-base leading-[22px] text-[#120F37] font-sans">
         {children}
       </p>
     ),
@@ -44,12 +44,12 @@ const ptComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc list-outside pl-6 mb-8 space-y-4 text-base md:text-lg text-slate-600 leading-relaxed font-medium">
+      <ul className="list-disc list-outside pl-6 mb-8 space-y-4 font-normal text-base leading-[22px] text-[#120F37] font-sans">
         {children}
       </ul>
     ),
     number: ({ children }) => (
-      <ol className="list-decimal list-outside pl-6 mb-8 space-y-4 text-base md:text-lg text-slate-600 leading-relaxed font-medium">
+      <ol className="list-decimal list-outside pl-6 mb-8 space-y-4 font-normal text-base leading-[22px] text-[#120F37] font-sans">
         {children}
       </ol>
     ),
@@ -189,11 +189,11 @@ const BlogPost = () => {
         </div>
         <Container className="relative z-10">
           <div className="max-w-3xl space-y-4">
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-white font-serif tracking-tight leading-none">
+            <h1 className="text-[60px] md:text-[80px] lg:text-[100px] font-medium text-white font-serif tracking-tight leading-none">
               News
             </h1>
             <div className="w-20 h-1.5 bg-[#f59e0b] rounded-full mt-8 mb-6" />
-            <p className="text-white/70 text-lg md:text-xl font-medium max-w-2xl leading-relaxed">
+            <p className="text-white/70 text-[18px] md:text-[20px] font-normal max-w-2xl leading-[24px] md:leading-[28px] font-sans">
               Read up on the latest from Ubunifu Foundation and what's happening in our community.
             </p>
           </div>
@@ -202,12 +202,12 @@ const BlogPost = () => {
 
       {/* ── Main Content Layout ────────────────────────────────── */}
       <section className="py-16 md:py-24">
-        <Container>
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_350px] lg:grid-cols-[1fr_450px] gap-12 md:gap-16 lg:gap-24">
+        <Container className="max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20">
             {/* Left Column: Content */}
             <div className="space-y-10">
               {/* Mobile-only Navigation */}
-              <div className="md:hidden">
+              <div className="lg:hidden">
                 <Link
                   to="/blog"
                   className="inline-flex items-center gap-3 text-xs font-bold text-[#f59e0b] hover:text-[#f59e0b]/80 transition-all group tracking-widest uppercase"
@@ -218,11 +218,11 @@ const BlogPost = () => {
               </div>
 
               <div className="space-y-6">
-                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#1a103d] font-serif leading-[1.1] tracking-tight">
+                <h2 className="text-[34px] md:text-[42px] lg:text-[60px] font-medium text-[#1a103d] font-serif leading-[1.1] md:leading-[72px] tracking-tight">
                   {post.title}
                 </h2>
                 {formattedDate && (
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">
+                  <p className="text-[14px] font-normal text-gray-400 uppercase tracking-[0.75px] font-sans">
                     {formattedDate}
                   </p>
                 )}
@@ -230,16 +230,16 @@ const BlogPost = () => {
 
               {/* Mobile-only Featured Image */}
               {post.coverImage?.asset && (
-                 <div className="md:hidden rounded-2xl overflow-hidden shadow-2xl shadow-black/10 ring-1 ring-black/5">
+                 <div className="lg:hidden aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-black/10 ring-1 ring-black/5">
                    <img
                      src={urlFor(post.coverImage).width(1000).url()}
                      alt={post.title}
-                     className="w-full h-auto object-cover"
+                     className="w-full h-full object-cover"
                    />
                  </div>
               )}
 
-              <div className="prose prose-slate prose-lg max-w-none prose-headings:font-serif prose-headings:text-[#1a103d] prose-p:text-slate-600 prose-p:leading-relaxed">
+              <div className="prose prose-slate prose-lg max-w-none prose-headings:font-serif prose-headings:text-[#1a103d]">
                 {post.body ? (
                    <PortableText value={post.body} components={ptComponents} />
                 ) : (
@@ -273,8 +273,8 @@ const BlogPost = () => {
                       <User size={24} />
                     </div>
                     <div>
-                      <p className="text-lg font-bold text-[#1a103d]">{post.author || "Ubunifu Team"}</p>
-                      <p className="text-xs text-gray-500 font-medium tracking-tight">Ubunifu Foundation</p>
+                      <p className="text-[18px] md:text-[20px] font-medium text-[#1a103d] font-serif">{post.author || "Ubunifu Team"}</p>
+                      <p className="text-[14px] text-gray-500 font-normal tracking-[0.75px] font-sans">Ubunifu Foundation</p>
                     </div>
                   </div>
                 </div>
@@ -282,25 +282,23 @@ const BlogPost = () => {
             </div>
 
             {/* Right Column: Desktop Sidebar */}
-            <div className="hidden md:flex flex-col gap-12 sticky top-24 h-fit">
-              <div>
+            <div className="hidden lg:flex flex-col gap-12 sticky top-24 h-fit">
+              <div className="flex justify-end">
                 <Link
                   to="/blog"
                   className="inline-flex items-center gap-4 text-xs font-bold text-[#1a103d] hover:text-[#f59e0b] transition-all group tracking-widest uppercase"
                 >
-                  <span className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-[#f59e0b] group-hover:bg-[#f59e0b] group-hover:text-white transition-all duration-300">
-                    <ArrowLeft size={18} />
-                  </span>
-                  Back to News
+                  <ArrowLeft size={18} className="text-[#f59e0b] group-hover:-translate-x-1 transition-transform" />
+                  <span className="border-b-2 border-transparent group-hover:border-[#f59e0b]">Back to News</span>
                 </Link>
               </div>
 
               {post.coverImage?.asset && (
-                 <div className="rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
+                 <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-[0_48px_96px_-24px_rgba(0,0,0,0.2)] ring-1 ring-black/5">
                    <img
-                     src={urlFor(post.coverImage).width(800).url()}
+                     src={urlFor(post.coverImage).width(1000).url()}
                      alt={post.title}
-                     className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                    />
                  </div>
               )}
@@ -314,7 +312,7 @@ const BlogPost = () => {
         <section className="py-24 bg-slate-50 border-t border-slate-100">
           <Container>
             <div className="mb-12">
-              <h2 className="text-3xl font-bold text-[#001D3D] font-serif tracking-tight">
+              <h2 className="text-[34px] md:text-[42px] font-medium text-[#001D3D] font-serif tracking-tight">
                 Related Stories
               </h2>
             </div>

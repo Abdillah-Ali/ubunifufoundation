@@ -1,10 +1,5 @@
 import Container from "./Container";
 
-
-
-
-
-
 const PageHero = ({ title, subtitle, backgroundImage }) =>
   <section className="relative min-h-[40vh] flex items-center text-white overflow-hidden py-20 md:py-24">
     {/* Background Image / Overlay */}
@@ -23,11 +18,11 @@ const PageHero = ({ title, subtitle, backgroundImage }) =>
 
     <Container className="relative z-10 text-center">
       <div className="max-w-4xl mx-auto animate-fade-in-up">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
+        <h1 className="text-[40px] md:text-[50px] lg:text-[60px] font-medium mb-6 tracking-tight leading-tight font-serif">
           {title}
         </h1>
         {subtitle &&
-          <p className="text-base sm:text-lg md:text-xl text-white max-w-3xl mx-auto leading-relaxed font-medium">
+          <p className="text-base sm:text-lg md:text-[20px] text-white max-w-3xl mx-auto leading-[22px] md:leading-[30px] font-normal font-sans">
             {subtitle}
           </p>
         }

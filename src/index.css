@@ -1,12 +1,10 @@
-/* Helvetica Now Display — loaded from local system install.
- * Fallback chain: Helvetica → Arial → system sans-serif.
- * If you have licensed .woff2 files, add them below the local() src. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,slnt,wght@0,100..900;1,100..900&display=swap');
+
+/* Gimlet Text — Placeholder for local installation or system font. 
+   Fallback to high-quality serif. */
 @font-face {
-  font-family: "Helvetica Now Display";
-  src: local("Helvetica Now Display"),
-       local("HelveticaNowDisplay"),
-       local("Helvetica Neue"),
-       local("HelveticaNeue");
+  font-family: "Gimlet Text";
+  src: local("Gimlet Text"), local("GimletText");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -18,19 +16,19 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* Pure White */
-    --foreground: 0 0% 0%; /* Pure Black */
+    --background: 0 0% 100%;
+    --foreground: 236 57% 14%; /* #120F37 */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 236 57% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 236 57% 14%;
 
-    --primary: 195 100% 39%; /* Bondi Blue #0096C7 */
-    --primary-foreground: 0 0% 100%; /* White text works better with this deeper blue */
+    --primary: 195 100% 39%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 97%; /* Light Grey #F7F7F7 */
+    --secondary: 0 0% 97%;
     --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 95%;
@@ -46,66 +44,9 @@
     --input: 0 0% 90%;
     --ring: 24 100% 41%;
 
-    --radius: 2rem; /* Pill-shaped by default */
-
-    --logo-red: 0 74% 42%; /* #B91C1C */
-    --logo-blue: 221 83% 40%; /* #1E40AF */
-    --cobalt: 24 100% 41%;
-    --cobalt-foreground: 0 0% 100%;
-    --warm-gray: 0 0% 97%;
-    --section-alt: 0 0% 97%;
-
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 24 100% 41%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 97%;
-    --sidebar-accent-foreground: 24 100% 41%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 24 100% 41%;
+    --radius: 2rem;
   }
 
-  .dark {
-    --background: 180 15% 8%;
-    --foreground: 160 15% 95%;
-
-    --card: 180 15% 12%;
-    --card-foreground: 160 15% 95%;
-
-    --popover: 180 15% 12%;
-    --popover-foreground: 160 15% 95%;
-
-    --primary: 203 85% 45%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 203 84% 65%;
-    --secondary-foreground: 210 20% 15%;
-
-    --muted: 203 15% 18%;
-    --muted-foreground: 203 10% 60%;
-
-    --accent: 203 25% 20%;
-    --accent-foreground: 203 45% 65%;
-
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 203 30% 98%;
-
-    --border: 203 15% 20%;
-    --input: 203 15% 20%;
-    --ring: 203 85% 45%;
-
-    --sidebar-background: 180 15% 10%;
-    --sidebar-foreground: 160 15% 90%;
-    --sidebar-primary: 168 45% 42%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 168 25% 20%;
-    --sidebar-accent-foreground: 168 45% 65%;
-    --sidebar-border: 180 15% 20%;
-    --sidebar-ring: 168 45% 42%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
@@ -114,21 +55,40 @@
     @apply bg-background text-foreground font-sans;
     font-size: 16px;
     font-weight: 400;
-    line-height: 24px;
-    letter-spacing: normal;
-    text-transform: none;
+    line-height: 22px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Helvetica Now Display", Helvetica, Arial, sans-serif;
-    @apply font-bold tracking-tight;
+    font-family: "Gimlet Text", Georgia, "Times New Roman", serif;
+    @apply font-medium tracking-tight;
+  }
+
+  /* Specific Heading Sizing */
+  h1 {
+    font-size: 60px;
+    line-height: 72px;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  p, li, label, span, div {
+    font-family: "Inter", sans-serif;
   }
 
   button, input, select, textarea {
-    font-family: "Helvetica Now Display", Helvetica, Arial, sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   ::selection {
@@ -150,38 +110,16 @@
     @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl;
   }
 
-  .glass-card-dark {
-    @apply bg-black/40 backdrop-blur-lg border border-white/5 shadow-2xl;
-  }
-
-  .glass-nav {
-    @apply bg-background/80 backdrop-blur-xl border-b border-border;
-  }
-
-  .reveal {
-    @apply opacity-0 translate-y-8 transition-all duration-1000 ease-out;
-  }
-
-  .reveal.active {
-    @apply opacity-100 translate-y-0 translate-x-0 scale-100;
-  }
-  
-  .vertical-text {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-  }
-
   .section-padding {
     padding-left: clamp(1.5rem, 6vw, 8rem);
     padding-right: clamp(1.5rem, 6vw, 8rem);
   }
-}
 
-@keyframes pulse-slow {
-  0%, 100% { opacity: 0.5; transform: scale(1.05); }
-  50% { opacity: 0.8; transform: scale(1.1); }
-}
+  .nav-link {
+    @apply font-sans font-normal text-base tracking-[0.75px];
+  }
 
-.animate-pulse-slow {
-  animation: pulse-slow 8s infinite ease-in-out;
+  .btn-ui {
+    @apply font-sans text-[12px] font-medium rounded-[100px] px-4 py-1; /* Approx 3px top/bottom is hard to hit exactly with py, but 1 is close */
+  }
 }

@@ -97,12 +97,12 @@ const About = () => {
             </div>
 
             {/* Main Intro */}
-            <h1 className="text-xl md:text-2xl lg:text-3xl font-medium leading-snug tracking-tight text-white/95 max-w-3xl">
+            <h1 className="text-[24px] md:text-[32px] lg:text-[40px] font-medium leading-tight tracking-tight text-white/95 max-w-3xl font-serif">
               Driving social entrepreneurship, youth empowerment, and sustainable community transformation by creating opportunities and building resilient futures in Zanzibar
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-xl font-medium">
+            <p className="text-base text-white/80 leading-[22px] max-w-xl font-normal font-sans">
               Supporting youth and women to create lasting impact.
             </p>
 
@@ -126,20 +126,20 @@ const About = () => {
           <div className="grid lg:grid-cols-12 items-center reveal" style={{ gap: '32px', padding: '0 80px' }}>
             <div className="lg:col-span-7" style={{ display: 'grid', gap: '32px' }}>
               <div>
-                <h3 style={{ fontFamily: '"Georgia", serif', fontSize: '30px', fontWeight: 500, lineHeight: 1.26, marginBottom: '15px', color: '#131313' }}>Problem statement.</h3>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 400, lineHeight: 1.375, marginTop: '16px', color: '#131313' }}>
+                <h3 className="text-[24px] font-medium leading-[32px] mb-[15px] text-[#131313] font-serif">Problem statement.</h3>
+                <p className="text-base font-normal leading-[22px] mt-[16px] text-[#131313] font-sans">
                   Youth aged 18- 30 in Zanzibar face high levels of unemployment due to limited job opportunities, lack of necessary skills and experience to compete for the few available job opportunities in the country which leads them to engage in unproductive activities such as a high crime rate, drug abuse and early marriage.
                 </p>
               </div>
               <div>
-                <h3 style={{ fontFamily: '"Georgia", serif', fontSize: '30px', fontWeight: 500, lineHeight: 1.26, marginBottom: '15px', color: '#131313' }}>Solution.</h3>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 400, lineHeight: 1.375, marginTop: '16px', color: '#131313' }}>
+                <h3 className="text-[24px] font-medium leading-[32px] mb-[15px] text-[#131313] font-serif">Solution.</h3>
+                <p className="text-base font-normal leading-[22px] mt-[16px] text-[#131313] font-sans">
                   We offer a free-responsible and self-driven learning space to nature and empower leaders to be able to transform challenges in their communities into opportunities.
                 </p>
               </div>
               <div>
-                <h3 style={{ fontFamily: '"Georgia", serif', fontSize: '30px', fontWeight: 500, lineHeight: 1.26, marginBottom: '15px', color: '#131313' }}>Value Proposition.</h3>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', fontWeight: 400, lineHeight: 1.375, marginTop: '16px', color: '#131313' }}>
+                <h3 className="text-[24px] font-medium leading-[32px] mb-[15px] text-[#131313] font-serif">Value Proposition.</h3>
+                <p className="text-base font-normal leading-[22px] mt-[16px] text-[#131313] font-sans">
                   We empower youths to become social entrepreneurs who are impact drivers of a sustainable future. 
                 </p>
               </div>
@@ -215,14 +215,14 @@ const About = () => {
             {/* Right: Vision on top, Mission below */}
             <div className="flex flex-col gap-12 max-w-3xl">
               <div className="space-y-4 pb-12 border-b border-border">
-                <h3 className="text-2xl md:text-3xl font-bold tracking-tight">Our Vision</h3>
-                <p className="text-base md:text-lg text-foreground leading-relaxed font-medium">
+                <h3 className="text-[24px] font-medium leading-[32px] font-serif">Our Vision</h3>
+                <p className="text-base font-normal leading-[22px] text-foreground font-sans">
                   Our vision is to be a catalyst for positive transformation in Zanzibar by equipping youth and women with a high-quality education in entrepreneurial skills, vocational training, and community building that inspire creativity to become leaves and legacy of youth empowerment.
                 </p>
               </div>
               <div className="space-y-4">
-                <h3 className="text-2xl md:text-3xl font-bold tracking-tight">Our Mission</h3>
-                <p className="text-base md:text-lg text-foreground leading-relaxed font-medium">
+                <h3 className="text-[24px] font-medium leading-[32px] font-serif">Our Mission</h3>
+                <p className="text-base font-normal leading-[22px] text-foreground font-sans">
                   Our mission is to address Zanzibar's youth unemployment challenge and empower women by offering comprehensive education in entrepreneurial skills, vocational training, and community building.
                 </p>
               </div>
@@ -247,11 +247,11 @@ const About = () => {
             <span className="block text-xs font-bold tracking-widest uppercase text-primary mb-6">Our Story</span>
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
               <div className="max-w-3xl">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
+                <h2 className="text-[34px] md:text-[40px] font-medium text-foreground leading-[42px] font-serif">
                   From a small idea to a movement changing lives in Zanzibar.
                 </h2>
               </div>
-              <div className="space-y-6 text-foreground/80 text-base md:text-lg leading-relaxed font-medium max-w-3xl">
+              <div className="space-y-6 text-foreground/80 text-base leading-[22px] font-normal font-sans max-w-3xl">
                 <p>
                   The story of Ubunifu Foundation is a journey of "returning home to sow seeds of change."
                 </p>
@@ -307,10 +307,10 @@ const About = () => {
 
                   {/* Content */}
                   <div className="relative z-10 flex-1 pr-16">
-                    <h4 className="text-lg md:text-xl font-bold tracking-tight leading-snug mb-2 text-foreground">
+                    <h4 className="text-[18px] font-medium leading-[24px] mb-2 text-foreground font-serif">
                       {obj.title}
                     </h4>
-                    <p className="text-sm md:text-base text-foreground/60 leading-relaxed">
+                    <p className="text-base text-foreground/60 leading-[22px] font-sans">
                       {obj.description}
                     </p>
                   </div>

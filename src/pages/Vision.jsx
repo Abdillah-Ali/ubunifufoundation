@@ -15,8 +15,8 @@ const Vision = () => {
       />
       <Container className="py-24">
         <div className="max-w-3xl mx-auto text-center space-y-8 reveal">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">Coming Soon</h2>
-          <p className="text-lg text-muted-foreground font-medium italic">
+          <h2 className="text-[34px] md:text-[42px] font-medium tracking-tight text-foreground font-serif">Coming Soon</h2>
+          <p className="text-base text-muted-foreground font-normal italic font-sans leading-[22px]">
             This page is currently under construction. Please check back later for detailed information about our vision for Zanzibar.
           </p>
         </div>
