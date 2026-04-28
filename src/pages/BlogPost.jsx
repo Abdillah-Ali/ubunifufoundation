@@ -22,12 +22,12 @@ const ptComponents = {
   },
   block: {
     h2: ({ children }) => (
-      <h2 className="text-3xl md:text-4xl font-bold text-[#001D3D] font-serif mt-16 mb-6 leading-tight">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#1a103d] font-serif mt-16 mb-6 leading-tight">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-2xl md:text-3xl font-bold text-[#001D3D] font-serif mt-12 mb-5 leading-tight">
+      <h3 className="text-2xl md:text-3xl font-bold text-[#1a103d] font-serif mt-12 mb-5 leading-tight">
         {children}
       </h3>
     ),
@@ -37,7 +37,7 @@ const ptComponents = {
       </p>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-primary pl-8 my-12 italic text-slate-700 text-xl md:text-2xl leading-relaxed font-serif">
+      <blockquote className="border-l-[6px] border-[#f59e0b] pl-8 my-12 italic text-slate-700 text-xl md:text-2xl leading-relaxed font-serif bg-slate-50/50 py-4 pr-4 rounded-r-lg">
         {children}
       </blockquote>
     ),
@@ -175,26 +175,25 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* ── Purple Hero Section ────────────────────────────────── */}
-      <section className="bg-[#3B2A5A] relative overflow-hidden py-24 md:py-32 lg:py-40">
-        <div className="absolute inset-0 opacity-[0.12] pointer-events-none">
-          <svg className="absolute top-0 right-0 w-1/2 h-full text-white" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <rect x="70" y="20" width="8" height="15" fill="currentColor" opacity="0.8" />
-            <rect x="80" y="30" width="8" height="15" fill="currentColor" opacity="0.6" />
-            <rect x="70" y="45" width="8" height="15" fill="currentColor" opacity="0.4" />
-            <rect x="90" y="10" width="8" height="15" fill="currentColor" opacity="0.5" />
-            <rect x="80" y="55" width="8" height="15" fill="currentColor" opacity="0.7" />
-            <rect x="60" y="70" width="8" height="15" fill="currentColor" opacity="0.3" />
-            <rect x="90" y="75" width="8" height="15" fill="currentColor" opacity="0.9" />
-            <rect x="80" y="85" width="8" height="15" fill="currentColor" opacity="0.4" />
-            <rect x="70" y="90" width="8" height="15" fill="currentColor" opacity="0.2" />
+      <section className="bg-[#0f0925] relative overflow-hidden py-24 md:py-32 border-b border-white/5">
+        <div className="absolute inset-0 pointer-events-none">
+          <svg className="w-full h-full opacity-[0.07]" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+              <pattern id="slantedLines" x="0" y="0" width="10" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(-15)">
+                <line x1="2" y1="0" x2="2" y2="10" stroke="white" strokeWidth="4" />
+                <line x1="7" y1="10" x2="7" y2="20" stroke="white" strokeWidth="4" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#slantedLines)" />
           </svg>
         </div>
         <Container className="relative z-10">
-          <div className="max-w-3xl space-y-6">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white font-serif tracking-tight">
+          <div className="max-w-3xl space-y-4">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-white font-serif tracking-tight leading-none">
               News
             </h1>
-            <p className="text-white/80 text-lg md:text-xl md:text-2xl font-medium max-w-2xl leading-relaxed">
+            <div className="w-20 h-1.5 bg-[#f59e0b] rounded-full mt-8 mb-6" />
+            <p className="text-white/70 text-lg md:text-xl font-medium max-w-2xl leading-relaxed">
               Read up on the latest from Ubunifu Foundation and what's happening in our community.
             </p>
           </div>
@@ -204,33 +203,34 @@ const BlogPost = () => {
       {/* ── Main Content Layout ────────────────────────────────── */}
       <section className="py-16 md:py-24">
         <Container>
-          {/* Navigation Row */}
-          <div className="max-w-3xl mx-auto flex justify-end mb-12">
-            <Link
-              to="/blog"
-              className="inline-flex items-center gap-2 text-sm font-bold text-[#001D3D] hover:text-primary transition-all group"
-            >
-              <ArrowLeft size={16} className="text-[#f59e0b] group-hover:-translate-x-1 transition-transform" />
-              <span className="border-b-2 border-transparent hover:border-primary">Back to News</span>
-            </Link>
-          </div>
-
-          <div className="max-w-3xl mx-auto flex flex-col gap-12">
-            {/* Text Content */}
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_350px] lg:grid-cols-[1fr_450px] gap-12 md:gap-16 lg:gap-24">
+            {/* Left Column: Content */}
             <div className="space-y-10">
-              <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold text-[#001D3D] font-serif leading-[1.15]">
+              {/* Mobile-only Navigation */}
+              <div className="md:hidden">
+                <Link
+                  to="/blog"
+                  className="inline-flex items-center gap-3 text-xs font-bold text-[#f59e0b] hover:text-[#f59e0b]/80 transition-all group tracking-widest uppercase"
+                >
+                  <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+                  Back to News
+                </Link>
+              </div>
+
+              <div className="space-y-6">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#1a103d] font-serif leading-[1.1] tracking-tight">
                   {post.title}
                 </h2>
                 {formattedDate && (
-                  <p className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest">
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">
                     {formattedDate}
                   </p>
                 )}
               </div>
 
+              {/* Mobile-only Featured Image */}
               {post.coverImage?.asset && (
-                 <div className="rounded-2xl overflow-hidden shadow-xl shadow-black/5 ring-1 ring-black/5 mt-8 mb-8">
+                 <div className="md:hidden rounded-2xl overflow-hidden shadow-2xl shadow-black/10 ring-1 ring-black/5">
                    <img
                      src={urlFor(post.coverImage).width(1000).url()}
                      alt={post.title}
@@ -239,9 +239,9 @@ const BlogPost = () => {
                  </div>
               )}
 
-              <div className="prose prose-slate prose-lg max-w-none">
+              <div className="prose prose-slate prose-lg max-w-none prose-headings:font-serif prose-headings:text-[#1a103d] prose-p:text-slate-600 prose-p:leading-relaxed">
                 {post.body ? (
-                  <PortableText value={post.body} components={ptComponents} />
+                   <PortableText value={post.body} components={ptComponents} />
                 ) : (
                   <p className="text-gray-500 italic">No content available.</p>
                 )}
@@ -265,19 +265,45 @@ const BlogPost = () => {
               </div>
 
               {/* Author context */}
-              <div className="bg-slate-50 rounded-2xl p-8 space-y-4 mt-8">
-                <h4 className="text-xs font-bold uppercase tracking-widest text-[#f59e0b]">Primary Contributor</h4>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                    <User size={24} />
-                  </div>
-                  <div>
-                    <p className="text-base font-bold text-[#001D3D]">{post.author || "Ubunifu Team"}</p>
-                    <p className="text-xs text-gray-500 font-medium tracking-tight">Ubunifu Foundation</p>
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100/50 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                <div className="space-y-4">
+                  <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f59e0b]">Primary Contributor</h4>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-[#1a103d]/5 flex items-center justify-center text-[#1a103d]">
+                      <User size={24} />
+                    </div>
+                    <div>
+                      <p className="text-lg font-bold text-[#1a103d]">{post.author || "Ubunifu Team"}</p>
+                      <p className="text-xs text-gray-500 font-medium tracking-tight">Ubunifu Foundation</p>
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
 
+            {/* Right Column: Desktop Sidebar */}
+            <div className="hidden md:flex flex-col gap-12 sticky top-24 h-fit">
+              <div>
+                <Link
+                  to="/blog"
+                  className="inline-flex items-center gap-4 text-xs font-bold text-[#1a103d] hover:text-[#f59e0b] transition-all group tracking-widest uppercase"
+                >
+                  <span className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-[#f59e0b] group-hover:bg-[#f59e0b] group-hover:text-white transition-all duration-300">
+                    <ArrowLeft size={18} />
+                  </span>
+                  Back to News
+                </Link>
+              </div>
+
+              {post.coverImage?.asset && (
+                 <div className="rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
+                   <img
+                     src={urlFor(post.coverImage).width(800).url()}
+                     alt={post.title}
+                     className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                   />
+                 </div>
+              )}
             </div>
           </div>
         </Container>
