@@ -90,7 +90,6 @@ const GetInvolved = () => {
                 </p>
               </div>
               <Link to="/contact">
-                <Button variant="outline" className="rounded-full px-8 py-5 text-sm font-medium tracking-wide border-2 hover:border-primary hover:text-primary transition-all">
                 <Button variant="outline" className="rounded-full px-8 py-5 text-sm font-medium tracking-wide border-2 hover:border-primary hover:text-primary transition-all font-sans">
                   Explore Partnership →
                 </Button>
