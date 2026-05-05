@@ -178,7 +178,7 @@ const Donate = () => {
                 <h2 className="text-[28px] font-bold text-[#001D3D] font-serif">Stories of Change</h2>
                 <div className="grid md:grid-cols-[240px_1fr] gap-8 items-start">
                   <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl">
-                    <img src="/success-story-mwamvua.png" alt="Mwamvua Khamis" className="w-full h-full object-cover" />
+                    <img src="/mwamvua.png" alt="Mwamvua Khamis" className="w-full h-full object-cover" />
                   </div>
                   <div className="bg-[#eefcf3] p-10 rounded-[2.5rem] relative">
                     <div className="text-[64px] text-emerald-200 font-serif leading-none absolute top-4 left-6 opacity-80">“</div>
