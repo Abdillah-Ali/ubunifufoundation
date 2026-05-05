@@ -38,35 +38,35 @@ const Donate = () => {
     <div className="min-h-screen bg-white">
 
       {/* ─── 1. HERO SECTION ─── */}
-      <section className="pt-32 pb-20 bg-white">
+      <section className="pt-16 pb-0 bg-[#F2F9FF] overflow-hidden relative min-h-[600px] flex items-center">
         <Container>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="space-y-8">
+          <div className="relative flex flex-col lg:flex-row items-center lg:items-end">
+            {/* Left Content - Overlapping Text */}
+            <div className="w-full lg:w-3/5 space-y-8 py-16 relative z-20">
               <div className="space-y-4">
-                <p className="text-[14px] font-bold tracking-widest text-slate-500 uppercase">MAKE A DIFFERENCE:</p>
-                <h1 className="text-[48px] md:text-[64px] font-bold leading-[1.1] tracking-tight text-[#001D3D] font-serif">
+                <p className="text-[14px] font-bold tracking-wider text-black uppercase font-sans">MAKE A DIFFERENCE:</p>
+                <h1 className="text-[44px] md:text-[60px] lg:text-[72px] font-extrabold leading-[1.05] tracking-tight text-black font-sans">
                   Support the Future <br /> of Youth.
                 </h1>
-                <p className="text-base md:text-lg text-slate-600 max-w-md font-sans leading-relaxed">
+                <p className="text-base md:text-lg text-black font-sans leading-relaxed max-w-md">
                   Your contribution empowers young people and women with skills, opportunities, and the tools they need to build sustainable lives.
                 </p>
               </div>
               <Button
                 onClick={scrollToPayment}
-                className="rounded-full bg-[#007BFF] hover:bg-[#0056b3] text-white px-10 py-6 text-sm font-bold uppercase tracking-wider shadow-lg shadow-blue-200"
+                className="rounded-xl bg-[#00A3E1] hover:bg-[#0081B3] text-white px-8 py-7 text-lg font-bold transition-all shadow-lg shadow-[#00A3E1]/20"
               >
                 Donate Now
               </Button>
             </div>
 
-            {/* Right Image */}
-            <div className="relative">
-              <div className="rounded-[2.5rem] overflow-hidden shadow-2xl">
+            {/* Right Image - Transparent Cutout Effect */}
+            <div className="w-full lg:w-[65%] relative h-full flex items-end justify-center lg:justify-end lg:-ml-[20%] z-10 pointer-events-none">
+              <div className="relative w-full max-w-[900px] aspect-[4/3] lg:aspect-auto lg:h-[700px] -mb-1">
                 <img
-                  src="/zanzibar_youth_innovation.png"
-                  alt="Ubunifu Youth Innovation"
-                  className="w-full h-full object-cover"
+                  src="/donate_hero_final_cutout.png"
+                  alt="Support the Future of Youth"
+                  className="w-full h-full object-contain object-bottom transition-transform duration-700 mix-blend-multiply"
                 />
               </div>
             </div>
