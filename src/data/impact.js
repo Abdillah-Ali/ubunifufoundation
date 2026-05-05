@@ -13,7 +13,7 @@ export const successStories = [
     title: "A Journey of Self-Belief",
     stat: "Founder of Safari Queen",
     description: "Mwamvua Khamis — received comprehensive mentorship and professional skills at Ubunifu becoming a local entrepreneur.",
-    image: "/success-story-mwamvua.png",
+    image: "/mwamvua.png",
     author: "Mwamvua Khamis",
     accent: "gold",
     fullStory: [
