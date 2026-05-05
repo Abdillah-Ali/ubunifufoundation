@@ -7,14 +7,14 @@ import { Link } from "react-router-dom";
 import { Users, Briefcase, ChevronRight, X } from "lucide-react";
 
 const milestones = [
-  { year: "2020", label: "Started", description: "A milestone" },
-  { year: "2021", label: "Swahili milestone", description: "A milestone" },
-  { year: "2022", label: "Milestones in our movers, Season", description: "Growth" },
-  { year: "2023", label: "Growth, growth & Businesses with impact", description: "Current date" }
+  { year: "2020", label: "Foundation Launched", description: "Ubunifu Foundation started its journey in Zanzibar." },
+  { year: "2021", label: "Program Expansion", description: "Introduced specialized training for women and entrepreneurs." },
+  { year: "2022", label: "Innovation Hub", description: "Opened our physical hub in Kwerekwe to provide a dedicated space for learning." },
+  { year: "2023", label: "Scaling Impact", description: "Reached significant milestones in youth employment and business creation." }
 ];
 
 const futureGoals = {
-  description: "Our Swahili Foundation is shine and bend three ambitious coaling in an ambitious goals.",
+  description: "Ubunifu Foundation is committed to scaling our impact through ambitious goals for the next year.",
   targets: [
     { label: "Youths to Train", value: "300", detail: "150 Women, 150 Men", icon: Users },
     { label: "Job Opportunities", value: "100", detail: "Creating sustainable livelihoods", icon: Briefcase }
@@ -329,7 +329,7 @@ const Impact = () => {
               Support Us
             </h2>
             <p className="text-base text-[#0a3d3d]/70 font-sans leading-relaxed max-w-xl mx-auto">
-              Get involved! Us as to help our community to support or Ubunifu Sustainable Futures
+              Join us in our mission to empower the next generation of leaders and entrepreneurs in Zanzibar.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

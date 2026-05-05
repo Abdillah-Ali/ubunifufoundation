@@ -20,10 +20,10 @@ const donationOptions = [
 ];
 
 const solutions = [
-  { title: "Skills Training Programs", desc: "Youth engaged quality to training continuous cycles of unemployment and onnplontes.", img: p1, color: "bg-blue-500" },
-  { title: "Women Empowerment Initiatives", desc: "Every donation empowers young people and skills, opportunities, and the tools they need to build as.", img: p2, color: "bg-emerald-500" },
-  { title: "Community Development Projects", desc: "Community community, community service, community action community communities.", img: p3, color: "bg-amber-500" },
-  { title: "Environmental Programs", desc: "Environment in support directly contributes to reducing unemployment and empowering programs.", img: p4, color: "bg-green-500" },
+  { title: "Skills Training Programs", desc: "Equipping youth with practical skills to break the cycle of unemployment and build sustainable careers.", img: p1, color: "bg-blue-500" },
+  { title: "Women Empowerment Initiatives", desc: "Providing women with the resources and mentorship they need to launch successful enterprises.", img: p2, color: "bg-emerald-500" },
+  { title: "Community Development Projects", desc: "Strengthening local communities through collaborative action and sustainable infrastructure.", img: p3, color: "bg-amber-500" },
+  { title: "Environmental Programs", desc: "Protecting Zanzibar's natural beauty through conservation efforts and environmental education.", img: p4, color: "bg-green-500" },
 ];
 
 const Donate = () => {
@@ -221,7 +221,7 @@ const Donate = () => {
                   </div>
                 </div>
                 <p className="text-[12px] text-slate-400 font-sans leading-relaxed text-center">
-                  All donations are used responsibly and transparently and overforements ovs profitons.
+                  All donations are used responsibly and transparently to maximize impact for our community.
                 </p>
               </div>
 

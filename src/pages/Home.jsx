@@ -84,27 +84,30 @@ const Underline = () => (
 /* ─── Core Programs Components ───────────────────────────────── */
 const ProgramCard = ({ title, type, description, className, isFeatured = false }) => (
   <div className={cn(
-    "bg-white rounded-[2rem] p-8 md:p-12 flex flex-col items-center text-center shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100",
+    "bg-white rounded-[2.5rem] p-10 flex flex-col items-start text-left shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 group",
     isFeatured ? "w-full lg:max-w-xl" : "h-full",
     className
   )}>
-    <p className="text-[11px] font-bold tracking-[0.2em] text-slate-400 uppercase mb-4">
-      {type}
-    </p>
+    <div className="flex items-center gap-3 mb-6">
+      <div className="w-2 h-2 rounded-full bg-primary" />
+      <p className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">
+        {type}
+      </p>
+    </div>
     <h3 className={cn(
-      "font-serif font-bold text-[#001D3D] tracking-tight leading-tight mb-6",
+      "font-serif font-bold text-[#001D3D] tracking-tight leading-tight mb-4 group-hover:text-primary transition-colors",
       isFeatured ? "text-3xl md:text-4xl" : "text-xl md:text-2xl"
     )}>
       {title}
     </h3>
-    <p className="text-base text-slate-600 leading-[22px] font-normal font-sans mb-8">
+    <p className="text-[15px] text-slate-600 leading-relaxed font-normal font-sans mb-8">
       {description}
     </p>
-    <Link to="/projects" className="mt-auto group flex items-center gap-3">
-      <span className="text-sm font-bold text-[#001D3D] tracking-tight border-b border-transparent group-hover:border-[#001D3D] transition-all">
-        Learn More
+    <Link to="/projects" className="mt-auto group/link flex items-center gap-3">
+      <span className="text-sm font-bold text-[#001D3D] tracking-tight border-b-2 border-transparent group-hover/link:border-primary transition-all">
+        Explore Program
       </span>
-      <div className="w-8 h-8 rounded-full bg-[#f43f5e] flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+      <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-[#001D3D] group-hover/link:bg-primary group-hover/link:text-white transition-all shadow-sm">
         <ArrowRight size={16} strokeWidth={2.5} />
       </div>
     </Link>
@@ -395,10 +398,11 @@ const Home = () => {
           <div className="w-full">
             
             {/* Section Header */}
-            <div className="text-center mb-24">
-              <h2 className="text-[34px] md:text-[42px] lg:text-[50px] font-medium font-serif text-[#001D3D] tracking-tight">
-                Academic Offerings Designed for You
+            <div className="text-center mb-24 max-w-3xl mx-auto space-y-4">
+              <h2 className="text-[34px] md:text-[42px] lg:text-[50px] font-bold font-serif text-[#001D3D] tracking-tight">
+                Empowerment Offerings.
               </h2>
+              <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
             </div>
 
             {/* Top Row: Mission & Feature Image */}
