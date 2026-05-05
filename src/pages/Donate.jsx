@@ -44,8 +44,8 @@ const Donate = () => {
             {/* Left Content - Overlapping Text */}
             <div className="w-full lg:w-3/5 space-y-8 py-16 relative z-20">
               <div className="space-y-4">
-                <p className="text-[14px] font-bold tracking-wider text-black uppercase font-sans">MAKE A DIFFERENCE:</p>
-                <h1 className="text-[44px] md:text-[60px] lg:text-[72px] font-extrabold leading-[1.05] tracking-tight text-black font-sans">
+                <p className="text-[14px] font-bold tracking-wider text-black uppercase font-serif">MAKE A DIFFERENCE:</p>
+                <h1 className="text-[44px] md:text-[60px] lg:text-[72px] font-extrabold leading-[1.05] tracking-tight text-black font-serif">
                   Support the Future <br /> of Youth.
                 </h1>
                 <p className="text-base md:text-lg text-black font-sans leading-relaxed max-w-md">

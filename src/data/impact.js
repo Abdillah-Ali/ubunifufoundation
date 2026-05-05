@@ -67,7 +67,7 @@ export const successStories = [
     stat: "Co-founder of MEILI ESSENCE",
     description: "Co-founder of MEILI ESSENCE, solving acne problems by producing chemical-free skin care from seaweed.",
     author: "Khamis Salum",
-    image: "/placeholder-scholar.png",
+    image: "/khamis.png",
     accent: "gold",
     fullStory: [
       "Hello! Everyone my name is Khamis Salum from Zanzibar I'm student of ubunifu foundation and also I'm co_founder of MEILI ESSENCE we are solving acne problem in women by producing chemical-free skin care body lotion made from seaweed which has ant-bacteria to fight with acne bacteria to remove acne and to improve health skin.",
@@ -114,7 +114,7 @@ export const successStories = [
     stat: "Ubunifu Scholar",
     description: "Without Ubunifu I would not have reached anywhere. Now I believe in myself and I have confidence.",
     author: "Latifa",
-    image: "/placeholder-scholar.png",
+    image: "/latifa.png",
     accent: "teal",
     fullStory: [
       "lot of members in my family do not support me so it makes me not believe myself.",
