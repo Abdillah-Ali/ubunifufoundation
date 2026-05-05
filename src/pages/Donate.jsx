@@ -216,7 +216,7 @@ const Donate = () => {
                 {[
                   { label: "Account No.", value: "0791623001" },
                   { label: "Account Name", value: "ABDILLAH TALIB ALI" },
-                  { label: "Phone Rep.", value: "+255 788 008 750" },
+                  { label: "Phone Rep.", value: "+255 623 067 338 / +255 629 766 203" },
                 ].map((row) => (
                   <div key={row.label} className="flex flex-col p-5 bg-background/10 rounded-2xl">
                     <span className="text-[11px] font-normal tracking-[0.75px] text-white/60 mb-1 uppercase font-sans">{row.label}</span>
@@ -236,7 +236,7 @@ const Donate = () => {
                 {[
                   { label: "Account No.", value: "3014111866159" },
                   { label: "Account Name", value: "ABDILLAH TALIB ALI" },
-                  { label: "Phone Rep.", value: "+255 788 008 750" },
+                  { label: "Phone Rep.", value: "+255 623 067 338 / +255 629 766 203" },
                 ].map((row) => (
                   <div key={row.label} className="flex flex-col p-5 bg-background/10 rounded-2xl">
                     <span className="text-[11px] font-normal tracking-[0.75px] text-white/60 mb-1 uppercase font-sans">{row.label}</span>

@@ -36,7 +36,7 @@ const Contact = () => {
 
   const contactInfo = [
   { icon: MapPin, title: "Visit Us", lines: ["Kwerekwe, Zanzibar", "Tanzania"] },
-  { icon: Phone, title: "Call Us", lines: ["+255 788 008 750"] },
+  { icon: Phone, title: "Call Us", lines: ["+255 623 067 338", "+255 629 766 203"] },
   { icon: Mail, title: "Email Us", lines: ["info@ubunifufoundation.org"] }];
 
 
@@ -139,9 +139,20 @@ const Contact = () => {
               <div className="space-y-8 pt-8">
                 <h4 className="text-[14px] font-normal tracking-[0.75px] text-foreground border-b border-border pb-4 w-fit uppercase font-sans">Digital Presence</h4>
                 <div className="flex gap-6">
-                  {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
-                    <a key={i} href="#" className="w-16 h-16 rounded-2xl bg-secondary text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all transform hover:-translate-y-2 shadow-sm border border-border" aria-label="Social link">
-                      <Icon size={24} />
+                  {[
+                    { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=100090323392111", label: "Facebook" },
+                    { Icon: Instagram, href: "https://www.instagram.com/ubunifufoundation?igsh=MTVoNGZubm00eTh2cA==", label: "Instagram" },
+                    { Icon: Linkedin, href: "https://www.linkedin.com/in/ubunifu-foundation-future-shaper-zanzibar-676638302", label: "LinkedIn" }
+                  ].map((social, i) => (
+                    <a 
+                      key={i} 
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-16 h-16 rounded-2xl bg-secondary text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all transform hover:-translate-y-2 shadow-sm border border-border" 
+                      aria-label={social.label}
+                    >
+                      <social.Icon size={24} />
                     </a>
                   ))}
                 </div>

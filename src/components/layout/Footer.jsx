@@ -34,14 +34,20 @@ const Footer = () => {
               </div>
               
               <div className="flex gap-4">
-                {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+                {[
+                  { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=100090323392111", label: "Facebook" },
+                  { Icon: Instagram, href: "https://www.instagram.com/ubunifufoundation?igsh=MTVoNGZubm00eTh2cA==", label: "Instagram" },
+                  { Icon: Linkedin, href: "https://www.linkedin.com/in/ubunifu-foundation-future-shaper-zanzibar-676638302", label: "LinkedIn" }
+                ].map((social, i) => (
                   <a 
                     key={i} 
-                    href="#" 
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1 border border-white/10" 
-                    aria-label="Social link"
+                    aria-label={social.label}
                   >
-                    <Icon size={20} />
+                    <social.Icon size={20} />
                   </a>
                 ))}
               </div>
@@ -108,7 +114,8 @@ const Footer = () => {
                   </div>
                   <div>
                     <span className="block text-white text-base font-bold mb-1 font-sans">Call Us</span>
-                    <span className="text-base text-white/80 leading-[22px] font-sans">+255 788 008 750</span>
+                    <span className="text-base text-white/80 leading-[22px] font-sans block">+255 623 067 338</span>
+                    <span className="text-base text-white/80 leading-[22px] font-sans block">+255 629 766 203</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
