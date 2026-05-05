@@ -83,7 +83,7 @@ export const successStories = [
     stat: "Ubunifu Scholar",
     description: "I now see my life with more clarity and purpose. I have a stronger vision for my future and clearer goals.",
     author: "Munira",
-    image: "/placeholder-scholar.png",
+    image: "/munira.png",
     accent: "teal",
     fullStory: [
       "Now, I see my life with more clarity and purpose. I have a stronger vision for my future and clearer goals that I am actively working toward. I believe that I can create opportunities instead of waiting for them.",
