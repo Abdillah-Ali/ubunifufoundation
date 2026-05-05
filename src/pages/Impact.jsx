@@ -249,20 +249,23 @@ const Impact = () => {
 
               {/* Target Cards */}
               <div className="grid grid-cols-2 gap-4">
-                {futureGoals.targets.map((target) => (
-                  <div key={target.label} className="p-5 rounded-2xl bg-white border border-[#0a3d3d]/10">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-xl bg-[#c49a2a]/15 flex items-center justify-center">
-                        <target.icon size={18} className="text-[#c49a2a]" />
+                {futureGoals.targets.map((target) => {
+                  const Icon = target.icon;
+                  return (
+                    <div key={target.label} className="p-5 rounded-2xl bg-white border border-[#0a3d3d]/10">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-10 h-10 rounded-xl bg-[#c49a2a]/15 flex items-center justify-center">
+                          <Icon size={18} className="text-[#c49a2a]" />
+                        </div>
                       </div>
+                      <p className="text-[30px] font-medium text-[#0a3d3d] font-serif">{target.value}</p>
+                      <p className="text-[12px] font-medium text-[#0a3d3d]/60 uppercase tracking-wider font-sans mt-1">
+                        {target.label}
+                      </p>
+                      <p className="text-[11px] text-[#0a3d3d]/40 mt-1 font-sans">{target.detail}</p>
                     </div>
-                    <p className="text-[30px] font-medium text-[#0a3d3d] font-serif">{target.value}</p>
-                    <p className="text-[12px] font-medium text-[#0a3d3d]/60 uppercase tracking-wider font-sans mt-1">
-                      {target.label}
-                    </p>
-                    <p className="text-[11px] text-[#0a3d3d]/40 mt-1 font-sans">{target.detail}</p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {/* Upcoming Programs */}
