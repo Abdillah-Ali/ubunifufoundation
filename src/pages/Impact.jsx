@@ -33,73 +33,69 @@ const Impact = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* ─── HERO SECTION ─── */}
-      <section className="relative bg-[#0a3d3d] overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#c49a2a] rounded-full blur-[150px]" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary rounded-full blur-[150px]" />
+      <section className="relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/Hero section background image.png"
+            alt="Ubunifu Foundation community members"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a3d3d]/90 via-[#0a3d3d]/75 to-[#0a3d3d]/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a3d3d]/80 via-transparent to-[#0a3d3d]/30" />
+        </div>
+
+        {/* Subtle decorative accents */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-8 right-8 w-24 h-24 rounded-2xl border border-[#c49a2a]/25 rotate-12 hidden lg:block" />
+          <div className="absolute top-16 right-16 w-16 h-16 rounded-2xl bg-[#c49a2a]/15 rotate-6 hidden lg:block" />
         </div>
 
         <Container className="relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[50vh] py-20 lg:py-28">
+          <div className="min-h-[55vh] py-20 lg:py-28 flex items-center">
             {/* Left Content */}
-            <div className="space-y-6 animate-fade-in-up">
-              <h1 className="text-[40px] md:text-[52px] lg:text-[60px] font-medium tracking-tight leading-[1.1] text-white font-serif">
+            <div className="max-w-xl space-y-6 animate-fade-in-up">
+              <h1 className="text-[40px] md:text-[52px] lg:text-[64px] font-medium tracking-tight leading-[1.08] text-white font-serif">
                 Our Impact
               </h1>
-              <p className="text-base md:text-lg text-white/80 max-w-lg font-sans leading-relaxed">
+              <p className="text-base md:text-lg text-white/85 max-w-md font-sans leading-relaxed">
                 Proof of our work — in numbers, milestones, and real outcomes from the communities we serve.
               </p>
-            </div>
-
-            {/* Right Image Placeholder */}
-            <div className="relative hidden lg:flex justify-end">
-              <div className="w-[480px] h-[320px] rounded-3xl bg-white/10 border border-white/15 overflow-hidden flex items-center justify-center backdrop-blur-sm">
-                <div className="text-center space-y-3">
-                  <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mx-auto">
-                    <Users size={28} className="text-white/50" />
-                  </div>
-                  <p className="text-white/40 text-sm font-sans">Community Image</p>
-                </div>
-              </div>
-              {/* Floating accent */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 rounded-2xl bg-[#c49a2a]/20 border border-[#c49a2a]/30" />
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full bg-primary/20 border border-primary/30" />
             </div>
           </div>
         </Container>
 
-        {/* Stats Bar — Overlaps Hero Bottom */}
-        <div className="relative z-20 -mb-16">
-          <Container>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
-              {impactStats.map(({ label, value, icon: Icon, color }) => (
-                <div
-                  key={label}
-                  className={cn(
-                    "rounded-2xl p-5 md:p-6 text-white",
-                    color
-                  )}
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
-                      <Icon size={18} />
-                    </div>
-                  </div>
-                  <p className="text-[28px] md:text-[34px] font-medium tracking-tight font-serif leading-none">
-                    {value}
-                  </p>
-                  <p className="text-[11px] md:text-[12px] font-medium tracking-wider uppercase mt-2 text-white/80 font-sans">
-                    {label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </div>
       </section>
 
-      {/* Spacer for stats overlap */}
-      <div className="h-20" />
+      {/* Stats Bar — Overlaps Hero Bottom */}
+      <div className="relative z-20 -mt-16 mb-8">
+        <Container>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+            {impactStats.map(({ label, value, icon: Icon, color }) => (
+              <div
+                key={label}
+                className={cn(
+                  "rounded-2xl p-5 md:p-6 text-white shadow-lg",
+                  color
+                )}
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                    <Icon size={18} />
+                  </div>
+                </div>
+                <p className="text-[28px] md:text-[34px] font-medium tracking-tight font-serif leading-none">
+                  {value}
+                </p>
+                <p className="text-[11px] md:text-[12px] font-medium tracking-wider uppercase mt-2 text-white/80 font-sans">
+                  {label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </div>
 
       {/* ─── SUCCESS STORIES ─── */}
       <section className="py-16 md:py-24 bg-background">
