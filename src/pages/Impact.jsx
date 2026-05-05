@@ -1,18 +1,23 @@
+import { useState } from "react";
 import { impactStats, successStories } from "@/data/impact";
 import { cn } from "@/lib/utils";
 import Container from "@/components/layout/Container";
-import PageHero from "@/components/layout/PageHero";
 import usePageTitle from "@/hooks/usePageTitle";
-
+import { Link } from "react-router-dom";
+import { Users, Briefcase, ChevronRight, X } from "lucide-react";
 
 const milestones = [
-  { year: "2023", title: "Foundation Founded", description: "Ubunifu Foundation was officially founded in September 2023, beginning its mission to empower the youth of Zanzibar." }
+  { year: "2020", label: "Started", description: "A milestone" },
+  { year: "2021", label: "Swahili milestone", description: "A milestone" },
+  { year: "2022", label: "Milestones in our movers, Season", description: "Growth" },
+  { year: "2023", label: "Growth, growth & Businesses with impact", description: "Current date" }
 ];
 
 const futureGoals = {
+  description: "Our Swahili Foundation is shine and bend three ambitious coaling in an ambitious goals.",
   targets: [
-    { label: "Youths to Train", value: "300", detail: "150 Women, 150 Men" },
-    { label: "Job Opportunities", value: "100", detail: "Creating sustainable livelihoods" }
+    { label: "Youths to Train", value: "300", detail: "150 Women, 150 Men", icon: Users },
+    { label: "Job Opportunities", value: "100", detail: "Creating sustainable livelihoods", icon: Briefcase }
   ],
   upcomingPrograms: [
     "Concentration Bootcamp",
@@ -21,62 +26,195 @@ const futureGoals = {
   ]
 };
 
-
 const Impact = () => {
   usePageTitle("Our Impact");
+  const [expandedStory, setExpandedStory] = useState(null);
 
   return (
-    <div className="min-h-screen bg-background pb-24">
-      <PageHero 
-        title="Our Impact" 
-        subtitle="Proof of our work — in numbers, milestones, and real outcomes from the communities we serve." 
-      />
+    <div className="min-h-screen bg-background">
+      {/* ─── HERO SECTION ─── */}
+      <section className="relative bg-[#0a3d3d] overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#c49a2a] rounded-full blur-[150px]" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary rounded-full blur-[150px]" />
+        </div>
 
-      {/* Stats Dashboard - Schwab Style */}
-      <section className="bg-secondary py-20 border-y border-border">
-        <Container>
-          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 text-center">
-            {impactStats.map(({ label, value, icon: Icon }) => (
-              <div key={label} className="space-y-4 group">
-                <div className="mx-auto p-4 rounded-2xl bg-white text-primary w-fit shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                  <Icon size={24} />
-                </div>
-                <div>
-                  <p className="text-[32px] md:text-[40px] font-medium text-primary tracking-tight font-serif">{value}</p>
-                  <p className="text-[14px] font-normal tracking-[0.75px] text-foreground mt-2 font-sans">{label}</p>
+        <Container className="relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[50vh] py-20 lg:py-28">
+            {/* Left Content */}
+            <div className="space-y-6 animate-fade-in-up">
+              <h1 className="text-[40px] md:text-[52px] lg:text-[60px] font-medium tracking-tight leading-[1.1] text-white font-serif">
+                Our Impact
+              </h1>
+              <p className="text-base md:text-lg text-white/80 max-w-lg font-sans leading-relaxed">
+                Proof of our work — in numbers, milestones, and real outcomes from the communities we serve.
+              </p>
+            </div>
+
+            {/* Right Image Placeholder */}
+            <div className="relative hidden lg:flex justify-end">
+              <div className="w-[480px] h-[320px] rounded-3xl bg-white/10 border border-white/15 overflow-hidden flex items-center justify-center backdrop-blur-sm">
+                <div className="text-center space-y-3">
+                  <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mx-auto">
+                    <Users size={28} className="text-white/50" />
+                  </div>
+                  <p className="text-white/40 text-sm font-sans">Community Image</p>
                 </div>
               </div>
-            ))}
+              {/* Floating accent */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 rounded-2xl bg-[#c49a2a]/20 border border-[#c49a2a]/30" />
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full bg-primary/20 border border-primary/30" />
+            </div>
           </div>
         </Container>
+
+        {/* Stats Bar — Overlaps Hero Bottom */}
+        <div className="relative z-20 -mb-16">
+          <Container>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+              {impactStats.map(({ label, value, icon: Icon, color }) => (
+                <div
+                  key={label}
+                  className={cn(
+                    "rounded-2xl p-5 md:p-6 text-white",
+                    color
+                  )}
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                      <Icon size={18} />
+                    </div>
+                  </div>
+                  <p className="text-[28px] md:text-[34px] font-medium tracking-tight font-serif leading-none">
+                    {value}
+                  </p>
+                  <p className="text-[11px] md:text-[12px] font-medium tracking-wider uppercase mt-2 text-white/80 font-sans">
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </div>
       </section>
 
-      {/* Success Stories - Clean Cards */}
-      <section className="py-24 bg-background">
+      {/* Spacer for stats overlap */}
+      <div className="h-20" />
+
+      {/* ─── SUCCESS STORIES ─── */}
+      <section className="py-16 md:py-24 bg-background">
         <Container>
-          <div className="max-w-3xl mb-16">
-            <h2 className="text-[34px] md:text-[42px] font-medium mb-6 tracking-tight font-serif">Success Stories</h2>
-            <p className="text-base text-foreground font-normal leading-[22px] max-w-2xl font-sans">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-[30px] md:text-[38px] font-medium mb-4 tracking-tight font-serif">
+              Success Stories:
+            </h2>
+            <p className="text-base text-foreground/70 font-normal leading-relaxed max-w-2xl font-sans">
               Real outcomes from our programs, transforming lives across Zanzibar and beyond.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-20">
-            {successStories.map((story) => (
-              <div key={story.author} className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
-                <div className="w-full lg:w-1/2 aspect-[16/10] overflow-hidden rounded-[2.5rem] shadow-xl border border-border">
-                  <img 
-                    src={story.image} 
-                    alt={story.author} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                  />
-                </div>
-                <div className="w-full lg:w-1/2 space-y-6 max-w-3xl">
-                  <h3 className="text-[24px] md:text-[28px] font-medium tracking-tight leading-tight font-serif">{story.title}</h3>
-                  <p className="text-[14px] font-normal text-primary tracking-[0.75px] uppercase font-sans">{story.stat} — {story.author}</p>
-                  <div className="space-y-4 text-base text-foreground leading-[22px] font-normal font-sans">
-                    {story.fullStory.map((paragraph, i) => (
-                      <p key={i}>"{paragraph}"</p>
-                    ))}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {successStories.map((story, i) => (
+              <div
+                key={story.author}
+                className={cn(
+                  "group rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-xl cursor-pointer",
+                  story.accent === "gold"
+                    ? "bg-[#f5e6c8] hover:shadow-[#c49a2a]/10"
+                    : "bg-[#0a3d3d] text-white hover:shadow-primary/10"
+                )}
+                onClick={() => setExpandedStory(expandedStory === i ? null : i)}
+              >
+                <div className="p-6 md:p-8">
+                  {/* Image placeholder + Header */}
+                  <div className="flex items-start gap-5">
+                    <div className={cn(
+                      "w-16 h-16 md:w-20 md:h-20 rounded-2xl shrink-0 flex items-center justify-center overflow-hidden",
+                      story.accent === "gold" ? "bg-[#c49a2a]/20" : "bg-white/10"
+                    )}>
+                      {story.image?.startsWith('/placeholder') ? (
+                        <span className={cn(
+                          "text-2xl font-serif font-medium uppercase",
+                          story.accent === "gold" ? "text-[#c49a2a]" : "text-white/60"
+                        )}>
+                          {story.author[0]}
+                        </span>
+                      ) : (
+                        <img
+                          src={story.image}
+                          alt={story.author}
+                          className="w-full h-full object-cover"
+                        />
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className={cn(
+                        "text-[18px] md:text-[20px] font-medium tracking-tight font-serif leading-tight mb-1",
+                        story.accent === "gold" ? "text-[#0a3d3d]" : "text-white"
+                      )}>
+                        {story.title}
+                      </h3>
+                      <p className={cn(
+                        "text-[12px] font-medium uppercase tracking-wider font-sans",
+                        story.accent === "gold" ? "text-[#c49a2a]" : "text-primary/70"
+                      )}>
+                        {story.stat}
+                      </p>
+                      <p className={cn(
+                        "text-[13px] font-sans mt-0.5",
+                        story.accent === "gold" ? "text-[#0a3d3d]/70" : "text-white/60"
+                      )}>
+                        {story.author}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <div className="mt-5">
+                    <p className={cn(
+                      "text-[14px] font-sans leading-relaxed italic",
+                      story.accent === "gold" ? "text-[#0a3d3d]/70" : "text-white/70"
+                    )}>
+                      "{story.description || story.fullStory[0]}"
+                    </p>
+                  </div>
+
+                  {/* Expanded Full Story */}
+                  {expandedStory === i && (
+                    <div className={cn(
+                      "mt-5 pt-5 border-t space-y-3 animate-fade-in-up",
+                      story.accent === "gold" ? "border-[#c49a2a]/20" : "border-white/15"
+                    )}>
+                      {story.fullStory.map((paragraph, j) => (
+                        <p
+                          key={j}
+                          className={cn(
+                            "text-[13px] font-sans leading-relaxed",
+                            story.accent === "gold" ? "text-[#0a3d3d]/80" : "text-white/70"
+                          )}
+                        >
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Read more indicator */}
+                  <div className={cn(
+                    "flex items-center gap-1 mt-4 text-[12px] font-medium uppercase tracking-wider font-sans group-hover:gap-2 transition-all",
+                    story.accent === "gold" ? "text-[#c49a2a]" : "text-primary/70"
+                  )}>
+                    {expandedStory === i ? (
+                      <>
+                        <span>Read less</span>
+                        <X size={12} />
+                      </>
+                    ) : (
+                      <>
+                        <span>Read more</span>
+                        <ChevronRight size={12} />
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
@@ -85,34 +223,62 @@ const Impact = () => {
         </Container>
       </section>
 
-      {/* Future Impact - New Section */}
-      <section className="py-24 bg-foreground text-background">
+      {/* ─── FUTURE IMPACT ─── */}
+      <section className="py-16 md:py-24 bg-[#f5f0e8]">
         <Container>
-          <div className="grid md:grid-cols-2 gap-24 items-center">
-            <div className="space-y-12">
-              <div className="space-y-6">
-                <h2 className="text-[34px] md:text-[42px] font-medium tracking-tight font-serif">Future <span className="text-primary">Impact.</span></h2>
-                <p className="text-base text-white font-normal leading-[22px] font-sans">
-                  We are currently formalizing our impact tracking to provide more rigorous data. Our goals for the upcoming period are ambitious but necessary for Zanzibar's growth.
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+            {/* Left - Visual Placeholder */}
+            <div className="space-y-6">
+              <div className="w-full aspect-[4/3] rounded-3xl bg-[#0a3d3d]/10 border border-[#0a3d3d]/10 flex items-center justify-center overflow-hidden">
+                <div className="text-center space-y-3">
+                  <div className="w-16 h-16 rounded-2xl bg-[#0a3d3d]/10 flex items-center justify-center mx-auto">
+                    <Users size={28} className="text-[#0a3d3d]/30" />
+                  </div>
+                  <p className="text-[#0a3d3d]/30 text-sm font-sans">Impact Visual</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right - Content */}
+            <div className="space-y-10">
+              <div className="space-y-4">
+                <h2 className="text-[30px] md:text-[38px] font-medium tracking-tight font-serif text-[#0a3d3d]">
+                  Future Impact
+                </h2>
+                <p className="text-base text-[#0a3d3d]/70 font-sans leading-relaxed">
+                  We are currently formalizing our impact tracking to provide more rigorous data.
+                  Our goals for the upcoming period are ambitious but necessary for Zanzibar's growth.
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-8">
+
+              {/* Target Cards */}
+              <div className="grid grid-cols-2 gap-4">
                 {futureGoals.targets.map((target) => (
-                  <div key={target.label} className="p-6 rounded-2xl bg-background/5 border border-background/10">
-                    <p className="text-[34px] font-medium text-primary mb-2 font-serif">{target.value}</p>
-                    <p className="text-[14px] font-normal text-white uppercase tracking-[0.75px] font-sans">{target.label}</p>
-                    <p className="text-xs text-white/60 mt-1 font-sans">{target.detail}</p>
+                  <div key={target.label} className="p-5 rounded-2xl bg-white border border-[#0a3d3d]/10">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-xl bg-[#c49a2a]/15 flex items-center justify-center">
+                        <target.icon size={18} className="text-[#c49a2a]" />
+                      </div>
+                    </div>
+                    <p className="text-[30px] font-medium text-[#0a3d3d] font-serif">{target.value}</p>
+                    <p className="text-[12px] font-medium text-[#0a3d3d]/60 uppercase tracking-wider font-sans mt-1">
+                      {target.label}
+                    </p>
+                    <p className="text-[11px] text-[#0a3d3d]/40 mt-1 font-sans">{target.detail}</p>
                   </div>
                 ))}
               </div>
-            </div>
-            <div className="space-y-8 p-10 rounded-[3rem] bg-background/5 border border-background/10">
-              <h3 className="text-[24px] font-medium tracking-tight font-serif">Upcoming Programs</h3>
-              <div className="space-y-4">
+
+              {/* Upcoming Programs */}
+              <div className="space-y-3">
+                <h3 className="text-[18px] font-medium font-serif text-[#0a3d3d]">Upcoming Programs</h3>
                 {futureGoals.upcomingPrograms.map((prog) => (
-                  <div key={prog} className="flex items-center gap-4 p-4 rounded-xl bg-background/5 group hover:bg-primary transition-colors cursor-default font-sans">
-                    <div className="w-2 h-2 rounded-full bg-primary group-hover:bg-background" />
-                    <span className="text-base font-normal tracking-[0.75px] group-hover:text-background">{prog}</span>
+                  <div
+                    key={prog}
+                    className="flex items-center gap-3 p-3 rounded-xl bg-white group hover:bg-primary transition-colors cursor-default"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-[#c49a2a] group-hover:bg-white shrink-0" />
+                    <span className="text-[14px] font-sans text-[#0a3d3d] group-hover:text-white transition-colors">{prog}</span>
                   </div>
                 ))}
               </div>
@@ -121,36 +287,33 @@ const Impact = () => {
         </Container>
       </section>
 
-      {/* Timeline - Modern Mininalist */}
-      <section className="py-24 bg-secondary border-t border-border">
+      {/* ─── OUR JOURNEY TIMELINE ─── */}
+      <section className="py-16 md:py-24 bg-white">
         <Container>
-          <div className="max-w-3xl mb-20 text-center mx-auto">
-            <h2 className="text-[34px] md:text-[42px] font-medium mb-6 tracking-tight font-serif">Our Journey</h2>
-            <p className="text-base text-foreground font-normal font-sans leading-[22px]">Key milestones in our story of growth and impact.</p>
+          <div className="mb-12">
+            <h2 className="text-[30px] md:text-[38px] font-medium mb-4 tracking-tight font-serif">
+              Our Journey
+            </h2>
           </div>
-          <div className="max-w-4xl mx-auto relative">
-            {/* Center line */}
-            <div className="absolute left-0 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-border hidden md:block" />
-            
-            <div className="space-y-20 md:space-y-32">
+
+          {/* Horizontal Timeline */}
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-0 right-0 top-[44px] h-0.5 bg-border" />
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {milestones.map((m, i) => (
-                <div key={m.year} className={cn(
-                  "relative flex flex-col md:flex-row gap-8 items-start",
-                  i % 2 === 1 ? "md:flex-row-reverse" : ""
-                )}>
-                  {/* Bullet */}
-                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 w-8 h-8 rounded-full bg-primary border-4 border-white shadow-xl z-10" />
-                  
+                <div key={m.year} className="relative pt-0">
+                  {/* Image placeholder */}
+                  <div className="w-20 h-20 rounded-2xl bg-secondary border border-border flex items-center justify-center mb-4 overflow-hidden relative z-10">
+                    <span className="text-xs text-foreground/30 font-sans">Photo</span>
+                  </div>
+                  {/* Dot */}
+                  <div className="absolute left-[34px] top-[78px] w-3 h-3 rounded-full bg-primary border-2 border-white shadow z-20" />
                   {/* Content */}
-                  <div className={cn(
-                    "w-full md:w-1/2 pl-12 md:pl-0",
-                    i % 2 === 0 ? "md:pr-16 text-left md:text-right" : "md:pl-16 text-left"
-                  )}>
-                    <div className="space-y-3">
-                      <span className="text-[40px] md:text-[60px] font-medium text-primary/20 leading-none block font-serif">{m.year}</span>
-                      <h4 className="text-[20px] md:text-[24px] font-medium tracking-tight font-serif">{m.title}</h4>
-                      <p className="text-base text-foreground leading-[22px] font-normal font-sans">{m.description}</p>
-                    </div>
+                  <div className="mt-6 space-y-1">
+                    <p className="text-[24px] font-medium text-primary/30 font-serif">{m.year}</p>
+                    <p className="text-[13px] font-sans text-foreground/60 leading-snug">{m.label}</p>
                   </div>
                 </div>
               ))}
@@ -158,8 +321,49 @@ const Impact = () => {
           </div>
         </Container>
       </section>
-    </div>);
 
+      {/* ─── SUPPORT US CTA ─── */}
+      <section className="py-16 md:py-24 bg-[#f5f0e8]">
+        <Container>
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <h2 className="text-[30px] md:text-[38px] font-medium tracking-tight font-serif text-[#0a3d3d]">
+              Support Us
+            </h2>
+            <p className="text-base text-[#0a3d3d]/70 font-sans leading-relaxed max-w-xl mx-auto">
+              Get involved! Us as to help our community to support or Ubunifu Sustainable Futures
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                to="/donate"
+                className="px-8 py-3 bg-[#0a3d3d] text-white rounded-full text-[14px] font-medium font-sans hover:bg-[#0a3d3d]/90 transition-colors tracking-wider"
+              >
+                Donate Now
+              </Link>
+              <div className="flex items-center gap-3">
+                <span className="text-[13px] font-medium text-[#0a3d3d]/50 uppercase tracking-widest font-sans">Get Involved</span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+              <Link
+                to="/get-involved"
+                className="px-6 py-2.5 bg-white border border-[#0a3d3d]/15 text-[#0a3d3d] rounded-full text-[13px] font-medium font-sans hover:border-primary hover:text-primary transition-colors"
+              >
+                Volunteer
+              </Link>
+              <Link
+                to="/get-involved"
+                className="px-6 py-2.5 bg-white border border-[#0a3d3d]/15 text-[#0a3d3d] rounded-full text-[13px] font-medium font-sans hover:border-primary hover:text-primary transition-colors"
+              >
+                Partner Programs
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </div>
+  );
 };
 
 export default Impact;
