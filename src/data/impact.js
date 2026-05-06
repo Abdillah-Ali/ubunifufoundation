@@ -28,7 +28,7 @@ export const successStories = [
     stat: "Ubunifu Scholar",
     description: "Before joining Ubunifu, my dreams felt limited by my family's financial situation, and I often felt discouraged about my future.",
     author: "Aisha Suleiman Mbarouk",
-    image: "/placeholder-scholar.png",
+    image: "/aisha.png",
     accent: "teal",
     fullStory: [
       "Before joining Ubunifu, my dreams felt limited by my family's financial situation, and I often felt discouraged about my future.",
