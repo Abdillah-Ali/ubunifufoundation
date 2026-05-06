@@ -54,7 +54,7 @@ export const successStories = [
     stat: "Ubunifu Scholar",
     description: "I was a person who was struggling, not knowing what I wanted. But after joining Ubunifu, my life has been very successful.",
     author: "Ahmad Mohammed Ali",
-    image: "/placeholder-scholar.png",
+    image: "/ahmad.png",
     accent: "teal",
     fullStory: [
       "My life used to be very bad before joining at Ubunifu Foundation, I was a person who was struggling here and there not knowing to do not knowing what I wanted and I was always wanting all places to study but there was no part I was finished reading in shots I had no vision in my future life.",
