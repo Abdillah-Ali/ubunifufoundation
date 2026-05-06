@@ -100,7 +100,7 @@ export const successStories = [
     stat: "Briquette Enterprise Owner",
     description: "I faced many challenges that made me feel lost. Since joining Ubunifu, I have gained new skills and now own a charcoal briquette enterprise.",
     author: "Omar Hamdan Vuai",
-    image: "/placeholder-scholar.png",
+    image: "/omar.png",
     accent: "gold",
     fullStory: [
       "My name is Omar Hamdan Vuai. I faced many challenges that made me feel lost and disappointed about life my background had a big impact on my confidence and vision for the future. I doubted myself and my abilities. Opportunities seemed far away, and I did not clearly see where my life was heading.",
