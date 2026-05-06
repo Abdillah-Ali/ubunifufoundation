@@ -41,7 +41,7 @@ export const successStories = [
     stat: "Ubunifu Scholar",
     description: "My background and environment contributed to a lack of confidence and made me see fewer opportunities for my future.",
     author: "Abdallah Waziri",
-    image: "/placeholder-scholar.png",
+    image: "/abdallah.png",
     accent: "gold",
     fullStory: [
       "My background and environment contributed to a lack of confidence and made me see fewer opportunities for my future.",
