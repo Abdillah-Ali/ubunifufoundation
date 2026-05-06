@@ -17,7 +17,12 @@ export default {
         sans: ['"Inter"', 'sans-serif'],
         serif: ['"Gimlet Text"', 'Georgia', 'serif'],
       },
+      fontSize: {
+        metadata: "13.33px",
+      },
       colors: {
+        body: "rgb(64, 64, 64)",
+        metadata: "rgb(128, 128, 128)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

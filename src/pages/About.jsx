@@ -97,12 +97,12 @@ const About = () => {
             </div>
 
             {/* Main Intro */}
-            <h1 className="text-[24px] md:text-[32px] lg:text-[40px] font-medium leading-tight tracking-tight text-white/95 max-w-3xl font-serif">
+            <h1 className="text-[24px] font-serif font-medium leading-tight tracking-tight text-white/95 max-w-3xl">
               Driving social entrepreneurship, youth empowerment, and sustainable community transformation by creating opportunities and building resilient futures in Zanzibar
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base text-white/80 leading-[22px] max-w-xl font-normal font-sans">
+            <p className="text-[16px] text-white/80 leading-[22px] max-w-xl font-normal font-sans">
               Supporting youth and women to create lasting impact.
             </p>
 
@@ -215,14 +215,14 @@ const About = () => {
             {/* Right: Vision on top, Mission below */}
             <div className="flex flex-col gap-12 max-w-3xl">
               <div className="space-y-4 pb-12 border-b border-border">
-                <h3 className="text-[24px] font-medium leading-[32px] font-serif">Our Vision</h3>
-                <p className="text-base font-normal leading-[22px] text-foreground font-sans">
+                <h3 className="text-[24px] font-medium leading-[32px] text-body font-serif">Our Vision</h3>
+                <p className="text-[16px] font-normal leading-[22px] text-body font-sans">
                   Our vision is to be a catalyst for positive transformation in Zanzibar by equipping youth and women with a high-quality education in entrepreneurial skills, vocational training, and community building that inspire creativity to become leaves and legacy of youth empowerment.
                 </p>
               </div>
               <div className="space-y-4">
-                <h3 className="text-[24px] font-medium leading-[32px] font-serif">Our Mission</h3>
-                <p className="text-base font-normal leading-[22px] text-foreground font-sans">
+                <h3 className="text-[24px] font-medium leading-[32px] text-body font-serif">Our Mission</h3>
+                <p className="text-[16px] font-normal leading-[22px] text-body font-sans">
                   Our mission is to address Zanzibar's youth unemployment challenge and empower women by offering comprehensive education in entrepreneurial skills, vocational training, and community building.
                 </p>
               </div>
@@ -244,14 +244,14 @@ const About = () => {
       <section className="py-24 bg-background reveal">
         <Container>
           <div className="max-w-none">
-            <span className="block text-xs font-bold tracking-widest uppercase text-primary mb-6">Our Story</span>
+            <span className="text-metadata uppercase mb-6">Our Story</span>
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
               <div className="max-w-3xl">
-                <h2 className="text-[34px] md:text-[40px] font-medium text-foreground leading-[42px] font-serif">
+                <h2 className="text-[24px] font-medium text-body leading-[32px] font-serif">
                   From a small idea to a movement changing lives in Zanzibar.
                 </h2>
               </div>
-              <div className="space-y-6 text-foreground/80 text-base leading-[22px] font-normal font-sans max-w-3xl">
+              <div className="space-y-6 text-body text-[16px] leading-[22px] font-normal font-sans max-w-3xl">
                 <p>
                   The story of Ubunifu Foundation is a journey of "returning home to sow seeds of change."
                 </p>

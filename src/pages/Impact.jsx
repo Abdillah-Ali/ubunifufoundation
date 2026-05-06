@@ -59,7 +59,7 @@ const Impact = () => {
               <h1 className="text-[40px] md:text-[52px] lg:text-[64px] font-medium tracking-tight leading-[1.08] text-white font-serif">
                 Our Impact
               </h1>
-              <p className="text-base md:text-lg text-white/85 max-w-md font-sans leading-relaxed">
+              <p className="text-[16px] text-white/85 max-w-md font-sans leading-[22px]">
                 Proof of our work — in numbers, milestones, and real outcomes from the communities we serve.
               </p>
             </div>
@@ -85,10 +85,10 @@ const Impact = () => {
                     <Icon size={18} />
                   </div>
                 </div>
-                <p className="text-[28px] md:text-[34px] font-medium tracking-tight font-serif leading-none">
+                <p className="text-[34px] font-medium tracking-tight font-serif leading-none">
                   {value}
                 </p>
-                <p className="text-[11px] md:text-[12px] font-medium tracking-wider uppercase mt-2 text-white/80 font-sans">
+                <p className="text-metadata uppercase text-white/80 mt-2">
                   {label}
                 </p>
               </div>
@@ -101,10 +101,10 @@ const Impact = () => {
       <section className="py-16 md:py-24 bg-background">
         <Container>
           <div className="max-w-3xl mb-12">
-            <h2 className="text-[30px] md:text-[38px] font-medium mb-4 tracking-tight font-serif">
+            <h2 className="text-[24px] font-medium mb-4 tracking-tight font-serif text-body">
               Success Stories:
             </h2>
-            <p className="text-base text-foreground/70 font-normal leading-relaxed max-w-2xl font-sans">
+            <p className="text-[16px] text-body/70 font-normal leading-[22px] max-w-2xl font-sans">
               Real outcomes from our programs, transforming lives across Zanzibar and beyond.
             </p>
           </div>
@@ -145,20 +145,20 @@ const Impact = () => {
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className={cn(
-                        "text-[18px] md:text-[20px] font-medium tracking-tight font-serif leading-tight mb-1",
-                        story.accent === "gold" ? "text-[#0a3d3d]" : "text-white"
+                        "text-[24px] font-medium tracking-tight font-serif leading-[32px] mb-1",
+                        story.accent === "gold" ? "text-body" : "text-white"
                       )}>
                         {story.title}
                       </h3>
                       <p className={cn(
-                        "text-[12px] font-medium uppercase tracking-wider font-sans",
-                        story.accent === "gold" ? "text-[#c49a2a]" : "text-primary/70"
+                        "text-metadata uppercase",
+                        story.accent === "gold" ? "text-body/60" : "text-primary/70"
                       )}>
                         {story.stat}
                       </p>
                       <p className={cn(
-                        "text-[13px] font-sans mt-0.5",
-                        story.accent === "gold" ? "text-[#0a3d3d]/70" : "text-white/60"
+                        "text-metadata",
+                        story.accent === "gold" ? "text-body/50" : "text-white/60"
                       )}>
                         {story.author}
                       </p>
@@ -168,8 +168,8 @@ const Impact = () => {
                   {/* Description */}
                   <div className="mt-5">
                     <p className={cn(
-                      "text-[14px] font-sans leading-relaxed italic",
-                      story.accent === "gold" ? "text-[#0a3d3d]/70" : "text-white/70"
+                      "text-[16px] font-sans leading-[22px] italic",
+                      story.accent === "gold" ? "text-body/70" : "text-white/70"
                     )}>
                       "{story.description || story.fullStory[0]}"
                     </p>
@@ -185,8 +185,8 @@ const Impact = () => {
                         <p
                           key={j}
                           className={cn(
-                            "text-[13px] font-sans leading-relaxed",
-                            story.accent === "gold" ? "text-[#0a3d3d]/80" : "text-white/70"
+                            "text-[16px] font-sans leading-[22px]",
+                            story.accent === "gold" ? "text-body/80" : "text-white/70"
                           )}
                         >
                           {paragraph}
@@ -238,10 +238,10 @@ const Impact = () => {
             {/* Right - Content */}
             <div className="space-y-10">
               <div className="space-y-4">
-                <h2 className="text-[30px] md:text-[38px] font-medium tracking-tight font-serif text-[#0a3d3d]">
+                <h2 className="text-[24px] font-medium tracking-tight font-serif text-body">
                   Future Impact
                 </h2>
-                <p className="text-base text-[#0a3d3d]/70 font-sans leading-relaxed">
+                <p className="text-[16px] text-body/70 font-sans leading-[22px]">
                   We are currently formalizing our impact tracking to provide more rigorous data.
                   Our goals for the upcoming period are ambitious but necessary for Zanzibar's growth.
                 </p>

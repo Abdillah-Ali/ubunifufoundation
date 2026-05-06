@@ -90,17 +90,17 @@ const ProgramCard = ({ title, type, description, className, isFeatured = false }
   )}>
     <div className="flex items-center gap-3 mb-6">
       <div className="w-2 h-2 rounded-full bg-primary" />
-      <p className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">
+      <p className="text-metadata uppercase">
         {type}
       </p>
     </div>
     <h3 className={cn(
-      "font-serif font-bold text-[#001D3D] tracking-tight leading-tight mb-4 group-hover:text-primary transition-colors",
-      isFeatured ? "text-3xl md:text-4xl" : "text-xl md:text-2xl"
+      "font-serif font-medium text-body leading-[32px] transition-colors",
+      isFeatured ? "text-3xl md:text-4xl" : "text-[24px]"
     )}>
       {title}
     </h3>
-    <p className="text-[15px] text-slate-600 leading-relaxed font-normal font-sans mb-8">
+    <p className="text-[16px] text-body leading-[22px] font-normal font-sans mb-8">
       {description}
     </p>
     <Link to="/projects" className="mt-auto group/link flex items-center gap-3">
@@ -193,12 +193,12 @@ const Home = () => {
           <div className="grid md:grid-cols-2 gap-16 lg:gap-32 items-center reveal">
             <div className="space-y-8 order-2 md:order-1 max-w-3xl">
               <div className="space-y-4">
-                <p className="text-[11px] font-bold tracking-[0.2em] text-primary uppercase">About Us</p>
-                <h2 className="text-[28px] md:text-[34px] font-medium leading-tight md:leading-[42px] text-foreground font-serif">
+                <p className="text-metadata uppercase">About Us</p>
+                <h2 className="text-[24px] font-medium leading-[32px] text-body font-serif">
                   Why we are here
                 </h2>
               </div>
-              <p className="text-base text-muted-foreground font-normal leading-[22px] font-sans">
+              <p className="text-[16px] text-body font-normal leading-[22px] font-sans">
                 Ubunifu Foundation is a community-driven organization based in Kwerekwe, Zanzibar, dedicated to addressing youth unemployment and empowering women. We provide access to entrepreneurial skills, vocational training, and mentorship, creating a supportive environment where individuals transform challenges into long-term opportunities.
               </p>
               <Link to="/about" className="inline-block mt-4">
@@ -227,12 +227,12 @@ const Home = () => {
             </div>
             <div className="space-y-8 order-2 max-w-3xl">
               <div className="space-y-4">
-                <p className="text-[11px] font-bold tracking-[0.2em] text-primary uppercase">Our Mission</p>
-                <h2 className="text-[28px] md:text-[34px] font-medium leading-tight md:leading-[42px] text-foreground font-serif">
+                <p className="text-metadata uppercase">Our Mission</p>
+                <h2 className="text-[24px] font-medium leading-[32px] text-body font-serif">
                   Change begins with transformation
                 </h2>
               </div>
-              <p className="text-base text-muted-foreground font-normal leading-[22px] font-sans">
+              <p className="text-[16px] text-body font-normal leading-[22px] font-sans">
                 Through its programs, Ubunifu Foundation equips youth and women to become social entrepreneurs who drive sustainable impact, improve livelihoods, and contribute to economic growth while promoting environmental responsibility. We create a legacy of empowerment and community transformation.
               </p>
               <Link to="/impact">
@@ -365,12 +365,12 @@ const Home = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold tracking-tight text-foreground mb-3 leading-snug">
+                <h3 className="text-[24px] font-medium text-body mb-3 leading-[32px] font-serif">
                   {story.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-base text-muted-foreground leading-[22px] font-normal font-sans flex-1 mb-5">
+                <p className="text-[16px] text-body leading-[22px] font-normal font-sans flex-1 mb-5">
                   {story.description}
                 </p>
 
@@ -399,7 +399,7 @@ const Home = () => {
             
             {/* Section Header */}
             <div className="text-center mb-24 max-w-3xl mx-auto space-y-4">
-              <h2 className="text-[34px] md:text-[42px] lg:text-[50px] font-bold font-serif text-[#001D3D] tracking-tight">
+              <h2 className="text-[24px] font-medium font-serif text-body leading-[32px] tracking-tight">
                 Empowerment Offerings.
               </h2>
               <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
@@ -408,7 +408,7 @@ const Home = () => {
             {/* Top Row: Mission & Feature Image */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-16 items-start">
               <div className="space-y-12">
-                <p className="text-base text-slate-600 leading-[22px] font-normal font-sans">
+                <p className="text-[16px] text-body leading-[22px] font-normal font-sans">
                   We provide rigorous, real-world education through our key programs without traditional barriers. Start your learning journey today with offerings designed by industry experts, delivered with impact, and focused on sustainable futures.
                 </p>
                 {/* Featured Card placement */}
@@ -454,8 +454,8 @@ const Home = () => {
           {/* Section Header */}
           <div className="flex justify-between items-start mb-16 reveal">
             <div className="max-w-xl text-left">
-              <h2 className="text-[24px] font-medium mb-4 tracking-tight text-foreground uppercase font-serif">Latest news</h2>
-              <p className="text-base text-muted-foreground font-normal font-sans leading-[22px]">What happens at Ubunifu Foundation around the world.</p>
+              <h2 className="text-[24px] font-medium mb-4 tracking-tight text-body uppercase font-serif">Latest news</h2>
+              <p className="text-[16px] text-body font-normal font-sans leading-[22px]">What happens at Ubunifu Foundation around the world.</p>
             </div>
             <Link to="/blog">
               <Button variant="outline" className="rounded-none border-foreground text-foreground px-6 py-2 hover:bg-foreground hover:text-white transition-all font-bold text-xs uppercase tracking-tight">
@@ -488,10 +488,10 @@ const Home = () => {
                   
                   {/* Content */}
                   <div className="flex flex-col flex-1 space-y-4">
-                    <h3 className="text-base font-bold leading-tight group-hover:text-primary transition-colors tracking-tight line-clamp-3">
+                    <h3 className="text-[24px] font-serif font-medium leading-[32px] text-body group-hover:text-primary transition-colors tracking-tight line-clamp-2">
                       {post.title}
                     </h3>
-                    <p className="text-base text-muted-foreground line-clamp-4 leading-[22px] font-normal font-sans">
+                    <p className="text-[16px] text-body line-clamp-4 leading-[22px] font-normal font-sans">
                       {post.excerpt}
                     </p>
                     <div className="pt-4 mt-auto">

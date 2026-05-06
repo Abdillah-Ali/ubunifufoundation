@@ -41,8 +41,8 @@ const BlogCard = ({ post, className = "" }) => {
           </div>
         )}
         
-        {/* Badge: Bottom Left or Top Left? The image shows Bottom Left. */}
-        <div className={`absolute bottom-0 left-0 ${badgeColor} text-white text-[10px] font-bold tracking-[0.15em] px-3.5 py-1.5 uppercase`}>
+        {/* Badge */}
+        <div className={`absolute bottom-0 left-0 ${badgeColor} text-white px-3.5 py-1.5 text-metadata uppercase`}>
           {badgeText}
         </div>
       </Link>
@@ -51,25 +51,25 @@ const BlogCard = ({ post, className = "" }) => {
       <div className="flex flex-col space-y-3.5">
         <div className="space-y-1">
           {post.category && (
-            <p className="text-[10px] md:text-[11px] font-normal text-gray-400 uppercase tracking-widest font-sans">
+            <p className="text-metadata uppercase">
               {post.category}
             </p>
           )}
           {formattedDate && (
-            <p className="text-[11px] text-gray-500 font-normal font-sans tracking-[0.75px]">
+            <p className="text-metadata">
               {formattedDate}
             </p>
           )}
         </div>
 
         <Link to={`/blog/${slug}`} className="block group/title">
-          <h3 className="text-[20px] md:text-[24px] font-medium leading-[32px] text-[#001D3D] font-serif group-hover/title:text-primary transition-colors line-clamp-3">
+          <h3 className="text-[24px] font-medium leading-[32px] text-body font-serif group-hover/title:text-primary transition-colors line-clamp-3">
             {post.title}
           </h3>
         </Link>
 
         {post.excerpt && (
-          <p className="text-base text-gray-600 leading-[22px] line-clamp-3 font-normal font-sans">
+          <p className="text-[16px] text-body leading-[22px] line-clamp-3 font-normal font-sans">
             {post.excerpt}
           </p>
         )}

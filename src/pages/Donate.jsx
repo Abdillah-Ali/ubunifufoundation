@@ -44,11 +44,11 @@ const Donate = () => {
             {/* Left Content - Overlapping Text */}
             <div className="w-full lg:w-3/5 space-y-8 py-16 relative z-20">
               <div className="space-y-4">
-                <p className="text-[14px] font-bold tracking-wider text-black uppercase font-serif">MAKE A DIFFERENCE:</p>
-                <h1 className="text-[44px] md:text-[60px] lg:text-[72px] font-extrabold leading-[1.05] tracking-tight text-black font-serif">
+                <p className="text-metadata uppercase">MAKE A DIFFERENCE:</p>
+                <h1 className="text-[44px] md:text-[60px] lg:text-[72px] font-medium leading-[1.1] tracking-tight text-body font-serif">
                   Support the Future <br /> of Youth.
                 </h1>
-                <p className="text-base md:text-lg text-black font-sans leading-relaxed max-w-md">
+                <p className="text-[16px] text-body font-sans leading-[22px] max-w-md">
                   Your contribution empowers young people and women with skills, opportunities, and the tools they need to build sustainable lives.
                 </p>
               </div>
@@ -77,7 +77,7 @@ const Donate = () => {
       {/* ─── 2. THE CHALLENGE ─── */}
       <section className="py-20 bg-white">
         <Container>
-          <h2 className="text-[32px] font-bold text-center text-[#001D3D] font-serif mb-16">The Challenge</h2>
+          <h2 className="text-[24px] font-medium text-center text-body font-serif mb-16">The Challenge</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { label: "The Challenge", icon: Wallet, desc: "Without these resources, many face continuous cycles of unemployment and poverty.", color: "text-[#1a4d2e]", bg: "bg-[#eefcf3]" },
@@ -90,8 +90,8 @@ const Donate = () => {
                   <div className="w-12 h-12 rounded-xl flex items-start justify-start">
                     <Icon size={32} className={item.color} />
                   </div>
-                  <h3 className="font-bold text-[#001D3D] text-lg font-serif">{item.label}</h3>
-                  <p className="text-[14px] text-slate-600 leading-relaxed font-sans">{item.desc}</p>
+                  <h3 className="text-[24px] font-medium text-body font-serif leading-[32px]">{item.label}</h3>
+                  <p className="text-[16px] text-body leading-[22px] font-sans">{item.desc}</p>
                 </div>
               );
             })}
@@ -103,7 +103,7 @@ const Donate = () => {
       <section className="py-24 bg-white">
         <Container>
           <div className="text-center space-y-4 mb-20">
-            <h2 className="text-[32px] font-bold text-[#001D3D] font-serif tracking-tight">Our Solution</h2>
+            <h2 className="text-[24px] font-medium text-body font-serif leading-[32px] tracking-tight">Our Solution</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
             {solutions.map((sol, i) => (
@@ -112,11 +112,11 @@ const Donate = () => {
                   <img src={sol.img} alt={sol.title} className="w-full h-full object-cover" />
                 </div>
                 <div className="space-y-3">
-                  <h4 className="flex items-start gap-3 font-bold text-[#001D3D] text-[16px] leading-tight font-serif">
-                    <span className={cn("w-3 h-3 rounded-full mt-1 shrink-0", sol.color)} />
+                  <h4 className="flex items-start gap-3 font-medium text-body text-[24px] leading-[32px] font-serif">
+                    <span className={cn("w-3 h-3 rounded-full mt-3 shrink-0", sol.color)} />
                     {sol.title}
                   </h4>
-                  <p className="text-[13px] text-slate-500 leading-relaxed font-sans">{sol.desc}</p>
+                  <p className="text-[16px] text-body leading-[22px] font-sans">{sol.desc}</p>
                 </div>
               </div>
             ))}
@@ -149,9 +149,9 @@ const Donate = () => {
                         </div>
                       </div>
                       <div className="space-y-1">
-                        <p className="text-2xl font-bold text-[#001D3D] font-serif">{opt.amount}</p>
-                        <p className="text-[12px] font-bold text-slate-400 uppercase tracking-widest">{opt.tzs}</p>
-                        <p className="text-[12px] text-slate-500 font-sans">({opt.title})</p>
+                        <p className="text-[24px] font-medium text-body font-serif leading-[32px]">{opt.amount}</p>
+                        <p className="text-metadata uppercase">{opt.tzs}</p>
+                        <p className="text-metadata">({opt.title})</p>
                       </div>
                     </button>
                   );
@@ -175,7 +175,7 @@ const Donate = () => {
             <div className="lg:col-span-2 space-y-20">
               {/* ─── 5. STORIES OF CHANGE ─── */}
               <div className="space-y-10">
-                <h2 className="text-[28px] font-bold text-[#001D3D] font-serif">Stories of Change</h2>
+                <h2 className="text-[24px] font-medium text-body font-serif leading-[32px]">Stories of Change</h2>
                 <div className="grid md:grid-cols-[240px_1fr] gap-8 items-start">
                   <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl">
                     <img src="/mwamvua.png" alt="Mwamvua Khamis" className="w-full h-full object-cover" />
@@ -187,7 +187,7 @@ const Donate = () => {
                         <h3 className="text-xl font-bold text-[#001D3D] font-serif leading-tight">Mwamvua Khamis,</h3>
                         <p className="text-sm font-bold text-emerald-700/70 uppercase tracking-widest">Founder of Safari Queen</p>
                       </div>
-                      <p className="text-[15px] text-slate-700 font-sans leading-relaxed italic">
+                      <p className="text-[16px] text-body font-sans leading-[22px] italic">
                         "Before joining UBUNIFU, I lacked confidence, clear goals... Since joining, I have developed skills in entrepreneurship... I now have clarity and purpose."
                       </p>
                     </div>
@@ -237,12 +237,12 @@ const Donate = () => {
                     </div>
                     <div className="space-y-4">
                       <div>
-                        <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Account No</p>
-                        <p className="text-lg font-bold text-[#001D3D]">0791623001</p>
+                        <p className="text-metadata uppercase">Account No</p>
+                        <p className="text-lg font-medium text-body">0791623001</p>
                       </div>
                       <div>
-                        <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Account Name</p>
-                        <p className="text-sm font-medium text-slate-600">Ubunifu Foundation</p>
+                        <p className="text-metadata uppercase">Account Name</p>
+                        <p className="text-[16px] font-medium text-body">Ubunifu Foundation</p>
                       </div>
                       <div className="flex items-center gap-2 text-blue-600">
                         <div className="w-4 h-4 rounded-full bg-blue-100 flex items-center justify-center">
