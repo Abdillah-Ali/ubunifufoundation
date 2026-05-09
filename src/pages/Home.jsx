@@ -203,19 +203,8 @@ const Home = () => {
           </div>
 
           {/* Block 2: Our Mission / Impact */}
-          <div className="grid md:grid-cols-2 gap-16 lg:gap-32 items-center mt-48 reveal">
-            <div className="order-1">
-              <div className="aspect-video bg-secondary border border-border overflow-hidden shadow-sm relative">
-                <iframe
-                  src="https://www.youtube.com/embed/m-nki6XAL7Q"
-                  title="Ubunifu Foundation Introduction"
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-            <div className="space-y-8 order-2 max-w-3xl">
+          <div className="mt-32 md:mt-48 reveal">
+            <div className="space-y-8 max-w-3xl">
               <div className="space-y-4">
                 <p className="text-metadata uppercase">Our Mission</p>
                 <h2 className="text-[24px] font-medium leading-[32px] text-body font-serif">
@@ -225,7 +214,7 @@ const Home = () => {
               <p className="text-[16px] text-body font-normal leading-[22px] font-sans">
                 Through its programs, Ubunifu Foundation equips youth and women to become social entrepreneurs who drive sustainable impact, improve livelihoods, and contribute to economic growth while promoting environmental responsibility. We create a legacy of empowerment and community transformation.
               </p>
-              <Link to="/impact">
+              <Link to="/impact" className="inline-block">
                 <Button variant="outline" className="rounded-none border-foreground text-foreground px-10 py-6 hover:bg-foreground hover:text-white transition-all font-bold text-sm uppercase tracking-tight">
                   Learn more
                 </Button>
@@ -234,6 +223,18 @@ const Home = () => {
           </div>
         </Container>
       </section>
+
+      {/* Full-width YouTube Video */}
+      <div className="w-full" style={{ aspectRatio: '16/9' }}>
+        <iframe
+          src="https://www.youtube.com/embed/m-nki6XAL7Q?autoplay=0&rel=0&modestbranding=1"
+          title="Ubunifu Foundation Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="w-full h-full"
+          style={{ border: 'none', display: 'block' }}
+        />
+      </div>
       
       {/* Visual Separator */}
       <Container className="my-16">

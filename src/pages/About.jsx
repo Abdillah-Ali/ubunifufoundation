@@ -213,15 +213,6 @@ const About = () => {
         </Container>
       </section>
 
-      {/* Full-width Image Banner */}
-      <div className="w-full bg-slate-50 flex items-center justify-center">
-        <img
-          src="/about_seminar.jpg"
-          alt="Ubunifu Foundation Community"
-          className="w-full h-auto object-contain"
-        />
-      </div>
-
       {/* Our Story - Full Width */}
       <section className="py-24 bg-background reveal">
         <Container>
@@ -251,6 +242,15 @@ const About = () => {
           </div>
         </Container>
       </section>
+
+      {/* Full-width Image Banner */}
+      <div className="w-full bg-slate-50 flex items-center justify-center">
+        <img
+          src="/about_seminar.jpg"
+          alt="Ubunifu Foundation Community"
+          className="w-full h-auto object-contain"
+        />
+      </div>
 
       {/* 6. Strategic Goals - Premium Redesign */}
       <section className="relative pt-12 pb-28 bg-white overflow-hidden reveal">
@@ -314,17 +314,7 @@ const About = () => {
 
 
 
-      {/* Full-width YouTube Video */}
-      <div className="w-full" style={{ aspectRatio: '16/9' }}>
-        <iframe
-          src="https://www.youtube.com/embed/m-nki6XAL7Q?autoplay=0&rel=0&modestbranding=1"
-          title="Ubunifu Foundation Video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className="w-full h-full"
-          style={{ border: 'none', display: 'block' }}
-        />
-      </div>
+
 
       {/* Our Board / Team Section */}
       <section className="py-24 bg-background reveal">
