@@ -14,7 +14,6 @@ import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
 import GetInvolved from "./pages/GetInvolved";
 import Vision from "./pages/Vision";
-import WhyUF from "./pages/WhyUF";
 import Model from "./pages/Model";
 import NotFound from "./pages/NotFound";
 
@@ -35,7 +34,6 @@ const App = () =>
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/vision" element={<Vision />} />
-            <Route path="/why-uf" element={<WhyUF />} />
             <Route path="/model" element={<Model />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/donate" element={<Donate />} />

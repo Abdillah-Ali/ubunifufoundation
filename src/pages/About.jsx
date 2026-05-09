@@ -17,38 +17,20 @@ const objectives = [
 
 const boardMembers = [
   {
-    name: "Hamza Khamis",
-    role: "Executive Director & Co-Founder, Ubunifu Foundation",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop"
+    name: "Saida Malik",
+    role: "Co-Founder & Strategic Lead",
+    image: "/saida.png"
   },
   {
-    name: "Fatma Ali",
-    role: "Co-Founder & Programs Director, Ubunifu Foundation",
-    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=400&auto=format&fit=crop"
-  },
-  {
-    name: "Ahmed Salim",
-    role: "Board Chair & Community Development Advisor",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop"
-  },
-  {
-    name: "Mariam Hassan",
-    role: "Women Empowerment Lead & Vocational Trainer",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop"
-  },
-  {
-    name: "Omar Juma",
-    role: "Youth Entrepreneurship Mentor & Advisor",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop"
-  },
+    name: "Fadhil",
+    role: "Co-Founder & Innovation Lead",
+    image: "/fadhil.png"
+  }
 ];
 
 const partners = [
-  { name: "Zanzibar Youth Council", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aba9?q=80&w=200&auto=format&fit=crop" },
-  { name: "Sustainable Development Goals", logo: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=200&auto=format&fit=crop" },
-  { name: "Community First Initiative", logo: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=200&auto=format&fit=crop" },
-  { name: "Youth Empowerment Network", logo: "https://images.unsplash.com/photo-1612810806563-4cb8265db55f?q=80&w=200&auto=format&fit=crop" },
-  { name: "Zanzibar Social Innovation", logo: "https://images.unsplash.com/photo-1603366445787-09714680cbf1?q=80&w=200&auto=format&fit=crop" }
+  { name: "TUI Care Foundation", logo: "/tuicare.png" },
+  { name: "Social Innovation Academy", logo: "/sina.png" }
 ];
 
 const Underline = () => (
@@ -207,7 +189,7 @@ const About = () => {
             {/* Left: Square Image */}
             <div className="aspect-square w-full overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2000&auto=format&fit=crop"
+                src="/about_vision.jpg"
                 alt="Ubunifu Foundation Team"
                 className="w-full h-full object-cover"
               />
@@ -232,11 +214,11 @@ const About = () => {
       </section>
 
       {/* Full-width Image Banner */}
-      <div className="w-full h-[85vh] overflow-hidden">
+      <div className="w-full bg-slate-50 flex items-center justify-center">
         <img
-          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2940&auto=format&fit=crop"
+          src="/about_seminar.jpg"
           alt="Ubunifu Foundation Community"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-auto object-contain"
         />
       </div>
 
@@ -348,12 +330,12 @@ const About = () => {
       <section className="py-24 bg-background reveal">
         <Container>
           <div className="max-w-2xl mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6">Our Board</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 font-serif">Our Board</h2>
             <p className="text-base md:text-lg text-foreground/80 leading-relaxed font-medium">
               The Ubunifu Foundation Board serves as a governing body committed to guiding the Foundation's mission. Each member brings deep expertise in community development, entrepreneurship, and social innovation across Zanzibar.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10">
+          <div className="grid grid-cols-2 gap-10 max-w-2xl mx-auto">
             {boardMembers.map((member, index) => (
               <div key={index} className="flex flex-col items-center text-center group">
                 <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden mb-5 border-2 border-border group-hover:border-primary transition-colors duration-300">
@@ -383,15 +365,15 @@ const About = () => {
                 Our Valued Partners
               </span>
             </div>
-            <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-16 items-center opacity-40">
+            <div className="flex-1 flex flex-wrap justify-center md:justify-start gap-12 lg:gap-20 items-center">
               {partners.map((partner, index) => (
-                <div key={index} className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer group relative">
+                <div key={index} className="flex items-center justify-center transition-all duration-500 cursor-pointer group relative">
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+                    className="h-20 md:h-28 lg:h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap text-[10px] font-bold uppercase tracking-widest text-primary">
+                  <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap text-xs font-bold uppercase tracking-widest text-primary">
                     {partner.name}
                   </div>
                 </div>

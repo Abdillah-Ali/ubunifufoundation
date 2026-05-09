@@ -15,12 +15,7 @@ import useScrollReveal from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
 
 
-import p1 from "@/assets/hero/p1.png";
-import p2 from "@/assets/hero/p2.png";
-import p3 from "@/assets/hero/p3.png";
-import p4 from "@/assets/hero/p4.png";
-import p5 from "@/assets/hero/p5.png";
-import p6 from "@/assets/hero/p6.png";
+
 
 
 
@@ -33,7 +28,7 @@ const AboutImageDesign = () => (
     {/* Main Image Container */}
     <div className="relative h-full w-full rounded-none overflow-hidden border-8 border-white shadow-2xl z-10 transition-transform duration-700 group-hover:scale-[1.02]">
       <img 
-        src="/zanzibar_youth_innovation.png" 
+        src="/scholars-innovation.jpg" 
         alt="Zanzibar Youth Innovation" 
         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
       />
@@ -162,22 +157,17 @@ const Home = () => {
               
               {/* Image 1: Main (Center Right) */}
               <div className="absolute top-[10%] right-0 w-[55%] aspect-square rounded-full border-4 border-white/20 overflow-hidden shadow-2xl z-20 group">
-                <img src={p1} alt="Scholar 1" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="/founders_hero.png" alt="Founders" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
               
               {/* Image 2: Support (Top Left) */}
               <div className="absolute top-0 left-[5%] w-[42%] aspect-square rounded-full border-4 border-white/20 overflow-hidden shadow-2xl z-10 group">
-                <img src={p2} alt="Scholar 2" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="/saida.png" alt="Saida Malik" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
               
               {/* Image 3: Support (Bottom Center) */}
               <div className="absolute bottom-[5%] left-[20%] w-[48%] aspect-square rounded-full border-4 border-white/20 overflow-hidden shadow-2xl z-30 group">
-                <img src={p3} alt="Scholar 3" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              </div>
-
-              {/* Image 4: Small Accent */}
-              <div className="absolute bottom-[15%] right-[10%] w-[25%] aspect-square rounded-full border-4 border-white/20 overflow-hidden shadow-xl z-10 group">
-                <img src={p4} alt="Scholar 4" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="/fadhil.png" alt="Fadhil" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
             </div>
 

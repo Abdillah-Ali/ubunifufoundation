@@ -19,7 +19,7 @@ export const projects = [
   status: "ongoing",
   partner: "SINA, Social Innovation Academy",
   description: "Helping youth identify their potential, build self-confidence, and align their personal goals with meaningful career paths or community impact.",
-  image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2000&auto=format&fit=crop",
+  image: "/home_empowerment_new.jpg",
   highlights: ["Confidence building", "Life coaching", "Goal setting"]
 },
 {

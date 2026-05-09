@@ -38,7 +38,7 @@ const Donate = () => {
     <div className="min-h-screen bg-white">
 
       {/* ─── 1. HERO SECTION ─── */}
-      <section className="pt-16 pb-0 bg-[#F2F9FF] overflow-hidden relative min-h-[600px] flex items-center">
+      <section className="pt-16 pb-0 bg-white overflow-hidden relative min-h-[600px] flex items-center">
         <Container>
           <div className="relative flex flex-col lg:flex-row items-center lg:items-end">
             {/* Left Content - Overlapping Text */}
@@ -64,9 +64,9 @@ const Donate = () => {
             <div className="w-full lg:w-[65%] relative h-full flex items-end justify-center lg:justify-end lg:-ml-[20%] z-10 pointer-events-none">
               <div className="relative w-full max-w-[900px] aspect-[4/3] lg:aspect-auto lg:h-[700px] -mb-1">
                 <img
-                  src="/donate_hero_final_cutout.png"
+                  src="/founders_hero.png"
                   alt="Support the Future of Youth"
-                  className="w-full h-full object-contain object-bottom transition-transform duration-700 mix-blend-multiply"
+                  className="w-full h-full object-contain object-bottom transition-transform duration-700"
                 />
               </div>
             </div>

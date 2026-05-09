@@ -14,7 +14,6 @@ const navLinks = [
     children: [
       { label: "About us", to: "/about" },
       { label: "Our Vision", to: "/vision" },
-      { label: "Why UF", to: "/why-uf" },
       { label: "Our Model", to: "/model" }
     ]
   },

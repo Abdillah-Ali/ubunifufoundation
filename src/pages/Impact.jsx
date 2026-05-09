@@ -225,13 +225,12 @@ const Impact = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Left - Visual Placeholder */}
             <div className="space-y-6">
-              <div className="w-full aspect-[4/3] rounded-3xl bg-[#0a3d3d]/10 border border-[#0a3d3d]/10 flex items-center justify-center overflow-hidden">
-                <div className="text-center space-y-3">
-                  <div className="w-16 h-16 rounded-2xl bg-[#0a3d3d]/10 flex items-center justify-center mx-auto">
-                    <Users size={28} className="text-[#0a3d3d]/30" />
-                  </div>
-                  <p className="text-[#0a3d3d]/30 text-sm font-sans">Impact Visual</p>
-                </div>
+              <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-slate-100">
+                <img 
+                  src="/founders_hero.png" 
+                  alt="Ubunifu Foundation Founders" 
+                  className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                />
               </div>
             </div>
 
