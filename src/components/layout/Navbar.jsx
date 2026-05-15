@@ -4,7 +4,6 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Container from "./Container";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -44,7 +43,7 @@ const Navbar = () => {
     )}>
       <Container className="flex items-center justify-between h-20 md:h-24">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img src={logo} alt="Ubunifu Foundation" className="h-12 md:h-16 w-auto" />
+          <img src="/logo.png" alt="Ubunifu Foundation" className="h-12 md:h-16 w-auto" />
           <div 
             className="flex flex-col justify-between h-12 md:h-16 leading-none font-sans" 
           >

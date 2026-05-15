@@ -8,11 +8,6 @@ import usePageTitle from "@/hooks/usePageTitle";
 import { cn } from "@/lib/utils";
 
 // Hero images
-import p1 from "@/assets/hero/p1.png";
-import p2 from "@/assets/hero/p2.png";
-import p3 from "@/assets/hero/p3.png";
-import p4 from "@/assets/hero/p4.png";
-
 const donationOptions = [
   { amount: "$10", tzs: "TZS 25,000", title: "Training Materials", impact: "Supports training materials for one participant.", icon: BookOpen },
   { amount: "$25", tzs: "TZS 62,500", title: "Mentorship Session", impact: "Supports a dedicated mentorship session.", icon: Users },
@@ -20,10 +15,10 @@ const donationOptions = [
 ];
 
 const solutions = [
-  { title: "Skills Training Programs", desc: "Equipping youth with practical skills to break the cycle of unemployment and build sustainable careers.", img: p1, color: "bg-blue-500" },
-  { title: "Women Empowerment Initiatives", desc: "Providing women with the resources and mentorship they need to launch successful enterprises.", img: p2, color: "bg-emerald-500" },
-  { title: "Community Development Projects", desc: "Strengthening local communities through collaborative action and sustainable infrastructure.", img: p3, color: "bg-amber-500" },
-  { title: "Environmental Programs", desc: "Protecting Zanzibar's natural beauty through conservation efforts and environmental education.", img: p4, color: "bg-green-500" },
+  { title: "Skills Training Programs", desc: "Equipping youth with practical skills to break the cycle of unemployment and build sustainable careers.", img: "/hero/p1.png", color: "bg-blue-500" },
+  { title: "Women Empowerment Initiatives", desc: "Providing women with the resources and mentorship they need to launch successful enterprises.", img: "/hero/p2.png", color: "bg-emerald-500" },
+  { title: "Community Development Projects", desc: "Strengthening local communities through collaborative action and sustainable infrastructure.", img: "/hero/p3.png", color: "bg-amber-500" },
+  { title: "Environmental Programs", desc: "Protecting Zanzibar's natural beauty through conservation efforts and environmental education.", img: "/hero/p4.png", color: "bg-green-500" },
 ];
 
 const Donate = () => {

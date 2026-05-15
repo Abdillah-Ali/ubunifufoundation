@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, ArrowRight } from "lucide-react";
 import Container from "./Container";
-import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -16,7 +15,7 @@ const Footer = () => {
             <div className="space-y-6">
               <div>
                 <Link to="/" className="flex items-center gap-3 mb-6">
-                  <img src={logo} alt="Ubunifu Foundation" className="h-12 w-auto" />
+                  <img src="/logo.png" alt="Ubunifu Foundation" className="h-12 w-auto" />
                 <div 
                   className="flex flex-col justify-between h-12 leading-none font-sans" 
                 >
