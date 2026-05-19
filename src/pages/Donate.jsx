@@ -15,10 +15,10 @@ const donationOptions = [
 ];
 
 const solutions = [
-  { title: "Skills Training Programs", desc: "Equipping youth with practical skills to break the cycle of unemployment and build sustainable careers.", img: "/hero/p1.png", color: "bg-blue-500" },
-  { title: "Women Empowerment Initiatives", desc: "Providing women with the resources and mentorship they need to launch successful enterprises.", img: "/hero/p2.png", color: "bg-emerald-500" },
-  { title: "Community Development Projects", desc: "Strengthening local communities through collaborative action and sustainable infrastructure.", img: "/hero/p3.png", color: "bg-amber-500" },
-  { title: "Environmental Programs", desc: "Protecting Zanzibar's natural beauty through conservation efforts and environmental education.", img: "/hero/p4.png", color: "bg-green-500" },
+  { title: "Skills Training Programs", desc: "Equipping youth with practical skills to break the cycle of unemployment and build sustainable careers.", img: "/abdallah.png", color: "bg-blue-500" },
+  { title: "Women Empowerment Initiatives", desc: "Providing women with the resources and mentorship they need to launch successful enterprises.", img: "/aisha.png", color: "bg-emerald-500" },
+  { title: "Community Development Projects", desc: "Strengthening local communities through collaborative action and sustainable infrastructure.", img: "/khamis.png", color: "bg-amber-500" },
+  { title: "Environmental Programs", desc: "Protecting Zanzibar's natural beauty through conservation efforts and environmental education.", img: "/munira.png", color: "bg-green-500" },
 ];
 
 const Donate = () => {
@@ -133,10 +133,9 @@ const Donate = () => {
                 {donationOptions.map((opt, i) => {
                   const Icon = opt.icon;
                   return (
-                    <button
+                    <div
                       key={i}
-                      onClick={scrollToPayment}
-                      className="w-full p-6 bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-md transition-all group text-center space-y-2"
+                      className="w-full p-6 bg-white border border-slate-100 rounded-3xl shadow-sm text-center space-y-2"
                     >
                       <div className="flex justify-center">
                         <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center">
@@ -148,22 +147,9 @@ const Donate = () => {
                         <p className="text-metadata uppercase">{opt.tzs}</p>
                         <p className="text-metadata">({opt.title})</p>
                       </div>
-                    </button>
+                    </div>
                   );
                 })}
-
-                {/* Custom Amount */}
-                <div className="p-6 rounded-3xl bg-white border border-slate-100 shadow-sm text-center space-y-3">
-                  <h4 className="font-bold text-[#001D3D] font-serif">Custom Amount</h4>
-                  <div className="flex justify-center">
-                    <button
-                      onClick={scrollToPayment}
-                      className="w-10 h-10 rounded-full bg-[#007BFF] text-white flex items-center justify-center hover:scale-110 transition-transform"
-                    >
-                      <ArrowRight size={18} />
-                    </button>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -194,14 +180,14 @@ const Donate = () => {
               <div className="space-y-12">
                 <div className="flex flex-wrap items-center gap-12">
                   <div className="flex items-center gap-3">
-                    <img src="/favicon.png" alt="Tui Care" className="h-10 opacity-60 grayscale" />
+                    <img src="/tuicare.png" alt="Tui Care Foundation" className="h-10 object-contain" />
                     <div className="leading-tight">
                       <p className="text-[12px] font-bold text-[#001D3D]">Tui Care</p>
                       <p className="text-[12px] font-bold text-[#001D3D]">Foundation</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-3xl font-bold tracking-tighter text-[#001D3D]">SINA</span>
+                    <img src="/sina.png" alt="SINA Social Innovation Academy" className="h-10 object-contain" />
                     <div className="leading-tight border-l border-slate-200 pl-3">
                       <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Social Innovation</p>
                       <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Academy</p>

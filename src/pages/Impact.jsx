@@ -37,13 +37,13 @@ const Impact = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/Hero section background image.png"
-            alt="Ubunifu Foundation community members"
+            src="/scholars-innovation.jpg"
+            alt="Ubunifu Foundation scholars"
             className="w-full h-full object-cover"
           />
           {/* Dark gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a3d3d]/90 via-[#0a3d3d]/75 to-[#0a3d3d]/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a3d3d]/80 via-transparent to-[#0a3d3d]/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a3d3d]/25 via-[#0a3d3d]/15 to-[#0a3d3d]/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a3d3d]/20 via-transparent to-[#0a3d3d]/10" />
         </div>
 
         {/* Subtle decorative accents */}

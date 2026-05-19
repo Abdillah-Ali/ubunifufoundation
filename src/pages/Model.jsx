@@ -1,4 +1,5 @@
 import { Box, Layers, RefreshCw, Zap, Users, ShieldCheck, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Container from "@/components/layout/Container";
 import usePageTitle from "@/hooks/usePageTitle";
 import useScrollReveal from "@/hooks/useScrollReveal";
@@ -38,13 +39,13 @@ const Model = () => {
     <div className="min-h-screen bg-white">
       {/* 1. HERO SECTION */}
       <section className="relative pt-32 pb-24 bg-[#0a3d3d] text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-30">
+        <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2000&auto=format&fit=crop" 
+            src="/about_vision.jpg" 
             alt="Collaboration and Growth" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a3d3d] via-[#0a3d3d]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a3d3d]/70 via-[#0a3d3d]/80 to-transparent" />
         </div>
 
         <Container className="relative z-10">
@@ -69,8 +70,8 @@ const Model = () => {
             <div className="relative reveal">
               <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200&auto=format&fit=crop" 
-                  alt="Team collaboration" 
+                  src="/about_vision.jpg" 
+                  alt="Our vision in action" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -186,9 +187,12 @@ const Model = () => {
               Our impact is the best evidence of our model's success. Explore the stories of youth who have transformed their lives through our self-driven learning space.
             </p>
             <div className="flex justify-center gap-4">
-              <button className="px-10 py-4 bg-[#0a3d3d] text-white rounded-full font-bold uppercase tracking-wider text-sm hover:bg-[#0a3d3d]/90 transition-all">
+              <Link
+                to="/impact"
+                className="px-10 py-4 bg-[#0a3d3d] text-white rounded-full font-bold uppercase tracking-wider text-sm hover:bg-[#0a3d3d]/90 transition-all"
+              >
                 Explore Our Impact
-              </button>
+              </Link>
             </div>
           </div>
         </Container>

@@ -132,7 +132,7 @@ const Footer = () => {
 
           {/* Bottom Bar */}
           <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[14px] font-normal tracking-[0.75px] font-sans text-white/80">
-            <p>© {new Date().getFullYear()} Ubunifu Foundation. Empowering Sustainable Futures.</p>
+            <p className="text-white">© 2026 Ubunifu Foundation. Empowering Sustainable Futures.</p>
             <div className="flex gap-8">
               <Link to="/" className="hover:text-[#4ECDC4] transition-colors">Privacy Policy</Link>
               <Link to="/" className="hover:text-[#4ECDC4] transition-colors">Terms of Service</Link>
