@@ -13,6 +13,7 @@ const navLinks = [
     to: "/about",
     children: [
       { label: "About us", to: "/about" },
+      { label: "Our Mission", to: "/mission" },
       { label: "Our Vision", to: "/vision" },
       { label: "Our Model", to: "/model" }
     ]
