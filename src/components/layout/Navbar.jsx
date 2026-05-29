@@ -40,18 +40,40 @@ const Navbar = () => {
 
   return (
     <header className={cn(
-      "sticky top-0 w-full z-50 transition-colors duration-300 bg-white shadow-sm border-b border-border/50"
+      "sticky top-0 w-full z-50 transition-all duration-300 border-b",
+      isScrolled 
+        ? "bg-white/80 backdrop-blur-md shadow-md border-border/80" 
+        : "bg-white shadow-sm border-border/50"
     )}>
-      <Container className="flex items-center justify-between h-20 md:h-24">
+      <Container className={cn(
+        "flex items-center justify-between transition-all duration-300",
+        isScrolled ? "h-16 md:h-20" : "h-20 md:h-24"
+      )}>
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img src="/logo.png" alt="Ubunifu Foundation" className="h-12 md:h-16 w-auto" />
+          <img 
+            src="/logo.png" 
+            alt="Ubunifu Foundation" 
+            className={cn(
+              "w-auto transition-all duration-300",
+              isScrolled ? "h-10 md:h-12" : "h-12 md:h-16"
+            )} 
+          />
           <div 
-            className="flex flex-col justify-between h-12 md:h-16 leading-none font-sans" 
+            className={cn(
+              "flex flex-col justify-between leading-none font-sans transition-all duration-300",
+              isScrolled ? "h-10 md:h-12" : "h-12 md:h-16"
+            )}
           >
-            <span className="text-[22px] xs:text-[25px] md:text-[34px] font-bold text-[hsl(var(--logo-red))]">
+            <span className={cn(
+              "font-bold text-[hsl(var(--logo-red))] transition-all duration-300",
+              isScrolled ? "text-[18px] xs:text-[20px] md:text-[28px]" : "text-[22px] xs:text-[25px] md:text-[34px]"
+            )}>
               Ubunifu
             </span>
-            <span className="text-[15px] xs:text-[17px] md:text-[23px] font-bold text-[hsl(var(--logo-blue))]">
+            <span className={cn(
+              "font-bold text-[hsl(var(--logo-blue))] transition-all duration-300",
+              isScrolled ? "text-[12px] xs:text-[14px] md:text-[18px]" : "text-[15px] xs:text-[17px] md:text-[23px]"
+            )}>
               Foundation
             </span>
           </div>
