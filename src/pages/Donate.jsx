@@ -219,7 +219,7 @@ const Donate = () => {
                     <div className="space-y-4">
                       <div>
                         <p className="text-metadata uppercase">Account No</p>
-                        <p className="text-lg font-medium text-body">0791623001</p>
+                        <p className="text-lg font-medium text-body">xxxxxxxxxxxxx</p>
                       </div>
                       <div>
                         <p className="text-metadata uppercase">Account Name</p>
@@ -243,7 +243,7 @@ const Donate = () => {
                     <div className="space-y-4">
                       <div>
                         <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Account No</p>
-                        <p className="text-lg font-bold text-[#001D3D]">3014111866159</p>
+                        <p className="text-lg font-bold text-[#001D3D]">xxxxxxxxxxxxx</p>
                       </div>
                       <div>
                         <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Account Name</p>
