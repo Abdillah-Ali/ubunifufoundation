@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import Container from "@/components/layout/Container";
 import usePageTitle from "@/hooks/usePageTitle";
 import useScrollReveal from "@/hooks/useScrollReveal";
-import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 const waysToGetInvolved = [
   {
@@ -68,13 +67,6 @@ const sdgGoals = [
     description: "Encouraging innovation, creativity, and social enterprise development.",
     color: "bg-[#fd6925]"
   }
-];
-
-const impactStats = [
-  { number: "500+", label: "Youth Reached" },
-  { number: "100+", label: "Women Empowered" },
-  { number: "20+", label: "Community Initiatives" },
-  { number: "5+", label: "Core Programs" }
 ];
 
 const GetInvolved = () => {
@@ -191,30 +183,6 @@ const GetInvolved = () => {
         </Container>
       </section>
 
-      {/* 4. COMMUNITY IMPACT */}
-      <section className="py-32 bg-gradient-to-r from-[#2D1457] to-[#1696D2] text-white relative overflow-hidden">
-        <Container className="relative z-10">
-          <div className="text-center mb-20 reveal space-y-4">
-            <h2 className="text-[40px] md:text-[48px] font-bold font-serif">
-              Your Support Creates Real Impact
-            </h2>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Through collaboration and community support, we continue creating opportunities
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {impactStats.map((stat, i) => (
-              <div key={i} className="text-center reveal">
-                <div className="text-6xl md:text-7xl font-bold font-serif mb-4">
-                  <AnimatedCounter value={stat.number} />
-                </div>
-                <p className="text-lg text-white/90">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
 
       {/* 5. SDG ALIGNMENT */}
       <section className="py-24 bg-[#F5F5F5]">
