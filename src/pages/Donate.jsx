@@ -209,51 +209,58 @@ const Donate = () => {
               {/* ─── 7. SECURE TRANSFER ─── */}
               <div id="payment-section" className="space-y-10 pt-10 border-t border-slate-100">
                 <h2 className="text-[28px] font-bold text-center text-[#001D3D] font-serif">Secure Transfer</h2>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {/* PBZ Card */}
-                  <div className="p-8 rounded-[2rem] bg-blue-50/20 border border-blue-100/50 space-y-6">
-                    <div className="flex items-center gap-3">
-                      <span className="text-blue-600 font-bold">1.</span>
-                      <h3 className="font-bold text-[#001D3D] font-serif">PBZ (TZS)</h3>
-                    </div>
-                    <div className="space-y-4">
-                      <div>
-                        <p className="text-metadata uppercase">Account No</p>
-                        <p className="text-lg font-medium text-body">xxxxxxxxxxxxx</p>
-                      </div>
-                      <div>
-                        <p className="text-metadata uppercase">Account Name</p>
-                        <p className="text-[16px] font-medium text-body">Ubunifu Foundation</p>
-                      </div>
-                      <div className="flex items-center gap-2 text-blue-600">
-                        <div className="w-4 h-4 rounded-full bg-blue-100 flex items-center justify-center">
-                          <span className="text-[10px]">+</span>
+                <div className="grid lg:grid-cols-2 gap-8">
+                  {/* Left Column - Payment Methods Description */}
+                  <div className="space-y-5">
+                    <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-200 space-y-6 h-full">
+                      <h3 className="font-bold text-[#001D3D] font-serif text-xl">Online Payment Methods</h3>
+                      <div className="space-y-6">
+                        <div className="flex items-start gap-4">
+                          <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-lg flex-shrink-0">💳</div>
+                          <div>
+                            <p className="font-semibold text-base text-[#001D3D]">Credit Card (Visa/Mastercard)</p>
+                            <p className="text-sm text-slate-600 mt-2">Fast and secure international transfers</p>
+                          </div>
                         </div>
-                        <p className="text-xs font-bold">+255 623 067 338</p>
+                        <div className="flex items-start gap-4">
+                          <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-lg flex-shrink-0">🅿️</div>
+                          <div>
+                            <p className="font-semibold text-base text-[#001D3D]">PayPal</p>
+                            <p className="text-sm text-slate-600 mt-2">Secure payment via your PayPal account</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-4">
+                          <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-lg flex-shrink-0">📱</div>
+                          <div>
+                            <p className="font-semibold text-base text-[#001D3D]">Mobile Money</p>
+                            <p className="text-sm text-slate-600 mt-2">Send money through mobile payment services</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Equity Card */}
-                  <div className="p-8 rounded-[2rem] bg-[#eefcf3] border border-emerald-100/50 space-y-6">
-                    <div className="flex items-center gap-3">
-                      <span className="text-emerald-600 font-bold">2.</span>
-                      <h3 className="font-bold text-[#001D3D] font-serif">Equity (USD)</h3>
-                    </div>
-                    <div className="space-y-4">
-                      <div>
-                        <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Account No</p>
-                        <p className="text-lg font-bold text-[#001D3D]">xxxxxxxxxxxxx</p>
+                  {/* Right Column - Bank Transfer Details */}
+                  <div className="p-8 bg-gradient-to-br from-blue-50 to-emerald-50 rounded-[2rem] shadow-2xl shadow-blue-900/10 border border-blue-200/60">
+                    {/* Amana Bank Card */}
+                    <div className="bg-white p-8 rounded-[2rem] border-2 border-blue-300 space-y-6 shadow-lg">
+                      <div className="text-center space-y-2">
+                        <h3 className="font-bold text-[#001D3D] font-serif text-2xl">Amana Bank Zanzibar</h3>
+                        <p className="text-emerald-600 font-semibold text-sm">Bank Transfer Details</p>
                       </div>
-                      <div>
-                        <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Account Name</p>
-                        <p className="text-sm font-medium text-slate-600">Equity (USD)</p>
-                      </div>
-                      <div className="flex items-center gap-2 text-emerald-600">
-                        <div className="w-4 h-4 rounded-full bg-emerald-100 flex items-center justify-center">
-                          <span className="text-[10px]">+</span>
+                      <div className="space-y-5">
+                        <div className="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-600">
+                          <p className="text-[12px] font-bold text-slate-500 mb-2 uppercase">Account Name</p>
+                          <p className="text-lg font-bold text-[#001D3D]">Ubunifu Foundation</p>
                         </div>
-                        <p className="text-xs font-bold">+255 629 766 203</p>
+                        <div className="bg-emerald-50 p-5 rounded-lg border-l-4 border-emerald-600">
+                          <p className="text-[12px] font-bold text-slate-500 mb-2 uppercase">Account Number</p>
+                          <p className="text-lg font-bold text-[#001D3D] font-mono">009142125480001</p>
+                        </div>
+                        <div className="bg-amber-50 p-5 rounded-lg border-l-4 border-amber-600">
+                          <p className="text-[12px] font-bold text-slate-500 mb-2 uppercase">Swift Code</p>
+                          <p className="text-lg font-bold text-[#001D3D] font-mono">AMNNTZTZ</p>
+                        </div>
                       </div>
                     </div>
                   </div>
