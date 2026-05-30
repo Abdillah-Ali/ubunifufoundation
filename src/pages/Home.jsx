@@ -271,7 +271,7 @@ const Home = () => {
               </div>
 
               {/* Intermediate Subheading */}
-              <div className="space-y-10">
+              <div className="space-y-10 reveal">
                 <h3 className="text-[20px] md:text-[24px] font-medium tracking-tight border-b border-border pb-4 w-fit mx-auto font-serif">
                   A Legacy of Empowerment and Community Transformation.
                 </h3>
@@ -439,7 +439,7 @@ const Home = () => {
       </section>
 
       {/* Trusted Partners Section */}
-      <section className="py-24 bg-slate-50/50 border-t border-border/50">
+      <section className="py-24 bg-slate-50/50 border-t border-border/50 reveal">
         <Container>
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-[24px] font-medium text-body font-serif uppercase">Trusted Partners</h2>
@@ -468,10 +468,10 @@ const Home = () => {
       </section>
 
       {/* Latest Blog - Minimalist Grid Redesign */}
-      <section className="py-24 bg-background border-t border-border/50">
+      <section className="py-24 bg-background border-t border-border/50 reveal">
         <Container>
           {/* Section Header */}
-          <div className="flex justify-between items-start mb-16 reveal">
+          <div className="flex justify-between items-start mb-16">
             <div className="max-w-xl text-left">
               <h2 className="text-[24px] font-medium mb-4 tracking-tight text-body uppercase font-serif">Latest news</h2>
               <p className="text-[16px] text-body font-normal font-sans leading-[22px]">What happens at Ubunifu Foundation around the world.</p>
