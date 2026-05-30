@@ -126,7 +126,12 @@ const Donate = () => {
             {/* ─── 4. DONATION OPTIONS PANEL (SIDEBAR) ─── */}
             <div className="lg:col-span-1 bg-white p-8 rounded-[2.5rem] shadow-2xl shadow-blue-900/5 space-y-8 border border-slate-100">
               <div className="flex justify-center">
-                <img src="/favicon.png" alt="Logo" className="w-16 h-16 object-contain" />
+                <div className="text-center">
+                  <span className="text-3xl font-bold font-serif">
+                    <span className="text-red-600">Ubunifu</span>
+                    <span className="text-blue-600"> Foundation</span>
+                  </span>
+                </div>
               </div>
 
               <div className="space-y-4">
