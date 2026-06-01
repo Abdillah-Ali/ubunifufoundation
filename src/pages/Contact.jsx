@@ -11,7 +11,7 @@ const Contact = () => {
   const contactInfo = [
     { icon: MapPin, title: "Visit Us", lines: ["Kwerekwe, Zanzibar", "Tanzania"] },
     { icon: Phone, title: "Call Us", lines: ["+255 623 067 338", "+255 629 766 203"] },
-    { icon: Mail, title: "Email Us", lines: ["info@ubunifufoundation.org"] },
+    { icon: Mail, title: "Email Us", lines: ["foundationubunifu@gmail.com"] },
   ];
 
   return (

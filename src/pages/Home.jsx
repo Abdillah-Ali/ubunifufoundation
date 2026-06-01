@@ -383,6 +383,35 @@ const Home = () => {
         </Container>
       </section>
 
+      {/* Trusted Partners Section */}
+      <section className="py-24 bg-slate-50/50 border-t border-border/50 reveal">
+        <Container>
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-[24px] font-medium text-body font-serif uppercase">Trusted Partners</h2>
+            <p className="text-[16px] text-body font-normal font-sans leading-[22px] max-w-2xl mx-auto">
+              We collaborate with leading organizations to amplify our impact and reach more young people across the region.
+            </p>
+          </div>
+          
+          <div className="flex flex-wrap items-center justify-center gap-16 lg:gap-20">
+            <div className="flex items-center gap-3">
+              <img src="/tuicare.png" alt="Tui Care Foundation" className="h-12 object-contain" />
+              <div className="leading-tight border-l border-slate-300 pl-4">
+                <p className="text-[13px] font-bold text-[#001D3D]">Tui Care</p>
+                <p className="text-[13px] font-bold text-[#001D3D]">Foundation</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <img src="/sina.png" alt="SINA Social Innovation Academy" className="h-12 object-contain" />
+              <div className="leading-tight border-l border-slate-300 pl-4">
+                <p className="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Social Innovation</p>
+                <p className="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Academy</p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* ── Our Core Programs: Redesign ── */}
       <section className="py-24 md:py-32 bg-[#F8FAFC] reveal overflow-hidden">
         <Container>
@@ -433,35 +462,6 @@ const Home = () => {
                   description={project.description}
                 />
               ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Trusted Partners Section */}
-      <section className="py-24 bg-slate-50/50 border-t border-border/50 reveal">
-        <Container>
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-[24px] font-medium text-body font-serif uppercase">Trusted Partners</h2>
-            <p className="text-[16px] text-body font-normal font-sans leading-[22px] max-w-2xl mx-auto">
-              We collaborate with leading organizations to amplify our impact and reach more young people across the region.
-            </p>
-          </div>
-          
-          <div className="flex flex-wrap items-center justify-center gap-16 lg:gap-20">
-            <div className="flex items-center gap-3">
-              <img src="/tuicare.png" alt="Tui Care Foundation" className="h-12 object-contain" />
-              <div className="leading-tight border-l border-slate-300 pl-4">
-                <p className="text-[13px] font-bold text-[#001D3D]">Tui Care</p>
-                <p className="text-[13px] font-bold text-[#001D3D]">Foundation</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <img src="/sina.png" alt="SINA Social Innovation Academy" className="h-12 object-contain" />
-              <div className="leading-tight border-l border-slate-300 pl-4">
-                <p className="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Social Innovation</p>
-                <p className="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Academy</p>
-              </div>
             </div>
           </div>
         </Container>

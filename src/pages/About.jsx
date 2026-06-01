@@ -62,7 +62,7 @@ const About = () => {
           <img 
             src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000&auto=format&fit=crop" 
             alt="Ubunifu Foundation Hero" 
-            className="w-full h-full object-cover scale-105 animate-pulse-slow"
+            className="w-full h-full object-cover scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a1635]/95 via-[#1a1635]/60 to-transparent" />
           <div className="absolute inset-0 bg-[#0c0a1a]/20" />

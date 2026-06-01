@@ -39,44 +39,28 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={cn(
-      "sticky top-0 w-full z-50 transition-all duration-300 border-b",
-      isScrolled 
-        ? "bg-white/80 backdrop-blur-md shadow-md border-border/80" 
-        : "bg-white shadow-sm border-border/50"
-    )}>
+    <header 
+      className={cn(
+        "sticky top-0 w-full z-50 transition-all duration-300 border-b",
+        isScrolled 
+          ? "backdrop-blur-md shadow-md border-border/80" 
+          : "shadow-sm border-border/50"
+      )}
+      style={{ backgroundColor: "#F7F8F7" }}
+    >
       <Container className={cn(
         "flex items-center justify-between transition-all duration-300",
         isScrolled ? "h-16 md:h-20" : "h-20 md:h-24"
       )}>
-        <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+        <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
           <img 
             src="/logo.png" 
             alt="Ubunifu Foundation" 
             className={cn(
               "w-auto transition-all duration-300",
-              isScrolled ? "h-10 md:h-12" : "h-12 md:h-16"
+              isScrolled ? "h-10 md:h-14" : "h-14 md:h-20"
             )} 
           />
-          <div 
-            className={cn(
-              "flex flex-col justify-between leading-none font-sans transition-all duration-300",
-              isScrolled ? "h-10 md:h-12" : "h-12 md:h-16"
-            )}
-          >
-            <span className={cn(
-              "font-bold text-[hsl(var(--logo-red))] transition-all duration-300",
-              isScrolled ? "text-[18px] xs:text-[20px] md:text-[28px]" : "text-[22px] xs:text-[25px] md:text-[34px]"
-            )}>
-              Ubunifu
-            </span>
-            <span className={cn(
-              "font-bold text-[hsl(var(--logo-blue))] transition-all duration-300",
-              isScrolled ? "text-[12px] xs:text-[14px] md:text-[18px]" : "text-[15px] xs:text-[17px] md:text-[23px]"
-            )}>
-              Foundation
-            </span>
-          </div>
         </Link>
 
         {/* Desktop nav */}
@@ -152,7 +136,7 @@ const Navbar = () => {
 
       {/* Mobile nav */}
       {open && (
-        <div className="lg:hidden border-t border-border bg-background animate-fade-in max-h-[calc(100vh-80px)] overflow-y-auto">
+        <div className="lg:hidden border-t border-border bg-background max-h-[calc(100vh-80px)] overflow-y-auto">
           <Container className="py-6 flex flex-col gap-2">
             {navLinks.map((link) => (
               <div key={link.label} className="flex flex-col">
@@ -166,7 +150,7 @@ const Navbar = () => {
                       <ChevronDown size={16} className={cn("transition-transform", activeDropdown === link.label && "rotate-180")} />
                     </button>
                     {activeDropdown === link.label && (
-                      <div className="flex flex-col ml-4 mt-1 border-l-2 border-primary/20 pl-4 animate-in slide-in-from-top-2 duration-200">
+                      <div className="flex flex-col ml-4 mt-1 border-l-2 border-primary/20 pl-4 duration-200">
                         {link.children.map((child) => (
                           <Link
                             key={child.to}

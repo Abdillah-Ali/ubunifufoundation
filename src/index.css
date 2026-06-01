@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,slnt,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,slnt,wght@0,100..900;1,100..900&display=swap");
 
 /* Gimlet Text — Placeholder for local installation or system font. 
    Fallback to high-quality serif. */
@@ -62,7 +62,12 @@
     overflow-x: clip;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: "Gimlet Text", Georgia, "Times New Roman", serif;
     color: rgb(64, 64, 64);
     font-weight: 500;
@@ -77,7 +82,8 @@
     line-height: 1.1;
   }
 
-  p, li {
+  p,
+  li {
     font-family: "Inter", sans-serif;
     font-size: 16px;
     line-height: 22px;
@@ -92,7 +98,10 @@
     font-weight: 400;
   }
 
-  button, input, select, textarea {
+  button,
+  input,
+  select,
+  textarea {
     font-family: "Inter", sans-serif;
   }
 
@@ -127,15 +136,14 @@
     @apply font-sans text-[12px] font-medium rounded-[100px] px-4 py-1; /* Approx 3px top/bottom is hard to hit exactly with py, but 1 is close */
   }
 
-  /* Scroll Reveal Animation */
+  /* Scroll Reveal Animation - Disabled slides, content appears immediately */
   .reveal {
-    opacity: 0;
-    transform: translateX(-60px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    opacity: 1;
+    transform: none;
   }
 
   .reveal.active {
     opacity: 1;
-    transform: translateX(0);
+    transform: none;
   }
 }

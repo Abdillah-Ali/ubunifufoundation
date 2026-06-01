@@ -212,67 +212,77 @@ const Donate = () => {
               </div>
 
               {/* ─── 7. SECURE TRANSFER ─── */}
-              <div id="payment-section" className="space-y-10 pt-10 border-t border-slate-100">
+              <div id="payment-section" className="space-y-10 pt-10 border-t border-slate-100 -mx-20 px-20 lg:-mx-32 lg:px-32">
                 <h2 className="text-[28px] font-bold text-center text-[#001D3D] font-serif">Secure Transfer</h2>
-                <div className="grid lg:grid-cols-2 gap-8">
-                  {/* Left Column - Payment Methods Description */}
-                  <div className="space-y-5">
-                    <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-200 space-y-6 h-full">
-                      <h3 className="font-bold text-[#001D3D] font-serif text-xl">Online Payment Methods</h3>
-                      <div className="space-y-6">
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-lg flex-shrink-0">💳</div>
-                          <div>
-                            <p className="font-semibold text-base text-[#001D3D]">Credit Card (Visa/Mastercard)</p>
-                            <p className="text-sm text-slate-600 mt-2">Fast and secure international transfers</p>
-                          </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+                  {/* Payment Methods Card */}
+                  <div className="bg-emerald-50 p-10 rounded-[2rem] border border-emerald-100 shadow-sm space-y-6 h-full w-full">
+                    <h3 className="font-bold text-[#001D3D] font-serif text-xl">Online Payment Methods</h3>
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-sm flex-shrink-0">💳</div>
+                        <div>
+                          <p className="font-semibold text-sm text-[#001D3D]">Credit Card (Visa/Mastercard)</p>
+                          <p className="text-xs text-slate-600 mt-1">Fast and secure international transfers</p>
                         </div>
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-lg flex-shrink-0">🅿️</div>
-                          <div>
-                            <p className="font-semibold text-base text-[#001D3D]">PayPal</p>
-                            <p className="text-sm text-slate-600 mt-2">Secure payment via your PayPal account</p>
-                          </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-sm flex-shrink-0">🅿️</div>
+                        <div>
+                          <p className="font-semibold text-sm text-[#001D3D]">PayPal</p>
+                          <p className="text-xs text-slate-600 mt-1">Secure payment via your PayPal account</p>
                         </div>
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-lg flex-shrink-0">📱</div>
-                          <div>
-                            <p className="font-semibold text-base text-[#001D3D]">Mobile Money</p>
-                            <p className="text-sm text-slate-600 mt-2">Send money through mobile payment services</p>
-                          </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-sm flex-shrink-0">📱</div>
+                        <div>
+                          <p className="font-semibold text-sm text-[#001D3D]">Mobile Money</p>
+                          <p className="text-xs text-slate-600 mt-1">Send money through mobile payment services</p>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Right Column - Bank Transfer Details */}
-                  <div className="p-8 bg-gradient-to-br from-blue-50 to-emerald-50 rounded-[2rem] shadow-2xl shadow-blue-900/10 border border-blue-200/60">
-                    {/* Amana Bank Card */}
-                    <div className="bg-white p-8 rounded-[2rem] border-2 border-blue-300 space-y-6 shadow-lg">
-                      <div className="text-center space-y-2">
-                        <h3 className="font-bold text-[#001D3D] font-serif text-2xl">Amana Bank Zanzibar</h3>
-                        <p className="text-emerald-600 font-semibold text-sm">Bank Transfer Details</p>
+                  {/* Amana Bank Zanzibar Card */}
+                  <div className="bg-emerald-50 p-10 rounded-[2rem] border border-emerald-100 shadow-sm space-y-6 h-full w-full">
+                    <div className="text-center space-y-2">
+                      <h3 className="font-bold text-[#001D3D] font-serif text-xl">Amana Bank Zanzibar</h3>
+                      <p className="text-emerald-600 font-semibold text-xs">Bank Transfer Details</p>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-600">
+                        <p className="text-[10px] font-bold text-slate-500 mb-1 uppercase">Account Name</p>
+                        <p className="text-sm font-bold text-[#001D3D]">Ubunifu Foundation</p>
                       </div>
-                      <div className="space-y-5">
-                        <div className="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-600">
-                          <p className="text-[12px] font-bold text-slate-500 mb-2 uppercase">Account Name</p>
-                          <p className="text-lg font-bold text-[#001D3D]">Ubunifu Foundation</p>
-                        </div>
-                        <div className="bg-emerald-50 p-5 rounded-lg border-l-4 border-emerald-600">
-                          <p className="text-[12px] font-bold text-slate-500 mb-2 uppercase">Account Number</p>
-                          <p className="text-lg font-bold text-[#001D3D] font-mono">009142125480001</p>
-                        </div>
-                        <div className="bg-amber-50 p-5 rounded-lg border-l-4 border-amber-600">
-                          <p className="text-[12px] font-bold text-slate-500 mb-2 uppercase">Swift Code</p>
-                          <p className="text-lg font-bold text-[#001D3D] font-mono">AMNNTZTZ</p>
-                        </div>
+                      <div className="bg-emerald-50 p-4 rounded-lg border-l-4 border-emerald-600">
+                        <p className="text-[10px] font-bold text-slate-500 mb-1 uppercase">Account Number</p>
+                        <p className="text-sm font-bold text-[#001D3D] font-mono">009142125480001</p>
                       </div>
+                      <div className="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-600">
+                        <p className="text-[10px] font-bold text-slate-500 mb-1 uppercase">Swift Code</p>
+                        <p className="text-sm font-bold text-[#001D3D] font-mono">AMNNTZTZ</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Payment Inquiries Card */}
+                  <div className="bg-emerald-50 p-10 rounded-[2rem] border border-emerald-100 shadow-sm space-y-6 h-full w-full flex flex-col">
+                    <h3 className="font-bold text-[#001D3D] font-serif text-xl">Payment Inquiries</h3>
+                    <div className="space-y-3 flex-1 flex flex-col justify-between">
+                      <p className="text-sm text-body font-sans leading-relaxed">
+                        If you have any questions about making a donation or need assistance with payment methods, please don't hesitate to reach out to us.
+                      </p>
+                      <div className="space-y-2">
+                        <p className="text-xs text-slate-600 font-normal font-sans">Email us at:</p>
+                        <a href="mailto:foundationubunifu@gmail.com" className="inline-block">
+                          <p className="text-sm font-bold text-[#00A3E1] font-mono hover:text-[#0081B3] transition-colors">foundationubunifu@gmail.com</p>
+                        </a>
+                      </div>
+                      <p className="text-xs text-slate-600 font-normal font-sans">We'll respond within 24 hours with details for fund accountability and donation confirmation.</p>
                     </div>
                   </div>
                 </div>
               </div>
-
-
             </div>
           </div>
         </Container>

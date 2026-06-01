@@ -9,23 +9,13 @@ const Footer = () => {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-white/15 -skew-x-12 translate-x-1/2 pointer-events-none" />
 
       <Container>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto pl-6 md:pl-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             {/* Brand Column */}
             <div className="space-y-6">
               <div>
                 <Link to="/" className="flex items-center gap-3 mb-6">
                   <img src="/logo.png" alt="Ubunifu Foundation" className="h-12 w-auto" />
-                <div 
-                  className="flex flex-col justify-between h-12 leading-none font-sans" 
-                >
-                  <span className="text-[25px] font-bold text-[hsl(var(--logo-red))]">
-                    Ubunifu
-                  </span>
-                  <span className="text-[17px] font-bold text-[hsl(var(--logo-blue))]">
-                    Foundation
-                  </span>
-                </div>
                 </Link>
                 <p className="text-base leading-[22px] text-white font-sans">
                   Empowering youth and women in Zanzibar through sustainable development, education, and social entrepreneurship since 2023.
@@ -64,7 +54,7 @@ const Footer = () => {
                 ].map((link) => (
                   <li key={link.to}>
                     <Link to={link.to} className="group flex items-center text-base font-sans font-normal tracking-[0.75px] text-white/90 hover:text-[#4ECDC4] transition-all">
-                      <ArrowRight size={14} className="mr-2 text-[#4ECDC4] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                      <ArrowRight size={14} className="mr-2 text-[#4ECDC4] opacity-0 group-hover:opacity-100 transition-all" />
                       {link.label}
                     </Link>
                   </li>
@@ -84,7 +74,7 @@ const Footer = () => {
                 ].map((link) => (
                   <li key={link.label}>
                     <Link to={link.to} className="group flex items-center text-base font-sans font-normal tracking-[0.75px] text-white/90 hover:text-[#4ECDC4] transition-all">
-                      <ArrowRight size={14} className="mr-2 text-[#4ECDC4] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                      <ArrowRight size={14} className="mr-2 text-[#4ECDC4] opacity-0 group-hover:opacity-100 transition-all" />
                       {link.label}
                     </Link>
                   </li>
@@ -123,7 +113,7 @@ const Footer = () => {
                   </div>
                   <div>
                     <span className="block text-[#4ECDC4] text-base font-bold mb-1 font-sans">Email Us</span>
-                    <span className="text-base text-white/90 leading-[22px] font-sans">info@ubunifufoundation.org</span>
+                    <span className="text-base text-white/90 leading-[22px] font-sans">foundationubunifu@gmail.com</span>
                   </div>
                 </li>
               </ul>

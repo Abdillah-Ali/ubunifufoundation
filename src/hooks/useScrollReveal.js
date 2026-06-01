@@ -2,24 +2,9 @@ import { useEffect } from "react";
 
 const useScrollReveal = (deps = []) => {
   useEffect(() => {
-    const reveal = () => {
-      const reveals = document.querySelectorAll(".reveal");
-      for (let i = 0; i < reveals.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = reveals[i].getBoundingClientRect().top;
-        const elementVisible = 150;
-        if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active");
-        }
-      }
-    };
-
-    window.addEventListener("scroll", reveal);
-    // Initial check (re-runs when deps change)
-    reveal();
-
-    return () => window.removeEventListener("scroll", reveal);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // Scroll reveal animations disabled - all content displays immediately
+    // This hook is kept for backward compatibility but performs no operations
+    return () => {};
   }, [...deps]);
 };
 

@@ -94,7 +94,7 @@ const Volunteer = () => {
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button
                   className="px-8 py-3 bg-white text-[#2D1457] hover:bg-gray-100 font-bold rounded-full text-sm uppercase tracking-wider w-full sm:w-auto"
-                  onClick={() => window.location.href = "mailto:volunteer@ubunifufoundation.org"}
+                  onClick={() => window.location.href = "mailto:foundationubunifu@gmail.com"}
                 >
                   Apply as Volunteer
                 </Button>
@@ -280,7 +280,7 @@ const Volunteer = () => {
             <div className="flex flex-wrap justify-center gap-4 pt-4 relative z-10">
               <Button
                 className="px-10 py-4 bg-[#F4B942] text-[#2D1457] hover:bg-yellow-400 font-bold rounded-full text-sm uppercase tracking-wider"
-                onClick={() => window.location.href = "mailto:volunteer@ubunifufoundation.org"}
+                onClick={() => window.location.href = "mailto:foundationubunifu@gmail.com"}
               >
                 Submit Application
               </Button>
