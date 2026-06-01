@@ -76,31 +76,31 @@ const GetInvolved = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-32 pb-20 bg-[#2D1457] text-white overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-[#F5F5F5] text-slate-900 overflow-hidden">
         {/* Background decorative elements */}
-        <div className="absolute top-20 right-10 w-64 h-64 border-4 border-[#F4B942]/20 rounded-full opacity-40 blur-sm" />
-        <div className="absolute bottom-10 left-10 w-48 h-48 border-4 border-[#1696D2]/20 rounded-full opacity-40 blur-sm" />
+        <div className="absolute top-20 right-10 w-64 h-64 border-4 border-[#F4B942]/30 rounded-full opacity-40 blur-sm" />
+        <div className="absolute bottom-10 left-10 w-48 h-48 border-4 border-[#1696D2]/30 rounded-full opacity-40 blur-sm" />
 
         <Container className="relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 reveal">
-              <span className="inline-block px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-[11px] font-bold tracking-[0.15em] uppercase">
+              <span className="inline-block px-4 py-2 rounded-full bg-[#2D1457]/10 border border-[#2D1457]/20 text-[#2D1457] text-[11px] font-bold tracking-[0.15em] uppercase">
                 Join Our Community
               </span>
-              <h1 className="text-[40px] md:text-[56px] lg:text-[64px] font-bold leading-[1.1] tracking-tight font-serif text-white">
+              <h1 className="text-[40px] md:text-[56px] lg:text-[64px] font-bold leading-[1.1] tracking-tight font-serif text-[#2D1457]">
                 Be Part of Positive Change in Zanzibar
               </h1>
-              <p className="text-lg md:text-xl text-white/85 leading-relaxed font-light max-w-lg">
+              <p className="text-lg md:text-xl text-[#404040] leading-relaxed font-light max-w-lg">
                 Ubunifu Foundation believes lasting impact happens when communities work together. Whether you are a volunteer, mentor, partner, researcher, donor, or supporter, your contribution can help empower youth and women through education, innovation, and entrepreneurship.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link to="/volunteer">
-                  <Button className="px-8 py-3 bg-transparent text-[#2D1457] hover:bg-gray-100 font-bold rounded-full text-sm uppercase tracking-wider w-full sm:w-auto">
+                  <Button className="px-8 py-3 bg-[#2D1457] text-white hover:bg-[#2D1457]/90 font-bold rounded-full text-sm uppercase tracking-wider w-full sm:w-auto">
                     Become a Volunteer
                   </Button>
                 </Link>
                 <Button
-                  className="px-8 py-3 border-2 border-white text-white hover:bg-transparent hover:text-[#2D1457] font-bold rounded-full text-sm uppercase tracking-wider transition-all w-full sm:w-auto"
+                  className="px-8 py-3 border-2 border-[#2D1457] text-[#2D1457] hover:bg-[#2D1457] hover:text-white font-bold rounded-full text-sm uppercase tracking-wider transition-all w-full sm:w-auto"
                   variant="outline"
                 >
                   Partner With Us
@@ -109,7 +109,7 @@ const GetInvolved = () => {
             </div>
 
             <div className="relative reveal">
-              <div className="aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white/10">
+              <div className="aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
                 <img
                   src="/home_empowerment_new.jpg"
                   alt="Community collaboration"
