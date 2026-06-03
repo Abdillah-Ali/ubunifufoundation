@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Heart, Users, Target, TrendingUp } from "lucide-react";
+import { ArrowRight, BookOpenCheck, Compass, Heart, Lightbulb, Monitor, Target, TrendingUp, Users, UsersRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Container from "@/components/layout/Container";
 import usePageTitle from "@/hooks/usePageTitle";
@@ -7,42 +7,11 @@ import { projects } from "@/data/projects";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 import { successStories } from "@/data/impact";
-import FeaturedImpact from "@/components/ui/FeaturedImpact";
 import { useState, useEffect } from "react";
 import { client, urlFor } from "@/lib/sanity";
 
 import useScrollReveal from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
-
-
-
-
-
-
-
-const AboutImageDesign = () => (
-  <div className="relative w-full aspect-square max-w-[500px] mx-auto group">
-    {/* Decorative Background Glow */}
-    <div className="absolute -inset-6 bg-primary/5 rounded-none blur-3xl group-hover:bg-primary/10 transition-colors duration-500" />
-    
-    {/* Main Image Container */}
-    <div className="relative h-full w-full rounded-none overflow-hidden border-8 border-white shadow-2xl z-10 transition-transform duration-700 group-hover:scale-[1.02]">
-      <img 
-        src="/scholars-innovation.jpg" 
-        alt="Zanzibar Youth Innovation" 
-        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-      />
-      {/* Subtle Interaction Overlay */}
-      <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-500" />
-    </div>
-    
-    {/* Geometric Accent (Bottom Left) */}
-    <div className="absolute -bottom-6 -left-6 w-40 h-40 border-b-[12px] border-l-[12px] border-primary/10 rounded-none z-0" />
-    {/* Geometric Accent (Top Right) */}
-    <div className="absolute -top-6 -right-6 w-40 h-40 border-t-[12px] border-r-[12px] border-primary/10 rounded-none z-0" />
-  </div>
-);
-
 
 /* ─── Hero Section Components ───────────────────────────────── */
 const RipplePattern = ({ className }) => (
@@ -77,37 +46,38 @@ const Underline = () => (
 
 
 /* ─── Core Programs Components ───────────────────────────────── */
-const ProgramCard = ({ title, type, description, className, isFeatured = false }) => (
-  <div className={cn(
-    "bg-white rounded-[2.5rem] p-10 flex flex-col items-start text-left shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 group",
-    isFeatured ? "w-full lg:max-w-xl" : "h-full",
-    className
-  )}>
-    <div className="flex items-center gap-3 mb-6">
-      <div className="w-2 h-2 rounded-full bg-primary" />
-      <p className="text-metadata uppercase">
-        {type}
-      </p>
-    </div>
-    <h3 className={cn(
-      "font-serif font-medium text-body leading-[32px] transition-colors",
-      isFeatured ? "text-3xl md:text-4xl" : "text-[24px]"
-    )}>
-      {title}
-    </h3>
-    <p className="text-[16px] text-body leading-[22px] font-normal font-sans mb-8">
-      {description}
-    </p>
-    <Link to="/projects" className="mt-auto group/link flex items-center gap-3">
-      <span className="text-sm font-bold text-[#001D3D] tracking-tight border-b-2 border-transparent group-hover/link:border-primary transition-all">
-        Explore Program
-      </span>
-      <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-[#001D3D] group-hover/link:bg-primary group-hover/link:text-white transition-all shadow-sm">
-        <ArrowRight size={16} strokeWidth={2.5} />
-      </div>
-    </Link>
-  </div>
-);
+const impactMetrics = [
+  {
+    value: "194+",
+    label: "Youths Empowered",
+    description: "Young people equipped with confidence, practical skills, and an entrepreneurial mindset.",
+    icon: Users,
+    accent: "text-[#008AC1]"
+  },
+  {
+    value: "7",
+    label: "Enterprises Supported",
+    description: "Scholar-led initiatives developed to solve real community challenges.",
+    icon: Target,
+    accent: "text-[#C49A2A]"
+  },
+  {
+    value: "47",
+    label: "Jobs Created",
+    description: "Employment opportunities generated through youth-driven ventures and local projects.",
+    icon: TrendingUp,
+    accent: "text-[#0A8F8A]"
+  },
+  {
+    value: "8",
+    label: "Businesses Launched",
+    description: "Small enterprises started by participants to promote self-employment.",
+    icon: Heart,
+    accent: "text-[#D94B2B]"
+  }
+];
+
+const programIcons = [Compass, Monitor, Lightbulb, UsersRound];
 
 const Home = () => {
   usePageTitle("Home");
@@ -126,7 +96,7 @@ const Home = () => {
   return (
     <div className="bg-background min-h-screen overflow-x-hidden">
       {/* ── High-Impact Hero ───────────────────────────────────── */}
-      <section className="bg-[#2D1B4D] relative overflow-hidden pt-24 md:pt-32 pb-16 md:pb-24">
+      <section className="bg-[#2D1B4D] relative overflow-hidden pt-16 md:pt-20 pb-10 md:pb-14">
         {/* Background Ripple (Top Left) */}
         <RipplePattern className="top-[-50px] left-[-50px] w-96 h-96 opacity-10" />
         
@@ -151,7 +121,7 @@ const Home = () => {
             </div>
 
             {/* RIGHT: Circular Image Cluster */}
-            <div className="relative h-[500px] md:h-[600px] reveal z-0 hidden sm:block">
+            <div className="relative h-[380px] md:h-[460px] reveal z-0 hidden sm:block">
               <RipplePattern className="top-0 right-0 w-[400px] h-[400px] opacity-20" />
               <RipplePattern className="bottom-0 left-20 w-[300px] h-[300px] opacity-15" />
               
@@ -176,48 +146,74 @@ const Home = () => {
       </section>
 
 
-      {/* 2. Overarching Mission Sections - Alternating Blocks */}
-      <section className="pt-[120px] md:pt-[200px] pb-40 bg-background space-y-48">
+      {/* 2. About & Mission */}
+      <section className="bg-white py-24 md:py-32">
         <Container>
-          {/* Block 1: About Us / Purpose */}
-          <div className="grid md:grid-cols-2 gap-16 lg:gap-32 items-center reveal">
-            <div className="space-y-8 order-2 md:order-1 max-w-3xl">
-              <div className="space-y-4">
+          <div className="grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20 reveal">
+            <div className="space-y-8">
+              <div>
                 <p className="text-metadata uppercase">About Us</p>
-                <h2 className="text-[24px] font-medium leading-[32px] text-body font-serif">
+                <h2 className="mt-4 text-[36px] leading-[44px] text-[#12323A] md:text-[56px] md:leading-[64px] font-serif">
                   Why we are here
                 </h2>
               </div>
-              <p className="text-[16px] text-body font-normal leading-[22px] font-sans">
+              <p className="max-w-2xl text-[17px] leading-[28px] text-[#454545] font-sans">
                 Ubunifu Foundation is a community-driven organization based in Kwerekwe, Zanzibar, dedicated to addressing youth unemployment and empowering women. We provide access to entrepreneurial skills, vocational training, and mentorship, creating a supportive environment where individuals transform challenges into long-term opportunities.
               </p>
-              <Link to="/about" className="inline-block mt-4">
-                <Button variant="outline" className="rounded-xl border-foreground text-foreground px-10 py-6 hover:bg-foreground hover:text-white transition-all font-bold text-sm uppercase tracking-tight">
-                  Learn more
-                </Button>
+              <div className="grid border-y border-[#DDEDE8] sm:grid-cols-3">
+                {[
+                  ["Kwerekwe", "Community base"],
+                  ["Youth", "Primary focus"],
+                  ["Women", "Empowerment priority"]
+                ].map(([value, label]) => (
+                  <div key={label} className="border-b border-[#DDEDE8] py-5 sm:border-b-0 sm:border-r sm:px-5 first:sm:pl-0 last:sm:border-r-0">
+                    <p className="text-[24px] leading-[32px] font-semibold text-[#12323A]">{value}</p>
+                    <p className="mt-1 text-metadata uppercase">{label}</p>
+                  </div>
+                ))}
+              </div>
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-3 text-sm font-bold uppercase text-[#12323A] group"
+              >
+                Learn More
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white transition-transform group-hover:translate-x-1">
+                  <ArrowRight size={16} />
+                </span>
               </Link>
             </div>
-            <div className="order-1 md:order-2 relative">
-              <AboutImageDesign />
+
+            <div className="relative">
+              <div className="absolute -left-5 top-5 hidden h-full w-full border-2 border-[#F5B51B] md:block" aria-hidden="true" />
+              <img
+                src="/scholars-innovation.jpg"
+                alt="Ubunifu Foundation scholars during a learning session"
+                className="relative z-10 aspect-[4/3] w-full rounded-lg object-cover shadow-2xl"
+              />
+              <div className="absolute bottom-5 left-5 z-20 border-l-4 border-[#F5B51B] bg-[#063A34]/95 px-5 py-4 backdrop-blur-sm">
+                <p className="text-[24px] leading-none font-semibold text-white">Transformation</p>
+                <p className="mt-2 text-metadata uppercase text-white/75">Skills into opportunity</p>
+              </div>
             </div>
           </div>
 
-          {/* Block 2: Our Mission / Impact */}
-          <div className="mt-32 md:mt-48 reveal">
-            <div className="space-y-8 max-w-3xl">
-              <div className="space-y-4">
-                <p className="text-metadata uppercase">Our Mission</p>
-                <h2 className="text-[24px] font-medium leading-[32px] text-body font-serif">
-                  Change begins with transformation
-                </h2>
-              </div>
-              <p className="text-[16px] text-body font-normal leading-[22px] font-sans">
-                Through its programs, Ubunifu Foundation equips youth and women to become social entrepreneurs who drive sustainable impact, improve livelihoods, and contribute to economic growth while promoting environmental responsibility. We create a legacy of empowerment and community transformation.
+          <div className="mt-20 border-y border-[#DDEDE8] bg-slate-50 px-6 py-14 md:mt-28 md:px-10 lg:px-14 reveal">
+            <div className="max-w-3xl space-y-6">
+              <p className="text-metadata uppercase">Our Mission</p>
+              <h2 className="text-[34px] leading-[42px] text-[#12323A] md:text-[46px] md:leading-[54px] font-serif">
+                Change begins with transformation.
+              </h2>
+              <p className="text-[17px] leading-[28px] text-[#454545] font-sans">
+                Through its programs, Ubunifu Foundation equips youth and women to become social entrepreneurs who drive sustainable impact, improve livelihoods, and contribute to economic growth while promoting environmental responsibility.
               </p>
-              <Link to="/impact" className="inline-block">
-                <Button variant="outline" className="rounded-none border-foreground text-foreground px-10 py-6 hover:bg-foreground hover:text-white transition-all font-bold text-sm uppercase tracking-tight">
-                  Learn more
-                </Button>
+              <Link
+                to="/impact"
+                className="inline-flex items-center gap-3 text-sm font-bold uppercase text-[#12323A] group"
+              >
+                Learn More
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white transition-transform group-hover:translate-x-1">
+                  <ArrowRight size={16} />
+                </span>
               </Link>
             </div>
           </div>
@@ -241,101 +237,65 @@ const Home = () => {
         <div className="h-px w-full bg-border" />
       </Container>
 
-      {/* 4. Impact Overview Section - High-Impact Redesign */}
-      <section className="pt-24 pb-10 bg-background reveal overflow-hidden relative">
-        {/* Island Watermarks */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-between px-[-10%] opacity-[0.1] md:opacity-[0.2]">
-            <img 
-              src="/pemba island.png" 
-              alt="Pemba Island Watermark" 
-              className="w-[60%] md:w-[35%] max-w-[600px] translate-x-[-20%] md:translate-x-[-15%] -translate-y-1/2 md:translate-y-0"
-            />
-            <img 
-              src="/unguja island.jpg" 
-              alt="Unguja Island Watermark" 
-              className="w-[60%] md:w-[35%] max-w-[600px] translate-x-[20%] md:translate-x-[15%] translate-y-1/2 md:translate-y-0"
-            />
-          </div>
-        </div>
+      {/* 4. Impact Overview Section */}
+      <section className="bg-white py-24 md:py-32 reveal overflow-hidden">
         <Container>
-          <div className="space-y-16">
-              {/* Header */}
-              <div className="space-y-6 text-center max-w-4xl mx-auto">
-                <h2 className="text-[34px] md:text-[42px] lg:text-[60px] font-medium tracking-tight leading-tight md:leading-[72px] font-serif">
-                  Our Impact in <span className="text-primary">Zanzibar.</span>
+          <div className="grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
+            <div className="space-y-8">
+              <div>
+                <p className="text-metadata uppercase">Our Impact in Zanzibar</p>
+                <h2 className="mt-4 text-[36px] leading-[44px] text-[#12323A] md:text-[56px] md:leading-[64px] font-serif">
+                  A growing record of skills, enterprise, and community change.
                 </h2>
-                <p className="text-base md:text-lg text-foreground font-normal leading-[22px] font-sans">
-                  Ubunifu Foundation is empowering youth and women in Zanzibar through skills development, mentorship, and social entrepreneurship, creating opportunities for sustainable livelihoods and positive community transformation.
-                </p>
               </div>
+              <p className="max-w-2xl text-[17px] leading-[28px] text-[#454545] font-sans">
+                Ubunifu Foundation is empowering youth and women through practical learning, mentorship, and social entrepreneurship. The result is a growing network of young people creating jobs, launching ventures, and strengthening communities across Zanzibar.
+              </p>
+              <Link to="/impact" className="inline-flex items-center gap-3 text-sm font-bold uppercase text-[#12323A] group">
+                View Impact Stories
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white transition-transform group-hover:translate-x-1">
+                  <ArrowRight size={16} />
+                </span>
+              </Link>
+            </div>
 
-              {/* Intermediate Subheading */}
-              <div className="space-y-10 reveal">
-                <h3 className="text-[20px] md:text-[24px] font-medium tracking-tight border-b border-border pb-4 w-fit mx-auto font-serif">
-                  A Legacy of Empowerment and Community Transformation.
-                </h3>
-
-                {/* Colored Stats Cards Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {/* Card 1: Teal */}
-                  <div className="p-1.5 rounded-[2.3rem] border-2 border-[#4EB8BC]/20 bg-white/50">
-                    <div className="bg-[#4EB8BC] p-8 rounded-[1.8rem] text-white h-full space-y-4 shadow-lg shadow-[#4EB8BC]/10 hover:scale-[1.01] transition-transform">
-                      <div className="flex justify-between items-start">
-                        <div className="text-4xl md:text-5xl font-bold tracking-tighter"><AnimatedCounter value="194+" /></div>
-                        <Users className="opacity-40" size={24} />
-                      </div>
-                      <div className="space-y-2">
-                        <h4 className="font-medium text-[18px] leading-[24px] font-serif">Youths Empowered</h4>
-                        <p className="text-base text-white/90 leading-[22px] font-normal font-sans">Young people equipped with practical skills, confidence, and entrepreneurial mindset to improve their livelihoods.</p>
-                      </div>
-                    </div>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {[
+                { name: "Unguja", image: "/unguja island.jpg", alt: "Unguja island map" },
+                { name: "Pemba", image: "/pemba island.png", alt: "Pemba island map" }
+              ].map((island) => (
+                <div key={island.name} className="border border-[#DDEDE8] bg-[#F8FCFA] p-6 shadow-xl shadow-slate-900/5">
+                  <div className="flex min-h-[280px] items-center justify-center border-l-4 border-[#F5B51B] pl-5">
+                    <img src={island.image} alt={island.alt} className="max-h-[250px] w-full object-contain" />
                   </div>
-
-                  {/* Card 2: Amber */}
-                  <div className="p-1.5 rounded-[2.3rem] border-2 border-[#F5B041]/20 bg-white/50">
-                    <div className="bg-[#F5B041] p-8 rounded-[1.8rem] text-white h-full space-y-4 shadow-lg shadow-[#F5B041]/10 hover:scale-[1.01] transition-transform">
-                      <div className="flex justify-between items-start">
-                        <div className="text-4xl md:text-5xl font-bold tracking-tighter"><AnimatedCounter value="7" /></div>
-                        <Target className="opacity-40" size={24} />
-                      </div>
-                      <div className="space-y-2">
-                        <h4 className="font-medium text-[18px] leading-[24px] font-serif">Social Enterprises Supported</h4>
-                        <p className="text-base text-white/90 leading-[22px] font-normal font-sans">Youth-led initiatives supported to address community challenges and create sustainable solutions.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Card 3: Light Blue */}
-                  <div className="p-1.5 rounded-[2.3rem] border-2 border-[#1e40af]/10 bg-white/50">
-                    <div className="bg-[#D1E9F6] p-8 rounded-[1.8rem] text-foreground h-full space-y-4 shadow-lg shadow-black/5 hover:scale-[1.01] transition-transform">
-                      <div className="flex justify-between items-start">
-                        <div className="text-4xl md:text-5xl font-bold tracking-tighter text-[#1e40af]"><AnimatedCounter value="47" /></div>
-                        <TrendingUp className="text-[#1e40af] opacity-40" size={24} />
-                      </div>
-                      <div className="space-y-2">
-                        <h4 className="font-medium text-[18px] leading-[24px] font-serif text-[#1e40af]">Jobs Created</h4>
-                        <p className="text-base text-foreground/70 leading-[22px] font-normal font-sans">Employment opportunities generated through community-based enterprises and youth-driven initiatives.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Card 4: Dark Navy */}
-                  <div className="p-1.5 rounded-[2.3rem] border-2 border-[#003d52]/20 bg-white/50">
-                    <div className="bg-[#003d52] p-8 rounded-[1.8rem] text-white h-full space-y-4 shadow-lg shadow-[#003d52]/20 hover:scale-[1.01] transition-transform">
-                      <div className="flex justify-between items-start">
-                        <div className="text-4xl md:text-5xl font-bold tracking-tighter"><AnimatedCounter value="8" /></div>
-                        <Heart className="opacity-40" size={24} />
-                      </div>
-                      <div className="space-y-2">
-                        <h4 className="font-medium text-[18px] leading-[24px] font-serif">Businesses Launched</h4>
-                        <p className="text-base text-white/85 leading-[22px] font-normal font-sans">Small enterprises started by participants to promote self-employment and economic independence.</p>
-                      </div>
-                    </div>
+                  <div className="mt-5 border-t border-[#DDEDE8] pt-4">
+                    <p className="text-[24px] leading-[32px] font-semibold text-[#12323A]">{island.name}</p>
+                    <p className="mt-1 text-metadata uppercase">Zanzibar reach</p>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
+          </div>
+
+          <div className="mt-16 grid border-y border-[#DDEDE8] sm:grid-cols-2 lg:grid-cols-4">
+            {impactMetrics.map((metric, index) => {
+              const Icon = metric.icon;
+
+              return (
+                <div key={metric.label} className="border-b border-[#DDEDE8] p-6 last:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b-0">
+                  <div className="flex items-center justify-between gap-4">
+                    <Icon className={cn("h-6 w-6", metric.accent)} />
+                    <span className="text-metadata uppercase text-slate-400">{String(index + 1).padStart(2, "0")}</span>
+                  </div>
+                  <p className="mt-6 text-[40px] leading-none font-semibold text-[#12323A]">
+                    <AnimatedCounter value={metric.value} />
+                  </p>
+                  <h3 className="mt-4 text-[20px] leading-[28px] text-[#12323A] font-serif">{metric.label}</h3>
+                  <p className="mt-2 text-[15px] leading-[23px] text-[#4A5A5A]">{metric.description}</p>
+                </div>
+              );
+            })}
+          </div>
         </Container>
       </section>
 
@@ -412,56 +372,68 @@ const Home = () => {
         </Container>
       </section>
 
-      {/* ── Our Core Programs: Redesign ── */}
-      <section className="py-24 md:py-32 bg-[#F8FAFC] reveal overflow-hidden">
+      {/* ── Empowerment Offerings ── */}
+      <section className="bg-[#063A34] py-24 text-white md:py-32 reveal overflow-hidden">
         <Container>
-          <div className="w-full">
-            
-            {/* Section Header */}
-            <div className="text-center mb-24 max-w-3xl mx-auto space-y-4">
-              <h2 className="text-[24px] font-medium font-serif text-body leading-[32px] tracking-tight">
-                Empowerment Offerings.
-              </h2>
-              <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
-            </div>
-
-            {/* Top Row: Mission & Feature Image */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-16 items-start">
-              <div className="space-y-12">
-                <p className="text-[16px] text-body leading-[22px] font-normal font-sans">
-                  We provide rigorous, real-world education through our key programs without traditional barriers. Start your learning journey today with offerings designed by industry experts, delivered with impact, and focused on sustainable futures.
-                </p>
-                {/* Featured Card placement */}
-                {featuredProjects[0] && (
-                  <ProgramCard 
-                    title={featuredProjects[0].title}
-                    type="Core Program"
-                    description={featuredProjects[0].description}
-                    isFeatured={true}
-                  />
-                )}
+          <div className="grid items-start gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+            <div className="space-y-8">
+              <div>
+                <p className="text-metadata uppercase text-white/70">Empowerment Offerings</p>
+                <h2 className="mt-4 text-[36px] leading-[44px] text-white md:text-[56px] md:leading-[64px] font-serif">
+                  Programs built for confidence, skills, and enterprise.
+                </h2>
               </div>
-              <div className="relative">
-                <div className="aspect-[16/11] rounded-[2rem] overflow-hidden shadow-2xl shadow-slate-200">
-                  <img 
-                    src={featuredProjects[0]?.image} 
-                    alt={featuredProjects[0]?.title} 
-                    className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom Grid: Supporting Programs */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {featuredProjects.slice(1, 4).map((project) => (
-                <ProgramCard 
-                  key={project.id}
-                  title={project.title}
-                  type="Initiative"
-                  description={project.description}
+              <p className="max-w-xl text-[17px] leading-[28px] text-white/75">
+                We provide practical, real-world learning through programs that help participants discover purpose, build digital skills, design solutions, and create sustainable livelihoods.
+              </p>
+              <div className="relative mt-10">
+                <div className="absolute -left-5 top-5 hidden h-full w-full border-2 border-[#F5B51B] md:block" aria-hidden="true" />
+                <img
+                  src="/home_empowerment_new.jpg"
+                  alt="Ubunifu Foundation participants in an empowerment program"
+                  className="relative z-10 aspect-[4/3] w-full rounded-lg object-cover shadow-2xl"
                 />
-              ))}
+              </div>
+            </div>
+
+            <div className="space-y-5">
+              {featuredProjects.map((project, index) => {
+                const Icon = programIcons[index] || BookOpenCheck;
+                const accents = ["text-[#008AC1]", "text-[#0A8F8A]", "text-[#F5B51B]", "text-[#B7D66B]"];
+
+                return (
+                  <div key={project.id} className="grid gap-5 border-t border-white/15 pt-6 md:grid-cols-[auto_1fr_auto] md:items-start">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-md bg-white/10">
+                      <Icon className={cn("h-6 w-6", accents[index])} />
+                    </div>
+                    <div>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <span className="text-metadata uppercase text-white/60">{String(index + 1).padStart(2, "0")}</span>
+                        <span className={cn("text-metadata uppercase", accents[index])}>Core pathway</span>
+                      </div>
+                      <h3 className="mt-2 text-[26px] leading-[34px] text-white font-serif">{project.title}</h3>
+                      <p className="mt-3 text-[16px] leading-[25px] text-white/70">{project.description}</p>
+                    </div>
+                    <Link
+                      to="/projects"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white hover:text-[#063A34]"
+                      aria-label={`Explore ${project.title}`}
+                    >
+                      <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                );
+              })}
+
+              <div className="border-t border-white/15 pt-8">
+                <Link
+                  to="/projects"
+                  className="inline-flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-bold uppercase text-white transition-transform hover:scale-[1.02]"
+                >
+                  Explore All Programs
+                  <ArrowRight size={17} />
+                </Link>
+              </div>
             </div>
           </div>
         </Container>

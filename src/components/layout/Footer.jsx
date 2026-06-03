@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="space-y-6">
               <div>
                 <Link to="/" className="flex items-center gap-3 mb-6">
-                  <img src="/logo.png" alt="Ubunifu Foundation" className="h-12 w-auto" />
+                  <img src="/logo-footer.png" alt="Ubunifu Foundation" className="h-16 md:h-20 w-auto" />
                 </Link>
                 <p className="text-base leading-[22px] text-white font-sans">
                   Empowering youth and women in Zanzibar through sustainable development, education, and social entrepreneurship since 2023.
@@ -68,9 +68,9 @@ const Footer = () => {
               <ul className="space-y-4">
                 {[
                   { label: "Donate Now", to: "/donate" },
-                  { label: "Volunteer", to: "/get-involved" },
+                  { label: "Volunteer", to: "/volunteer" },
                   { label: "Partner Programs", to: "/contact" },
-                  { label: "Get Involved", to: "/get-involved" }
+                  { label: "Get Involved", to: "/volunteer" }
                 ].map((link) => (
                   <li key={link.label}>
                     <Link to={link.to} className="group flex items-center text-base font-sans font-normal tracking-[0.75px] text-white/90 hover:text-[#4ECDC4] transition-all">
@@ -121,12 +121,8 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[14px] font-normal tracking-[0.75px] font-sans text-white/80">
+          <div className="pt-6 border-t border-white/10 flex justify-start text-left text-[14px] font-normal tracking-[0.75px] font-sans text-white/80">
             <p className="text-white">© 2026 Ubunifu Foundation. Empowering Sustainable Futures.</p>
-            <div className="flex gap-8">
-              <Link to="/" className="hover:text-[#4ECDC4] transition-colors">Privacy Policy</Link>
-              <Link to="/" className="hover:text-[#4ECDC4] transition-colors">Terms of Service</Link>
-            </div>
           </div>
         </div>
       </Container>

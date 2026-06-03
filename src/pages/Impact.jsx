@@ -1,16 +1,16 @@
-import { useState } from "react";
 import { impactStats, successStories } from "@/data/impact";
 import { cn } from "@/lib/utils";
 import Container from "@/components/layout/Container";
 import usePageTitle from "@/hooks/usePageTitle";
 import { Link } from "react-router-dom";
-import { Users, Briefcase, ChevronRight, X } from "lucide-react";
+import { Users, Briefcase, Quote, Sparkles } from "lucide-react";
 
 const milestones = [
-  { year: "2020", label: "Foundation Launched", description: "Ubunifu Foundation started its journey in Zanzibar." },
-  { year: "2021", label: "Program Expansion", description: "Introduced specialized training for women and entrepreneurs." },
-  { year: "2022", label: "Innovation Hub", description: "Opened our physical hub in Kwerekwe to provide a dedicated space for learning." },
-  { year: "2023", label: "Scaling Impact", description: "Reached significant milestones in youth employment and business creation." }
+  { year: "2022", label: "Scholarship Opportunity from SINA", description: "Received a scholarship opportunity from SINA, opening the path for deeper social innovation and entrepreneurship learning." },
+  { year: "2023", label: "Ubunifu Foundation Started", description: "Ubunifu Foundation began its work in Zanzibar, creating a platform for youth empowerment and community transformation." },
+  { year: "2024", label: "Core Programs Grew", description: "Expanded practical learning through self-discovery, digital literacy, social innovation, and entrepreneurship programs." },
+  { year: "2025", label: "Scholar Enterprises Advanced", description: "Supported scholar-led enterprises and strengthened pathways into jobs, business creation, and community impact." },
+  { year: "2026", label: "Scaling Sustainable Impact", description: "Continuing to grow partnerships, programs, and enterprise support across Zanzibar for long-term sustainable change." }
 ];
 
 const futureGoals = {
@@ -26,195 +26,181 @@ const futureGoals = {
   ]
 };
 
+const statAccents = [
+  "text-[#008AC1]",
+  "text-[#C49A2A]",
+  "text-[#0A8F8A]",
+  "text-[#D94B2B]",
+  "text-[#6A8F2A]"
+];
+
 const Impact = () => {
   usePageTitle("Our Impact");
-  const [expandedStory, setExpandedStory] = useState(null);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* ─── HERO SECTION ─── */}
-      <section className="relative overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
-            src="/scholars-innovation.jpg"
-            alt="Ubunifu Foundation scholars"
-            className="w-full h-full object-cover"
-          />
-          {/* Dark gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a3d3d]/25 via-[#0a3d3d]/15 to-[#0a3d3d]/10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a3d3d]/20 via-transparent to-[#0a3d3d]/10" />
-        </div>
-
-        {/* Subtle decorative accents */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-8 right-8 w-24 h-24 rounded-2xl border border-[#c49a2a]/25 rotate-12 hidden lg:block" />
-          <div className="absolute top-16 right-16 w-16 h-16 rounded-2xl bg-[#c49a2a]/15 rotate-6 hidden lg:block" />
-        </div>
-
-        <Container className="relative z-10">
-          <div className="min-h-[55vh] py-20 lg:py-28 flex items-center">
-            {/* Left Content */}
-            <div className="max-w-xl space-y-6 animate-fade-in-up">
-              <h1 className="text-[40px] md:text-[52px] lg:text-[64px] font-medium tracking-tight leading-[1.08] text-white font-serif">
-                Our Impact
-              </h1>
-              <p className="text-[16px] text-white/85 max-w-md font-sans leading-[22px]">
-                Proof of our work — in numbers, milestones, and real outcomes from the communities we serve.
-              </p>
+      <section className="relative flex min-h-[calc(100vh-5rem)] items-center overflow-hidden bg-[#063A34] text-white md:min-h-[calc(100vh-6rem)]">
+        <img
+          src="/scholars-innovation.jpg"
+          alt="Ubunifu Foundation scholars reviewing learning materials"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#063A34]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#063A34]/95 via-[#063A34]/72 to-[#063A34]/28" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#063A34]/80 to-transparent" />
+        <Container className="relative z-10 py-14 md:py-16">
+          <div className="max-w-3xl">
+            <p className="text-metadata uppercase text-white/70">Measured Community Change</p>
+            <h1 className="mt-5 text-[44px] leading-[52px] text-white md:text-[68px] md:leading-[74px]">
+              Our Impact
+            </h1>
+            <p className="mt-6 max-w-xl text-[17px] leading-[28px] text-white/80">
+              Proof of our work in numbers, milestones, and real outcomes from the communities we serve. Every figure points back to young people and women building confidence, skills, and new opportunities.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <Link
+                to="/donate"
+                className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-4 text-sm font-bold uppercase text-white transition-transform hover:scale-[1.02]"
+              >
+                Support the Work
+              </Link>
+              <a
+                href="#success-stories"
+                className="inline-flex items-center justify-center rounded-full border border-white/35 px-7 py-4 text-sm font-bold uppercase text-white transition-colors hover:bg-white hover:text-[#063A34]"
+              >
+                Read Stories
+              </a>
             </div>
           </div>
         </Container>
-
+        <div className="absolute bottom-10 right-6 z-10 hidden border-l-4 border-[#F5B51B] bg-[#063A34]/90 px-6 py-5 backdrop-blur-sm md:block lg:right-16">
+          <p className="text-[34px] leading-none font-semibold text-white">194+</p>
+          <p className="mt-2 text-metadata uppercase text-white/75">Youths Trained</p>
+        </div>
       </section>
 
-      {/* Stats Bar — Overlaps Hero Bottom */}
-      <div className="relative z-20 -mt-16 mb-8">
+      {/* Impact Metrics */}
+      <section className="relative z-20 bg-white">
         <Container>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
-            {impactStats.map(({ label, value, icon: Icon, color }) => (
+          <div className="grid border-y border-[#DDEDE8] bg-white shadow-xl shadow-slate-900/5 sm:grid-cols-2 lg:grid-cols-5">
+            {impactStats.map(({ label, value, icon: Icon }, index) => (
               <div
                 key={label}
-                className={cn(
-                  "rounded-2xl p-5 md:p-6 text-white shadow-lg",
-                  color
-                )}
+                className="min-h-[150px] border-b border-[#DDEDE8] p-6 last:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b-0"
               >
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
-                    <Icon size={18} />
-                  </div>
+                <div className="flex items-center justify-between gap-4">
+                  <Icon className={cn("h-6 w-6", statAccents[index])} />
+                  <span className="text-metadata uppercase text-slate-400">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
-                <p className="text-[34px] font-medium tracking-tight font-serif leading-none">
+                <p className="mt-6 text-[38px] leading-none font-semibold text-[#12323A]">
                   {value}
                 </p>
-                <p className="text-metadata uppercase text-white/80 mt-2">
+                <p className="mt-3 text-metadata uppercase text-[#4A5A5A]">
                   {label}
                 </p>
               </div>
             ))}
           </div>
         </Container>
-      </div>
+      </section>
 
       {/* ─── SUCCESS STORIES ─── */}
-      <section className="py-16 md:py-24 bg-background">
+      <section id="success-stories" className="bg-white py-20 md:py-24">
         <Container>
-          <div className="max-w-3xl mb-12">
-            <h2 className="text-[24px] font-medium mb-4 tracking-tight font-serif text-body">
-              Success Stories:
-            </h2>
-            <p className="text-[16px] text-body/70 font-normal leading-[22px] max-w-2xl font-sans">
-              Real outcomes from our programs, transforming lives across Zanzibar and beyond.
-            </p>
+          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+            <div>
+              <p className="text-metadata uppercase">Success Stories</p>
+              <h2 className="mt-4 text-[32px] leading-[40px] text-[#12323A] md:text-[44px] md:leading-[52px]">
+                Real stories of confidence, skill, and new direction.
+              </h2>
+            </div>
+            <div className="border-l-4 border-primary pl-6">
+              <p className="text-[17px] leading-[28px] text-[#343434]">
+                Behind every number is a person whose life has shifted through mentorship, learning, and opportunity. These stories show how Ubunifu Foundation helps young people move from uncertainty to purpose, practical skills, and community impact.
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {successStories.map((story, i) => (
-              <div
-                key={story.author}
-                className={cn(
-                  "group rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-xl cursor-pointer",
-                  story.accent === "gold"
-                    ? "bg-[#f5e6c8] hover:shadow-[#c49a2a]/10"
-                    : "bg-[#0a3d3d] text-white hover:shadow-primary/10"
-                )}
-                onClick={() => setExpandedStory(expandedStory === i ? null : i)}
-              >
-                <div className="p-6 md:p-8">
-                  {/* Image placeholder + Header */}
-                  <div className="flex items-start gap-5">
-                    <div className={cn(
-                      "w-16 h-16 md:w-20 md:h-20 rounded-2xl shrink-0 flex items-center justify-center overflow-hidden",
-                      story.accent === "gold" ? "bg-[#c49a2a]/20" : "bg-white/10"
-                    )}>
-                      {story.image?.startsWith('/placeholder') ? (
-                        <span className={cn(
-                          "text-2xl font-serif font-medium uppercase",
-                          story.accent === "gold" ? "text-[#c49a2a]" : "text-white/60"
-                        )}>
-                          {story.author[0]}
-                        </span>
-                      ) : (
-                        <img
-                          src={story.image}
-                          alt={story.author}
-                          className="w-full h-full object-cover"
-                        />
-                      )}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className={cn(
-                        "text-[24px] font-medium tracking-tight font-serif leading-[32px] mb-1",
-                        story.accent === "gold" ? "text-body" : "text-white"
-                      )}>
-                        {story.title}
-                      </h3>
-                      <p className={cn(
-                        "text-metadata uppercase",
-                        story.accent === "gold" ? "text-body/60" : "text-primary/70"
-                      )}>
-                        {story.stat}
-                      </p>
-                      <p className={cn(
-                        "text-metadata",
-                        story.accent === "gold" ? "text-body/50" : "text-white/60"
-                      )}>
+          <div className="mt-16 space-y-20 md:space-y-24">
+            {successStories.map((story, index) => {
+              const isFlipped = index % 2 === 1;
+              const isGold = story.accent === "gold";
+
+              return (
+                <article
+                  key={story.author}
+                  className={cn(
+                    "grid items-center gap-10 border-t border-slate-200 pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16",
+                    isFlipped && "lg:[&>div:first-child]:order-2"
+                  )}
+                >
+                  <div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span
+                        className={cn(
+                          "inline-flex h-10 w-10 items-center justify-center rounded-md text-sm font-bold text-white",
+                          isGold ? "bg-[#C49A2A]" : "bg-[#0A8F8A]"
+                        )}
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-metadata uppercase">{story.stat}</span>
+                      <span className={cn("text-metadata uppercase", isGold ? "text-[#9B7618]" : "text-[#0A8F8A]")}>
                         {story.author}
+                      </span>
+                    </div>
+
+                    <h3 className="mt-7 text-[30px] leading-[38px] text-[#12323A] md:text-[42px] md:leading-[50px]">
+                      {story.title}
+                    </h3>
+
+                    <div className="mt-7 flex gap-4 border-l border-slate-200 pl-5">
+                      <Quote className={cn("mt-1 h-6 w-6 shrink-0", isGold ? "text-[#C49A2A]" : "text-[#0A8F8A]")} />
+                      <p className="text-[18px] leading-[29px] text-[#2F3A3A]">
+                        "{story.description || story.fullStory[0]}"
                       </p>
                     </div>
-                  </div>
 
-                  {/* Description */}
-                  <div className="mt-5">
-                    <p className={cn(
-                      "text-[16px] font-sans leading-[22px] italic",
-                      story.accent === "gold" ? "text-body/70" : "text-white/70"
-                    )}>
-                      "{story.description || story.fullStory[0]}"
-                    </p>
-                  </div>
-
-                  {/* Expanded Full Story */}
-                  {expandedStory === i && (
-                    <div className={cn(
-                      "mt-5 pt-5 border-t space-y-3 animate-fade-in-up",
-                      story.accent === "gold" ? "border-[#c49a2a]/20" : "border-white/15"
-                    )}>
-                      {story.fullStory.map((paragraph, j) => (
-                        <p
-                          key={j}
-                          className={cn(
-                            "text-[16px] font-sans leading-[22px]",
-                            story.accent === "gold" ? "text-body/80" : "text-white/70"
-                          )}
-                        >
+                    <div className="mt-8 space-y-5">
+                      {story.fullStory.map((paragraph) => (
+                        <p key={paragraph} className="text-[16px] leading-[26px] text-[#454545]">
                           {paragraph}
                         </p>
                       ))}
                     </div>
-                  )}
-
-                  {/* Read more indicator */}
-                  <div className={cn(
-                    "flex items-center gap-1 mt-4 text-[12px] font-medium uppercase tracking-wider font-sans group-hover:gap-2 transition-all",
-                    story.accent === "gold" ? "text-[#c49a2a]" : "text-primary/70"
-                  )}>
-                    {expandedStory === i ? (
-                      <>
-                        <span>Read less</span>
-                        <X size={12} />
-                      </>
-                    ) : (
-                      <>
-                        <span>Read more</span>
-                        <ChevronRight size={12} />
-                      </>
-                    )}
                   </div>
-                </div>
-              </div>
-            ))}
+
+                  <div className="relative">
+                    <div
+                      className={cn(
+                        "absolute hidden h-full w-full border-2 md:block",
+                        isGold ? "border-[#C49A2A]" : "border-[#0A8F8A]",
+                        isFlipped ? "-left-5 top-5" : "left-5 top-5"
+                      )}
+                      aria-hidden="true"
+                    />
+                    <img
+                      src={story.image}
+                      alt={story.author}
+                      className="relative z-10 aspect-[4/5] w-full rounded-lg object-cover shadow-xl"
+                    />
+                    <div
+                      className={cn(
+                        "absolute bottom-5 z-20 flex items-center gap-2 rounded-md px-4 py-3 text-sm font-bold text-white shadow-lg",
+                        isGold ? "bg-[#C49A2A]" : "bg-[#0A8F8A]",
+                        isFlipped ? "right-5" : "left-5"
+                      )}
+                    >
+                      <Sparkles size={16} />
+                      <span>{story.author}</span>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </Container>
       </section>
@@ -299,19 +285,19 @@ const Impact = () => {
             {/* Timeline Line */}
             <div className="absolute left-0 right-0 top-[44px] h-0.5 bg-border" />
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6">
               {milestones.map((m, i) => (
                 <div key={m.year} className="relative pt-0">
-                  {/* Image placeholder */}
-                  <div className="w-20 h-20 rounded-2xl bg-secondary border border-border flex items-center justify-center mb-4 overflow-hidden relative z-10">
-                    <span className="text-xs text-foreground/30 font-sans">Photo</span>
+                  {/* Milestone marker */}
+                  <div className="w-20 h-20 rounded-2xl bg-[#063A34] border border-[#0A8F8A]/30 flex items-center justify-center mb-4 overflow-hidden relative z-10 shadow-lg shadow-[#063A34]/10">
+                    <span className="text-[18px] font-bold text-white font-serif">{m.year}</span>
                   </div>
                   {/* Dot */}
                   <div className="absolute left-[34px] top-[78px] w-3 h-3 rounded-full bg-primary border-2 border-white shadow z-20" />
                   {/* Content */}
                   <div className="mt-6 space-y-1">
-                    <p className="text-[24px] font-medium text-primary/30 font-serif">{m.year}</p>
-                    <p className="text-[13px] font-sans text-foreground/60 leading-snug">{m.label}</p>
+                    <p className="text-[13px] font-sans text-foreground/70 leading-snug font-semibold">{m.label}</p>
+                    <p className="mt-2 text-[12px] font-sans text-foreground/50 leading-[18px]">{m.description}</p>
                   </div>
                 </div>
               ))}
@@ -345,13 +331,13 @@ const Impact = () => {
 
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
               <Link
-                to="/get-involved"
+                to="/volunteer"
                 className="px-6 py-2.5 bg-white border border-[#0a3d3d]/15 text-[#0a3d3d] rounded-full text-[13px] font-medium font-sans hover:border-primary hover:text-primary transition-colors"
               >
                 Volunteer
               </Link>
               <Link
-                to="/get-involved"
+                to="/volunteer"
                 className="px-6 py-2.5 bg-white border border-[#0a3d3d]/15 text-[#0a3d3d] rounded-full text-[13px] font-medium font-sans hover:border-primary hover:text-primary transition-colors"
               >
                 Partner Programs

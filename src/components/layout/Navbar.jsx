@@ -18,6 +18,7 @@ const navLinks = [
     ]
   },
   { label: "Programs", to: "/projects" },
+  { label: "Enterprises", to: "/enterprises" },
   { label: "Impact", to: "/impact" },
   { label: "Contact", to: "/contact" }
 ];
@@ -63,7 +64,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-6 lg:gap-8 h-full">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-8 h-full">
           {navLinks.map((link) => (
             <div 
               key={link.label} 
@@ -116,8 +117,8 @@ const Navbar = () => {
               )}
             </div>
           ))}
-          <Link to="/donate" className="ml-4">
-            <Button className="rounded-full px-8 py-6 text-sm font-bold tracking-tight bg-primary hover:bg-primary/90 shadow-lg hover:scale-105 transition-all uppercase">
+          <Link to="/donate" className="ml-2 xl:ml-4">
+            <Button className="rounded-full px-6 xl:px-8 py-6 text-sm font-bold tracking-tight bg-primary hover:bg-primary/90 shadow-lg hover:scale-105 transition-all uppercase">
               Donate
             </Button>
           </Link>

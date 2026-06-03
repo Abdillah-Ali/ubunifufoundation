@@ -1,19 +1,79 @@
 import { Link } from "react-router-dom";
-import { Target, Users, Sprout, Heart, BookOpen, Lightbulb } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  CalendarDays,
+  CheckCircle2,
+  Compass,
+  Handshake,
+  Heart,
+  Lightbulb,
+  MapPin,
+  Sprout,
+  Target,
+  Users
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Container from "@/components/layout/Container";
 import usePageTitle from "@/hooks/usePageTitle";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
-const objectives = [
-  { title: "Women Empowerment", description: "Supporting women with skills, financial tools, and opportunities for personal and professional growth.", icon: Heart },
-  { title: "Youth Livelihoods", description: "Creating income-generating opportunities to improve youth livelihoods and economic independence.", icon: Users },
-  { title: "Skills & Training", description: "Providing training and mentorship to equip youth with employable and practical skills.", icon: BookOpen },
-  { title: "Entrepreneurship Development", description: "Supporting entrepreneurship and self-employment through innovation and business skills development.", icon: Lightbulb },
-  { title: "Community Engagement", description: "Working with local communities to develop sustainable projects and improve living conditions.", icon: Target },
-  { title: "Blue Economy & Environment", description: "Promoting environmental conservation through ocean protection and sustainable practices.", icon: Sprout }
+const focusAreas = [
+  {
+    title: "Women Empowerment",
+    description: "Supporting women with skills, financial tools, and opportunities for personal and professional growth.",
+    icon: Heart,
+    color: "text-[#D94B2B]"
+  },
+  {
+    title: "Youth Livelihoods",
+    description: "Creating income-generating opportunities that strengthen youth livelihoods and economic independence.",
+    icon: Users,
+    color: "text-[#008AC1]"
+  },
+  {
+    title: "Skills & Training",
+    description: "Providing practical training and mentorship so young people can build employable, future-ready skills.",
+    icon: BookOpen,
+    color: "text-[#0A8F8A]"
+  },
+  {
+    title: "Entrepreneurship Development",
+    description: "Helping youth and women transform community challenges into sustainable social enterprises.",
+    icon: Lightbulb,
+    color: "text-[#C49A2A]"
+  },
+  {
+    title: "Community Engagement",
+    description: "Working with local communities to develop responsive projects and improve everyday living conditions.",
+    icon: Target,
+    color: "text-[#008AC1]"
+  },
+  {
+    title: "Blue Economy & Environment",
+    description: "Promoting ocean protection, environmental conservation, and practical sustainable practices.",
+    icon: Sprout,
+    color: "text-[#0A8F8A]"
+  }
 ];
 
+const storySteps = [
+  {
+    year: "2022",
+    title: "Learning Through SINA",
+    description: "Saida and Fadhil returned from the Social Innovation Academy in Uganda with a mission to turn local challenges into opportunities."
+  },
+  {
+    year: "2023",
+    title: "Ubunifu Foundation Began",
+    description: "The first program launched in September 2023 with 29 pioneers, creating a bridge between local talent and global impact."
+  },
+  {
+    year: "Today",
+    title: "Building Sustainable Futures",
+    description: "Ubunifu now supports youth and women through self-discovery, skills training, social enterprise, and community-led change."
+  }
+];
 
 const boardMembers = [
   {
@@ -33,295 +93,100 @@ const partners = [
   { name: "Social Innovation Academy", logo: "/sina.png" }
 ];
 
-const Underline = () => (
-  <svg 
-    className="absolute -bottom-2 left-0 w-full h-3 text-[#f59e0b] opacity-80" 
-    viewBox="0 0 100 10" 
-    preserveAspectRatio="none"
-  >
-    <path 
-      d="M0 5 Q 25 0, 50 5 T 100 5" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="3" 
-      strokeLinecap="round" 
-    />
-  </svg>
-);
+const stats = [
+  { value: "2023", label: "Foundation started" },
+  { value: "29", label: "First pioneers" },
+  { value: "100+", label: "Youth and women reached annually" }
+];
 
 const About = () => {
   usePageTitle("About");
   useScrollReveal();
 
   return (
-    <div className="bg-background min-h-screen">
-      {/* 1. Hero Section - Cinematic Schwab Style */}
-      <section className="relative min-h-[60vh] md:min-h-[75vh] flex items-center text-white overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000&auto=format&fit=crop" 
-            alt="Ubunifu Foundation Hero" 
-            className="w-full h-full object-cover scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1635]/95 via-[#1a1635]/60 to-transparent" />
-          <div className="absolute inset-0 bg-[#0c0a1a]/20" />
-        </div>
-
-        <Container className="relative z-10 py-20 md:py-32">
-          <div className="max-w-4xl animate-fade-in-up space-y-10">
-            {/* Title with Underline */}
-            <div className="relative inline-block">
-              <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium text-white tracking-tight">
-                About
-              </h2>
-              <Underline />
-            </div>
-
-            {/* Main Intro */}
-            <h1 className="text-[24px] font-serif font-medium leading-tight tracking-tight text-white/95 max-w-3xl">
-              Driving social entrepreneurship, youth empowerment, and sustainable community transformation by creating opportunities and building resilient futures in Zanzibar
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-[16px] text-white/80 leading-[22px] max-w-xl font-normal font-sans">
-              Supporting youth and women to create lasting impact.
-            </p>
-
-            {/* Keywords Footer */}
-            <div className="pt-6 flex flex-wrap gap-x-4 gap-y-2 text-[10px] md:text-xs font-bold tracking-[0.2em] text-white uppercase opacity-90">
-              <span>EMPOWERING</span>
-              <span className="text-primary">|</span>
-              <span>SUSTAINABLE</span>
-              <span className="text-primary">|</span>
-              <span>INNOVATIVE</span>
-              <span className="text-primary">|</span>
-              <span>IMPACTFUL</span>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* 2. Mission & Vision - Editorial Layout */}
-      <section className="py-24 bg-background overflow-hidden">
-        <Container>
-          <div className="grid lg:grid-cols-12 items-center reveal" style={{ gap: '32px', padding: '0 80px' }}>
-            <div className="lg:col-span-7" style={{ display: 'grid', gap: '32px' }}>
-              <div>
-                <h3 className="text-[24px] font-medium leading-[32px] mb-[15px] text-[#131313] font-serif">Problem statement.</h3>
-                <p className="text-base font-normal leading-[22px] mt-[16px] text-[#131313] font-sans">
-                  Youth aged 18- 30 in Zanzibar face high levels of unemployment due to limited job opportunities, lack of necessary skills and experience to compete for the few available job opportunities in the country which leads them to engage in unproductive activities such as a high crime rate, drug abuse and early marriage.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-[24px] font-medium leading-[32px] mb-[15px] text-[#131313] font-serif">Solution.</h3>
-                <p className="text-base font-normal leading-[22px] mt-[16px] text-[#131313] font-sans">
-                  We offer a free-responsible and self-driven learning space to nature and empower leaders to be able to transform challenges in their communities into opportunities.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-[24px] font-medium leading-[32px] mb-[15px] text-[#131313] font-serif">Value Proposition.</h3>
-                <p className="text-base font-normal leading-[22px] mt-[16px] text-[#131313] font-sans">
-                  We empower youths to become social entrepreneurs who are impact drivers of a sustainable future. 
-                </p>
-              </div>
-            </div>
-            
-            {/* Image Side */}
-            <div className="lg:col-span-5 w-full aspect-square overflow-hidden rounded-[2.5rem] border border-border shadow-2xl group relative bg-secondary">
-              <img 
-                src="/scholars-innovation.jpg" 
-                alt="Ubunifu Foundation Scholars" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Vision & Mission Split */}
-      <section className="py-24 bg-slate-50 border-y border-border reveal">
-        <Container>
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Left: Square Image */}
-            <div className="aspect-square w-full overflow-hidden">
-              <img
-                src="/about_vision.jpg"
-                alt="Ubunifu Foundation Team"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {/* Right: Vision on top, Mission below */}
-            <div className="flex flex-col gap-12 max-w-3xl">
-              <div className="space-y-4 pb-12 border-b border-border">
-                <h3 className="text-[24px] font-medium leading-[32px] text-body font-serif">Our Vision</h3>
-                <p className="text-[16px] font-normal leading-[22px] text-body font-sans">
-                  Our vision is to be a catalyst for positive transformation in Zanzibar by equipping youth and women with a high-quality education in entrepreneurial skills, vocational training, and community building that inspire creativity to become leaves and legacy of youth empowerment.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-[24px] font-medium leading-[32px] text-body font-serif">Our Mission</h3>
-                <p className="text-[16px] font-normal leading-[22px] text-body font-sans">
-                  Our mission is to address Zanzibar's youth unemployment challenge and empower women by offering comprehensive education in entrepreneurial skills, vocational training, and community building.
-                </p>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Our Story - Full Width */}
-      <section className="py-24 bg-background reveal">
-        <Container>
-          <div className="max-w-none">
-            <span className="text-metadata uppercase mb-6">Our Story</span>
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
-              <div className="max-w-3xl">
-                <h2 className="text-[24px] font-medium text-body leading-[32px] font-serif">
-                  From a small idea to a movement changing lives in Zanzibar.
-                </h2>
-              </div>
-              <div className="space-y-6 text-body text-[16px] leading-[22px] font-normal font-sans max-w-3xl">
-                <p>
-                  The story of Ubunifu Foundation is a journey of "returning home to sow seeds of change."
-                </p>
-                <p>
-                  It began in 2022, when two young Zanzibaris, Saida and Fadhil, returned from the Social Innovation Academy (SINA) in Uganda a program that funded by TUI Care Foundation. They didn't just bring back memories; they brought a mission: to prove that Zanzibar’s challenges were actually opportunities in disguise.
-                </p>
-                <p>
-                  In September 2023, they turned this vision into reality by launching Ubunifu Foundation’s first program with 29 pioneers. As part of the SINA Community and the TUI Future Shaper initiative, the foundation became a bridge between local talent and global impact.
-                </p>
-                <p>
-                  Today, Ubunifu empowers 100 youth and women annually. They guide them through a transformative process—from discovering their potential to launching social enterprises ensuring that the next generation of Zanzibari leaders doesn't just wait for the future, but builds it.
-                </p>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Full-width Image Banner */}
-      <div className="w-full bg-slate-50 flex items-center justify-center">
+    <div className="min-h-screen bg-white">
+      <section className="relative flex min-h-[70vh] items-end overflow-hidden bg-[#063A34] text-white md:min-h-[78vh]">
         <img
-          src="/about_seminar.jpg"
-          alt="Ubunifu Foundation Community"
-          className="w-full h-auto object-contain"
+          src="/hero_about.jpg"
+          alt="Ubunifu Foundation founders and community members"
+          className="absolute inset-0 h-full w-full object-cover object-center md:object-[68%_center]"
         />
-      </div>
-
-      {/* 6. Strategic Goals - Premium Redesign */}
-      <section className="relative pt-12 pb-28 bg-white overflow-hidden reveal">
-        {/* Subtle background grid texture */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, #0096C7 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-
-        <Container className="relative z-10">
-          {/* Goals Grid — 2 columns, 3 rows */}
-          <div className="grid md:grid-cols-2 gap-5">
-            {objectives.map((obj, index) => {
-              const num = String(index + 1).padStart(2, '0');
-              const colorAccents = [
-                { bg: 'bg-sky-50', icon: 'bg-sky-100 text-sky-600', border: 'hover:border-sky-300', num: 'text-sky-200' },
-                { bg: 'bg-violet-50', icon: 'bg-violet-100 text-violet-600', border: 'hover:border-violet-300', num: 'text-violet-200' },
-                { bg: 'bg-amber-50', icon: 'bg-amber-100 text-amber-600', border: 'hover:border-amber-300', num: 'text-amber-200' },
-                { bg: 'bg-emerald-50', icon: 'bg-emerald-100 text-emerald-600', border: 'hover:border-emerald-300', num: 'text-emerald-200' },
-                { bg: 'bg-rose-50', icon: 'bg-rose-100 text-rose-600', border: 'hover:border-rose-300', num: 'text-rose-200' },
-                { bg: 'bg-cyan-50', icon: 'bg-cyan-100 text-cyan-600', border: 'hover:border-cyan-300', num: 'text-cyan-200' },
-              ];
-              const accent = colorAccents[index % colorAccents.length];
-
-              return (
-                <div
-                  key={index}
-                  className={`group relative flex gap-6 p-7 rounded-2xl border border-border/50 ${accent.border} ${accent.bg} bg-opacity-40 hover:shadow-lg transition-all duration-400 overflow-hidden`}
-                >
-                  {/* Giant ghost number */}
-                  <span className={`absolute -bottom-3 right-3 text-[7rem] font-black leading-none select-none pointer-events-none ${accent.num} transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2`}>
-                    {num}
-                  </span>
-
-                  {/* Icon */}
-                  <div className={`shrink-0 w-14 h-14 rounded-xl flex items-center justify-center ${accent.icon} transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 z-10`}>
-                    <obj.icon size={26} strokeWidth={2} />
-                  </div>
-
-                  {/* Content */}
-                  <div className="relative z-10 flex-1 pr-16">
-                    <h4 className="text-[18px] font-medium leading-[24px] mb-2 text-foreground font-serif">
-                      {obj.title}
-                    </h4>
-                    <p className="text-base text-foreground/60 leading-[22px] font-sans">
-                      {obj.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Bottom accent strip */}
-          <div className="mt-16 flex items-center gap-6">
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-            <p className="text-xs font-semibold tracking-widest uppercase text-foreground/35 shrink-0">
-              Ubunifu Foundation · Strategic Pillars
+        <div className="absolute inset-0 bg-[#052F2B]/58" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#052F2B] via-[#052F2B]/88 to-[#052F2B]/54" />
+        <Container className="relative z-10 pb-14 pt-36 md:pb-20">
+          <div className="max-w-3xl reveal">
+            <p className="text-metadata uppercase text-white">About Ubunifu Foundation</p>
+            <h1 className="mt-5 text-[38px] leading-[46px] text-white drop-shadow-lg md:text-[58px] md:leading-[64px] lg:text-[62px] lg:leading-[68px]">
+              Empowering Zanzibar's next generation of changemakers.
+            </h1>
+            <p className="mt-6 max-w-2xl text-[17px] leading-[29px] text-white">
+              Ubunifu Foundation equips youth and women with social entrepreneurship, vocational skills, mentorship, and community-building support so they can create resilient futures.
             </p>
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-          </div>
-        </Container>
-      </section>
-
-
-
-
-
-      {/* Our Board / Team Section */}
-      <section className="py-24 bg-background reveal">
-        <Container>
-          <div className="max-w-2xl mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 font-serif">Our Board</h2>
-            <p className="text-base md:text-lg text-foreground/80 leading-relaxed font-medium">
-              The Ubunifu Foundation Board serves as a governing body committed to guiding the Foundation's mission. Each member brings deep expertise in community development, entrepreneurship, and social innovation across Zanzibar.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-10 max-w-2xl mx-auto">
-            {boardMembers.map((member, index) => (
-              <div key={index} className="flex flex-col items-center text-center group">
-                <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden mb-5 border-2 border-border group-hover:border-primary transition-colors duration-300">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
+            <div className="mt-10 grid max-w-2xl gap-4 sm:grid-cols-3">
+              {stats.map((stat) => (
+                <div key={stat.label} className="border-l-4 border-[#F5B51B] bg-[#052F2B]/76 px-5 py-4 shadow-lg shadow-black/15 backdrop-blur-sm">
+                  <p className="text-[30px] leading-[34px] text-white">{stat.value}</p>
+                  <p className="mt-1 text-[12px] font-bold uppercase tracking-[0.8px] text-white">{stat.label}</p>
                 </div>
-                <h4 className="text-sm md:text-base font-bold text-foreground tracking-tight leading-snug mb-1">{member.name}</h4>
-                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* 8. Our Partners - Minimalist Strip */}
-      <section className="py-20 bg-white border-t border-border reveal">
-        <Container>
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="shrink-0">
-              <span className="text-[11px] font-bold tracking-widest uppercase text-muted-foreground/60 border-r border-border pr-8 hidden md:block">
-                Trusted Partners
-              </span>
-              <span className="text-[11px] font-bold tracking-widest uppercase text-muted-foreground/60 text-center block md:hidden mb-8">
-                Our Valued Partners
-              </span>
+              ))}
             </div>
-            <div className="flex-1 flex flex-wrap justify-center md:justify-start gap-12 lg:gap-20 items-center">
-              {partners.map((partner, index) => (
-                <div key={index} className="flex items-center justify-center transition-all duration-500 cursor-pointer group relative">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="h-20 md:h-28 lg:h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap text-xs font-bold uppercase tracking-widest text-primary">
-                    {partner.name}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-[#F8FCFA] py-20 md:py-24">
+        <Container>
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+            <div className="relative reveal">
+              <div className="absolute -left-5 top-5 hidden h-full w-full border-2 border-[#F5B51B] md:block" aria-hidden="true" />
+              <img
+                src="/scholars-innovation.jpg"
+                alt="Ubunifu Foundation scholars in a learning program"
+                className="relative z-10 aspect-[4/3] w-full rounded-lg object-cover shadow-xl"
+              />
+            </div>
+            <div className="space-y-8 reveal">
+              <div className="border-l-4 border-[#008AC1] bg-white p-7 shadow-lg shadow-slate-900/5">
+                <Compass className="h-7 w-7 text-[#008AC1]" />
+                <h2 className="mt-4 text-[30px] leading-[38px] text-[#12323A]">Our Vision</h2>
+                <p className="mt-4 text-[16px] leading-[26px] text-[#4A5A5A]">
+                  To be a catalyst for positive transformation in Zanzibar by equipping youth and women with quality education in entrepreneurial skills, vocational training, and community building that inspires creativity and leaves a legacy of youth empowerment.
+                </p>
+              </div>
+              <div className="border-l-4 border-[#0A8F8A] bg-white p-7 shadow-lg shadow-slate-900/5">
+                <CheckCircle2 className="h-7 w-7 text-[#0A8F8A]" />
+                <h2 className="mt-4 text-[30px] leading-[38px] text-[#12323A]">Our Mission</h2>
+                <p className="mt-4 text-[16px] leading-[26px] text-[#4A5A5A]">
+                  To address Zanzibar's youth unemployment challenge and empower women by offering comprehensive education in entrepreneurial skills, vocational training, and community building.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-20 md:py-24">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+            <div className="reveal">
+              <p className="text-metadata uppercase">Our Story</p>
+              <h2 className="mt-4 text-[34px] leading-[42px] text-[#12323A] md:text-[50px] md:leading-[58px]">
+                Returning home to sow seeds of change.
+              </h2>
+              <p className="mt-6 text-[17px] leading-[28px] text-[#4A5A5A]">
+                Ubunifu Foundation began with two young Zanzibaris who came home determined to prove that community challenges can become opportunities in disguise.
+              </p>
+            </div>
+            <div className="space-y-6 reveal">
+              {storySteps.map((step) => (
+                <div key={step.year} className="grid gap-4 border-t border-[#DDEDE8] pt-6 sm:grid-cols-[120px_1fr]">
+                  <div className="flex items-center gap-3">
+                    <CalendarDays className="h-5 w-5 text-[#F5B51B]" />
+                    <span className="text-[24px] leading-[30px] text-[#12323A]">{step.year}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-[24px] leading-[31px] text-[#12323A]">{step.title}</h3>
+                    <p className="mt-3 text-[16px] leading-[25px] text-[#4A5A5A]">{step.description}</p>
                   </div>
                 </div>
               ))}
@@ -330,49 +195,131 @@ const About = () => {
         </Container>
       </section>
 
-      {/* 9. Final Conclusion - Two-Card Layout */}
-      <section className="py-24 bg-slate-50/50 reveal">
+      <section className="bg-[#063A34] py-20 text-white md:py-24">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Card 1: Theory of Change */}
-            <div className="bg-white p-10 md:p-14 rounded-[2.5rem] border border-border shadow-sm flex flex-col justify-center space-y-8">
-              <div className="inline-block w-fit px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[11px] font-bold tracking-widest uppercase border border-primary/20">
-                Impact Strategy
-              </div>
-              <div className="space-y-6">
-                <h3 className="text-2xl md:text-3xl font-bold tracking-tight">Our Theory of Change.</h3>
-                <p className="text-xl md:text-2xl text-foreground font-medium italic leading-relaxed">
-                  "We believe that by providing social entrepreneurship training and practical skills, young people can create opportunities, reduce poverty, and drive economic growth."
+          <div className="grid items-end gap-10 md:grid-cols-[1fr_auto]">
+            <div className="max-w-3xl reveal">
+              <p className="text-metadata uppercase text-white/70">Strategic Pillars</p>
+              <h2 className="mt-4 text-[34px] leading-[42px] text-white md:text-[50px] md:leading-[58px]">
+                The work is practical, local, and built for long-term impact.
+              </h2>
+            </div>
+            <Link
+              to="/projects"
+              className="inline-flex items-center justify-center gap-3 rounded-full border border-white/40 px-7 py-4 text-sm font-bold uppercase text-white transition-colors hover:bg-white hover:text-[#063A34] reveal"
+            >
+              View Programs
+              <ArrowRight size={17} />
+            </Link>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {focusAreas.map((area, index) => {
+              const Icon = area.icon;
+
+              return (
+                <div key={area.title} className="border border-white/15 bg-white/[0.07] p-6 backdrop-blur-sm reveal">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-md bg-white/10">
+                      <Icon className={`h-5 w-5 ${area.color}`} />
+                    </div>
+                    <span className="text-[13px] font-bold uppercase tracking-[1px] text-white/50">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 text-[22px] leading-[29px] text-white">{area.title}</h3>
+                  <p className="mt-3 text-[15px] leading-[24px] text-white/75">{area.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-20 md:py-24">
+        <Container>
+          <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+            <div className="reveal">
+              <p className="text-metadata uppercase">Our Board</p>
+              <h2 className="mt-4 text-[34px] leading-[42px] text-[#12323A] md:text-[50px] md:leading-[58px]">
+                Guided by people rooted in community and innovation.
+              </h2>
+              <p className="mt-6 text-[17px] leading-[28px] text-[#4A5A5A]">
+                The Ubunifu Foundation Board guides the mission with expertise in community development, entrepreneurship, and social innovation across Zanzibar.
+              </p>
+              <div className="mt-8 flex items-start gap-3 border-l-4 border-[#F5B51B] bg-[#F8FCFA] p-5">
+                <MapPin className="mt-1 h-5 w-5 shrink-0 text-[#008AC1]" />
+                <p className="text-[15px] leading-[24px] text-[#4A5A5A]">
+                  Based in Kwerekwe, Zanzibar, the foundation works close to the communities it serves.
                 </p>
               </div>
             </div>
 
-            {/* Card 2: Final CTA */}
-            <div className="bg-secondary/50 p-10 md:p-14 rounded-[2.5rem] border border-border flex flex-col justify-center space-y-8 relative overflow-hidden group">
-              {/* Subtle background accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl group-hover:bg-primary/10 transition-colors duration-500" />
-              
-              <div className="space-y-6">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
-                  Be Part of the <span className="text-primary">Transformation.</span>
-                </h2>
-                <p className="text-base md:text-lg text-foreground/70 font-medium leading-relaxed">
-                  Whether through partnership, volunteering, or donation, your contribution directly empowers the next generation of leaders and innovators in Zanzibar.
-                </p>
-              </div>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {boardMembers.map((member) => (
+                <div key={member.name} className="border border-[#DDEDE8] bg-[#F8FCFA] p-5 reveal">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="aspect-[4/5] w-full rounded-md object-cover object-top"
+                  />
+                  <h3 className="mt-5 text-[24px] leading-[30px] text-[#12323A]">{member.name}</h3>
+                  <p className="mt-2 text-[14px] font-bold uppercase tracking-[0.6px] text-[#008AC1]">{member.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
 
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Link to="/get-involved" className="flex-1 min-w-[160px]">
-                  <Button className="w-full rounded-full py-7 text-sm font-bold tracking-tight bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 hover:scale-[1.02] transition-all">
-                    Get Involved
-                  </Button>
-                </Link>
-                <Link to="/donate" className="flex-1 min-w-[160px]">
-                  <Button variant="outline" className="w-full rounded-full py-7 text-sm font-bold tracking-tight border-2 border-foreground hover:bg-foreground hover:text-white hover:scale-[1.02] transition-all">
-                    Support Our Work
-                  </Button>
-                </Link>
+      <section className="bg-[#F8FCFA] py-16">
+        <Container>
+          <div className="grid items-center gap-10 md:grid-cols-[auto_1fr] reveal">
+            <div>
+              <p className="text-metadata uppercase">Trusted Partners</p>
+              <h2 className="mt-3 text-[30px] leading-[38px] text-[#12323A]">Built through collaboration.</h2>
+            </div>
+            <div className="flex flex-wrap items-center justify-start gap-8 md:justify-end lg:gap-14">
+              {partners.map((partner) => (
+                <div key={partner.name} className="flex min-h-28 items-center justify-center bg-white px-8 py-5 shadow-lg shadow-slate-900/5">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-16 w-auto object-contain md:h-20"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-20 md:py-24">
+        <Container>
+          <div className="grid items-center gap-10 border-y border-[#DDEDE8] py-14 lg:grid-cols-[1fr_auto]">
+            <div className="max-w-3xl reveal">
+              <div className="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[1px] text-[#008AC1]">
+                <Handshake className="h-4 w-4" />
+                Be Part of the Transformation
               </div>
+              <h2 className="mt-4 text-[34px] leading-[42px] text-[#12323A] md:text-[50px] md:leading-[58px]">
+                Help youth and women build sustainable futures in Zanzibar.
+              </h2>
+              <p className="mt-5 text-[16px] leading-[26px] text-[#4A5A5A]">
+                Whether through partnership, volunteering, or donation, your contribution supports practical learning, enterprise creation, and community-led impact.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 sm:flex-row lg:flex-col reveal">
+              <Link to="/volunteer">
+                <Button className="w-full rounded-full px-8 py-7 text-sm font-bold uppercase tracking-tight">
+                  Get Involved
+                </Button>
+              </Link>
+              <Link to="/donate">
+                <Button variant="outline" className="w-full rounded-full border-2 border-[#12323A] px-8 py-7 text-sm font-bold uppercase tracking-tight text-[#12323A] hover:bg-[#12323A] hover:text-white">
+                  Support Our Work
+                </Button>
+              </Link>
             </div>
           </div>
         </Container>
