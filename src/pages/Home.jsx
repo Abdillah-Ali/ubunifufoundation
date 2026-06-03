@@ -127,7 +127,7 @@ const Home = () => {
               
               {/* Image 1: Main (Center Right) */}
               <div className="absolute top-[10%] right-0 w-[55%] aspect-square rounded-full border-4 border-white/20 overflow-hidden shadow-2xl z-20 group">
-                <img src="/founders_hero.png" alt="Founders" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="/impact.png" alt="Founders" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
               
               {/* Image 2: Support (Top Left) */}

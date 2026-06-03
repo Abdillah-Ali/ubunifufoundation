@@ -213,7 +213,7 @@ const Impact = () => {
             <div className="space-y-6">
               <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-slate-100">
                 <img 
-                  src="/founders_hero.png" 
+                  src="/impact.png" 
                   alt="Ubunifu Foundation Founders" 
                   className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                 />
