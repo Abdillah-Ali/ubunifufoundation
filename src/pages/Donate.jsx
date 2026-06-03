@@ -59,7 +59,7 @@ const Donate = () => {
             <div className="w-full lg:w-[65%] relative h-full flex items-end justify-center lg:justify-end lg:-ml-[20%] z-10 pointer-events-none">
               <div className="relative w-full max-w-[900px] aspect-[4/3] lg:aspect-auto lg:h-[700px] -mb-1">
                 <img
-                  src="/founders_hero.png"
+                  src="/donate_hero.png"
                   alt="Support the Future of Youth"
                   className="w-full h-full object-contain object-bottom transition-transform duration-700"
                 />
