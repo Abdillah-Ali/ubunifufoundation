@@ -54,7 +54,7 @@ const Model = () => {
               The Empowerment Engine
             </span>
             <h1 className="text-[48px] md:text-[64px] lg:text-[72px] font-bold leading-[1.1] tracking-tight font-serif">
-              A Self-Driven <br /> <span className="text-emerald-400 italic">Learning Space.</span>
+              A Self-Driven <br /> <span className="text-emerald-400">Learning Space.</span>
             </h1>
             <p className="text-xl text-white/80 max-w-2xl font-light leading-relaxed font-sans">
               Our model is built on the principles of self-governance and responsible learning, empowering youth to take ownership of their future.

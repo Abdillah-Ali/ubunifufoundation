@@ -231,6 +231,76 @@ const Home = () => {
           style={{ border: 'none', display: 'block' }}
         />
       </div>
+
+      {/* Sustainable Development Goals */}
+      <section className="bg-[#F5F5F5] py-20 md:py-24">
+        <Container>
+          <div className="space-y-12">
+            <div className="flex justify-center reveal">
+              <img
+                src="/SDG.png"
+                alt="Sustainable Development Goals"
+                className="h-auto w-full max-w-4xl rounded-[1.5rem] shadow-lg"
+              />
+            </div>
+
+            <div className="mx-auto max-w-3xl text-center reveal">
+              <p className="text-lg text-[#404040]">
+                Our programs and initiatives align with global sustainable development priorities focused on education, economic empowerment, innovation, and social inclusion.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+              {[
+                {
+                  number: 8,
+                  title: "Decent Work & Economic Growth",
+                  description: "Creating opportunities for youth entrepreneurship, vocational skills, and sustainable employment to reduce unemployment in Zanzibar.",
+                  image: "/SDG8.png",
+                },
+                {
+                  number: 4,
+                  title: "Quality Education",
+                  description: "Providing practical learning experiences, digital skills training, mentorship, and accessible educational opportunities.",
+                  image: "/SDG4.png",
+                },
+                {
+                  number: 1,
+                  title: "No Poverty",
+                  description: "Helping communities generate income through entrepreneurship, innovation, and economic empowerment programs.",
+                  image: "/SDG 1.png",
+                },
+                {
+                  number: 10,
+                  title: "Reduced Inequalities",
+                  description: "Supporting underserved youth, women, and marginalized communities through inclusive development initiatives.",
+                  image: "/SDG10.png",
+                },
+                {
+                  number: 9,
+                  title: "Industry, Innovation & Infrastructure",
+                  description: "Encouraging innovation, creativity, and social enterprise solutions that strengthen local communities and future industries.",
+                  image: "/SDG9.png",
+                },
+              ].map((goal) => (
+                <article key={goal.number} className="group overflow-hidden rounded-[1.5rem] bg-white shadow-md transition-shadow hover:shadow-lg reveal">
+                  <div className="aspect-square overflow-hidden bg-slate-100">
+                    <img
+                      src={goal.image}
+                      alt={`SDG ${goal.number}: ${goal.title}`}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="space-y-2 p-4">
+                    <h3 className="font-serif text-base font-bold text-[#2D1457]">{goal.title}</h3>
+                    <p className="text-xs leading-relaxed text-[#404040]">{goal.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
       
       {/* Visual Separator */}
       <Container className="my-16">
