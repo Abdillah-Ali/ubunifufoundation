@@ -5,14 +5,14 @@
 
 
 export const galleryImages = [
-{ src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop", alt: "Youth leadership workshop in Kwerekwe", category: "Empowerment" },
+{ src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop", alt: "Youth leadership workshop in Fuoni Afya", category: "Empowerment" },
 { src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop", alt: "Digital literacy training session", category: "Digital" },
 { src: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=600&h=400&fit=crop", alt: "Women entrepreneurship forum", category: "Empowerment" },
 { src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=400&fit=crop", alt: "Students learning computer basics", category: "Digital" },
 { src: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=400&fit=crop", alt: "Volunteer mentoring a young entrepreneur", category: "Innovation" },
 { src: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=400&fit=crop", alt: "Collaborative project planning at Ubunifu center", category: "Innovation" },
 { src: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=600&h=400&fit=crop", alt: "Community engagement meeting", category: "Community" },
-{ src: "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?w=600&h=400&fit=crop", alt: "Zanzibar landscape near Kwerekwe", category: "Community" },
+{ src: "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?w=600&h=400&fit=crop", alt: "Zanzibar landscape near Fuoni Afya", category: "Community" },
 { src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop", alt: "Social Innovation academy scholars", category: "Innovation" },
 { src: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=400&fit=crop", alt: "Digital marketing training for women", category: "Digital" },
 { src: "https://images.unsplash.com/photo-1531206715517-5c0ba140bef2?w=600&h=400&fit=crop", alt: "Youth team planning", category: "Empowerment" },

@@ -250,7 +250,7 @@ const About = () => {
               <div className="mt-8 flex items-start gap-3 border-l-4 border-[#F5B51B] bg-[#F8FCFA] p-5">
                 <MapPin className="mt-1 h-5 w-5 shrink-0 text-[#008AC1]" />
                 <p className="text-[15px] leading-[24px] text-[#4A5A5A]">
-                  Based in Kwerekwe, Zanzibar, the foundation works close to the communities it serves.
+                  Based in Fuoni Afya, Zanzibar, Tanzania, the foundation works close to the communities it serves.
                 </p>
               </div>
             </div>

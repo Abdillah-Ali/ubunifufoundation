@@ -92,9 +92,9 @@ const Footer = () => {
                   </div>
                   <div>
                     <span className="block text-[#4ECDC4] text-base font-bold mb-1 font-sans">Visit Us</span>
-                    <span className="text-base text-white/90 leading-[22px] font-sans">
-                      Kwerekwe, Zanzibar,<br/>Tanzania
-                    </span>
+                    <a className="text-base text-white/90 leading-[22px] font-sans hover:text-[#4ECDC4]" href="https://maps.app.goo.gl/uVmoM8aKghBUgpKb8" target="_blank" rel="noopener noreferrer">
+                      Fuoni Afya, Zanzibar,<br/>Tanzania
+                    </a>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -103,8 +103,8 @@ const Footer = () => {
                   </div>
                   <div>
                     <span className="block text-[#4ECDC4] text-base font-bold mb-1 font-sans">Call Us</span>
-                    <span className="text-base text-white/90 leading-[22px] font-sans block">+255 623 067 338</span>
-                    <span className="text-base text-white/90 leading-[22px] font-sans block">+255 629 766 203</span>
+                    <a href="tel:+255623067338" className="text-base text-white/90 leading-[22px] font-sans block hover:text-[#4ECDC4]">+255 623 067 338</a>
+                    <a href="tel:+255629766203" className="text-base text-white/90 leading-[22px] font-sans block hover:text-[#4ECDC4]">+255 629 766 203</a>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -113,7 +113,7 @@ const Footer = () => {
                   </div>
                   <div>
                     <span className="block text-[#4ECDC4] text-base font-bold mb-1 font-sans">Email Us</span>
-                    <span className="text-base text-white/90 leading-[22px] font-sans">foundationubunifu@gmail.com</span>
+                    <a href="mailto:foundationubunifu@gmail.com" className="text-base text-white/90 leading-[22px] font-sans hover:text-[#4ECDC4]">foundationubunifu@gmail.com</a>
                   </div>
                 </li>
               </ul>

@@ -10,14 +10,14 @@
 
 export const posts = [
 {
-  title: "Building Futures in Kwerekwe: Our 2023 Launch",
-  slug: "building-futures-kwerekwe-launch",
+  title: "Building Futures in Fuoni Afya: Our 2023 Launch",
+  slug: "building-futures-fuoni-afya-launch",
   publishedAt: "2023-09-15",
   coverImage: "https://images.unsplash.com/photo-1594398901394-4e34939a02eb?w=800&h=500&fit=crop",
-  excerpt: "In September 2023, Ubunifu Foundation officially opened its doors in Kwerekwe, Zanzibar. Here is the story of how we began our mission.",
+  excerpt: "In September 2023, Ubunifu Foundation officially opened its doors in Fuoni Afya, Zanzibar. Here is the story of how we began our mission.",
   category: "story",
   body: `<p>Ubunifu Foundation was founded in September 2023 with a clear mission: to empower the youth and women of Zanzibar through education, mentorhip and social entrepreneurship.</p>
-<p>Located in the heart of Kwerekwe, our first center was designed as a space for creative problem solving and skill development. From the very first day, we saw the incredible potential of Zanzibar's youth.</p>
+<p>Located in the heart of Fuoni Afya, our first center was designed as a space for creative problem solving and skill development. From the very first day, we saw the incredible potential of Zanzibar's youth.</p>
 <h3>The Beginning</h3>
 <p>"We wanted to create more than just a training center," says the founder. "We wanted a sanctuary for innovation where young people could discover their purpose and build the confidence to lead."</p>
 <p>Since our launch, we've focused on three core programs: Self Discovery, Digital Literacy, and Social Innovation. These pillars are the foundation of everything we do.</p>`
@@ -50,9 +50,9 @@ export const posts = [
   slug: "digital-literacy-opportunity",
   publishedAt: "2024-03-05",
   coverImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=500&fit=crop",
-  excerpt: "In a digital-first world, computer skills are essential. See how our Digital Literacy program is opening new doors for youth in Kwerekwe.",
+  excerpt: "In a digital-first world, computer skills are essential. See how our Digital Literacy program is opening new doors for youth in Fuoni Afya.",
   category: "story",
-  body: `<p>Our Digital Literacy program in Kwerekwe is more than just learning to code or use spreadsheets. It's about giving young people the tools to participate in the global digital economy.</p>
+  body: `<p>Our Digital Literacy program in Fuoni Afya is more than just learning to code or use spreadsheets. It's about giving young people the tools to participate in the global digital economy.</p>
 <h3>Breaking Barriers</h3>
 <p>Many of our participants enter the program with limited prior exposure to computers. Within three months, they are navigating business tools, building resumes, and exploring online entrepreneurship.</p>
 <p>"Before Ubunifu, I felt left behind by technology," says a recent graduate. "Now, I'm building my own brand and connecting with customers online."</p>`
@@ -64,7 +64,7 @@ export const posts = [
   coverImage: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=500&fit=crop",
   excerpt: "Partnering with SINA (Social Innovation Academy) to foster a culture of creative problem-solving among Zanzibar's youth.",
   category: "story",
-  body: `<p>We are proud to be part of the SINA network, bringing their tried-and-tested social innovation methodology to Kwerekwe. This approach empowers youth to turn community challenges into sustainable business opportunities.</p>
+  body: `<p>We are proud to be part of the SINA network, bringing their tried-and-tested social innovation methodology to Fuoni Afya. This approach empowers youth to turn community challenges into sustainable business opportunities.</p>
 <h3>Fostering Innovation</h3>
 <p>The SINA model focuses on self-organization and purpose alignment. It helps our scholars move from a 'victim mindset' to a 'creator mindset', leading to the launch of real social enterprises that address local needs in Zanzibar.</p>`
 }

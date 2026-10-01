@@ -158,11 +158,11 @@ const Home = () => {
                 </h2>
               </div>
               <p className="max-w-2xl text-[17px] leading-[28px] text-[#454545] font-sans">
-                Ubunifu Foundation is a community-driven organization based in Kwerekwe, Zanzibar, dedicated to addressing youth unemployment and empowering women. We provide access to entrepreneurial skills, vocational training, and mentorship, creating a supportive environment where individuals transform challenges into long-term opportunities.
+                Ubunifu Foundation is a community-driven organization based in Fuoni Afya, Zanzibar, Tanzania, dedicated to addressing youth unemployment and empowering women. We provide access to entrepreneurial skills, vocational training, and mentorship, creating a supportive environment where individuals transform challenges into long-term opportunities.
               </p>
               <div className="grid border-y border-[#DDEDE8] sm:grid-cols-3">
                 {[
-                  ["Kwerekwe", "Community base"],
+                  ["Fuoni Afya", "Community base"],
                   ["Youth", "Primary focus"],
                   ["Women", "Empowerment priority"]
                 ].map(([value, label]) => (

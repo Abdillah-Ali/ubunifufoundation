@@ -5,7 +5,7 @@ export const impactStats = [
   { icon: Target, value: "7", label: "Enterprises Supported", color: "bg-[#c49a2a]" },
   { icon: TrendingUp, value: "47", label: "Jobs Created", color: "bg-primary" },
   { icon: Lightbulb, value: "8", label: "Businesses Started", color: "bg-[#c49a2a]" },
-  { icon: MapPin, value: "Kwerekwe", label: "Area of Operation", color: "bg-primary" }
+  { icon: MapPin, value: "Fuoni Afya", label: "Area of Operation", color: "bg-primary" }
 ];
 
 export const successStories = [
